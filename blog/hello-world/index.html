@@ -405,7 +405,11 @@ header {
 }
 
 @media (max-width: 90rem) {
-	header {
+	header.panel {
+		background: none;
+		box-shadow: none;
+		backdrop-filter: none;
+		-webkit-backdrop-filter: none;
 		margin: 2rem 1rem;
 	}
 }
@@ -473,12 +477,11 @@ header {
 	.wordart-wrapper {
 		width: 100%;
 		position: absolute;
-		left: -50px;
-		top: -50px;
+		left: 0;
+		top: -40px;
 	}
 	.wordart {
 		font-size: 2.5rem;
-		width: 100vw;
 	}
 }
 
