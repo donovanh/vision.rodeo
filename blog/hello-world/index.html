@@ -354,6 +354,12 @@ code {
 	padding: 2rem 4rem;
 }
 
+@media (max-width: 500px) {
+	.padded {
+		padding: 1rem;
+	}
+}
+
 /* Header */
 .header-container {
 	perspective: 100vw;
@@ -401,15 +407,6 @@ header {
 	}
 }
 
-@media (max-width: 800px) {
-	header {
-		margin: 2rem 1rem;
-	}
-	.wordart {
-		font-size: 4rem;
-	}
-}
-
 .wordart {
 	display: inline-block;
 	margin: 2rem 0 4rem;
@@ -429,6 +426,28 @@ header {
 
 .wordart-wrapper {
 	filter: drop-shadow(2px 2px 0px rgba(2, 5, 42, 0.8));
+}
+
+@media (max-width: 600px) {
+	header {
+		margin: 2rem 1rem;
+	}
+	.wordart {
+		font-size: 4rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.wordart-wrapper {
+		overflow: hidden;
+	}
+	.wordart {
+		position: absolute;
+		left: -235px;
+		top: -30%;
+		font-size: 3rem;
+		width: 800px;
+	}
 }
 
 /* Nav */
