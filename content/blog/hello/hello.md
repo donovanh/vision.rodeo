@@ -14,7 +14,7 @@ I'm looking forward to learning how this new tech will work, as well as building
 
 ## Why Apple Vision Pro?
 
-I'm a web designer and developer and have been working on the web for over 20 years. When I began creating web sites, CSS was brand new and web browsers were a lot more primative than they are today, but the platform was new and very exciting.
+I'm a web designer and developer and have been working on the web for over 20 years. When I began creating web sites, CSS was brand new and web browsers were a lot more primative than they are today, but the platform was new and exciting.
 
 Being able to design, create and publish my ideas for the world to see from the comfort of my sofa was a revolutionary time. The web has since grown to become simultaneously more important but also more mundane. It's possible to create random little sites like this but few people do, and it feels like less of a world wild web and more dominated by heterogenous, large platforms.
 
