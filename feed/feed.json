@@ -1,0 +1,22 @@
+{
+	"version": "https://jsonfeed.org/version/1.1",
+	"title": "Donovan&#39;s Vision Blog",
+	"language": "en",
+	"home_page_url": "https://vision.rodeo/",
+	"feed_url": "https://vision.rodeo/feed/feed.json",
+	"description": "Learning how to build apps for the Apple Vision Pro.",
+	"author": {
+		"name": "Donovan Hutchinson",
+		"url": "https://hop.ie"
+	},
+	"items": [
+		{
+			"id": "https://vision.rodeo/blog/hello-world/",
+			"url": "https://vision.rodeo/blog/hello-world/",
+			"title": "This is my first post.",
+			"content_html": "<p>This is a test post while I get things started on this little site about <a href=\"https://www.apple.com/apple-vision-pro/\">Apple Vision Pro</a>!</p>\n<p>I'm looking forward to learning how this new tech will work, as well as building apps for it in SwiftUI.</p>\n<p>This blog is built on <a href=\"http://eleventy-base-blog.netlify.app\">Eleventy Base Blog</a> with a few small tweaks.</p>\n<p><picture><source type=\"image/avif\" srcset=\"https://vision.rodeo/img/SOFWriN75L-800.avif 800w\"><source type=\"image/webp\" srcset=\"https://vision.rodeo/img/SOFWriN75L-800.webp 800w\"><img alt=\"The classic Apple Hello text in Vision Pro\" loading=\"lazy\" decoding=\"async\" src=\"https://vision.rodeo/img/SOFWriN75L-800.jpeg\" width=\"800\" height=\"450\"></picture></p>\n<p>Thanks for reading, be sure to check out <a href=\"https://vision.rodeo/feed/feed.xml\">the RSS feed</a>.</p>\n",
+			"date_published": "2024-01-26T00:00:00Z"
+		}
+		
+	]
+}

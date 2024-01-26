@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	
+	<url>
+		<loc>https://vision.rodeo/blog/hello-world/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/blog/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/links/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/tags/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/tags/thoughts/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+</urlset>
