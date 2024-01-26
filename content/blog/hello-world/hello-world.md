@@ -18,7 +18,7 @@ I'm a web designer and developer and have been working on the web for over 20 ye
 
 Being able to design, create and publish my ideas for the world to see from the comfort of my sofa was a revolutionary time. The web has since grown to become simultaneously more important but also more mundane. It's possible to create random little sites like this but few people do, and it feels like less of a world wild web and more dominated by heterogenous, large platforms.
 
-The iPhone was [launched almost 16 years ago](https://en.wikipedia.org/wiki/IPhone), and has created it's own wonderful exosystem of creativity. It introduced the first good implementation of a touch-based interface and made the internet available in a pocket-sized device to everyone.
+The iPhone was [launched almost 16 years ago](https://en.wikipedia.org/wiki/IPhone), and has created it's own wonderful ecosystem of creativity. It introduced the first good implementation of a touch-based interface and made the internet available in a pocket-sized device to everyone.
 
 Building apps was also something within reach of a solo developer. The tools to build on iOS have continued to to get better and better, while the technology has become more refined. Which leads to what I hope will be another exciting stage in technology, [spatial computing](https://en.wikipedia.org/wiki/Spatial_computing).
 
