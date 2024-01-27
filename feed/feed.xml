@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
 	<title>Donovan&#39;s Vision Blog</title>
-	<subtitle>Learning how to build apps for the Apple Vision Pro.</subtitle>
+	<subtitle>Let&#39;s build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
 	<updated>2024-01-26T00:00:00Z</updated>
