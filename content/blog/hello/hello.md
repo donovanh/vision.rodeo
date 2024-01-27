@@ -46,4 +46,10 @@ It's like when laptops were dull, beige and focused on office productivity, and 
 
 Apple's Vision Pro combines the highest fidelity of passthrough video, with state of the art eye tracking, and a (hopefully) expansive array of applications.
 
+## So what's this blog about?
+
+I'm interested in exploring what this new platform offers, from a developer's perspective. I'd like to ask questions such as how we build spatial experiences, what makes a good Vision Pro app, and how we find inspiration as this platform emerges.
+
+I have a lot to learn and I find blogging about it can be a great way to reinforce my learning. It's fun too.
+
 Time will tell if the device is worth the asking price. Developers will explore the capabilities and build apps to see what it can do. I'm excited to be in a position to learn how to build apps for this platform, and I'll continue documenting this journey here.
