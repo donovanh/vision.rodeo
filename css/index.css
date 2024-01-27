@@ -444,3 +444,8 @@ footer {
 		margin: 2rem 1rem;
 	}
 }
+
+.signup-frame {
+	max-width: 375px;
+	margin: 0 auto;
+}
