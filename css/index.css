@@ -304,9 +304,7 @@ header {
 nav {
 	max-width: 22rem;
 	margin: 0 auto;
-	margin-bottom: -6rem;
-	backdrop-filter: blur(15px);
-	-webkit-backdrop-filter: blur(15px);
+	margin-bottom: -6.75rem;
 }
 nav.secondary {
 	margin: 1rem auto 2rem;
