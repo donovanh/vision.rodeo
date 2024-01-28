@@ -35,6 +35,7 @@ eleventyNavigation:
   <ul>
     <li><a href="https://mastodon.ie/@donovanh">@donovanh@mastodon.ie</a> (Me!)</li>
     <li><a href="https://mastodon.social/@stroughtonsmith/">@stroughtonsmith@mastodon.social</a></li>
+    <li><a href="https://twitter.com/M1Astra">@M1Astra@twitter.com</a></li>
   </ul>
 
   <h2>Apple</h2>

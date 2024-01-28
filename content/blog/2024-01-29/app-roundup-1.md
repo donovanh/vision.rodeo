@@ -7,7 +7,9 @@ tags:
   - apps
 ---
 
-It's been about 6 months and developers have been working hard to learn how to build Apple Vision Pro apps. Ahead of this week's launch, here's a list of apps you might want to try out. Each has indicated they either currently support Vision Pro or plan to do so at launch.
+It's been about 6 months and developers have been working hard to learn how to build Apple Vision Pro apps. Ahead of this week's launch, here's a list of apps you might want to try out.
+
+The list here is not exhaustive - apparently there are currently over 200 apps built or adapted specifically for Vision Pro.
 
 Strap in, cancel your Netflix, and load up some amazing apps!
 
@@ -41,11 +43,21 @@ Strap in, cancel your Netflix, and load up some amazing apps!
 
 [PGA Tour Vision](https://apps.apple.com/us/app/pga-tour-vision/id6471858717) - Experience golf like never before.
 
-[NBA App](https://apps.apple.com/app/nba-live-games-scores/id484672289) - Live scores and insights on basketball stuff.
+[NBA](https://apps.apple.com/app/nba-live-games-scores/id484672289) - Live scores and insights on basketball stuff.
+
+[MLB](https://apps.apple.com/app/mlb/id493619333) - Live baseball and on-demand.
+
+[ESPN](https://apps.apple.com/app/espn-live-sports-scores/id317469184) - Live sports and scores.
+
+[Discovery+](https://apps.apple.com/app/discovery-stream-tv-shows/id395972146) - TV show streaming.
+
+[Crunchyroll](https://apps.apple.com/app/crunchyroll/id329913454) - Anime streaming.
 
 [Cricket Scores Live Matches](https://apps.apple.com/app/cricket-scores-live-matches/id1616385207) - More detail coming soon.
 
 ## Entertainment
+
+[Disney+](https://apps.apple.com/app/disney/id1446075923) - All the usual Disney content including 3D movies, custom environments and more.
 
 [Play](https://apps.apple.com/app/play-save-videos-watch-later/id1596506190) - Save videos to watch later.
 
@@ -72,6 +84,8 @@ Particle playground - TBD
 ## Other Stuff
 
 [Voice in a Can](https://viac.app/) - Virtual Alexa assistant.
+
+[Carrot Weather](https://apps.apple.com/app/carrot-weather/id993487541?mt=12) - A crazy-powerful (and privacy-conscious) weather app.
 
 [Plant Daddy](https://plantdaddy.app/) - The mod­ern, cute little place to keep track of your plants’ needs.
 
