@@ -12,14 +12,14 @@
 	</author>
 	
 	<entry>
-		<title>Apple&#39;s Vision</title>
+		<title>Apple’s Vision</title>
 		<link href="https://vision.rodeo/vision"/>
 		<updated>2024-01-28T00:00:00Z</updated>
 		<id>https://vision.rodeo/vision</id>
 		<content type="html">&lt;p&gt;Let&#39;s discuss the &lt;em&gt;vision&lt;/em&gt; in Apple Vision Pro, and what this product represents.&lt;/p&gt;
 &lt;h2 id=&quot;looking-to-the-future&quot; tabindex=&quot;-1&quot;&gt;Looking to the future &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Imagine we could make use of technology without being bound by screens. All while living our day to day lives. Seamlessly blending the virtual with reality.&lt;/p&gt;
-&lt;p&gt;This is what AR (augmented reality) promises, and it&#39;s not something we&#39;ve been able to achieve. Camera and screen technology is only now reaching a level where we can present our surroundings at a high enough fidelity to be considered AR, and even then the headsets are bulky and not the most comfortable experience.&lt;/p&gt;
+&lt;p&gt;This is what AR (augmented reality) promises, and we are not there yet. Camera and screen technology is only now reaching a level where we can present our surroundings at a high enough fidelity to be considered AR, and even then the headsets are bulky and not the most comfortable experience.&lt;/p&gt;
 &lt;p&gt;The vision of AR is that technology will enable a seamless integration of our computing lives with the real world around us. I think this headset from Apple is a step toward making it a reality.&lt;/p&gt;
 &lt;h3 id=&quot;simulations-in-simulations&quot; tabindex=&quot;-1&quot;&gt;Simulations in simulations &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;When we build apps in Xcode&#39;s simulator, it simulates the experience of how the app would look in Vision Pro. This allows us to have some idea of what it will be like when the app is used by a user on the device.&lt;/p&gt;
