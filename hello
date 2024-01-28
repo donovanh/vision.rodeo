@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Hello World!</title>
+		<title>hello - Donovan's Vision Blog</title>
 		<meta name="description" content="Let&#39;s start on this Vision Pro journey">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -369,9 +369,9 @@ code {
 
 .panel {
 	background-color: rgba(200, 180, 200, 0.2);
-	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
-		0 0 1rem 0 rgba(0, 0, 0, 0.2);
-	border-radius: 1rem;
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.75),
+		0 0 1rem 0 rgba(0, 0, 0, 0.1);
+	border-radius: 2.5rem;
 	position: relative;
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
@@ -396,13 +396,19 @@ code {
 header {
 	text-align: center;
 	align-items: center;
-	padding: 4rem 0 4rem 0;
-	margin: 2rem auto;
+	padding: 4rem 0;
+	margin: 2rem auto 4rem;
 	max-width: 90rem;
 	z-index: 128;
 }
 
 @media (max-width: 90rem) {
+	header {
+		margin: 2rem 1rem 3rem;
+	}
+}
+
+@media (max-width: 40rem) {
 	header.panel {
 		background: none;
 		box-shadow: none;
@@ -464,12 +470,6 @@ header {
 .wordart-wrapper {
 	filter: drop-shadow(2px 2px 0px rgba(2, 5, 42, 0.8));
 }
-/* 
-@media (max-width: 40rem) {
-	.wordart {
-		font-size: 4rem;
-	}
-} */
 
 @media (max-width: 500px) {
 	.wordart-wrapper {
@@ -487,9 +487,7 @@ header {
 nav {
 	max-width: 22rem;
 	margin: 0 auto;
-	margin-bottom: -6rem;
-	backdrop-filter: blur(15px);
-	-webkit-backdrop-filter: blur(15px);
+	margin-bottom: -8rem;
 }
 nav.secondary {
 	margin: 1rem auto 2rem;
@@ -497,7 +495,7 @@ nav.secondary {
 .nav {
 	display: flex;
 	justify-content: space-between;
-	padding: 1rem;
+	padding: 1.5rem 1rem;
 	list-style: none;
 }
 .nav-item {
@@ -511,6 +509,12 @@ nav.secondary {
 	color: #fff;
 }
 
+@media (max-width: 40rem) {
+	nav {
+		margin-bottom: -7rem;
+	}
+}
+
 /* Posts list */
 .postlist {
 	list-style: none;
@@ -520,17 +524,16 @@ nav.secondary {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
-	margin-bottom: 1em;
-	padding-top: 3rem;
-	padding-bottom: 4rem;
+	padding: 0.5rem;
 }
 .postlist-item time {
 	width: 100%;
 }
-.postlist-item img {
+.postlist-item img,
+main img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 1rem;
+	border-radius: 2rem;
 	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
 		0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
@@ -545,24 +548,43 @@ nav.secondary {
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
-.content {
-	max-width: 60rem;
-	margin-left: auto;
-	margin-right: auto;
-}
 .postlist h2,
 .postlist h3,
 .postlist h4 {
 	display: block;
 	width: 100%;
 }
+
+.content {
+	max-width: 60rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.content h2,
+.content h3,
+.content h4 {
+	margin-top: 2rem;
+}
+
 /* Tags */
 .post-tag {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	text-transform: capitalize;
-	font-style: italic;
+	text-decoration: none;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 0.25rem 0.5rem;
+	border: 0.5px solid rgba(255, 255, 255, 0.25);
+	border-radius: 1rem;
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
+		0 0 1rem 0 rgba(0, 0, 0, 0.2);
+	font-size: 0.75em; /* 12px /16 */
+	opacity: 0.5;
+}
+.post-tag:hover {
+	opacity: 1;
+	transition: opacity 0.25s ease-out;
 }
 .postlist-item > .post-tag {
 	align-self: center;
@@ -615,6 +637,11 @@ footer {
 	footer {
 		margin: 2rem 1rem;
 	}
+}
+
+.signup-frame {
+	max-width: 375px;
+	margin: 0 auto;
 }</style>
 		<script src="/js/on-scroll.js"></script>
 	</head>
@@ -643,7 +670,7 @@ footer {
 		<main id="skip" class="">
 			
 <div class="content panel padded">
-	<h1>Hello World!</h1>
+	<h1>hello</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2024-01-26">26 January 2024</time></li>
@@ -654,7 +681,7 @@ footer {
 <p>I'm looking forward to learning how this new tech will work, as well as building apps for it in SwiftUI.</p>
 <p><picture><source type="image/avif" srcset="/img/SOFWriN75L-800.avif 800w"><source type="image/webp" srcset="/img/SOFWriN75L-800.webp 800w"><img alt="The classic Apple Hello text in Vision Pro" loading="lazy" decoding="async" src="/img/SOFWriN75L-800.jpeg" width="800" height="450"></picture></p>
 <h2 id="why-apple-vision-pro" tabindex="-1">Why Apple Vision Pro? <a class="header-anchor" href="#why-apple-vision-pro">#</a></h2>
-<p>I'm a web designer and developer and have been working on the web for over 20 years. When I began creating web sites, CSS was brand new and web browsers were a lot more primative than they are today, but the platform was new and very exciting.</p>
+<p>I'm a web designer and developer and have been working on the web for over 20 years. When I began creating web sites, CSS was brand new and web browsers were a lot more primative than they are today, but the platform was new and exciting.</p>
 <p>Being able to design, create and publish my ideas for the world to see from the comfort of my sofa was a revolutionary time. The web has since grown to become simultaneously more important but also more mundane. It's possible to create random little sites like this but few people do, and it feels like less of a world wild web and more dominated by heterogenous, large platforms.</p>
 <p>The iPhone was <a href="https://en.wikipedia.org/wiki/IPhone">launched almost 16 years ago</a>, and has created it's own wonderful ecosystem of creativity. It introduced the first good implementation of a touch-based interface and made the internet available in a pocket-sized device to everyone.</p>
 <p>Building apps was also something within reach of a solo developer. The tools to build on iOS have continued to to get better and better, while the technology has become more refined. Which leads to what I hope will be another exciting stage in technology, <a href="https://en.wikipedia.org/wiki/Spatial_computing">spatial computing</a>.</p>
@@ -670,8 +697,13 @@ footer {
 <p>It's like when laptops were dull, beige and focused on office productivity, and Apple promoted their laptops as <em>creative</em> tools. The Vision Pro is being positioned as a device that will bring spatial computing and be a creative tool rather than just got gaming.</p>
 <h2 id="cutting-edge-technology" tabindex="-1">Cutting-edge technology <a class="header-anchor" href="#cutting-edge-technology">#</a></h2>
 <p>Apple's Vision Pro combines the highest fidelity of passthrough video, with state of the art eye tracking, and a (hopefully) expansive array of applications.</p>
+<h2 id="so-what-s-this-blog-about" tabindex="-1">So what's this blog about? <a class="header-anchor" href="#so-what-s-this-blog-about">#</a></h2>
+<p>I'm interested in exploring what this new platform offers, from a developer's perspective. I'd like to ask questions such as how we build spatial experiences, what makes a good Vision Pro app, and how we find inspiration as this platform emerges.</p>
+<p>I have a lot to learn and I find blogging about it can be a great way to reinforce my learning. It's fun too.</p>
 <p>Time will tell if the device is worth the asking price. Developers will explore the capabilities and build apps to see what it can do. I'm excited to be in a position to learn how to build apps for this platform, and I'll continue documenting this journey here.</p>
 
+<ul class="links-nextprev"><li>Next: <a href="/vision">Apple&#39;s Vision</a></li>
+</ul>
 </div>
 
 		</main>
@@ -680,7 +712,17 @@ footer {
 			<div class="signup">
 				<h2>Donovan's Vision Newsletter</h2>
 				<p>Stay up to date when new posts land</p>
-				<iframe src="https://embeds.beehiiv.com/e4b485a8-6ae4-48c8-a4aa-e699ebbc193f?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 1rem 1rem 2rem; border-radius: 0px !important; background-color: transparent;"></iframe>
+				<div class="signup-frame">
+					<iframe
+					src="https://embeds.beehiiv.com/e4b485a8-6ae4-48c8-a4aa-e699ebbc193f?slim=true"
+					data-test-id="beehiiv-embed"
+					height="52"
+					width="100%"
+					frameborder="0"
+					scrolling="no"
+					style="margin: 1rem 0 2rem; border-radius: 0px !important; background-color: transparent;"
+					></iframe>
+				</div>
 			</div>
 			<nav class="panel secondary">
 					<h2 class="visually-hidden">Footer navigation menu</h2>
@@ -696,6 +738,6 @@ footer {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /blog/hello-world/hello/ -->
+		<!-- Current page: /hello -->
 	</body>
 </html>

@@ -4,7 +4,7 @@
 	<subtitle>Let&#39;s build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-01-26T00:00:00Z</updated>
+	<updated>2024-01-28T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
@@ -12,31 +12,57 @@
 	</author>
 	
 	<entry>
+		<title>Apple&#39;s Vision</title>
+		<link href="https://vision.rodeo/vision"/>
+		<updated>2024-01-28T00:00:00Z</updated>
+		<id>https://vision.rodeo/vision</id>
+		<content type="html">&lt;p&gt;Let&#39;s discuss the &lt;em&gt;vision&lt;/em&gt; in Apple Vision Pro, and what this product represents.&lt;/p&gt;
+&lt;h2 id=&quot;apple-s-vision&quot; tabindex=&quot;-1&quot;&gt;Apple&#39;s vision &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Imagine we could make use of technology without being bound by screens. All while living our day to day lives. Seamlessly blending the virtual with reality.&lt;/p&gt;
+&lt;p&gt;This is what AR (augmented reality) promises, and it&#39;s not something we&#39;ve been able to achieve. Camera and screen technology is only now reaching a level where we can present our surroundings at a high enough fidelity to be considered AR, and even then the headsets are bulky and not the most comfortable experience.&lt;/p&gt;
+&lt;p&gt;The vision of AR is that technology will enable a seamless integration of our computing lives with the real world around us. I think this headset from Apple is a step toward making it a reality.&lt;/p&gt;
+&lt;h3 id=&quot;simulations-in-simulations&quot; tabindex=&quot;-1&quot;&gt;Simulations in simulations &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;When we build apps in Xcode&#39;s simulator, it simulates the experience of how the app would look in Vision Pro. This allows us to have some idea of what it will be like when the app is used by a user on the device.&lt;/p&gt;
+&lt;p&gt;I see the Vision Pro headset as a simulator for what a truly augmented reality would look like. Just as the simulator on Xcode is a two-dimensional proxy to the real thing, this headset from Apple uses cameras (and some clever algorithms) to represent what we&#39;d see without any headset. It then adds the our apps and content, as if they were in the real world around us.&lt;/p&gt;
+&lt;p&gt;This differs from other headsets whose purpose was virtual environments. These devices purpose is to take the user into a new space and present all-encompassing 3D experiences. These are great and have many uses, but I don&#39;t think VR (virtual reality) is Apple&#39;s primary goal.&lt;/p&gt;
+&lt;p&gt;The lack of emphasis on games is an example. Until now, the primary goal of VR headsets has been gaming and socialising within virtual worlds.&lt;/p&gt;
+&lt;p&gt;Vision Pro is more about presenting us with our own world, which is then augmented.&lt;/p&gt;
+&lt;h2 id=&quot;a-platform-for-experimentation-and-learning&quot; tabindex=&quot;-1&quot;&gt;A platform for experimentation and learning &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I think Apple is trying to make a very good headset that will be fantastic for both VR and AR experiences. Apple wants people to be able to step away from their world into entirely new spaces, but I don&#39;t think VR is the whole game. This is a new platform in which we can work out what works or doesn&#39;t work in a platform that aims to ground us in our own world.&lt;/p&gt;
+&lt;p&gt;Just as the original iPhone emphasised touch as an input, this headset will encourage developers to experiment with controller-free eye tracking and hand tracking. It will allow us to build applications that explode out of the bounds of the screens, and make use of the infinite canvas all around.&lt;/p&gt;
+&lt;p&gt;It will allow us to work toward a future of computing in which our we remain better connected to our environment and those around us while also enjoying all the benefits our technology offers.&lt;/p&gt;
+&lt;h2 id=&quot;only-the-first-step&quot; tabindex=&quot;-1&quot;&gt;Only the first step &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Many commenters have suggested that this is a beta test of a product, or an prototype, and in a sense I agree. This headset is a bulky, power-hungry device that is not something many people will want to wear all day.&lt;/p&gt;
+&lt;p&gt;For that reason I see this as the first step toward a new approach to &lt;a href=&quot;https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction&quot;&gt;human-computer interation&lt;/a&gt;. It&#39;s not there yet, but this is glimpse of how it could be.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
 		<title>hello</title>
-		<link href="https://vision.rodeo/blog/hello/"/>
+		<link href="https://vision.rodeo/hello"/>
 		<updated>2024-01-26T00:00:00Z</updated>
-		<id>https://vision.rodeo/blog/hello/</id>
+		<id>https://vision.rodeo/hello</id>
 		<content type="html">&lt;p&gt;This is my first post while I get things started on this little site about &lt;a href=&quot;https://www.apple.com/apple-vision-pro/&quot;&gt;Apple Vision Pro&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;I&#39;m looking forward to learning how this new tech will work, as well as building apps for it in SwiftUI.&lt;/p&gt;
 &lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/SOFWriN75L-800.avif 800w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/SOFWriN75L-800.webp 800w&quot;&gt;&lt;img alt=&quot;The classic Apple Hello text in Vision Pro&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/SOFWriN75L-800.jpeg&quot; width=&quot;800&quot; height=&quot;450&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;h2 id=&quot;why-apple-vision-pro&quot; tabindex=&quot;-1&quot;&gt;Why Apple Vision Pro? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blog/hello/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;why-apple-vision-pro&quot; tabindex=&quot;-1&quot;&gt;Why Apple Vision Pro? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/hello&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I&#39;m a web designer and developer and have been working on the web for over 20 years. When I began creating web sites, CSS was brand new and web browsers were a lot more primative than they are today, but the platform was new and exciting.&lt;/p&gt;
 &lt;p&gt;Being able to design, create and publish my ideas for the world to see from the comfort of my sofa was a revolutionary time. The web has since grown to become simultaneously more important but also more mundane. It&#39;s possible to create random little sites like this but few people do, and it feels like less of a world wild web and more dominated by heterogenous, large platforms.&lt;/p&gt;
 &lt;p&gt;The iPhone was &lt;a href=&quot;https://en.wikipedia.org/wiki/IPhone&quot;&gt;launched almost 16 years ago&lt;/a&gt;, and has created it&#39;s own wonderful ecosystem of creativity. It introduced the first good implementation of a touch-based interface and made the internet available in a pocket-sized device to everyone.&lt;/p&gt;
 &lt;p&gt;Building apps was also something within reach of a solo developer. The tools to build on iOS have continued to to get better and better, while the technology has become more refined. Which leads to what I hope will be another exciting stage in technology, &lt;a href=&quot;https://en.wikipedia.org/wiki/Spatial_computing&quot;&gt;spatial computing&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;spatial-computing-vs-vr&quot; tabindex=&quot;-1&quot;&gt;Spatial computing vs VR &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blog/hello/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;spatial-computing-vs-vr&quot; tabindex=&quot;-1&quot;&gt;Spatial computing vs VR &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/hello&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Most headsets aim for a primarily &lt;a href=&quot;https://en.wikipedia.org/wiki/Virtual_reality&quot;&gt;virtual reality&lt;/a&gt; (VR) approach, in which the user is placed into an entirely simulated environment. As technology has improved this has created some amazing, immersive games and simulations.&lt;/p&gt;
 &lt;p&gt;What is more tricky is supporting &lt;a href=&quot;https://en.wikipedia.org/wiki/Augmented_reality&quot;&gt;augmented reality&lt;/a&gt; (AR). This when the real world is visible and a computer overlays items on top. To do this requires cameras, lots of smart code to adjust and shape the camera input to look right, as well as sensors to detect where the headset is and where the user is looking.&lt;/p&gt;
 &lt;p&gt;With all these pieces in place, the headset can then render visual elements within the video stream and make it look like your computer and the real world are intermingled. The result, if done well, allows us to explore computing beyond the constraint of screens.&lt;/p&gt;
 &lt;p&gt;As much as laptops are amazing devices, having a seemingly infinite canvas within which 3D computing elements can be placed is a big step forward.&lt;/p&gt;
-&lt;h2 id=&quot;apple-s-difference&quot; tabindex=&quot;-1&quot;&gt;Apple&#39;s difference &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blog/hello/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;apple-s-difference&quot; tabindex=&quot;-1&quot;&gt;Apple&#39;s difference &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/hello&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Compared to other platforms such as the &lt;a href=&quot;https://en.wikipedia.org/wiki/Meta_Quest_3&quot;&gt;Meta Quest&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/PlayStation_VR&quot;&gt;PlayStation VR&lt;/a&gt;, Apple has taken a different approach.&lt;/p&gt;
 &lt;p&gt;Where the previously mentioned headsets are designed and marketed primarily as gaming devices, Apple has promoted their headset as an entertainment and creative productivity device.&lt;/p&gt;
 &lt;p&gt;I&#39;m sure there&#39;ll be games, and maybe I&#39;ll try making some. However with no controllers, and a much more expensive device, the value I&#39;m hoping Vision Pro will bring will be much more than games.&lt;/p&gt;
 &lt;p&gt;It&#39;s like when laptops were dull, beige and focused on office productivity, and Apple promoted their laptops as &lt;em&gt;creative&lt;/em&gt; tools. The Vision Pro is being positioned as a device that will bring spatial computing and be a creative tool rather than just got gaming.&lt;/p&gt;
-&lt;h2 id=&quot;cutting-edge-technology&quot; tabindex=&quot;-1&quot;&gt;Cutting-edge technology &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blog/hello/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;cutting-edge-technology&quot; tabindex=&quot;-1&quot;&gt;Cutting-edge technology &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/hello&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Apple&#39;s Vision Pro combines the highest fidelity of passthrough video, with state of the art eye tracking, and a (hopefully) expansive array of applications.&lt;/p&gt;
-&lt;h2 id=&quot;so-what-s-this-blog-about&quot; tabindex=&quot;-1&quot;&gt;So what&#39;s this blog about? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blog/hello/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;so-what-s-this-blog-about&quot; tabindex=&quot;-1&quot;&gt;So what&#39;s this blog about? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/hello&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I&#39;m interested in exploring what this new platform offers, from a developer&#39;s perspective. I&#39;d like to ask questions such as how we build spatial experiences, what makes a good Vision Pro app, and how we find inspiration as this platform emerges.&lt;/p&gt;
 &lt;p&gt;I have a lot to learn and I find blogging about it can be a great way to reinforce my learning. It&#39;s fun too.&lt;/p&gt;
 &lt;p&gt;Time will tell if the device is worth the asking price. Developers will explore the capabilities and build apps to see what it can do. I&#39;m excited to be in a position to learn how to build apps for this platform, and I&#39;ll continue documenting this journey here.&lt;/p&gt;

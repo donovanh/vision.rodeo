@@ -341,6 +341,12 @@ nav.secondary {
 	color: #fff;
 }
 
+@media (max-width: 40rem) {
+	nav {
+		margin-bottom: -7rem;
+	}
+}
+
 /* Posts list */
 .postlist {
 	list-style: none;
@@ -350,9 +356,7 @@ nav.secondary {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
-	margin-bottom: 1em;
-	padding-top: 3rem;
-	padding-bottom: 4rem;
+	padding: 0.5rem;
 }
 .postlist-item time {
 	width: 100%;
@@ -376,17 +380,24 @@ main img {
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
-.content {
-	max-width: 60rem;
-	margin-left: auto;
-	margin-right: auto;
-}
 .postlist h2,
 .postlist h3,
 .postlist h4 {
 	display: block;
 	width: 100%;
 }
+
+.content {
+	max-width: 60rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.content h2,
+.content h3,
+.content h4 {
+	margin-top: 2rem;
+}
+
 /* Tags */
 .post-tag {
 	display: inline-flex;
