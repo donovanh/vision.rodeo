@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
-	<title>Donovan&#39;s Vision Blog</title>
-	<subtitle>Let&#39;s build great apps for Apple Vision Pro</subtitle>
+	<title>Donovan’s Vision Blog</title>
+	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
 	<updated>2024-01-28T00:00:00Z</updated>
@@ -17,7 +17,7 @@
 		<updated>2024-01-28T00:00:00Z</updated>
 		<id>https://vision.rodeo/vision</id>
 		<content type="html">&lt;p&gt;Let&#39;s discuss the &lt;em&gt;vision&lt;/em&gt; in Apple Vision Pro, and what this product represents.&lt;/p&gt;
-&lt;h2 id=&quot;apple-s-vision&quot; tabindex=&quot;-1&quot;&gt;Apple&#39;s vision &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;looking-to-the-future&quot; tabindex=&quot;-1&quot;&gt;Looking to the future &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Imagine we could make use of technology without being bound by screens. All while living our day to day lives. Seamlessly blending the virtual with reality.&lt;/p&gt;
 &lt;p&gt;This is what AR (augmented reality) promises, and it&#39;s not something we&#39;ve been able to achieve. Camera and screen technology is only now reaching a level where we can present our surroundings at a high enough fidelity to be considered AR, and even then the headsets are bulky and not the most comfortable experience.&lt;/p&gt;
 &lt;p&gt;The vision of AR is that technology will enable a seamless integration of our computing lives with the real world around us. I think this headset from Apple is a step toward making it a reality.&lt;/p&gt;
@@ -31,7 +31,7 @@
 &lt;p&gt;I think Apple is trying to make a very good headset that will be fantastic for both VR and AR experiences. Apple wants people to be able to step away from their world into entirely new spaces, but I don&#39;t think VR is the whole game. This is a new platform in which we can work out what works or doesn&#39;t work in a platform that aims to ground us in our own world.&lt;/p&gt;
 &lt;p&gt;Just as the original iPhone emphasised touch as an input, this headset will encourage developers to experiment with controller-free eye tracking and hand tracking. It will allow us to build applications that explode out of the bounds of the screens, and make use of the infinite canvas all around.&lt;/p&gt;
 &lt;p&gt;It will allow us to work toward a future of computing in which our we remain better connected to our environment and those around us while also enjoying all the benefits our technology offers.&lt;/p&gt;
-&lt;h2 id=&quot;only-the-first-step&quot; tabindex=&quot;-1&quot;&gt;Only the first step &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;a-first-step&quot; tabindex=&quot;-1&quot;&gt;A first step &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Many commenters have suggested that this is a beta test of a product, or an prototype, and in a sense I agree. This headset is a bulky, power-hungry device that is not something many people will want to wear all day.&lt;/p&gt;
 &lt;p&gt;For that reason I see this as the first step toward a new approach to &lt;a href=&quot;https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction&quot;&gt;human-computer interation&lt;/a&gt;. It&#39;s not there yet, but this is glimpse of how it could be.&lt;/p&gt;
 </content>

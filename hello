@@ -9,8 +9,8 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan&#39;s Vision Blog">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan&#39;s Vision Blog">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
 		<meta name="generator" content="Eleventy v2.0.1">
 		<style>/**
  * okaidia theme for JavaScript, CSS and HTML
@@ -661,7 +661,7 @@ footer {
 			<header class="panel " id="header">
 				<a href="/" class="home-link">
 					<span class="wordart-wrapper">
-						<span class="wordart">Donovan&#39;s Vision Blog</span>
+						<span class="wordart">Donovan’s Vision Blog</span>
 					</span>
 				</a>
 				<nav class="panel">
