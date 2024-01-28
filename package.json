@@ -3,9 +3,9 @@
 	"version": "1.0.0",
 	"description": "A blog about Vision stuff.",
 	"scripts": {
-		"build": "npx @11ty/eleventy",
-		"deploy": "git push origin main && npx @11ty/eleventy && gh-pages -d _site",
-		"start": "npx @11ty/eleventy --serve --quiet",
+		"build": "rm -rf _site && npx @11ty/eleventy",
+		"deploy": "git push origin main && yarn build && gh-pages -d _site",
+		"start": "rm -rf _site && npx @11ty/eleventy --serve --quiet",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
