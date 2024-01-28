@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://vision.rodeo/hello</loc>
+		<loc>https://vision.rodeo/hello/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -37,7 +37,7 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/vision</loc>
+		<loc>https://vision.rodeo/vision/</loc>
 		<lastmod>2024-01-28</lastmod>
 	</url>
 </urlset>
