@@ -13,6 +13,8 @@ The list here is not exhaustive - apparently there are currently over 200 apps b
 
 Strap in, cancel your Netflix, and load up some amazing apps!
 
+_Additional info:_ I just found a great list of _all_ supported visionOS apps [in this Google doc](https://docs.google.com/spreadsheets/d/1Kbkm_jPdgV2qwhoRFIufCass8u2k-h4Xxuj0r7tXYZo/edit?pli=1#gid=0). Worth a bookmark when you're looking for new ideas.
+
 ## Productivity & Lifestyle
 
 [Fantastical](https://apps.apple.com/app/fantastical-calendar/id718043190) - award-winning calendar app with powerful features including intuitive natural language text parsing and more. Check out their [Vision Pro launch blog post](https://flexibits.com/blog/2023/08/sneaking-a-peek-at-fantastical-on-apple-vision-pro/).
@@ -30,6 +32,8 @@ Strap in, cancel your Netflix, and load up some amazing apps!
 [Focus](https://apps.apple.com/app/focus-productivity-timer/id975017240) - Pomodoro time-tracking app for productivity.
 
 [Subjects](https://eyen.fr/subjects/) - Easily manage school subjects and schedules.
+
+[Great White Board](https://www.swankyshark.com/great-white-board.html) - A minimalist, fun shared whiteboard experience.
 
 ## Music
 
