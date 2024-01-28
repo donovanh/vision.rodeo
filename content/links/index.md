@@ -31,6 +31,12 @@ eleventyNavigation:
     <li><a href="https://atp.fm">Accidental Tech Podcast</a></li>
   </ul>
 
+  <h2>Social Follows</h2>
+  <ul>
+    <li><a href="https://mastodon.ie/@donovanh">@donovanh@mastodon.ie</a> (Me!)</li>
+    <li><a href="https://mastodon.social/@stroughtonsmith/">@stroughtonsmith@mastodon.social</a></li>
+  </ul>
+
   <h2>Apple</h2>
   <ul>
     <li><a href="https://www.apple.com/apple-vision-pro/">Apple Vision Pro</a></li>
