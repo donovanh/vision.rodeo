@@ -25,6 +25,8 @@ Strap in, cancel your Netflix, and load up some amazing apps!
 
 [Crouton](https://apps.apple.com/app/crouton-recipe-manager/id1461650987) - Beautiful recipe manager and meal planner.
 
+[J.Crew](https://apps.apple.com/app/j-crew/id1636531300) - Fashion shopping.
+
 [Focus](https://apps.apple.com/app/focus-productivity-timer/id975017240) - Pomodoro time-tracking app for productivity.
 
 [Subjects](https://eyen.fr/subjects/) - Easily manage school subjects and schedules.
