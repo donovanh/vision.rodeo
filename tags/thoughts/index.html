@@ -356,7 +356,14 @@ nav.secondary {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
-	padding: 0.5rem;
+	margin-bottom: 1em;
+}
+.home .postlist-item {
+	padding-bottom: 4rem;
+}
+.nested .postlist-item {
+	padding-top: 0;
+	padding-bottom: 0;
 }
 .postlist-item time {
 	width: 100%;
@@ -391,9 +398,6 @@ main img {
 	max-width: 60rem;
 	margin-left: auto;
 	margin-right: auto;
-}
-.content h1 {
-	margin-top: 1.5rem;
 }
 .content h2,
 .content h3,
@@ -631,7 +635,7 @@ pre[class*="language-"] {
   <h1>Tagged “thoughts”</h1>
 
 
-<ul reversed class="postlist">
+<ul reversed class="nested postlist">
 
 	<li class="postlist-item">
 		<a href="/vision" class="postlist-link">Apple&#39;s Vision</a>
