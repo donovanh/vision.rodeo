@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Donovan’s Vision Blog - Donovan's Vision Blog</title>
-		<meta name="description" content="Build great apps for Apple Vision Pro">
+		<title>App Roundup #1 - Donovan's Vision Blog</title>
+		<meta name="description" content="Explore spatial computing with these Apple Vision Pro apps available on launch day">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -12,7 +12,175 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
 		<meta name="generator" content="Eleventy v2.0.1">
-		<style>* { box-sizing: border-box; }
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
@@ -481,129 +649,6 @@ footer {
 .signup-frame {
 	max-width: 375px;
 	margin: 0 auto;
-}
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #8292a2;
-}
-
-.token.punctuation {
-	color: #f8f8f2;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #a6e22e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
-}
-
-.token.keyword {
-	color: #66d9ef;
-}
-
-.token.regex,
-.token.important {
-	color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
 }</style>
 		<script src="/js/on-scroll.js"></script>
 	</head>
@@ -613,7 +658,7 @@ pre[class*="language-"] {
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<div class="header-container">
-			<header class="panel animated" id="header">
+			<header class="panel " id="header">
 				<a href="/" class="home-link">
 					<span class="wordart-wrapper">
 						<span class="wordart">Donovan’s Vision Blog</span>
@@ -622,24 +667,24 @@ pre[class*="language-"] {
 				<nav class="panel">
 					<h2 class="visually-hidden">Top level navigation menu</h2>
 					<ul class="nav">
-						<li class="nav-item"><a href="/" aria-current="page">Home</a></li>
+						<li class="nav-item"><a href="/">Home</a></li>
 						<li class="nav-item"><a href="/blog/">All Posts</a></li>
 						<li class="nav-item"><a href="/links/">Cool Links</a></li>
 					</ul>
 				</nav>
 			</header>
 			</div>
-		<main id="skip" class="animated">
+		<main id="skip" class="">
 			
+<div class="content panel padded">
+	<h1>App Roundup #1</h1>
 
+<ul class="post-metadata">
+	<li><time datetime="2024-01-28">28 January 2024</time></li>
+	<li><a href="/tags/apps/" class="post-tag">apps</a></li>
+</ul>
 
-
-<ul reversed class="home postlist">
-
-	<li class="content panel padded postlist-item">
-		<h1><a href="/app-roundup-1/" class="postlist-link">App Roundup #1</a></h1>
-		<time class="postlist-date" datetime="2024-01-28">January 2024</time>
-		<p>It's been about 6 months and developers have been working hard to learn how to build Apple Vision Pro apps. Ahead of this week's launch, here's a list of apps you might want to try out. Each has indicated they either currently support Vision Pro or plan to do so at launch.</p>
+<p>It's been about 6 months and developers have been working hard to learn how to build Apple Vision Pro apps. Ahead of this week's launch, here's a list of apps you might want to try out. Each has indicated they either currently support Vision Pro or plan to do so at launch.</p>
 <p>Strap in, cancel your Netflix, and load up some amazing apps!</p>
 <h2 id="productivity-and-lifestyle" tabindex="-1">Productivity &amp; Lifestyle <a class="header-anchor" href="#productivity-and-lifestyle">#</a></h2>
 <p><a href="https://apps.apple.com/app/fantastical-calendar/id718043190">Fantastical</a> - award-winning calendar app with powerful features including intuitive natural language text parsing and more. Check out their <a href="https://flexibits.com/blog/2023/08/sneaking-a-peek-at-fantastical-on-apple-vision-pro/">Vision Pro launch blog post</a>.</p>
@@ -676,73 +721,9 @@ pre[class*="language-"] {
 <h2 id="got-any-others" tabindex="-1">Got any others? <a class="header-anchor" href="#got-any-others">#</a></h2>
 <p>If you hear of a cool app you'd like me to add to this or the next roundup, <a href="mailto:vision-links@hop.ie">let me know</a>.</p>
 
-	</li>
-
-	<li class="content panel padded postlist-item">
-		<h1><a href="/vision/" class="postlist-link">Apple’s Vision</a></h1>
-		<time class="postlist-date" datetime="2024-01-28">January 2024</time>
-		<p>Let's discuss the <em>vision</em> in Apple Vision Pro, and what this product represents.</p>
-<h2 id="looking-to-the-future" tabindex="-1">Looking to the future <a class="header-anchor" href="#looking-to-the-future">#</a></h2>
-<p>Imagine we could make use of technology without being bound by screens. All while living our day to day lives. Seamlessly blending the virtual with reality.</p>
-<p>This is what AR (augmented reality) promises, and we are not there yet. Camera and screen technology is only now reaching a level where we can present our surroundings at a high enough fidelity to be considered AR, and even then the headsets are bulky and not the most comfortable experience.</p>
-<p>The vision of AR is that technology will enable a seamless integration of our computing lives with the real world around us. I think this headset from Apple is a step toward making it a reality.</p>
-<h3 id="simulations-in-simulations" tabindex="-1">Simulations in simulations <a class="header-anchor" href="#simulations-in-simulations">#</a></h3>
-<p>When we build apps on our computers using Xcode's simulator, it simulates the experience of how the app would look in Vision Pro. This allows us to have some idea of what it will be like when the app is used by a user on the device.</p>
-<p>I see the Vision Pro headset as a simulator for what a truly augmented reality would look like. Just as the simulator on Xcode is a two-dimensional proxy to the real thing, this headset from Apple uses cameras (and some clever algorithms) to represent what we'd see without any headset. It then adds the our apps and content, as if they were in the real world around us.</p>
-<p>This differs from other headsets whose purpose was virtual environments. These devices purpose is to take the user into a new space and present all-encompassing 3D experiences. These are great and have many uses, but I don't think VR (virtual reality) is Apple's primary goal.</p>
-<p>The lack of emphasis on games is an example. Until now, the primary goal of VR headsets has been gaming and socialising within virtual worlds.</p>
-<p>Vision Pro is more about presenting us with our own world, which is then augmented.</p>
-<h2 id="a-platform-for-experimentation-and-learning" tabindex="-1">A platform for experimentation and learning <a class="header-anchor" href="#a-platform-for-experimentation-and-learning">#</a></h2>
-<p>I think Apple is trying to make a very good headset that will be fantastic for both VR and AR experiences. Apple wants people to be able to step away from their world into entirely new spaces, but I don't think VR is the whole game. This is a new platform in which we can work out what works or doesn't work in a platform that aims to ground us in our own world.</p>
-<p>Just as the original iPhone emphasised touch as an input, this headset will encourage developers to experiment with controller-free eye tracking and hand tracking. It will allow us to build applications that explode out of the bounds of the screens, and make use of the infinite canvas all around.</p>
-<p>It will allow us to work toward a future of computing in which we remain better connected to our environment and those around us while also enjoying all the benefits our technology offers.</p>
-<h2 id="a-first-step" tabindex="-1">A first step <a class="header-anchor" href="#a-first-step">#</a></h2>
-<p>Many commenters have suggested that this is a beta test of a product, or an prototype, and in a sense I agree. This headset is a bulky, power-hungry device that is not something many people will want to wear all day.</p>
-<p>For that reason I see this as the first step toward a new approach to <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction">human-computer interation</a>. It's not there yet, but this is glimpse of how it could be.</p>
-
-	</li>
-
-	<li class="content panel padded postlist-item">
-		<h1><a href="/hello/" class="postlist-link">hello</a></h1>
-		<time class="postlist-date" datetime="2024-01-26">January 2024</time>
-		<p>This is my first post while I get things started on this little site about <a href="https://www.apple.com/apple-vision-pro/">Apple Vision Pro</a>!</p>
-<p>I'm looking forward to learning how this new tech will work, as well as building apps for it in SwiftUI.</p>
-<p><picture><source type="image/avif" srcset="/img/SOFWriN75L-800.avif 800w"><source type="image/webp" srcset="/img/SOFWriN75L-800.webp 800w"><img alt="The classic Apple Hello text in Vision Pro" loading="lazy" decoding="async" src="/img/SOFWriN75L-800.jpeg" width="800" height="450"></picture></p>
-<h2 id="why-apple-vision-pro" tabindex="-1">Why Apple Vision Pro? <a class="header-anchor" href="#why-apple-vision-pro">#</a></h2>
-<p>I'm a web designer and developer and have been working on the web for over 20 years. When I began creating web sites, CSS was brand new and web browsers were a lot more primative than they are today, but the platform was new and exciting.</p>
-<p>Being able to design, create and publish my ideas for the world to see from the comfort of my sofa was a revolutionary time. The web has since grown to become simultaneously more important but also more mundane. It's possible to create random little sites like this but few people do, and it feels like less of a world wild web and more dominated by heterogenous, large platforms.</p>
-<p>The iPhone was <a href="https://en.wikipedia.org/wiki/IPhone">launched almost 16 years ago</a>, and has created it's own wonderful ecosystem of creativity. It introduced the first good implementation of a touch-based interface and made the internet available in a pocket-sized device to everyone.</p>
-<p>Building apps was also something within reach of a solo developer. The tools to build on iOS have continued to to get better and better, while the technology has become more refined. Which leads to what I hope will be another exciting stage in technology, <a href="https://en.wikipedia.org/wiki/Spatial_computing">spatial computing</a>.</p>
-<h2 id="spatial-computing-vs-vr" tabindex="-1">Spatial computing vs VR <a class="header-anchor" href="#spatial-computing-vs-vr">#</a></h2>
-<p>Most headsets aim for a primarily <a href="https://en.wikipedia.org/wiki/Virtual_reality">virtual reality</a> (VR) approach, in which the user is placed into an entirely simulated environment. As technology has improved this has created some amazing, immersive games and simulations.</p>
-<p>What is more tricky is supporting <a href="https://en.wikipedia.org/wiki/Augmented_reality">augmented reality</a> (AR). This when the real world is visible and a computer overlays items on top. To do this requires cameras, lots of smart code to adjust and shape the camera input to look right, as well as sensors to detect where the headset is and where the user is looking.</p>
-<p>With all these pieces in place, the headset can then render visual elements within the video stream and make it look like your computer and the real world are intermingled. The result, if done well, allows us to explore computing beyond the constraint of screens.</p>
-<p>As much as laptops are amazing devices, having a seemingly infinite canvas within which 3D computing elements can be placed is a big step forward.</p>
-<h2 id="apple-s-difference" tabindex="-1">Apple's difference <a class="header-anchor" href="#apple-s-difference">#</a></h2>
-<p>Compared to other platforms such as the <a href="https://en.wikipedia.org/wiki/Meta_Quest_3">Meta Quest</a> or <a href="https://en.wikipedia.org/wiki/PlayStation_VR">PlayStation VR</a>, Apple has taken a different approach.</p>
-<p>Where the previously mentioned headsets are designed and marketed primarily as gaming devices, Apple has promoted their headset as an entertainment and creative productivity device.</p>
-<p>I'm sure there'll be games, and maybe I'll try making some. However with no controllers, and a much more expensive device, the value I'm hoping Vision Pro will bring will be much more than games.</p>
-<p>It's like when laptops were dull, beige and focused on office productivity, and Apple promoted their laptops as <em>creative</em> tools. The Vision Pro is being positioned as a device that will bring spatial computing and be a creative tool rather than just got gaming.</p>
-<h2 id="cutting-edge-technology" tabindex="-1">Cutting-edge technology <a class="header-anchor" href="#cutting-edge-technology">#</a></h2>
-<p>Apple's Vision Pro combines the highest fidelity of passthrough video, with state of the art eye tracking, and a (hopefully) expansive array of applications.</p>
-<h2 id="so-what-s-this-blog-about" tabindex="-1">So what's this blog about? <a class="header-anchor" href="#so-what-s-this-blog-about">#</a></h2>
-<p>I'm interested in exploring what this new platform offers, from a developer's perspective. I'd like to ask questions such as how we build spatial experiences, what makes a good Vision Pro app, and how we find inspiration as this platform emerges.</p>
-<p>I have a lot to learn and I find blogging about it can be a great way to reinforce my learning. It's fun too.</p>
-<p>Time will tell if the device is worth the asking price. Developers will explore the capabilities and build apps to see what it can do. I'm excited to be in a position to learn how to build apps for this platform, and I'll continue documenting this journey here.</p>
-
-	</li>
-
+<ul class="links-nextprev"><li>Previous: <a href="/vision/">Apple’s Vision</a></li>
 </ul>
-
-
-
-
-
-
-
-
-
-
+</div>
 
 		</main>
 
@@ -765,7 +746,7 @@ pre[class*="language-"] {
 			<nav class="panel secondary">
 					<h2 class="visually-hidden">Footer navigation menu</h2>
 					<ul class="nav">
-						<li class="nav-item"><a href="/" aria-current="page">Home</a></li>
+						<li class="nav-item"><a href="/">Home</a></li>
 						<li class="nav-item"><a href="/blog/">All Posts</a></li>
 						<li class="nav-item"><a href="/links/">Cool Links</a></li>
 					</ul>
@@ -776,6 +757,6 @@ pre[class*="language-"] {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: / -->
+		<!-- Current page: /app-roundup-1/ -->
 	</body>
 </html>

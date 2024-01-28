@@ -27,12 +27,12 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/thoughts/</loc>
+		<loc>https://vision.rodeo/tags/apps/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/apps/</loc>
+		<loc>https://vision.rodeo/tags/thoughts/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -43,6 +43,11 @@
 	
 	<url>
 		<loc>https://vision.rodeo/vision/</loc>
+		<lastmod>2024-01-28</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/app-roundup-1/</loc>
 		<lastmod>2024-01-28</lastmod>
 	</url>
 </urlset>
