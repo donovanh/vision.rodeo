@@ -55,7 +55,7 @@ Strap in, cancel your Netflix, and load up some amazing apps!
 
 [Crunchyroll](https://apps.apple.com/app/crunchyroll/id329913454) - Anime streaming.
 
-[Cricket Scores Live Matches](https://apps.apple.com/app/cricket-scores-live-matches/id1616385207) - More detail coming soon.
+[Cricket Scores Live Matches](https://apps.apple.com/app/cricket-scores-live-matches/id1616385207) - Cricket stats and live streams.
 
 ## Entertainment
 
@@ -71,6 +71,8 @@ Strap in, cancel your Netflix, and load up some amazing apps!
 
 ## Games
 
+[Game Room](https://apps.apple.com/us/app/game-room/id1642897935) - A collection of tabletop games in an immersive environment.
+
 [What the Golf](https://apps.apple.com/app/what-the-golf/id1415190483) - Quirky golf game. Check the [Vision Pro promo video](https://www.reddit.com/r/VisionPro/comments/19epb4f/what_the_golf_app_trailer/).
 
 [Gametrack](https://gametrack.app/) - Track and share your gaming life.
@@ -79,7 +81,7 @@ Strap in, cancel your Netflix, and load up some amazing apps!
 
 ## Developer tools
 
-Particle playground - TBD
+Particle Emitter Playground - [In progress](https://swiftdevs.space/@mikaelacaron/111834951300397498)
 
 [Bento|Craft](https://thatvirtualboy.com/bentocraft) - Create beautiful promotional artwork to highlight your app's features.
 
