@@ -75,6 +75,8 @@ Particle playground - TBD
 
 [Plant Daddy](https://plantdaddy.app/) - The mod­ern, cute little place to keep track of your plants’ needs.
 
+[Navi](https://apps.apple.com/us/app/navi-subtitles-translation/id1573261774) - Adds transcriptions to Facetime calls through SharePlay. See the [demo video here](https://twitter.com/spatialreport/status/1749215350019833922/mediaViewer?currentTweet=1749215350019833922&currentTweetUser=spatialreport).
+
 ## Got any others?
 
 If you hear of a cool app you'd like me to add to this or the next roundup, <a href="mailto:vision-links@hop.ie">let me know</a>.
