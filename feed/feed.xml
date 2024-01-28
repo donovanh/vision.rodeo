@@ -16,7 +16,8 @@
 		<link href="https://vision.rodeo/app-roundup-1/"/>
 		<updated>2024-01-28T00:00:00Z</updated>
 		<id>https://vision.rodeo/app-roundup-1/</id>
-		<content type="html">&lt;p&gt;It&#39;s been about 6 months and developers have been working hard to learn how to build Apple Vision Pro apps. Ahead of this week&#39;s launch, here&#39;s a list of apps you might want to try out. Each has indicated they either currently support Vision Pro or plan to do so at launch.&lt;/p&gt;
+		<content type="html">&lt;p&gt;It&#39;s been about 6 months and developers have been working hard to learn how to build Apple Vision Pro apps. Ahead of this week&#39;s launch, here&#39;s a list of apps you might want to try out.&lt;/p&gt;
+&lt;p&gt;The list here is not exhaustive - apparently there are currently over 200 apps built or adapted specifically for Vision Pro.&lt;/p&gt;
 &lt;p&gt;Strap in, cancel your Netflix, and load up some amazing apps!&lt;/p&gt;
 &lt;h2 id=&quot;productivity-and-lifestyle&quot; tabindex=&quot;-1&quot;&gt;Productivity &amp;amp; Lifestyle &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/fantastical-calendar/id718043190&quot;&gt;Fantastical&lt;/a&gt; - award-winning calendar app with powerful features including intuitive natural language text parsing and more. Check out their &lt;a href=&quot;https://flexibits.com/blog/2023/08/sneaking-a-peek-at-fantastical-on-apple-vision-pro/&quot;&gt;Vision Pro launch blog post&lt;/a&gt;.&lt;/p&gt;
@@ -33,9 +34,14 @@
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/lungy-interactive-breathing/id1545223887&quot;&gt;Lungy&lt;/a&gt; - A deeply beautiful breathing app that applies a little medical rigor.&lt;/p&gt;
 &lt;h2 id=&quot;sports&quot; tabindex=&quot;-1&quot;&gt;Sports &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/us/app/pga-tour-vision/id6471858717&quot;&gt;PGA Tour Vision&lt;/a&gt; - Experience golf like never before.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/nba-live-games-scores/id484672289&quot;&gt;NBA App&lt;/a&gt; - Live scores and insights on basketball stuff.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/nba-live-games-scores/id484672289&quot;&gt;NBA&lt;/a&gt; - Live scores and insights on basketball stuff.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/mlb/id493619333&quot;&gt;MLB&lt;/a&gt; - Live baseball and on-demand.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/espn-live-sports-scores/id317469184&quot;&gt;ESPN&lt;/a&gt; - Live sports and scores.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/discovery-stream-tv-shows/id395972146&quot;&gt;Discovery+&lt;/a&gt; - TV show streaming.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/crunchyroll/id329913454&quot;&gt;Crunchyroll&lt;/a&gt; - Anime streaming.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/cricket-scores-live-matches/id1616385207&quot;&gt;Cricket Scores Live Matches&lt;/a&gt; - More detail coming soon.&lt;/p&gt;
 &lt;h2 id=&quot;entertainment&quot; tabindex=&quot;-1&quot;&gt;Entertainment &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/disney/id1446075923&quot;&gt;Disney+&lt;/a&gt; - All the usual Disney content including 3D movies, custom environments and more.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/play-save-videos-watch-later/id1596506190&quot;&gt;Play&lt;/a&gt; - Save videos to watch later.&lt;/p&gt;
 &lt;h2 id=&quot;education&quot; tabindex=&quot;-1&quot;&gt;Education &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/study-snacks-playful-learning/id6444380323&quot;&gt;Study Snacks&lt;/a&gt; - Playful learning.&lt;/p&gt;
@@ -49,6 +55,7 @@
 &lt;p&gt;&lt;a href=&quot;https://thatvirtualboy.com/bentocraft&quot;&gt;Bento|Craft&lt;/a&gt; - Create beautiful promotional artwork to highlight your app&#39;s features.&lt;/p&gt;
 &lt;h2 id=&quot;other-stuff&quot; tabindex=&quot;-1&quot;&gt;Other Stuff &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://viac.app/&quot;&gt;Voice in a Can&lt;/a&gt; - Virtual Alexa assistant.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/carrot-weather/id993487541?mt=12&quot;&gt;Carrot Weather&lt;/a&gt; - A crazy-powerful (and privacy-conscious) weather app.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://plantdaddy.app/&quot;&gt;Plant Daddy&lt;/a&gt; - The mod­ern, cute little place to keep track of your plants’ needs.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/us/app/navi-subtitles-translation/id1573261774&quot;&gt;Navi - Subtitles &amp;amp; Translation&lt;/a&gt; - Adds transcriptions to Facetime calls through SharePlay. See the &lt;a href=&quot;https://twitter.com/spatialreport/status/1749215350019833922/mediaViewer?currentTweet=1749215350019833922&amp;amp;currentTweetUser=spatialreport&quot;&gt;demo video here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;got-any-others&quot; tabindex=&quot;-1&quot;&gt;Got any others? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
