@@ -22,6 +22,7 @@ eleventyNavigation:
   <ul>
     <li><a href="https://iosdevweekly.com">iOS Dev Weekly</a></li>
     <li><a href="https://weekly.swiftwithmajid.com">SwiftUI Weekly</a></li>
+    <li><a href="https://buttondown.email/varrall">StuVision</a></li>
   </ul>
 
   <h2>Podcasts</h2>
