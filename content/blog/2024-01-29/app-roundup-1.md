@@ -43,7 +43,11 @@ _Additional info:_ I just found a great list of _all_ supported visionOS apps [i
 
 [LongPlay](https://longplay.rocks/) - Rediscover, enjoy and organise your album collection.
 
+[Spool](https://apps.apple.com/app/spool-music-video-editor/id1604274234) - Create visuals for your music.
+
 ## Health
+
+[Complete HeartX](https://apps.apple.com/app/complete-heartx/id6450795770) - Explore how the heart works.
 
 [Lungy](https://apps.apple.com/app/lungy-interactive-breathing/id1545223887) - A deeply beautiful breathing app that applies a little medical rigor.
 
@@ -83,6 +87,8 @@ _Additional info:_ I just found a great list of _all_ supported visionOS apps [i
 
 [Cut the Rope](https://apps.apple.com/app/cut-the-rope-3/id997332884) - Cute physics-based puzzler.
 
+[Demeo](https://apps.apple.com/app/demeo/id6463004635) - Tabletop RPG simulator.
+
 [Ploppy Pairs](https://apps.apple.com/us/app/vision-ploppy-pairs-full-space/id6472619150) - A colorful fun memory game.
 
 [Void-X](https://apps.apple.com/app/void-x/id1622479769) - A bullethell game with interesting particle effects.
@@ -98,6 +104,8 @@ Particle Emitter Playground - [In progress](https://swiftdevs.space/@mikaelacaro
 [Bento|Craft](https://thatvirtualboy.com/bentocraft) - Create beautiful promotional artwork to highlight your app's features.
 
 ## Other Stuff
+
+[Widgetsmith](https://apps.apple.com/app/widgetsmith/id1523682319) - Create a personal experience with a wide range of widgets.
 
 [JigSpace](https://apps.apple.com/app/jigspace-3d-presentations/id6456791766) - Explore 3D objects.
 
