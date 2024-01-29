@@ -1,4 +1,5 @@
 ---
+title: "Cool links"
 layout: layouts/base.njk
 eleventyNavigation:
   key: Cool Links
