@@ -16,12 +16,12 @@
 		<link href="https://vision.rodeo/app-roundup-1/"/>
 		<updated>2024-01-28T00:00:00Z</updated>
 		<id>https://vision.rodeo/app-roundup-1/</id>
-		<content type="html">&lt;p&gt;It&#39;s been about 6 months and developers have been working hard to learn how to build Apple Vision Pro apps. Ahead of this week&#39;s launch, here&#39;s a list of apps you might want to try out.&lt;/p&gt;
-&lt;p&gt;The list here is not exhaustive - apparently there are currently over 200 apps built or adapted specifically for Vision Pro.&lt;/p&gt;
+		<content type="html">&lt;p&gt;Developers have been working hard to create or update their apps for Apple Vision Pro. Here&#39;s a list of selected apps you might want to try out.&lt;/p&gt;
 &lt;p&gt;Strap in, cancel your Netflix, and load up some amazing apps!&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Additional info:&lt;/em&gt; I just found a great list of &lt;em&gt;all&lt;/em&gt; supported visionOS apps &lt;a href=&quot;https://docs.google.com/spreadsheets/d/1Kbkm_jPdgV2qwhoRFIufCass8u2k-h4Xxuj0r7tXYZo/edit?pli=1#gid=0&quot;&gt;in this Google doc&lt;/a&gt;. Worth a bookmark when you&#39;re looking for new ideas.&lt;/p&gt;
 &lt;h2 id=&quot;productivity-and-lifestyle&quot; tabindex=&quot;-1&quot;&gt;Productivity &amp;amp; Lifestyle &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/fantastical-calendar/id718043190&quot;&gt;Fantastical&lt;/a&gt; - award-winning calendar app with powerful features including intuitive natural language text parsing and more. Check out their &lt;a href=&quot;https://flexibits.com/blog/2023/08/sneaking-a-peek-at-fantastical-on-apple-vision-pro/&quot;&gt;Vision Pro launch blog post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://runestone.app/&quot;&gt;Runestone&lt;/a&gt; - A beautiful plain-text editor. I can see myself building websites and blogging with this.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/pcalc/id284666222&quot;&gt;PCalc&lt;/a&gt; - James Thompson&#39;s powerful scientific calculator will be ready to go at launch.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/us/app/omniplan-4/id1460319993&quot;&gt;OmniPlan&lt;/a&gt; - Bringing project management timelines to the Vision Pro. Check out their &lt;a href=&quot;https://www.omnigroup.com/blog/omniplan-coming-to-apple-vision-pro&quot;&gt;blog post&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://soka.appdeco.ca&quot;&gt;Söka&lt;/a&gt; - Manage your bucket lists and set new goals.&lt;/p&gt;
@@ -32,6 +32,7 @@
 &lt;p&gt;&lt;a href=&quot;https://www.swankyshark.com/great-white-board.html&quot;&gt;Great White Board&lt;/a&gt; - A minimalist, fun shared whiteboard experience.&lt;/p&gt;
 &lt;h2 id=&quot;music&quot; tabindex=&quot;-1&quot;&gt;Music &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/us/app/spatial-symphony/id6476616491&quot;&gt;Spatial Symphony&lt;/a&gt; - Create custom soundscapes with hand-controlled music synthesis.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/djay-dj-app-ai-mixer/id450527929&quot;&gt;djay&lt;/a&gt; - Virtual decks and mixing optimised for an immersive experience.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://longplay.rocks/&quot;&gt;LongPlay&lt;/a&gt; - Rediscover, enjoy and organise your album collection.&lt;/p&gt;
 &lt;h2 id=&quot;health&quot; tabindex=&quot;-1&quot;&gt;Health &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/lungy-interactive-breathing/id1545223887&quot;&gt;Lungy&lt;/a&gt; - A deeply beautiful breathing app that applies a little medical rigor.&lt;/p&gt;
@@ -52,16 +53,22 @@
 &lt;h2 id=&quot;games&quot; tabindex=&quot;-1&quot;&gt;Games &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/us/app/game-room/id1642897935&quot;&gt;Game Room&lt;/a&gt; - A collection of tabletop games in an immersive environment.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/what-the-golf/id1415190483&quot;&gt;What the Golf&lt;/a&gt; - Quirky golf game. Check the &lt;a href=&quot;https://www.reddit.com/r/VisionPro/comments/19epb4f/what_the_golf_app_trailer/&quot;&gt;Vision Pro promo video&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/cut-the-rope-3/id997332884&quot;&gt;Cut the Rope&lt;/a&gt; - Cute physics-based puzzler.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/us/app/vision-ploppy-pairs-full-space/id6472619150&quot;&gt;Ploppy Pairs&lt;/a&gt; - A colorful fun memory game.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/void-x/id1622479769&quot;&gt;Void-X&lt;/a&gt; - A bullethell game with interesting particle effects.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://gametrack.app/&quot;&gt;Gametrack&lt;/a&gt; - Track and share your gaming life.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/us/app/kattam/id6476475799&quot;&gt;Kattam&lt;/a&gt; - Not sure yet but should be a game available at launch. Check back for details.&lt;/p&gt;
 &lt;h2 id=&quot;developer-tools&quot; tabindex=&quot;-1&quot;&gt;Developer tools &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Particle Emitter Playground - &lt;a href=&quot;https://swiftdevs.space/@mikaelacaron/111834951300397498&quot;&gt;In progress&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://thatvirtualboy.com/bentocraft&quot;&gt;Bento|Craft&lt;/a&gt; - Create beautiful promotional artwork to highlight your app&#39;s features.&lt;/p&gt;
 &lt;h2 id=&quot;other-stuff&quot; tabindex=&quot;-1&quot;&gt;Other Stuff &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/jigspace-3d-presentations/id6456791766&quot;&gt;JigSpace&lt;/a&gt; - Explore 3D objects.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://viac.app/&quot;&gt;Voice in a Can&lt;/a&gt; - Virtual Alexa assistant.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/carrot-weather/id993487541?mt=12&quot;&gt;Carrot Weather&lt;/a&gt; - A crazy-powerful (and privacy-conscious) weather app.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/au/app/mercury-weather/id1621800675&quot;&gt;Mercury Weather&lt;/a&gt; - A fun and beautiful weather app.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://plantdaddy.app/&quot;&gt;Plant Daddy&lt;/a&gt; - The mod­ern, cute little place to keep track of your plants’ needs.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://apps.apple.com/us/app/navi-subtitles-translation/id1573261774&quot;&gt;Navi - Subtitles &amp;amp; Translation&lt;/a&gt; - Adds transcriptions to Facetime calls through SharePlay. See the &lt;a href=&quot;https://twitter.com/spatialreport/status/1749215350019833922/mediaViewer?currentTweet=1749215350019833922&amp;amp;currentTweetUser=spatialreport&quot;&gt;demo video here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://apps.apple.com/app/night-sky/id475772902&quot;&gt;Night Sky&lt;/a&gt; - See what&#39;s above you. I&#39;m really looking forward to what this could bring.&lt;/p&gt;
 &lt;h2 id=&quot;got-any-others&quot; tabindex=&quot;-1&quot;&gt;Got any others? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/app-roundup-1/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;If you hear of a cool app you&#39;d like me to add to this or the next roundup, &lt;a href=&quot;mailto:vision-links@hop.ie&quot;&gt;let me know&lt;/a&gt;.&lt;/p&gt;
 </content>
