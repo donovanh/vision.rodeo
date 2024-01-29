@@ -7,9 +7,7 @@ tags:
   - apps
 ---
 
-It's been about 6 months and developers have been working hard to learn how to build Apple Vision Pro apps. Ahead of this week's launch, here's a list of apps you might want to try out.
-
-The list here is not exhaustive - apparently there are currently over 200 apps built or adapted specifically for Vision Pro.
+Developers have been working hard to create or update their apps for Apple Vision Pro. Here's a list of selected apps you might want to try out.
 
 Strap in, cancel your Netflix, and load up some amazing apps!
 
@@ -18,6 +16,8 @@ _Additional info:_ I just found a great list of _all_ supported visionOS apps [i
 ## Productivity & Lifestyle
 
 [Fantastical](https://apps.apple.com/app/fantastical-calendar/id718043190) - award-winning calendar app with powerful features including intuitive natural language text parsing and more. Check out their [Vision Pro launch blog post](https://flexibits.com/blog/2023/08/sneaking-a-peek-at-fantastical-on-apple-vision-pro/).
+
+[Runestone](https://runestone.app/) - A beautiful plain-text editor. I can see myself building websites and blogging with this.
 
 [PCalc](https://apps.apple.com/app/pcalc/id284666222) - James Thompson's powerful scientific calculator will be ready to go at launch.
 
@@ -38,6 +38,8 @@ _Additional info:_ I just found a great list of _all_ supported visionOS apps [i
 ## Music
 
 [Spatial Symphony](https://apps.apple.com/us/app/spatial-symphony/id6476616491) - Create custom soundscapes with hand-controlled music synthesis.
+
+[djay](https://apps.apple.com/app/djay-dj-app-ai-mixer/id450527929) - Virtual decks and mixing optimised for an immersive experience.
 
 [LongPlay](https://longplay.rocks/) - Rediscover, enjoy and organise your album collection.
 
@@ -79,6 +81,12 @@ _Additional info:_ I just found a great list of _all_ supported visionOS apps [i
 
 [What the Golf](https://apps.apple.com/app/what-the-golf/id1415190483) - Quirky golf game. Check the [Vision Pro promo video](https://www.reddit.com/r/VisionPro/comments/19epb4f/what_the_golf_app_trailer/).
 
+[Cut the Rope](https://apps.apple.com/app/cut-the-rope-3/id997332884) - Cute physics-based puzzler.
+
+[Ploppy Pairs](https://apps.apple.com/us/app/vision-ploppy-pairs-full-space/id6472619150) - A colorful fun memory game.
+
+[Void-X](https://apps.apple.com/app/void-x/id1622479769) - A bullethell game with interesting particle effects.
+
 [Gametrack](https://gametrack.app/) - Track and share your gaming life.
 
 [Kattam](https://apps.apple.com/us/app/kattam/id6476475799) - Not sure yet but should be a game available at launch. Check back for details.
@@ -91,13 +99,19 @@ Particle Emitter Playground - [In progress](https://swiftdevs.space/@mikaelacaro
 
 ## Other Stuff
 
+[JigSpace](https://apps.apple.com/app/jigspace-3d-presentations/id6456791766) - Explore 3D objects.
+
 [Voice in a Can](https://viac.app/) - Virtual Alexa assistant.
 
 [Carrot Weather](https://apps.apple.com/app/carrot-weather/id993487541?mt=12) - A crazy-powerful (and privacy-conscious) weather app.
 
+[Mercury Weather](https://apps.apple.com/au/app/mercury-weather/id1621800675) - A fun and beautiful weather app.
+
 [Plant Daddy](https://plantdaddy.app/) - The mod­ern, cute little place to keep track of your plants’ needs.
 
 [Navi - Subtitles & Translation](https://apps.apple.com/us/app/navi-subtitles-translation/id1573261774) - Adds transcriptions to Facetime calls through SharePlay. See the [demo video here](https://twitter.com/spatialreport/status/1749215350019833922/mediaViewer?currentTweet=1749215350019833922&currentTweetUser=spatialreport).
+
+[Night Sky](https://apps.apple.com/app/night-sky/id475772902) - See what's above you. I'm really looking forward to what this could bring.
 
 ## Got any others?
 
