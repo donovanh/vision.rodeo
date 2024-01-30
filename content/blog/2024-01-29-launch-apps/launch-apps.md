@@ -95,6 +95,8 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 [Void-X](https://apps.apple.com/app/void-x/id1622479769) - A bullethell game with interesting particle effects.
 
+[Steam Link](https://apps.apple.com/app/steam-link/id1246969117) - Play your Steam library on a massive virtual screen.
+
 [Gametrack](https://gametrack.app/) - Track and share your gaming life.
 
 [Kattam](https://apps.apple.com/us/app/kattam/id6476475799) - Not sure yet but should be a game available at launch. Check back for details.
