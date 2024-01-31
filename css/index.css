@@ -50,6 +50,7 @@ body {
 	margin: 0 auto;
 	font-family: var(--font-family-monospace);
 	color: var(--text-color);
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 	/* TODO: Have this dynamically change by time of day */
 	background-image: linear-gradient(
 			to bottom,
@@ -271,6 +272,7 @@ header {
 	display: inline-block;
 	margin: 2rem 0 4rem;
 	font-size: 9vw;
+	text-shadow: none;
 	background: linear-gradient(
 		183deg,
 		rgba(183, 0, 255, 0.7) 10%,
@@ -439,6 +441,7 @@ main img {
 	font-style: normal;
 	font-size: 1em;
 	margin-left: 0.1em;
+	text-shadow: none;
 }
 a[href].header-anchor,
 a[href].header-anchor:visited {
