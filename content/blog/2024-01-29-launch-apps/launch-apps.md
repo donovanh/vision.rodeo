@@ -15,6 +15,8 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 ## Productivity & Lifestyle
 
+[Shortcut Buttons](https://www.finnvoorhees.com/shortcutbuttons) - This looks fun! Add shortcuts to locations.
+
 [Fantastical](https://apps.apple.com/app/fantastical-calendar/id718043190) - award-winning calendar app with powerful features including intuitive natural language text parsing and more. Check out their [Vision Pro launch blog post](https://flexibits.com/blog/2023/08/sneaking-a-peek-at-fantastical-on-apple-vision-pro/).
 
 [Runestone](https://runestone.app/) - A beautiful plain-text editor. I can see myself building websites and blogging with this.
