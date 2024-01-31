@@ -55,6 +55,8 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 [Lungy](https://apps.apple.com/app/lungy-interactive-breathing/id1545223887) - A deeply beautiful breathing app that applies a little medical rigor.
 
+[Coachy](https://apps.apple.com/us/app/calisthenics-crossfit-coachy/id1534754095) - Bodyweight fitness workouts.
+
 ## Sports
 
 [PGA Tour Vision](https://apps.apple.com/us/app/pga-tour-vision/id6471858717) - Experience golf like never before.
