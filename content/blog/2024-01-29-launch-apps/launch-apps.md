@@ -39,6 +39,8 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 [Great White Board](https://www.swankyshark.com/great-white-board.html) - A minimalist, fun shared whiteboard experience.
 
+[Bezel - Device Mirroring](https://apps.apple.com/app/bezel-device-mirroring/id6476657945) - Mirror your iPhone in full detail as a 3D model. [More info here](https://getbezel.app/vision/).
+
 ## Music
 
 [Spatial Symphony](https://apps.apple.com/us/app/spatial-symphony/id6476616491) - Create custom soundscapes with hand-controlled music synthesis.
