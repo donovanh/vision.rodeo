@@ -131,6 +131,8 @@ Particle Emitter Playground - [In progress](https://swiftdevs.space/@mikaelacaro
 
 [Night Sky](https://apps.apple.com/app/night-sky/id475772902) - See what's above you. I'm really looking forward to what this could bring.
 
+[Quiet](https://apps.apple.com/us/app/quiet/id1441525727) - A content blocker to reclaim your Safari browsing experience.
+
 ## Got any others?
 
 If you hear of a cool app you'd like me to add to this or the next roundup, <a href="mailto:vision-links@hop.ie">let me know</a>.
