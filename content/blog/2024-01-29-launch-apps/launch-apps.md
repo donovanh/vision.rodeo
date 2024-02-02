@@ -47,6 +47,8 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 [djay](https://apps.apple.com/app/djay-dj-app-ai-mixer/id450527929) - Virtual decks and mixing optimised for an immersive experience.
 
+[Piano: Flowing Tiles](https://apps.apple.com/app/piano-flowing-tiles/id6472594978) - Guided piano playing in AR.
+
 [LongPlay](https://longplay.rocks/) - Rediscover, enjoy and organise your album collection.
 
 [Spool](https://apps.apple.com/app/spool-music-video-editor/id1604274234) - Create visuals for your music.
