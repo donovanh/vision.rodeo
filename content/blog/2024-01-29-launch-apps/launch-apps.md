@@ -55,6 +55,8 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 [Complete HeartX](https://apps.apple.com/app/complete-heartx/id6450795770) - Explore how the heart works.
 
+[VibeScape](https://apps.apple.com/app/vibescape/id6476827678) - Immersive meditation with unique locations. Check out [the blog post](https://www.apposite.ai/vibescape.html).
+
 [Lungy](https://apps.apple.com/app/lungy-interactive-breathing/id1545223887) - A deeply beautiful breathing app that applies a little medical rigor.
 
 [Coachy](https://apps.apple.com/us/app/calisthenics-crossfit-coachy/id1534754095) - Bodyweight fitness workouts.
