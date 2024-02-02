@@ -35,6 +35,8 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 [Focus](https://apps.apple.com/app/focus-productivity-timer/id975017240) - Pomodoro time-tracking app for productivity.
 
+[Moosti](https://apps.apple.com/us/app/moosti/id1480602835) - Attractive pomodoro / mindfulness app.
+
 [Subjects](https://eyen.fr/subjects/) - Easily manage school subjects and schedules.
 
 [Great White Board](https://www.swankyshark.com/great-white-board.html) - A minimalist, fun shared whiteboard experience.
@@ -138,6 +140,8 @@ Particle Emitter Playground - [In progress](https://swiftdevs.space/@mikaelacaro
 [Night Sky](https://apps.apple.com/app/night-sky/id475772902) - See what's above you. I'm really looking forward to what this could bring.
 
 [Quiet](https://apps.apple.com/us/app/quiet/id1441525727) - A content blocker to reclaim your Safari browsing experience. Read [the Vision Pro blog post here](https://petercammeraat.net/journal/2024/quiet-4-2-new-app-icon-and-visionos-support/).
+
+[Ocean Chill](https://apps.apple.com/app/ocean-chill/id6476815660) - Relaxing ocean vibes.
 
 ## Got any others?
 
