@@ -29,6 +29,8 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 [Söka](https://soka.appdeco.ca) - Manage your bucket lists and set new goals.
 
+[Fin - Budget Tracker](https://apps.apple.com/app/fin-budget-tracker/id1489698531) - A beautiful budget app with interesting 3D-lit bar charts.
+
 [Crouton](https://apps.apple.com/app/crouton-recipe-manager/id1461650987) - Beautiful recipe manager and meal planner.
 
 [J.Crew](https://apps.apple.com/app/j-crew/id1636531300) - Fashion shopping.
