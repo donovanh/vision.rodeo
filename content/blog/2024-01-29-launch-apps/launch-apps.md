@@ -119,7 +119,7 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 [TelemetryDeck](https://telemetrydeck.com) - Privacy-first visitor tracking. Check out [the TelemetryDeck Vision Pro blog post](https://telemetrydeck.com/blog/vision-pro-ready/).
 
-Particle Emitter Playground - [In progress](https://swiftdevs.space/@mikaelacaron/111834951300397498)
+[Particle Emitter Playground](https://apps.apple.com/app/spatial-effects/id6476788209) - Step into a world where your imagination comes to life with Spatial Effects!
 
 [Bento|Craft](https://thatvirtualboy.com/bentocraft) - Create beautiful promotional artwork to highlight your app's features.
 
