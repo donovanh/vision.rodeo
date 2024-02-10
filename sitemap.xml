@@ -27,12 +27,22 @@
 	</url>
 	
 	<url>
+		<loc>https://vision.rodeo/tags/thoughts/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://vision.rodeo/tags/apps/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/thoughts/</loc>
+		<loc>https://vision.rodeo/tags/dev/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/tags/dev-diary/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -49,5 +59,10 @@
 	<url>
 		<loc>https://vision.rodeo/app-roundup-1/</loc>
 		<lastmod>2024-01-29</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/dev-diary-01/</loc>
+		<lastmod>2024-02-09</lastmod>
 	</url>
 </urlset>

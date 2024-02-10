@@ -1,15 +1,15 @@
 addEventListener("scroll", (event) => {});
 
-onscroll = () => {
-	const scrollPos = window.scrollY;
-	const targetDepth = 400;
-	const scrollRatio = scrollPos / targetDepth;
+let scrollPos = window.scrollY;
+let targetDepth = 400;
+let scrollRatio = scrollPos / targetDepth;
 
-	// Apply overlay
+function applyOverlay(scrollRatio) {
 	const overlay = document.getElementById("overlay");
 	overlay.style.opacity = scrollRatio > 1 ? 1 : scrollRatio;
+}
 
-	// Adjust header transform
+function adjustHeaderTransform(scrollRatio) {
 	const header = document.getElementById("header");
 	if (scrollRatio < 1.5) {
 		header.style.opacity = 1;
@@ -21,4 +21,18 @@ onscroll = () => {
 		header.style.opacity = 0;
 		header.style.pointerEvents = "none";
 	}
+}
+
+window.document.onload = () => {
+	applyOverlay(scrollRatio);
+	adjustHeaderTransform(scrollRatio);
+};
+
+onscroll = () => {
+	scrollPos = window.scrollY;
+	targetDepth = 400;
+	scrollRatio = scrollPos / targetDepth;
+
+	applyOverlay(scrollRatio);
+	adjustHeaderTransform(scrollRatio);
 };

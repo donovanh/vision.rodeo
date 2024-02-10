@@ -231,7 +231,7 @@ html,
 body {
 	padding: 0;
 	margin: 0 auto;
-	font-family: var(--font-family-monospace);
+	font-family: var(--font-family);
 	color: var(--text-color);
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	/* TODO: Have this dynamically change by time of day */
@@ -240,7 +240,7 @@ body {
 			rgba(255, 240, 255, 0.2),
 			rgba(120, 20, 90, 0.6)
 		),
-		url(/img/office.webp);
+		url("/img/office.webp");
 	background-attachment: fixed;
 	background-size: cover;
 }
@@ -374,8 +374,8 @@ code {
 		0 0 1rem 0 rgba(0, 0, 0, 0.1);
 	border-radius: 2.5rem;
 	position: relative;
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 }
 
 .padded {
@@ -395,6 +395,7 @@ code {
 	transform-style: preserve-3d;
 }
 header {
+	font-family: var(--font-family-monospace);
 	text-align: center;
 	align-items: center;
 	padding: 4rem 0;
@@ -552,6 +553,17 @@ main img {
 	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
 		0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
+.video-wrapper {
+	width: 100%;
+}
+main video {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: 2rem;
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
+		0 0 1rem 0 rgba(0, 0, 0, 0.2);
+}
 .postlist-date,
 .postlist-item:before {
 	font-size: 0.8125em; /* 13px /16 */
@@ -579,6 +591,7 @@ main img {
 .content h3,
 .content h4 {
 	margin-top: 2rem;
+	margin-bottom: 0;
 }
 
 /* Tags */
@@ -637,6 +650,13 @@ a[href].header-anchor:hover {
 a[href].header-anchor:focus,
 :hover > a[href].header-anchor {
 	color: #aaa;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+	font-family: var(--font-family-monospace);
 }
 
 h2 + .header-anchor {
