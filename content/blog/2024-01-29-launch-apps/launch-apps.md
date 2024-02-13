@@ -45,6 +45,8 @@ _Prefer to see ALL the apps?_ There's a great list of supported visionOS apps [i
 
 [Bezel - Device Mirroring](https://apps.apple.com/app/bezel-device-mirroring/id6476657945) - Mirror your iPhone in full detail as a 3D model. [More info here](https://getbezel.app/vision/).
 
+[Voice Pen](https://apps.apple.com/app/voice-pen-speech-to-pure-text/id6462815872) - Avoid the built-in keyboard with this excellent transcription app that uses AI to improve accuracy.
+
 ## Music
 
 [Spatial Symphony](https://apps.apple.com/us/app/spatial-symphony/id6476616491) - Create custom soundscapes with hand-controlled music synthesis.
