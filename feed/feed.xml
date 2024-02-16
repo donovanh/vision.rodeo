@@ -4,12 +4,39 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-02-09T00:00:00Z</updated>
+	<updated>2024-02-16T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>Are people returning Vision Pro?</title>
+		<link href="https://vision.rodeo/returns/"/>
+		<updated>2024-02-16T00:00:00Z</updated>
+		<id>https://vision.rodeo/returns/</id>
+		<content type="html">&lt;p&gt;It&#39;s been a couple of weeks since the Vision Pro started arriving in people&#39;s hands. I&#39;ve been following the reactions and posts across social media such as Mastodon, and Reddit.&lt;/p&gt;
+&lt;p&gt;I&#39;ve seen people&#39;s initial posts on receiving it, countless posts around light seals, apps, band tips and hacks, and more. Even though I don&#39;t own one of these devices myself, I am very interested in what people think of it and want to be well informed for when it becomes available in my country.&lt;/p&gt;
+&lt;h2 id=&quot;click-bait-and-half-truths&quot; tabindex=&quot;-1&quot;&gt;Click-bait and half-truths &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/returns/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This week has seen a couple of notable press drops, including Mark Zuckerberg saying &lt;a href=&quot;https://variety.com/2024/digital/news/zuckerberg-apple-vision-pro-meta-quest-better-product-1235910851/&quot;&gt;the Quest 3 was a better product&lt;/a&gt;, followed by reporting &lt;a href=&quot;https://www.theverge.com/2024/2/14/24072792/apple-vision-pro-early-adopters-returns&quot;&gt;from The Verge&lt;/a&gt; and &lt;a href=&quot;https://uk.news.yahoo.com/techies-returning-apple-vision-pro-120000624.html&quot;&gt;Yahoo News&lt;/a&gt; (among others) saying that people are returning their AVPs.&lt;/p&gt;
+&lt;p&gt;As a response to these, I&#39;ve seen a lot of people uncritically claiming on Mastodon that the product has failed, and that the majority of purchasers are unhappy enough to return it.&lt;/p&gt;
+&lt;p&gt;This isn&#39;t what I&#39;ve seen elsewhere.&lt;/p&gt;
+&lt;h2 id=&quot;magic-until-it-isn-t-and-then&quot; tabindex=&quot;-1&quot;&gt;Magic until it isn&#39;t... and then? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/returns/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Over on &lt;a href=&quot;https://www.reddit.com/r/VisionPro/&quot;&gt;r/VisionPro&lt;/a&gt; the mood is very different. This forum has gone through a journey this past couple of weeks. With the excitement around pre-ordering, to the hand-wringing over the &lt;a href=&quot;https://www.theverge.com/24054862/apple-vision-pro-review-vr-ar-headset-features-price&quot;&gt;Verge&#39;s lukewarm enthusiasm&lt;/a&gt;, to when the devices dropped and the journey since.&lt;/p&gt;
+&lt;p&gt;Something I saw a lot was a journey like this. There&#39;s an initial mix of excitement and enthusiastic posting, alongside a smaller number of people expressing some buyer&#39;s remorse. Then over the following days, these posts went from &amp;quot;I&#39;m going to have to return this&amp;quot; to &amp;quot;I tried it again and I&#39;m 50/50 now&amp;quot;, then later in the week became &amp;quot;I&#39;m starting to love this&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Concerns about comfort may not disappear for everyone, but for most people that, and the finicky eye tracking, the version-1 software glitches and the tunnel-like FOV become background noise as they continue to use the device.&lt;/p&gt;
+&lt;p&gt;It made me think of Nilay&#39;s quote in his review, that it&#39;s &amp;quot;magic until it&#39;s not&amp;quot;. While that&#39;s right to a point, it doesn&#39;t really consider what happens &lt;em&gt;after&lt;/em&gt; that. People learn more about what makes this device unique and in many cases grow to appreciate it over time.&lt;/p&gt;
+&lt;p&gt;There were definitely some people who in the end couldn&#39;t justify keeping the device that they had paid so much for, primarily as it didn&#39;t seem worth the expense. I can understand this, but the proportion of those who decided to spend all that money to later change their minds doesn&#39;t seem to be the majority.&lt;/p&gt;
+&lt;p&gt;Certainly not enough to justify reaching a conclusion that this product has failed and it being returned en masse. Yet that&#39;s what the headlines would suggest.&lt;/p&gt;
+&lt;h2 id=&quot;tyre-kicking-clout-chasing-and-the-return-cycle&quot; tabindex=&quot;-1&quot;&gt;Tyre-kicking, clout-chasing and the return cycle &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/returns/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I think a big part of what we&#39;re seeing is people using the return window to try out this new shiny thing. For some it&#39;s not worth keeping and that&#39;s perfectly reasonable. However I think the more vocal reports, mostly on the social video platforms, is from people milking the return window for click-baiting content.&lt;/p&gt;
+&lt;p&gt;The cycle for these people is to jump on the new thing, make content about ordering it, then using it, and finally make as much noise as they can when returning it. All these steps drive clicks and income, and costs them nothing as they get a full refund. I don&#39;t think this represents the average consumer or Apple fan. It&#39;s an easy way to both seem on the cutting edge, build an audience, and do so on the cheap.&lt;/p&gt;
+&lt;h2 id=&quot;what-to-think&quot; tabindex=&quot;-1&quot;&gt;What to think? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/returns/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Having read hundreds of threads by real-world users expressing their excitement, concerns, disappointments, hacks and hopes, I think this is very much an early adopter product that won&#39;t make everyone happy. Not yet anyway. It&#39;s pricey, finicky, but equally is awe-inspiring and a glimpse of a possible AR-infused future.&lt;/p&gt;
+&lt;p&gt;It&#39;s an interesting product. Definitely not for everyone but at the same time, I do wish people would stop and think about what they&#39;re sharing when they echo the headlines that cherry-pick the &amp;quot;bad&amp;quot; news. This is a very exciting time to be in the Apple ecosystem and I&#39;m looking forward to some day trying my own AVP.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Reps: Dev Diary #1</title>
