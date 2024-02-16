@@ -1,6 +1,6 @@
 ---
 title: Are people returning Vision Pro?
-permalink: /vision/
+permalink: /returns/
 description: Lazy journalism helps reinforce assumptions
 date: 2024-02-16
 tags:
