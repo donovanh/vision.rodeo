@@ -4,12 +4,73 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-02-16T00:00:00Z</updated>
+	<updated>2024-02-19T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>Reps Dev Diary #2: TestFlight &amp; Timers</title>
+		<link href="https://vision.rodeo/dev-diary-02/"/>
+		<updated>2024-02-19T00:00:00Z</updated>
+		<id>https://vision.rodeo/dev-diary-02/</id>
+		<content type="html">&lt;p&gt;Last week I launched my &lt;a href=&quot;https://testflight.apple.com/join/Keq4Mca2&quot;&gt;Reps app on TestFlight&lt;/a&gt; for any curious early testers (primarily my brother) to try out. I also started using it properly myself and as a result, I&#39;ve a long list of things I really want to improve right away.&lt;/p&gt;
+&lt;h2 id=&quot;testflight-no-testing-like-user-testing&quot; tabindex=&quot;-1&quot;&gt;TestFlight: No testing like user testing &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/dev-diary-02/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;No matter how much time spent going through user flows in the simulator, it&#39;s an entirely different experience using an app for real on a device. In my case, when I started using my app in the morning to log a workout, I immediately spotted a bunch of small (and large) issues.&lt;/p&gt;
+&lt;p&gt;I also wanted to bring in some external testers to try to get some feedback. To do this I enrolled in &lt;a href=&quot;https://appstoreconnect.apple.com&quot;&gt;App Store Connect&lt;/a&gt;, which included a €99-per-year fee, and &lt;a href=&quot;https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases&quot;&gt;pushed an archive of my app to TestFlight&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The process of creating a release and then submitting it for review was fairly straightforward. One thing I needed to do was create a &lt;a href=&quot;https://reps.hop.ie&quot;&gt;Reps app website&lt;/a&gt; with a &lt;a href=&quot;https://reps.hop.ie/privacy/&quot;&gt;privacy policy&lt;/a&gt;. To do this I set up a quick &lt;a href=&quot;https://www.11ty.dev&quot;&gt;11ty&lt;/a&gt; project and deployed it to Github Pages.&lt;/p&gt;
+&lt;p&gt;I then set up a public group in App Store Connect and when my TestFlight was reviewed I could start sharing the link.&lt;/p&gt;
+&lt;h2 id=&quot;deploy-schedule&quot; tabindex=&quot;-1&quot;&gt;Deploy schedule &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/dev-diary-02/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It&#39;s very easy to deploy new versions of apps to TestFlight. I&#39;m glad it is because I at one point managed to push a version with an important feature commented out. I was able to expire the old version and upload a new within minutes.&lt;/p&gt;
+&lt;p&gt;Generally though I&#39;m going to aim to release a new version once every week or so, barring emergency fixes.&lt;/p&gt;
+&lt;h2 id=&quot;initial-feedback&quot; tabindex=&quot;-1&quot;&gt;Initial feedback &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/dev-diary-02/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;So far I&#39;ve quickly amassed a list of things I want to improve. In the first week the main issues were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Some late-updating quirks in the UI&lt;/li&gt;
+&lt;li&gt;The &amp;quot;Log x reps&amp;quot; button jumps too suddenly to the next exercise, which feels jarring&lt;/li&gt;
+&lt;li&gt;It&#39;s a hassle to have to leave the app to start a timer for timed exercises&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Last weekend I set out to address these issues.&lt;/p&gt;
+&lt;h3 id=&quot;ui-state-out-of-sync&quot; tabindex=&quot;-1&quot;&gt;UI state out of sync &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/dev-diary-02/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Firstly, I refactored the way I store the UI state into one central ViewModel class for the main view. I had been tracking the state with two separate classes and trying to update them as needed, but without a central source of truth the UI was partially-updating at times. This pushes those two models into a role of background-storage and initial-state, and then my main ViewModel is responsible for keeping the current state and pushing updates into those models for storage. Seems to make things more solid.&lt;/p&gt;
+&lt;p&gt;I still end up instatiating the main ViewModel and then passing it down to children views, which feels a little sub-optimal but it&#39;s working for now until I find a way to properly use the local Environment to store the class.&lt;/p&gt;
+&lt;h3 id=&quot;logging-reps-button&quot; tabindex=&quot;-1&quot;&gt;Logging reps button &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/dev-diary-02/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;To help with this issue, I wanted to make it clear when reps were being saved. I also thought it would be helpful to have a &lt;code&gt;Cancel&lt;/code&gt; option, as I&#39;ve been hearing a lot about phantom clicks from Vision Pro users, and this can easily happen on any touch devices.&lt;/p&gt;
+&lt;p&gt;To address this, I added a &lt;code&gt;Task&lt;/code&gt; to the saving action that sets &lt;code&gt;isSavingReps&lt;/code&gt; to true, while awaiting a timer for a couple of seconds. During this time it&#39;ll show a saving message (maybe an icon later) along with a &lt;code&gt;Cancel&lt;/code&gt; button. Hitting cancel stops the Task before it progresses to the save action.&lt;/p&gt;
+&lt;div class=&quot;video-wrapper&quot;&gt;
+    &lt;video autoplay=&quot;&quot; muted=&quot;&quot; loop=&quot;&quot; playsinline=&quot;&quot; width=&quot;300&quot;&gt;
+    &lt;source src=&quot;https://i.imgur.com/oP7BiI2.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;/video&gt;
+
+&lt;p&gt;I think this improves the feel of adding reps.&lt;/p&gt;
+&lt;h3 id=&quot;timed-exercises&quot; tabindex=&quot;-1&quot;&gt;Timed exercises &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/dev-diary-02/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This was a big one. I found it was less than ideal to have to leave the app to start a timer when recording timed exercises. To fix this, I built a timer function into the exercise record view.&lt;/p&gt;
+&lt;div style=&quot;max-width: 300px&quot;&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/I2G_fYqqjw-692.avif 692w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/I2G_fYqqjw-692.webp 692w&quot;&gt;&lt;img alt=&quot;Timer view&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/I2G_fYqqjw-692.png&quot; width=&quot;692&quot; height=&quot;622&quot;&gt;&lt;/picture&gt;&lt;/div&gt;
+&lt;p&gt;This one was complex enough to require it&#39;s own ViewModel. I wanted to manage a few things - the accrued time both as a countdown until the target time was reached, and then counting upward, as well as a count-in of 5 seconds before the timer starts timing.&lt;/p&gt;
+&lt;p&gt;To do this I have two timers, with a reset option that you can call either by pressing reset or tapping the count-in while it&#39;s underway.&lt;/p&gt;
+&lt;div class=&quot;video-wrapper&quot;&gt;
+    &lt;video autoplay=&quot;&quot; muted=&quot;&quot; loop=&quot;&quot; playsinline=&quot;&quot; width=&quot;300&quot;&gt;
+    &lt;source src=&quot;https://i.imgur.com/I3nM0di.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;/video&gt;
+
+&lt;p&gt;Once you stop the timer, it gives the option to then log the number of seconds recorded. You can also jump across to the manual view and record the number of seconds there if you prefer.&lt;/p&gt;
+&lt;p&gt;Lastly I added some sounds to indicate when the count-in was happening, when the timer starts, and when the target time is achieved. Of all the interactions, I think this is one that benefits from having some sounds as you might not be looking at the timer when doing a handstand, for example.&lt;/p&gt;
+&lt;p&gt;I grabbed some free sounds from &lt;a href=&quot;https://kenney.nl&quot;&gt;Kenney.nl&lt;/a&gt; and they seem ok for now.&lt;/p&gt;
+&lt;p&gt;It&#39;s good enough as a first version, but I see a few gaps I really need to tidy up to make it feel more complete.&lt;/p&gt;
+&lt;h2 id=&quot;current-todo-list&quot; tabindex=&quot;-1&quot;&gt;Current TODO list &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/dev-diary-02/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I&#39;ve since picked up a bunch more items for the TODO list. Some highlights that I hope to work on this week:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UI fixes: Place the &amp;quot;Set 1 of 2&amp;quot; text closer to the reps number&lt;/li&gt;
+&lt;li&gt;Add the &lt;code&gt;Saving...&lt;/code&gt; flow for measured seconds&lt;/li&gt;
+&lt;li&gt;Add plus and minus beside the log button to adjust the measured seconds&lt;/li&gt;
+&lt;li&gt;Improve the animation between exercises (it&#39;s a bit choppy)&lt;/li&gt;
+&lt;li&gt;... and a bunch of small UI tweaks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thanks for reading, and if you want to see my app as it is built, feel free to &lt;a href=&quot;https://testflight.apple.com/join/Keq4Mca2&quot;&gt;download Reps on TestFlight&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;</content>
+	</entry>
 	
 	<entry>
 		<title>Are people returning Vision Pro?</title>
@@ -39,7 +100,7 @@
 	</entry>
 	
 	<entry>
-		<title>Reps: Dev Diary #1</title>
+		<title>Reps Dev Diary #1</title>
 		<link href="https://vision.rodeo/dev-diary-01/"/>
 		<updated>2024-02-09T00:00:00Z</updated>
 		<id>https://vision.rodeo/dev-diary-01/</id>

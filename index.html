@@ -666,6 +666,65 @@ pre[class*="language-"] {
 <ul reversed class="home postlist">
 
 	<li class="content panel padded postlist-item">
+		<h1><a href="/dev-diary-02/" class="postlist-link">Reps Dev Diary #2: TestFlight &amp; Timers</a></h1>
+		<time class="postlist-date" datetime="2024-02-19">February 2024</time>
+		<p>Last week I launched my <a href="https://testflight.apple.com/join/Keq4Mca2">Reps app on TestFlight</a> for any curious early testers (primarily my brother) to try out. I also started using it properly myself and as a result, I've a long list of things I really want to improve right away.</p>
+<h2 id="testflight-no-testing-like-user-testing" tabindex="-1">TestFlight: No testing like user testing <a class="header-anchor" href="#testflight-no-testing-like-user-testing">#</a></h2>
+<p>No matter how much time spent going through user flows in the simulator, it's an entirely different experience using an app for real on a device. In my case, when I started using my app in the morning to log a workout, I immediately spotted a bunch of small (and large) issues.</p>
+<p>I also wanted to bring in some external testers to try to get some feedback. To do this I enrolled in <a href="https://appstoreconnect.apple.com">App Store Connect</a>, which included a €99-per-year fee, and <a href="https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases">pushed an archive of my app to TestFlight</a>.</p>
+<p>The process of creating a release and then submitting it for review was fairly straightforward. One thing I needed to do was create a <a href="https://reps.hop.ie">Reps app website</a> with a <a href="https://reps.hop.ie/privacy/">privacy policy</a>. To do this I set up a quick <a href="https://www.11ty.dev">11ty</a> project and deployed it to Github Pages.</p>
+<p>I then set up a public group in App Store Connect and when my TestFlight was reviewed I could start sharing the link.</p>
+<h2 id="deploy-schedule" tabindex="-1">Deploy schedule <a class="header-anchor" href="#deploy-schedule">#</a></h2>
+<p>It's very easy to deploy new versions of apps to TestFlight. I'm glad it is because I at one point managed to push a version with an important feature commented out. I was able to expire the old version and upload a new within minutes.</p>
+<p>Generally though I'm going to aim to release a new version once every week or so, barring emergency fixes.</p>
+<h2 id="initial-feedback" tabindex="-1">Initial feedback <a class="header-anchor" href="#initial-feedback">#</a></h2>
+<p>So far I've quickly amassed a list of things I want to improve. In the first week the main issues were:</p>
+<ul>
+<li>Some late-updating quirks in the UI</li>
+<li>The &quot;Log x reps&quot; button jumps too suddenly to the next exercise, which feels jarring</li>
+<li>It's a hassle to have to leave the app to start a timer for timed exercises</li>
+</ul>
+<p>Last weekend I set out to address these issues.</p>
+<h3 id="ui-state-out-of-sync" tabindex="-1">UI state out of sync <a class="header-anchor" href="#ui-state-out-of-sync">#</a></h3>
+<p>Firstly, I refactored the way I store the UI state into one central ViewModel class for the main view. I had been tracking the state with two separate classes and trying to update them as needed, but without a central source of truth the UI was partially-updating at times. This pushes those two models into a role of background-storage and initial-state, and then my main ViewModel is responsible for keeping the current state and pushing updates into those models for storage. Seems to make things more solid.</p>
+<p>I still end up instatiating the main ViewModel and then passing it down to children views, which feels a little sub-optimal but it's working for now until I find a way to properly use the local Environment to store the class.</p>
+<h3 id="logging-reps-button" tabindex="-1">Logging reps button <a class="header-anchor" href="#logging-reps-button">#</a></h3>
+<p>To help with this issue, I wanted to make it clear when reps were being saved. I also thought it would be helpful to have a <code>Cancel</code> option, as I've been hearing a lot about phantom clicks from Vision Pro users, and this can easily happen on any touch devices.</p>
+<p>To address this, I added a <code>Task</code> to the saving action that sets <code>isSavingReps</code> to true, while awaiting a timer for a couple of seconds. During this time it'll show a saving message (maybe an icon later) along with a <code>Cancel</code> button. Hitting cancel stops the Task before it progresses to the save action.</p>
+<div class="video-wrapper">
+    <video autoplay muted loop playsinline width="300">
+    <source src="https://i.imgur.com/oP7BiI2.mp4" type="video/mp4">
+    </video>
+</video>
+<p>I think this improves the feel of adding reps.</p>
+<h3 id="timed-exercises" tabindex="-1">Timed exercises <a class="header-anchor" href="#timed-exercises">#</a></h3>
+<p>This was a big one. I found it was less than ideal to have to leave the app to start a timer when recording timed exercises. To fix this, I built a timer function into the exercise record view.</p>
+<div style="max-width: 300px"><picture><source type="image/avif" srcset="/img/I2G_fYqqjw-692.avif 692w"><source type="image/webp" srcset="/img/I2G_fYqqjw-692.webp 692w"><img alt="Timer view" loading="lazy" decoding="async" src="/img/I2G_fYqqjw-692.png" width="692" height="622"></picture></div>
+<p>This one was complex enough to require it's own ViewModel. I wanted to manage a few things - the accrued time both as a countdown until the target time was reached, and then counting upward, as well as a count-in of 5 seconds before the timer starts timing.</p>
+<p>To do this I have two timers, with a reset option that you can call either by pressing reset or tapping the count-in while it's underway.</p>
+<div class="video-wrapper">
+    <video autoplay muted loop playsinline width="300">
+    <source src="https://i.imgur.com/I3nM0di.mp4" type="video/mp4">
+    </video>
+</video>
+<p>Once you stop the timer, it gives the option to then log the number of seconds recorded. You can also jump across to the manual view and record the number of seconds there if you prefer.</p>
+<p>Lastly I added some sounds to indicate when the count-in was happening, when the timer starts, and when the target time is achieved. Of all the interactions, I think this is one that benefits from having some sounds as you might not be looking at the timer when doing a handstand, for example.</p>
+<p>I grabbed some free sounds from <a href="https://kenney.nl">Kenney.nl</a> and they seem ok for now.</p>
+<p>It's good enough as a first version, but I see a few gaps I really need to tidy up to make it feel more complete.</p>
+<h2 id="current-todo-list" tabindex="-1">Current TODO list <a class="header-anchor" href="#current-todo-list">#</a></h2>
+<p>I've since picked up a bunch more items for the TODO list. Some highlights that I hope to work on this week:</p>
+<ul>
+<li>UI fixes: Place the &quot;Set 1 of 2&quot; text closer to the reps number</li>
+<li>Add the <code>Saving...</code> flow for measured seconds</li>
+<li>Add plus and minus beside the log button to adjust the measured seconds</li>
+<li>Improve the animation between exercises (it's a bit choppy)</li>
+<li>... and a bunch of small UI tweaks</li>
+</ul>
+<p>Thanks for reading, and if you want to see my app as it is built, feel free to <a href="https://testflight.apple.com/join/Keq4Mca2">download Reps on TestFlight</a>.</p>
+
+	</li>
+
+	<li class="content panel padded postlist-item">
 		<h1><a href="/returns/" class="postlist-link">Are people returning Vision Pro?</a></h1>
 		<time class="postlist-date" datetime="2024-02-16">February 2024</time>
 		<p>It's been a couple of weeks since the Vision Pro started arriving in people's hands. I've been following the reactions and posts across social media such as Mastodon, and Reddit.</p>
@@ -691,7 +750,7 @@ pre[class*="language-"] {
 	</li>
 
 	<li class="content panel padded postlist-item">
-		<h1><a href="/dev-diary-01/" class="postlist-link">Reps: Dev Diary #1</a></h1>
+		<h1><a href="/dev-diary-01/" class="postlist-link">Reps Dev Diary #1</a></h1>
 		<time class="postlist-date" datetime="2024-02-09">February 2024</time>
 		<p>The following is a log of the process of designing and building an app, while learning Swift and SwiftUI.</p>
 <p>The following represents the result of my poking around in XCode for about 6 months. I'd like to do smaller, more regular updates. By reading this, you're helping me by providing me accountability. Thank you!</p>
@@ -1056,36 +1115,6 @@ pre[class*="language-"] {
 <h2 id="a-first-step" tabindex="-1">A first step <a class="header-anchor" href="#a-first-step">#</a></h2>
 <p>Many commenters have suggested that this is a beta test of a product, or an prototype, and in a sense I agree. This headset is a bulky, power-hungry device that is not something many people will want to wear all day.</p>
 <p>For that reason I see this as the first step toward a new approach to <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction">human-computer interation</a>. It's not there yet, but this is glimpse of how it could be.</p>
-
-	</li>
-
-	<li class="content panel padded postlist-item">
-		<h1><a href="/hello/" class="postlist-link">hello</a></h1>
-		<time class="postlist-date" datetime="2024-01-26">January 2024</time>
-		<p>This is my first post while I get things started on this little site about <a href="https://www.apple.com/apple-vision-pro/">Apple Vision Pro</a>!</p>
-<p>I'm looking forward to learning how this new tech will work, as well as building apps for it in SwiftUI.</p>
-<p><picture><source type="image/avif" srcset="/img/SOFWriN75L-800.avif 800w"><source type="image/webp" srcset="/img/SOFWriN75L-800.webp 800w"><img alt="The classic Apple Hello text in Vision Pro" loading="lazy" decoding="async" src="/img/SOFWriN75L-800.jpeg" width="800" height="450"></picture></p>
-<h2 id="why-apple-vision-pro" tabindex="-1">Why Apple Vision Pro? <a class="header-anchor" href="#why-apple-vision-pro">#</a></h2>
-<p>I'm a web designer and developer and have been working on the web for over 20 years. When I began creating web sites, CSS was brand new and web browsers were a lot more primative than they are today, but the platform was new and exciting.</p>
-<p>Being able to design, create and publish my ideas for the world to see from the comfort of my sofa was a revolutionary time. The web has since grown to become simultaneously more important but also more mundane. It's possible to create random little sites like this but few people do, and it feels like less of a world wild web and more dominated by heterogenous, large platforms.</p>
-<p>The iPhone was <a href="https://en.wikipedia.org/wiki/IPhone">launched almost 16 years ago</a>, and has created it's own wonderful ecosystem of creativity. It introduced the first good implementation of a touch-based interface and made the internet available in a pocket-sized device to everyone.</p>
-<p>Building apps was also something within reach of a solo developer. The tools to build on iOS have continued to to get better and better, while the technology has become more refined. Which leads to what I hope will be another exciting stage in technology, <a href="https://en.wikipedia.org/wiki/Spatial_computing">spatial computing</a>.</p>
-<h2 id="spatial-computing-vs-vr" tabindex="-1">Spatial computing vs VR <a class="header-anchor" href="#spatial-computing-vs-vr">#</a></h2>
-<p>Most headsets aim for a primarily <a href="https://en.wikipedia.org/wiki/Virtual_reality">virtual reality</a> (VR) approach, in which the user is placed into an entirely simulated environment. As technology has improved this has created some amazing, immersive games and simulations.</p>
-<p>What is more tricky is supporting <a href="https://en.wikipedia.org/wiki/Augmented_reality">augmented reality</a> (AR). This when the real world is visible and a computer overlays items on top. To do this requires cameras, lots of smart code to adjust and shape the camera input to look right, as well as sensors to detect where the headset is and where the user is looking.</p>
-<p>With all these pieces in place, the headset can then render visual elements within the video stream and make it look like your computer and the real world are intermingled. The result, if done well, allows us to explore computing beyond the constraint of screens.</p>
-<p>As much as laptops are amazing devices, having a seemingly infinite canvas within which 3D computing elements can be placed is a big step forward.</p>
-<h2 id="apple-s-difference" tabindex="-1">Apple's difference <a class="header-anchor" href="#apple-s-difference">#</a></h2>
-<p>Compared to other platforms such as the <a href="https://en.wikipedia.org/wiki/Meta_Quest_3">Meta Quest</a> or <a href="https://en.wikipedia.org/wiki/PlayStation_VR">PlayStation VR</a>, Apple has taken a different approach.</p>
-<p>Where the previously mentioned headsets are designed and marketed primarily as gaming devices, Apple has promoted their headset as an entertainment and creative productivity device.</p>
-<p>I'm sure there'll be games, and maybe I'll try making some. However with no controllers, and a much more expensive device, the value I'm hoping Vision Pro will bring will be much more than games.</p>
-<p>It's like when laptops were dull, beige and focused on office productivity, and Apple promoted their laptops as <em>creative</em> tools. The Vision Pro is being positioned as a device that will bring spatial computing and be a creative tool rather than just got gaming.</p>
-<h2 id="cutting-edge-technology" tabindex="-1">Cutting-edge technology <a class="header-anchor" href="#cutting-edge-technology">#</a></h2>
-<p>Apple's Vision Pro combines the highest fidelity of passthrough video, with state of the art eye tracking, and a (hopefully) expansive array of applications.</p>
-<h2 id="so-what-s-this-blog-about" tabindex="-1">So what's this blog about? <a class="header-anchor" href="#so-what-s-this-blog-about">#</a></h2>
-<p>I'm interested in exploring what this new platform offers, from a developer's perspective. I'd like to ask questions such as how we build spatial experiences, what makes a good Vision Pro app, and how we find inspiration as this platform emerges.</p>
-<p>I have a lot to learn and I find blogging about it can be a great way to reinforce my learning. It's fun too.</p>
-<p>Time will tell if the device is worth the asking price. Developers will explore the capabilities and build apps to see what it can do. I'm excited to be in a position to learn how to build apps for this platform, and I'll continue documenting this journey here.</p>
 
 	</li>
 
