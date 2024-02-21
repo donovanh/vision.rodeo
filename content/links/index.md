@@ -40,6 +40,11 @@ eleventyNavigation:
     <li><a href="https://twitter.com/M1Astra">@M1Astra@twitter.com</a></li>
   </ul>
 
+  <h2>Links sites</h2>
+  <ul>
+    <li><a href="https://bukmark.club">Bukmark Club</a></li>
+  </ul>
+
   <h2>Apple</h2>
   <ul>
     <li><a href="https://www.apple.com/apple-vision-pro/">Apple Vision Pro</a></li>
