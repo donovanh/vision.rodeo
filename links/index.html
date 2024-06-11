@@ -28,7 +28,7 @@
 	--color-gray-50: rgba(255, 255, 255, 0.5);
 	--color-gray-20: rgba(255, 255, 255, 0.8);
 
-	--background-color: #241653;
+	--background-color: #000;
 
 	--text-color: var(--color-gray-20);
 	--text-color-link: rgba(241, 233, 255, 0.8);
@@ -67,14 +67,10 @@ body {
 	color: var(--text-color);
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	/* TODO: Have this dynamically change by time of day */
-	background-image: linear-gradient(
-			to bottom,
-			rgba(255, 240, 255, 0.2),
-			rgba(120, 20, 90, 0.6)
-		),
-		url("/img/office.webp");
-	background-attachment: fixed;
-	background-size: cover;
+	background: var(--background-color);
+	background-image: url("/img/office.webp");
+	background-size: 100vw;
+	background-repeat: no-repeat;
 }
 html {
 	overflow-y: scroll;
@@ -82,29 +78,6 @@ html {
 
 .bodyBackground {
 	opacity: 0;
-}
-
-@media (max-width: 500px) {
-	body {
-		background: rgb(40, 40, 40);
-	}
-	.bodyBackground {
-		opacity: 1;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		top: 0;
-		background-size: cover;
-		background-image: linear-gradient(
-				to bottom,
-				rgba(245, 246, 252, 0.52),
-				rgba(117, 19, 93, 0.73),
-				rgb(40, 40, 40)
-			),
-			url("/img/office.webp");
-		background-repeat: no-repeat;
-	}
 }
 
 .bodyBGCover {
@@ -201,7 +174,7 @@ code {
 }
 
 .panel {
-	background-color: rgba(200, 180, 200, 0.2);
+	background-color: rgba(89, 89, 89, 0.2);
 	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.75),
 		0 0 1rem 0 rgba(0, 0, 0, 0.1);
 	border-radius: 2.5rem;
@@ -252,38 +225,6 @@ header {
 	}
 }
 
-/* header.animated {
-	animation: fade-in 1s ease-out, pop-in 1s cubic-bezier(0, 1, 0.3, 1);
-} */
-
-@keyframes fade-in {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes pop-in {
-	0%,
-	20% {
-		transform: translateZ(-500px) rotateX(-45deg);
-	}
-	100% {
-		transform: none;
-	}
-}
-
-@keyframes slide-up {
-	0% {
-		transform: translateY(50px);
-	}
-	100% {
-		transform: none;
-	}
-}
-
 .wordart {
 	display: inline-block;
 	margin: 2rem 0 4rem;
@@ -309,18 +250,6 @@ header {
 @media (min-width: 1400px) {
 	.wordart {
 		font-size: 8rem;
-	}
-}
-
-@media (max-width: 500px) {
-	.wordart-wrapper {
-		width: 100%;
-		position: absolute;
-		left: 0;
-		top: -40px;
-	}
-	.wordart {
-		font-size: 2.5rem;
 	}
 }
 
@@ -356,6 +285,72 @@ nav.secondary {
 	}
 }
 
+/* Internal header */
+header.internal {
+	display: flex;
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+header.internal .home-link {
+	width: 300px;
+	margin-right: auto;
+}
+
+header.internal .wordart {
+	font-size: 2rem;
+	margin: 0;
+}
+
+header.internal nav {
+	background: none;
+	box-shadow: none;
+	filter: none;
+	-webkit-backdrop-filter: none;
+	max-width: 100%;
+	margin: 2rem;
+}
+
+header.internal ul.nav {
+	padding: 1rem 0 0;
+}
+
+@media (max-width: 500px) {
+	header.internal,
+	header,
+	header.panel {
+		display: block;
+		max-width: 100%;
+		padding: 0;
+		margin: 2rem 0 0;
+	}
+
+	header .home-link {
+		width: 300px;
+		margin-right: auto;
+	}
+
+	header .wordart {
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	nav,
+	header .panel {
+		background: none;
+		box-shadow: none;
+		filter: none;
+		-webkit-backdrop-filter: none;
+		max-width: 100%;
+		margin: 2rem;
+	}
+
+	header .nav {
+		padding: 1rem 0 0;
+	}
+}
+
 /* Posts list */
 .postlist {
 	list-style: none;
@@ -381,6 +376,7 @@ nav.secondary {
 main img {
 	max-width: 100%;
 	height: auto;
+	margin: 3rem 0;
 	border-radius: 2rem;
 	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
 		0 0 1rem 0 rgba(0, 0, 0, 0.2);
@@ -390,7 +386,7 @@ main img {
 }
 main video {
 	display: block;
-	max-width: 100%;
+	max-width: 80%;
 	height: auto;
 	border-radius: 2rem;
 	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
@@ -415,7 +411,7 @@ main video {
 }
 
 .content {
-	max-width: 60rem;
+	max-width: 48rem;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -640,23 +636,22 @@ pre[class*="language-"] {
 		<div class="bodyBackground"></div>
 		<div class="bodyBGCover" id="overlay"></div>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
-
-		<div class="header-container">
-			<header class="panel " id="header">
-				<a href="/" class="home-link">
-					<span class="wordart-wrapper">
-						<span class="wordart">Donovan’s Vision Blog</span>
-					</span>
-				</a>
-				<nav class="panel">
-					<h2 class="visually-hidden">Top level navigation menu</h2>
-					<ul class="nav">
-						<li class="nav-item"><a href="/">Home</a></li>
-						<li class="nav-item"><a href="/blog/">All Posts</a></li>
-						<li class="nav-item"><a href="/links/" aria-current="page">Cool Links</a></li>
-					</ul>
-				</nav>
-			</header>
+			<div class="header-container home">
+				<header class="panel " id="header">
+					<a href="/" class="home-link">
+						<span class="wordart-wrapper">
+							<span class="wordart">Donovan’s Vision Blog</span>
+						</span>
+					</a>
+					<nav class="panel">
+						<h2 class="visually-hidden">Top level navigation menu</h2>
+						<ul class="nav">
+							<li class="nav-item"><a href="/">Home</a></li>
+							<li class="nav-item"><a href="/blog/">All Posts</a></li>
+							<li class="nav-item"><a href="/links/" aria-current="page">Cool Links</a></li>
+						</ul>
+					</nav>
+				</header>
 			</div>
 		<main id="skip" class="">
 			<div class="content panel padded">

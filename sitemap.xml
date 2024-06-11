@@ -27,22 +27,17 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/thoughts/</loc>
-		<lastmod>2024-01-26</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://vision.rodeo/tags/apps/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/dev/</loc>
+		<loc>https://vision.rodeo/tags/thoughts/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/dev-diary/</loc>
+		<loc>https://vision.rodeo/tags/dev/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -62,17 +57,12 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/dev-diary-01/</loc>
-		<lastmod>2024-02-09</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://vision.rodeo/returns/</loc>
 		<lastmod>2024-02-16</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/dev-diary-02/</loc>
-		<lastmod>2024-02-19</lastmod>
+		<loc>https://vision.rodeo/blender-file-in-vision/</loc>
+		<lastmod>2024-06-10</lastmod>
 	</url>
 </urlset>

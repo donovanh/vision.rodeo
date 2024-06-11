@@ -4,7 +4,7 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-02-19T00:00:00Z</updated>
+	<updated>2024-06-10T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
@@ -12,13 +12,72 @@
 	</author>
 	
 	<entry>
-		<title>Reps Dev Diary #2: TestFlight &amp; Timers</title>
-		<link href="https://vision.rodeo/dev-diary-02/"/>
-		<updated>2024-02-19T00:00:00Z</updated>
-		<id>https://vision.rodeo/dev-diary-02/</id>
-		<content type="html">&lt;p&gt;This week on the &lt;a href=&quot;https://reps.hop.ie&quot;&gt;Reps website&lt;/a&gt; I&#39;m working on fixing bugs and adding some useful features.&lt;/p&gt;
-&lt;p&gt;I&#39;ve started letting people try out the app on TestFlight, and in &lt;a href=&quot;https://reps.hop.ie/dev-diary-02/&quot;&gt;the latest post&lt;/a&gt; I write about some of the insights I&#39;ve gained and what I&#39;m currently working on.&lt;/p&gt;
-&lt;p&gt;Read the &lt;a href=&quot;https://reps.hop.ie/dev-diary-02/&quot;&gt;second dev diary here&lt;/a&gt;.&lt;/p&gt;
+		<title>Animated Blender entity in RealityView</title>
+		<link href="https://vision.rodeo/blender-file-in-vision/"/>
+		<updated>2024-06-10T00:00:00Z</updated>
+		<id>https://vision.rodeo/blender-file-in-vision/</id>
+		<content type="html">&lt;p&gt;Starting with a Blender model we will export, convert it, and display it in a Vision Pro app.&lt;/p&gt;
+&lt;p&gt;I found &lt;a href=&quot;https://www.youtube.com/watch?v=ycJO3DKTsDM&quot;&gt;this Youtube video from Sebastian Kotarski&lt;/a&gt; very helpful in getting this example put together. Here&#39;s the finished result:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/Ix6VDSaiz2-1614.avif 1614w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/Ix6VDSaiz2-1614.webp 1614w&quot;&gt;&lt;img alt=&quot;Finished animated model&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/Ix6VDSaiz2-1614.png&quot; width=&quot;1614&quot; height=&quot;1150&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2 id=&quot;convert-blender-file-to-usdz&quot; tabindex=&quot;-1&quot;&gt;Convert Blender file to USDZ &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To get started I chose a model from my &lt;a href=&quot;http://reps.hop.ie&quot;&gt;Reps app&lt;/a&gt;. Rather than create animation in Reality Composer Pro, this model has an animation already built-in.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/kkggEtt4mT-2558.avif 2558w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/kkggEtt4mT-2558.webp 2558w&quot;&gt;&lt;img alt=&quot;A blender model with animation&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/kkggEtt4mT-2558.png&quot; width=&quot;2558&quot; height=&quot;1800&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;You can &lt;a href=&quot;https://vision.rodeo/files/pushup-05.blend.zip&quot;&gt;download the Blender file here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The first step is to export this model as a &lt;code&gt;GLB&lt;/code&gt; file (gITF 2.0)&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/Nb3qybsBTS-978.avif 978w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/Nb3qybsBTS-978.webp 978w&quot;&gt;&lt;img alt=&quot;Export GLB file from Blender&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/Nb3qybsBTS-978.png&quot; width=&quot;978&quot; height=&quot;666&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2 id=&quot;reality-converter&quot; tabindex=&quot;-1&quot;&gt;Reality Converter &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With the file exported, it can be converted in Reality Converter. Press Command + Space and type &amp;quot;Reality Converter&amp;quot; to find it.&lt;/p&gt;
+&lt;p&gt;You can then drag the exported &lt;code&gt;glb&lt;/code&gt; file into the converter:&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/_bX0InbBx4-2412.avif 2412w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/_bX0InbBx4-2412.webp 2412w&quot;&gt;&lt;img alt=&quot;Converting the GLB file to USDZ&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/_bX0InbBx4-2412.png&quot; width=&quot;2412&quot; height=&quot;1828&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Select &lt;code&gt;File -&amp;gt; Export&lt;/code&gt; to export this as &lt;code&gt;usdz&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;set-up-in-reality-composer-pro&quot; tabindex=&quot;-1&quot;&gt;Set up in Reality Composer Pro &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Open Xcode and start a new Vision Pro App. In the demo code, there&#39;s a &lt;code&gt;RealityKitContent&lt;/code&gt; package already in place with a sphere in it. We can change it to use our model. Open &lt;code&gt;Packages -&amp;gt; RealityKitContent -&amp;gt; Package&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/fIZ1ZZWpoD-528.avif 528w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/fIZ1ZZWpoD-528.webp 528w&quot;&gt;&lt;img alt=&quot;Select the package&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/fIZ1ZZWpoD-528.png&quot; width=&quot;528&quot; height=&quot;418&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Select &amp;quot;Open In Reality Composer Pro&amp;quot; at the top-right corner.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/fb-zKS28Fx-2366.avif 2366w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/fb-zKS28Fx-2366.webp 2366w&quot;&gt;&lt;img alt=&quot;Open in Reality Composer Pro&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/fb-zKS28Fx-2366.png&quot; width=&quot;2366&quot; height=&quot;1232&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Select and delete the sphere. Then add the new model by dragging the exported model file into the assets at bottom.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/IROV4991tR-2744.avif 2744w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/IROV4991tR-2744.webp 2744w&quot;&gt;&lt;img alt=&quot;Reality Composer Pro&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/IROV4991tR-2744.png&quot; width=&quot;2744&quot; height=&quot;1838&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;Then, drag this new asset into the scene and position it in the center. If needed, you can adjust angle or size when selecting the model.&lt;/p&gt;
+&lt;p&gt;Remember to press &lt;code&gt;Save&lt;/code&gt; before closing Reality Composer Pro.&lt;/p&gt;
+&lt;h2 id=&quot;open-in-project&quot; tabindex=&quot;-1&quot;&gt;Open in Project &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Return to XCode and open &lt;code&gt;ContentView&lt;/code&gt;, let the preview load (or load preview) and you should see the model.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/pQeuHR1QGU-1570.avif 1570w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/pQeuHR1QGU-1570.webp 1570w&quot;&gt;&lt;img alt=&quot;Initial model pose&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/pQeuHR1QGU-1570.png&quot; width=&quot;1570&quot; height=&quot;1088&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2 id=&quot;applying-animation-from-blender&quot; tabindex=&quot;-1&quot;&gt;Applying animation from Blender &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;When loaded in the demo code, it shows the model in it&#39;s default state. In my example this is the classic T-pose without any animation applied. The Blender model has an animation, so let&#39;s apply it by adjusting the &lt;code&gt;ContentView&lt;/code&gt; code:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ContentView&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; body&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;RealityView&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; content &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; animatedModel &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;loadEntity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;animatedModel&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+                animatedModel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;isEnabled &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; update&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; content &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; character &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;entities&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;first &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+            character&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;isEnabled &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+            character&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;availableAnimations&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;forEach &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; animation &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+                character&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;playAnimation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;animation&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;repeat&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function-definition function&quot;&gt;loadEntity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Entity&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Entity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;named&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Scene&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; realityKitContentBundle&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This code starts by loading the &lt;code&gt;Scene&lt;/code&gt; model entity using the &lt;code&gt;loadEntity&lt;/code&gt; function. It sets &lt;code&gt;isEnabled&lt;/code&gt; to false so that it won&#39;t show the default pose without animation applied. It then uses &lt;code&gt;update&lt;/code&gt; to apply the animation from the model file.&lt;/p&gt;
+&lt;p&gt;You may find though that the size still isn&#39;t right. In that case you can add some adjustments to the model in the &lt;code&gt;loadEntity&lt;/code&gt; method.&lt;/p&gt;
+&lt;h3 id=&quot;scaling-in-code&quot; tabindex=&quot;-1&quot;&gt;Scaling in code &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Rather than rely on sizing the model in Reality Composer Pro. In &lt;code&gt;loadEntity&lt;/code&gt;, you can use &lt;code&gt;setScale&lt;/code&gt; to adjust the output size:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function-definition function&quot;&gt;loadEntity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Entity&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; entity &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Entity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;named&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Scene&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; realityKitContentBundle&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    entity&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setScale&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;SIMD3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; z&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.05&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; relativeTo&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token nil constant&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; entity
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You should now have an animated model in your Vision app.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/Ix6VDSaiz2-1614.avif 1614w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/Ix6VDSaiz2-1614.webp 1614w&quot;&gt;&lt;img alt=&quot;Finished animated model&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/Ix6VDSaiz2-1614.png&quot; width=&quot;1614&quot; height=&quot;1150&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 </content>
 	</entry>
 	
@@ -46,17 +105,6 @@
 &lt;h2 id=&quot;what-to-think&quot; tabindex=&quot;-1&quot;&gt;What to think? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/returns/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Having read hundreds of threads by real-world users expressing their excitement, concerns, disappointments, hacks and hopes, I think this is very much an early adopter product that won&#39;t make everyone happy. Not yet anyway. It&#39;s pricey, finicky, but equally is awe-inspiring and a glimpse of a possible AR-infused future.&lt;/p&gt;
 &lt;p&gt;It&#39;s an interesting product. Definitely not for everyone but at the same time, I do wish people would stop and think about what they&#39;re sharing when they echo the headlines that cherry-pick the &amp;quot;bad&amp;quot; news. This is a very exciting time to be in the Apple ecosystem and I&#39;m looking forward to some day trying my own AVP.&lt;/p&gt;
-</content>
-	</entry>
-	
-	<entry>
-		<title>Reps Dev Diary #1</title>
-		<link href="https://vision.rodeo/dev-diary-01/"/>
-		<updated>2024-02-09T00:00:00Z</updated>
-		<id>https://vision.rodeo/dev-diary-01/</id>
-		<content type="html">&lt;p&gt;Over on the &lt;a href=&quot;https://reps.hop.ie&quot;&gt;Reps website&lt;/a&gt; I&#39;ve started blogging about the process of making my side project iOS app.&lt;/p&gt;
-&lt;p&gt;In this first post, I cover everything from ideation, to building out data schemes, 3D assets creation, ScrollViews and more.&lt;/p&gt;
-&lt;p&gt;Read the &lt;a href=&quot;https://reps.hop.ie/dev-diary-01/&quot;&gt;first dev diary here&lt;/a&gt;.&lt;/p&gt;
 </content>
 	</entry>
 	

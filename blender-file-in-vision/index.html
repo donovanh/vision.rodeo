@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>hello - Donovan's Vision Blog</title>
-		<meta name="description" content="Let&#39;s start on this Vision Pro journey">
+		<title>Animated Blender entity in RealityView - Donovan's Vision Blog</title>
+		<meta name="description" content="Display a Blender 3D object in a Vision RealityView">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -699,39 +699,77 @@ footer {
 		<main id="skip" class="">
 			
 <div class="content panel padded">
-	<h1>hello</h1>
+	<h1>Animated Blender entity in RealityView</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2024-01-26">26 January 2024</time></li>
-	<li><a href="/tags/thoughts/" class="post-tag">thoughts</a></li>
+	<li><time datetime="2024-06-10">10 June 2024</time></li>
+	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
 
-<p>This is my first post while I get things started on this little site about <a href="https://www.apple.com/apple-vision-pro/">Apple Vision Pro</a>!</p>
-<p>I'm looking forward to learning how this new tech will work, as well as building apps for it in SwiftUI.</p>
-<p><picture><source type="image/avif" srcset="/img/SOFWriN75L-800.avif 800w"><source type="image/webp" srcset="/img/SOFWriN75L-800.webp 800w"><img alt="The classic Apple Hello text in Vision Pro" loading="lazy" decoding="async" src="/img/SOFWriN75L-800.jpeg" width="800" height="450"></picture></p>
-<h2 id="why-apple-vision-pro" tabindex="-1">Why Apple Vision Pro? <a class="header-anchor" href="#why-apple-vision-pro">#</a></h2>
-<p>I'm a web designer and developer and have been working on the web for over 20 years. When I began creating web sites, CSS was brand new and web browsers were a lot more primative than they are today, but the platform was new and exciting.</p>
-<p>Being able to design, create and publish my ideas for the world to see from the comfort of my sofa was a revolutionary time. The web has since grown to become simultaneously more important but also more mundane. It's possible to create random little sites like this but few people do, and it feels like less of a world wild web and more dominated by heterogenous, large platforms.</p>
-<p>The iPhone was <a href="https://en.wikipedia.org/wiki/IPhone">launched almost 16 years ago</a>, and has created it's own wonderful ecosystem of creativity. It introduced the first good implementation of a touch-based interface and made the internet available in a pocket-sized device to everyone.</p>
-<p>Building apps was also something within reach of a solo developer. The tools to build on iOS have continued to to get better and better, while the technology has become more refined. Which leads to what I hope will be another exciting stage in technology, <a href="https://en.wikipedia.org/wiki/Spatial_computing">spatial computing</a>.</p>
-<h2 id="spatial-computing-vs-vr" tabindex="-1">Spatial computing vs VR <a class="header-anchor" href="#spatial-computing-vs-vr">#</a></h2>
-<p>Most headsets aim for a primarily <a href="https://en.wikipedia.org/wiki/Virtual_reality">virtual reality</a> (VR) approach, in which the user is placed into an entirely simulated environment. As technology has improved this has created some amazing, immersive games and simulations.</p>
-<p>What is more tricky is supporting <a href="https://en.wikipedia.org/wiki/Augmented_reality">augmented reality</a> (AR). This when the real world is visible and a computer overlays items on top. To do this requires cameras, lots of smart code to adjust and shape the camera input to look right, as well as sensors to detect where the headset is and where the user is looking.</p>
-<p>With all these pieces in place, the headset can then render visual elements within the video stream and make it look like your computer and the real world are intermingled. The result, if done well, allows us to explore computing beyond the constraint of screens.</p>
-<p>As much as laptops are amazing devices, having a seemingly infinite canvas within which 3D computing elements can be placed is a big step forward.</p>
-<h2 id="apple-s-difference" tabindex="-1">Apple's difference <a class="header-anchor" href="#apple-s-difference">#</a></h2>
-<p>Compared to other platforms such as the <a href="https://en.wikipedia.org/wiki/Meta_Quest_3">Meta Quest</a> or <a href="https://en.wikipedia.org/wiki/PlayStation_VR">PlayStation VR</a>, Apple has taken a different approach.</p>
-<p>Where the previously mentioned headsets are designed and marketed primarily as gaming devices, Apple has promoted their headset as an entertainment and creative productivity device.</p>
-<p>I'm sure there'll be games, and maybe I'll try making some. However with no controllers, and a much more expensive device, the value I'm hoping Vision Pro will bring will be much more than games.</p>
-<p>It's like when laptops were dull, beige and focused on office productivity, and Apple promoted their laptops as <em>creative</em> tools. The Vision Pro is being positioned as a device that will bring spatial computing and be a creative tool rather than just got gaming.</p>
-<h2 id="cutting-edge-technology" tabindex="-1">Cutting-edge technology <a class="header-anchor" href="#cutting-edge-technology">#</a></h2>
-<p>Apple's Vision Pro combines the highest fidelity of passthrough video, with state of the art eye tracking, and a (hopefully) expansive array of applications.</p>
-<h2 id="so-what-s-this-blog-about" tabindex="-1">So what's this blog about? <a class="header-anchor" href="#so-what-s-this-blog-about">#</a></h2>
-<p>I'm interested in exploring what this new platform offers, from a developer's perspective. I'd like to ask questions such as how we build spatial experiences, what makes a good Vision Pro app, and how we find inspiration as this platform emerges.</p>
-<p>I have a lot to learn and I find blogging about it can be a great way to reinforce my learning. It's fun too.</p>
-<p>Time will tell if the device is worth the asking price. Developers will explore the capabilities and build apps to see what it can do. I'm excited to be in a position to learn how to build apps for this platform, and I'll continue documenting this journey here.</p>
+<p>Starting with a Blender model we will export, convert it, and display it in a Vision Pro app.</p>
+<p>I found <a href="https://www.youtube.com/watch?v=ycJO3DKTsDM">this Youtube video from Sebastian Kotarski</a> very helpful in getting this example put together. Here's the finished result:</p>
+<p><picture><source type="image/avif" srcset="/img/Ix6VDSaiz2-1614.avif 1614w"><source type="image/webp" srcset="/img/Ix6VDSaiz2-1614.webp 1614w"><img alt="Finished animated model" loading="lazy" decoding="async" src="/img/Ix6VDSaiz2-1614.png" width="1614" height="1150"></picture></p>
+<h2 id="convert-blender-file-to-usdz" tabindex="-1">Convert Blender file to USDZ <a class="header-anchor" href="#convert-blender-file-to-usdz">#</a></h2>
+<p>To get started I chose a model from my <a href="http://reps.hop.ie">Reps app</a>. Rather than create animation in Reality Composer Pro, this model has an animation already built-in.</p>
+<p><picture><source type="image/avif" srcset="/img/kkggEtt4mT-2558.avif 2558w"><source type="image/webp" srcset="/img/kkggEtt4mT-2558.webp 2558w"><img alt="A blender model with animation" loading="lazy" decoding="async" src="/img/kkggEtt4mT-2558.png" width="2558" height="1800"></picture></p>
+<p>You can <a href="/files/pushup-05.blend.zip">download the Blender file here</a>.</p>
+<p>The first step is to export this model as a <code>GLB</code> file (gITF 2.0)</p>
+<p><picture><source type="image/avif" srcset="/img/Nb3qybsBTS-978.avif 978w"><source type="image/webp" srcset="/img/Nb3qybsBTS-978.webp 978w"><img alt="Export GLB file from Blender" loading="lazy" decoding="async" src="/img/Nb3qybsBTS-978.png" width="978" height="666"></picture></p>
+<h2 id="reality-converter" tabindex="-1">Reality Converter <a class="header-anchor" href="#reality-converter">#</a></h2>
+<p>With the file exported, it can be converted in Reality Converter. Press Command + Space and type &quot;Reality Converter&quot; to find it.</p>
+<p>You can then drag the exported <code>glb</code> file into the converter:</p>
+<p><picture><source type="image/avif" srcset="/img/_bX0InbBx4-2412.avif 2412w"><source type="image/webp" srcset="/img/_bX0InbBx4-2412.webp 2412w"><img alt="Converting the GLB file to USDZ" loading="lazy" decoding="async" src="/img/_bX0InbBx4-2412.png" width="2412" height="1828"></picture></p>
+<p>Select <code>File -&gt; Export</code> to export this as <code>usdz</code>.</p>
+<h2 id="set-up-in-reality-composer-pro" tabindex="-1">Set up in Reality Composer Pro <a class="header-anchor" href="#set-up-in-reality-composer-pro">#</a></h2>
+<p>Open Xcode and start a new Vision Pro App. In the demo code, there's a <code>RealityKitContent</code> package already in place with a sphere in it. We can change it to use our model. Open <code>Packages -&gt; RealityKitContent -&gt; Package</code>.</p>
+<p><picture><source type="image/avif" srcset="/img/fIZ1ZZWpoD-528.avif 528w"><source type="image/webp" srcset="/img/fIZ1ZZWpoD-528.webp 528w"><img alt="Select the package" loading="lazy" decoding="async" src="/img/fIZ1ZZWpoD-528.png" width="528" height="418"></picture></p>
+<p>Select &quot;Open In Reality Composer Pro&quot; at the top-right corner.</p>
+<p><picture><source type="image/avif" srcset="/img/fb-zKS28Fx-2366.avif 2366w"><source type="image/webp" srcset="/img/fb-zKS28Fx-2366.webp 2366w"><img alt="Open in Reality Composer Pro" loading="lazy" decoding="async" src="/img/fb-zKS28Fx-2366.png" width="2366" height="1232"></picture></p>
+<p>Select and delete the sphere. Then add the new model by dragging the exported model file into the assets at bottom.</p>
+<p><picture><source type="image/avif" srcset="/img/IROV4991tR-2744.avif 2744w"><source type="image/webp" srcset="/img/IROV4991tR-2744.webp 2744w"><img alt="Reality Composer Pro" loading="lazy" decoding="async" src="/img/IROV4991tR-2744.png" width="2744" height="1838"></picture></p>
+<p>Then, drag this new asset into the scene and position it in the center. If needed, you can adjust angle or size when selecting the model.</p>
+<p>Remember to press <code>Save</code> before closing Reality Composer Pro.</p>
+<h2 id="open-in-project" tabindex="-1">Open in Project <a class="header-anchor" href="#open-in-project">#</a></h2>
+<p>Return to XCode and open <code>ContentView</code>, let the preview load (or load preview) and you should see the model.</p>
+<p><picture><source type="image/avif" srcset="/img/pQeuHR1QGU-1570.avif 1570w"><source type="image/webp" srcset="/img/pQeuHR1QGU-1570.webp 1570w"><img alt="Initial model pose" loading="lazy" decoding="async" src="/img/pQeuHR1QGU-1570.png" width="1570" height="1088"></picture></p>
+<h2 id="applying-animation-from-blender" tabindex="-1">Applying animation from Blender <a class="header-anchor" href="#applying-animation-from-blender">#</a></h2>
+<p>When loaded in the demo code, it shows the model in it's default state. In my example this is the classic T-pose without any animation applied. The Blender model has an animation, so let's apply it by adjusting the <code>ContentView</code> code:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">ContentView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+        <span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
+            <span class="token keyword">if</span> <span class="token keyword">let</span> animatedModel <span class="token operator">=</span> <span class="token function">loadEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>animatedModel<span class="token punctuation">)</span>
+                animatedModel<span class="token punctuation">.</span>isEnabled <span class="token operator">=</span> <span class="token boolean">false</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> update<span class="token punctuation">:</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
+            <span class="token keyword">guard</span> <span class="token keyword">let</span> character <span class="token operator">=</span> content<span class="token punctuation">.</span>entities<span class="token punctuation">.</span>first <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">}</span>
 
-<ul class="links-nextprev"><li>Next: <a href="/vision/">Apple’s Vision</a></li>
+            character<span class="token punctuation">.</span>isEnabled <span class="token operator">=</span> <span class="token boolean">true</span>
+            character<span class="token punctuation">.</span>availableAnimations<span class="token punctuation">.</span>forEach <span class="token punctuation">{</span> animation <span class="token keyword">in</span>
+                character<span class="token punctuation">.</span><span class="token function">playAnimation</span><span class="token punctuation">(</span>animation<span class="token punctuation">.</span><span class="token keyword">repeat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">func</span> <span class="token function-definition function">loadEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Entity</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+      <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">Entity</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Scene"</span></span><span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> realityKitContentBundle<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This code starts by loading the <code>Scene</code> model entity using the <code>loadEntity</code> function. It sets <code>isEnabled</code> to false so that it won't show the default pose without animation applied. It then uses <code>update</code> to apply the animation from the model file.</p>
+<p>You may find though that the size still isn't right. In that case you can add some adjustments to the model in the <code>loadEntity</code> method.</p>
+<h3 id="scaling-in-code" tabindex="-1">Scaling in code <a class="header-anchor" href="#scaling-in-code">#</a></h3>
+<p>Rather than rely on sizing the model in Reality Composer Pro. In <code>loadEntity</code>, you can use <code>setScale</code> to adjust the output size:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">private</span> <span class="token keyword">func</span> <span class="token function-definition function">loadEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Entity</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> entity <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">Entity</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Scene"</span></span><span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> realityKitContentBundle<span class="token punctuation">)</span>
+
+    entity<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">setScale</span><span class="token punctuation">(</span><span class="token function">SIMD3</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0.05</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0.05</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0.05</span><span class="token punctuation">)</span><span class="token punctuation">,</span> relativeTo<span class="token punctuation">:</span> <span class="token nil constant">nil</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> entity
+<span class="token punctuation">}</span></code></pre>
+<p>You should now have an animated model in your Vision app.</p>
+<p><picture><source type="image/avif" srcset="/img/Ix6VDSaiz2-1614.avif 1614w"><source type="image/webp" srcset="/img/Ix6VDSaiz2-1614.webp 1614w"><img alt="Finished animated model" loading="lazy" decoding="async" src="/img/Ix6VDSaiz2-1614.png" width="1614" height="1150"></picture></p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/returns/">Are people returning Vision Pro?</a></li>
 </ul>
 </div>
 
@@ -767,6 +805,6 @@ footer {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /hello/ -->
+		<!-- Current page: /blender-file-in-vision/ -->
 	</body>
 </html>
