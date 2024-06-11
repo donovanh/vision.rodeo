@@ -42,9 +42,8 @@
 		<div class="bodyBackground"></div>
 		<div class="bodyBGCover" id="overlay"></div>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
-
-		<div class="header-container">
-			<header class="panel {% if page.url === "/" %}animated{% endif %}" id="header">
+		{%- if isInternal %}
+			<header class="internal">
 				<a href="/" class="home-link">
 					<span class="wordart-wrapper">
 						<span class="wordart">{{ metadata.title }}</span>
@@ -59,7 +58,25 @@
 					</ul>
 				</nav>
 			</header>
+		{%- else %}
+			<div class="header-container home">
+				<header class="panel {% if page.url === "/" %}animated{% endif %}" id="header">
+					<a href="/" class="home-link">
+						<span class="wordart-wrapper">
+							<span class="wordart">{{ metadata.title }}</span>
+						</span>
+					</a>
+					<nav class="panel">
+						<h2 class="visually-hidden">Top level navigation menu</h2>
+						<ul class="nav">
+						{%- for entry in collections.all | eleventyNavigation %}
+							<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+						{%- endfor %}
+						</ul>
+					</nav>
+				</header>
 			</div>
+		{%- endif %}
 		<main id="skip" class="{% if page.url === "/" %}animated{% endif %}">
 			{{ content | safe }}
 		</main>
