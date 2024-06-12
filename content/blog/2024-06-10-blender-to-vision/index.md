@@ -31,7 +31,7 @@ With the file exported, it can be converted in Reality Converter. Press Command 
 
 You can then drag the exported `glb` file into the converter:
 
-{% image "./files/05-reality-converter.png", "Converting the GLB file to USDZ" %}
+{% image "./files/04-realityconverter.png", "Converting the GLB file to USDZ" %}
 
 Select `File -> Export` to export this as `usdz`.
 
