@@ -18,9 +18,7 @@
 		<id>https://vision.rodeo/volumetric-window-group/</id>
 		<content type="html">&lt;p&gt;Now that we can &lt;a href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;import a Blender file to RealityKit&lt;/a&gt;, let&#39;s make it look fancy in it&#39;s own &lt;em&gt;volumetric window&lt;/em&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;finished-example&quot; tabindex=&quot;-1&quot;&gt;Finished example &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/volumetric-window-group/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/02Lb3Wk&quot;&gt;
-&lt;a href=&quot;https://imgur.com/a/02Lb3Wk&quot;&gt;Do a pushup! (Vision Pro demo)&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/02Lb3Wk&quot; data-context=&quot;false&quot;&gt;&lt;a href=&quot;https://imgur.com/a/02Lb3Wk&quot;&gt;Do a pushup! (Vision Pro demo)&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 &lt;h2 id=&quot;initial-plain-windowgroup&quot; tabindex=&quot;-1&quot;&gt;Initial plain WindowGroup &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/volumetric-window-group/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In your app&#39;s root view, apply the &lt;code&gt;plain&lt;/code&gt; windowStyle to the main WindowGroup:&lt;/p&gt;
 &lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;WindowGroup&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
