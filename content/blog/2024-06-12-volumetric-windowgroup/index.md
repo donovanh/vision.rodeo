@@ -11,9 +11,7 @@ Now that we can [import a Blender file to RealityKit](/blender-file-in-vision/),
 
 ## Finished example
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/02Lb3Wk">
-<a href="//imgur.com/a/02Lb3Wk">Do a pushup! (Vision Pro demo)</a></blockquote>
-<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/02Lb3Wk" data-context="false"><a href="//imgur.com/a/02Lb3Wk">Do a pushup! (Vision Pro demo)</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## Initial plain WindowGroup
 
