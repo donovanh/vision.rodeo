@@ -27,12 +27,12 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/thoughts/</loc>
+		<loc>https://vision.rodeo/tags/apps/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/apps/</loc>
+		<loc>https://vision.rodeo/tags/thoughts/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -64,5 +64,10 @@
 	<url>
 		<loc>https://vision.rodeo/blender-file-in-vision/</loc>
 		<lastmod>2024-06-10</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/volumetric-window-group/</loc>
+		<lastmod>2024-06-12</lastmod>
 	</url>
 </urlset>

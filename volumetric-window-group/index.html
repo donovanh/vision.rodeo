@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Animated Blender entity in RealityView - Donovan's Vision Blog</title>
-		<meta name="description" content="Display a Blender 3D object in a Vision RealityView">
+		<title>Showing volumetric window group - Donovan's Vision Blog</title>
+		<meta name="description" content="Showing an animation in a volumetric window">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -699,47 +699,62 @@ footer {
 		<main id="skip" class="">
 			
 <div class="content panel padded">
-	<h1>Animated Blender entity in RealityView</h1>
+	<h1>Showing volumetric window group</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2024-06-10">10 June 2024</time></li>
+	<li><time datetime="2024-06-12">12 June 2024</time></li>
 	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
 
-<p>Starting with a Blender model we will export, convert it, and display it in a Vision Pro app.</p>
-<p>I found <a href="https://www.youtube.com/watch?v=ycJO3DKTsDM">this Youtube video from Sebastian Kotarski</a> very helpful in getting this example put together. Here's the finished result:</p>
-<p><picture><source type="image/avif" srcset="/img/Ix6VDSaiz2-1614.avif 1614w"><source type="image/webp" srcset="/img/Ix6VDSaiz2-1614.webp 1614w"><img alt="Finished animated model" loading="lazy" decoding="async" src="/img/Ix6VDSaiz2-1614.png" width="1614" height="1150"></picture></p>
-<h2 id="convert-blender-file-to-usdz" tabindex="-1">Convert Blender file to USDZ <a class="header-anchor" href="#convert-blender-file-to-usdz">#</a></h2>
-<p>To get started I chose a model from my <a href="http://reps.hop.ie">Reps app</a>. Rather than create animation in Reality Composer Pro, this model has an animation already built-in.</p>
-<p><picture><source type="image/avif" srcset="/img/kkggEtt4mT-2558.avif 2558w"><source type="image/webp" srcset="/img/kkggEtt4mT-2558.webp 2558w"><img alt="A blender model with animation" loading="lazy" decoding="async" src="/img/kkggEtt4mT-2558.png" width="2558" height="1800"></picture></p>
-<p>You can <a href="/files/pushup-05.blend.zip">download the Blender file here</a>.</p>
-<p>The first step is to export this model as a <code>GLB</code> file (gITF 2.0)</p>
-<p><picture><source type="image/avif" srcset="/img/Nb3qybsBTS-978.avif 978w"><source type="image/webp" srcset="/img/Nb3qybsBTS-978.webp 978w"><img alt="Export GLB file from Blender" loading="lazy" decoding="async" src="/img/Nb3qybsBTS-978.png" width="978" height="666"></picture></p>
-<h2 id="reality-converter" tabindex="-1">Reality Converter <a class="header-anchor" href="#reality-converter">#</a></h2>
-<p>With the file exported, it can be converted in Reality Converter. Press Command + Space and type &quot;Reality Converter&quot; to find it.</p>
-<p>You can then drag the exported <code>glb</code> file into the converter:</p>
-<p><picture><source type="image/avif" srcset="/img/_bX0InbBx4-2412.avif 2412w"><source type="image/webp" srcset="/img/_bX0InbBx4-2412.webp 2412w"><img alt="Converting the GLB file to USDZ" loading="lazy" decoding="async" src="/img/_bX0InbBx4-2412.png" width="2412" height="1828"></picture></p>
-<p>Select <code>File -&gt; Export</code> to export this as <code>usdz</code>.</p>
-<h2 id="set-up-in-reality-composer-pro" tabindex="-1">Set up in Reality Composer Pro <a class="header-anchor" href="#set-up-in-reality-composer-pro">#</a></h2>
-<p>Open Xcode and start a new Vision Pro App. In the demo code, there's a <code>RealityKitContent</code> package already in place with a sphere in it. We can change it to use our model. Open <code>Packages -&gt; RealityKitContent -&gt; Package</code>.</p>
-<p><picture><source type="image/avif" srcset="/img/fIZ1ZZWpoD-528.avif 528w"><source type="image/webp" srcset="/img/fIZ1ZZWpoD-528.webp 528w"><img alt="Select the package" loading="lazy" decoding="async" src="/img/fIZ1ZZWpoD-528.png" width="528" height="418"></picture></p>
-<p>Select &quot;Open In Reality Composer Pro&quot; at the top-right corner.</p>
-<p><picture><source type="image/avif" srcset="/img/fb-zKS28Fx-2366.avif 2366w"><source type="image/webp" srcset="/img/fb-zKS28Fx-2366.webp 2366w"><img alt="Open in Reality Composer Pro" loading="lazy" decoding="async" src="/img/fb-zKS28Fx-2366.png" width="2366" height="1232"></picture></p>
-<p>Select and delete the sphere. Then add the new model by dragging the exported model file into the assets at bottom.</p>
-<p><picture><source type="image/avif" srcset="/img/IROV4991tR-2744.avif 2744w"><source type="image/webp" srcset="/img/IROV4991tR-2744.webp 2744w"><img alt="Reality Composer Pro" loading="lazy" decoding="async" src="/img/IROV4991tR-2744.png" width="2744" height="1838"></picture></p>
-<p>Then, drag this new asset into the scene and position it in the center. If needed, you can adjust angle or size when selecting the model.</p>
-<p>Remember to press <code>Save</code> before closing Reality Composer Pro.</p>
-<h2 id="open-in-project" tabindex="-1">Open in Project <a class="header-anchor" href="#open-in-project">#</a></h2>
-<p>Return to XCode and open <code>ContentView</code>, let the preview load (or load preview) and you should see the model.</p>
-<p><picture><source type="image/avif" srcset="/img/pQeuHR1QGU-1570.avif 1570w"><source type="image/webp" srcset="/img/pQeuHR1QGU-1570.webp 1570w"><img alt="Initial model pose" loading="lazy" decoding="async" src="/img/pQeuHR1QGU-1570.png" width="1570" height="1088"></picture></p>
-<h2 id="applying-animation-from-blender" tabindex="-1">Applying animation from Blender <a class="header-anchor" href="#applying-animation-from-blender">#</a></h2>
-<p>When loaded in the demo code, it shows the model in it's default state. In my example this is the classic T-pose without any animation applied. The Blender model has an animation, so let's apply it by adjusting the <code>ContentView</code> code:</p>
+<p>Now that we can <a href="/blender-file-in-vision/">import a Blender file to RealityKit</a>, let's make it look fancy in it's own <em>volumetric window</em>.</p>
+<h2 id="finished-example" tabindex="-1">Finished example <a class="header-anchor" href="#finished-example">#</a></h2>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/02Lb3Wk">
+<a href="//imgur.com/a/02Lb3Wk">Do a pushup! (Vision Pro demo)</a></blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<h2 id="initial-plain-windowgroup" tabindex="-1">Initial plain WindowGroup <a class="header-anchor" href="#initial-plain-windowgroup">#</a></h2>
+<p>In your app's root view, apply the <code>plain</code> windowStyle to the main WindowGroup:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token class-name">WindowGroup</span> <span class="token punctuation">{</span>
+    <span class="token class-name">ContentView</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">.</span><span class="token function">windowStyle</span><span class="token punctuation">(</span><span class="token punctuation">.</span>plain<span class="token punctuation">)</span></code></pre>
+<p>This removes the usual window's background. To make our own, smaller view, we set up <code>ContentView</code>.</p>
 <pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">ContentView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token attribute atrule">@Environment</span><span class="token punctuation">(</span><span class="token punctuation">\</span><span class="token punctuation">.</span>openWindow<span class="token punctuation">)</span> <span class="token keyword">var</span> openWindow
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Do a pushup!"</span></span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">font</span><span class="token punctuation">(</span><span class="token punctuation">.</span>extraLargeTitle<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">glassBackgroundEffect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>onAppear <span class="token punctuation">{</span>
+                <span class="token class-name">Task</span> <span class="token punctuation">{</span>
+                    <span class="token function">openWindow</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"model"</span></span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This view has some text, with padding and a glass background. It also has an <code>onAppear</code> method that runs <code>openWindow</code>.</p>
+<p>This <code>openWindow</code> method comes from the <code>@Environment(\.openWindow)</code> setting. It's trying to open a window with <code>id</code> of <code>model</code>. We need to add that.</p>
+<h2 id="volumetric-windowgroup" tabindex="-1">Volumetric WindowGroup <a class="header-anchor" href="#volumetric-windowgroup">#</a></h2>
+<p>Back in the root file, alongside the plain WindowGroup, add a second WindowGroup:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token class-name">WindowGroup</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"model"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">ModelView</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">.</span><span class="token function">windowStyle</span><span class="token punctuation">(</span><span class="token punctuation">.</span>volumetric<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">defaultSize</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> depth<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> <span class="token punctuation">.</span>meters<span class="token punctuation">)</span></code></pre>
+<p>This sets the <code>windowStyle</code> to <code>volumetric</code> and gives it a size of <code>1m</code> cubed. It also displays a <code>ModelView</code>. We should add that.</p>
+<h2 id="set-up-modelview" tabindex="-1">Set up ModelView <a class="header-anchor" href="#set-up-modelview">#</a></h2>
+<p>Based on the code <a href="/blender-file-in-vision/">from this post</a>, I set up a standalone <code>ModelView</code>:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">import</span> <span class="token class-name">SwiftUI</span>
+<span class="token keyword">import</span> <span class="token class-name">RealityKit</span>
+<span class="token keyword">import</span> <span class="token class-name">RealityKitContent</span>
+
+<span class="token keyword">struct</span> <span class="token class-name">ModelView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
         <span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
             <span class="token keyword">if</span> <span class="token keyword">let</span> animatedModel <span class="token operator">=</span> <span class="token function">loadEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>animatedModel<span class="token punctuation">)</span>
-                animatedModel<span class="token punctuation">.</span>isEnabled <span class="token operator">=</span> <span class="token boolean">false</span>
+                animatedModel<span class="token punctuation">.</span>isEnabled <span class="token operator">=</span> <span class="token boolean">true</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span> update<span class="token punctuation">:</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
             <span class="token keyword">guard</span> <span class="token keyword">let</span> character <span class="token operator">=</span> content<span class="token punctuation">.</span>entities<span class="token punctuation">.</span>first <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">}</span>
@@ -752,24 +767,56 @@ footer {
     <span class="token punctuation">}</span>
 
     <span class="token keyword">private</span> <span class="token keyword">func</span> <span class="token function-definition function">loadEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Entity</span><span class="token operator">?</span> <span class="token punctuation">{</span>
-      <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">Entity</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Scene"</span></span><span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> realityKitContentBundle<span class="token punctuation">)</span>
+        <span class="token keyword">let</span> entity <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">Entity</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Scene"</span></span><span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> realityKitContentBundle<span class="token punctuation">)</span>
+
+        entity<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">setScale</span><span class="token punctuation">(</span><span class="token function">SIMD3</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> relativeTo<span class="token punctuation">:</span> <span class="token nil constant">nil</span><span class="token punctuation">)</span>
+        entity<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">setPosition</span><span class="token punctuation">(</span><span class="token function">SIMD3</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">0.25</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> relativeTo<span class="token punctuation">:</span> <span class="token nil constant">nil</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> entity
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<p>This code starts by loading the <code>Scene</code> model entity using the <code>loadEntity</code> function. It sets <code>isEnabled</code> to false so that it won't show the default pose without animation applied. It then uses <code>update</code> to apply the animation from the model file.</p>
-<p>You may find though that the size still isn't right. In that case you can add some adjustments to the model in the <code>loadEntity</code> method.</p>
-<h3 id="scaling-in-code" tabindex="-1">Scaling in code <a class="header-anchor" href="#scaling-in-code">#</a></h3>
-<p>Rather than rely on sizing the model in Reality Composer Pro. In <code>loadEntity</code>, you can use <code>setScale</code> to adjust the output size:</p>
-<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">private</span> <span class="token keyword">func</span> <span class="token function-definition function">loadEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Entity</span><span class="token operator">?</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> entity <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">Entity</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Scene"</span></span><span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> realityKitContentBundle<span class="token punctuation">)</span>
+<p>A couple of small changes here, in the <code>loadEntity</code> function. I adjusted <code>setScale</code> to <code>0.1</code> to make the model a big bigger. I also added <code>setPosition</code> with a <code>y</code> value of <code>-0.25</code> to move the model down a little. Play around with values that suit your setup.</p>
+<h2 id="launch-in-simulator" tabindex="-1">Launch in simulator <a class="header-anchor" href="#launch-in-simulator">#</a></h2>
+<p>When you launch the app, you should now see a small window with &quot;Do a pushup!&quot; which then opens a second window, with your 3D model. You can drag the handles to position and move the object.</p>
+<h2 id="shadow" tabindex="-1">Shadow <a class="header-anchor" href="#shadow">#</a></h2>
+<p>Thanks to <em>hhjgjhghjghjghjg</em> <a href="https://forums.developer.apple.com/forums/thread/733918">for this suggestion</a> to extend <code>Entity</code> and introduce a <code>enumerateHierarchy</code> method that can be used to walk through all the components of the <code>usdz</code> source. The extension looks like this:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">import</span> <span class="token class-name">RealityKit</span>
 
-    entity<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">setScale</span><span class="token punctuation">(</span><span class="token function">SIMD3</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token number">0.05</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">0.05</span><span class="token punctuation">,</span> z<span class="token punctuation">:</span> <span class="token number">0.05</span><span class="token punctuation">)</span><span class="token punctuation">,</span> relativeTo<span class="token punctuation">:</span> <span class="token nil constant">nil</span><span class="token punctuation">)</span>
+<span class="token keyword">extension</span> <span class="token class-name">Entity</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Executes a closure for each of the entity's child and descendant</span>
+  <span class="token comment">// entities, as well as for the entity itself.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// Set `stop` to true in the closure to abort further processing of the child entity subtree.</span>
+  <span class="token keyword">func</span> <span class="token function-definition function">enumerateHierarchy</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> body<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token class-name">Entity</span><span class="token punctuation">,</span> <span class="token class-name">UnsafeMutablePointer</span><span class="token operator">&lt;</span><span class="token class-name">Bool</span><span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> stop <span class="token operator">=</span> <span class="token boolean">false</span>
 
-    <span class="token keyword">return</span> entity
+      <span class="token keyword">func</span> <span class="token function-definition function">enumerate</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> body<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token class-name">Entity</span><span class="token punctuation">,</span> <span class="token class-name">UnsafeMutablePointer</span><span class="token operator">&lt;</span><span class="token class-name">Bool</span><span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">guard</span> <span class="token operator">!</span>stop <span class="token keyword">else</span> <span class="token punctuation">{</span>
+              <span class="token keyword">return</span>
+          <span class="token punctuation">}</span>
+
+          <span class="token function">body</span><span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>stop<span class="token punctuation">)</span>
+
+          <span class="token keyword">for</span> child <span class="token keyword">in</span> children <span class="token punctuation">{</span>
+              <span class="token keyword">guard</span> <span class="token operator">!</span>stop <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                  <span class="token keyword">break</span>
+              <span class="token punctuation">}</span>
+              child<span class="token punctuation">.</span><span class="token function">enumerateHierarchy</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token function">enumerate</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<p>You should now have an animated model in your Vision app.</p>
-<p><picture><source type="image/avif" srcset="/img/Ix6VDSaiz2-1614.avif 1614w"><source type="image/webp" srcset="/img/Ix6VDSaiz2-1614.webp 1614w"><img alt="Finished animated model" loading="lazy" decoding="async" src="/img/Ix6VDSaiz2-1614.png" width="1614" height="1150"></picture></p>
+<p>It's then applied to the entity like so:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift">entity<span class="token operator">?</span><span class="token punctuation">.</span>enumerateHierarchy <span class="token punctuation">{</span> entity<span class="token punctuation">,</span> stop <span class="token keyword">in</span>
+  <span class="token keyword">if</span> entity <span class="token keyword">is</span> <span class="token class-name">ModelEntity</span> <span class="token punctuation">{</span>
+      entity<span class="token punctuation">.</span>components<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token class-name">GroundingShadowComponent</span><span class="token punctuation">(</span>castsShadow<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We should now have a pair of WindowGroups that load then the app loads, with one being a <code>.plain</code> window which then triggers the appearance of the <code>model</code> WindowGroup.</p>
 
-<ul class="links-nextprev"><li>Previous: <a href="/returns/">Are people returning Vision Pro?</a></li><li>Next: <a href="/volumetric-window-group/">Showing volumetric window group</a></li>
+<ul class="links-nextprev"><li>Previous: <a href="/blender-file-in-vision/">Animated Blender entity in RealityView</a></li>
 </ul>
 </div>
 
@@ -805,6 +852,6 @@ footer {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /blender-file-in-vision/ -->
+		<!-- Current page: /volumetric-window-group/ -->
 	</body>
 </html>
