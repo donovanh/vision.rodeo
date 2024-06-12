@@ -18,9 +18,6 @@ module.exports = function (eleventyConfig) {
 		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css",
 	});
 
-	// Copy across zip files
-	eleventyConfig.addPassthroughCopy({ "**/*.zip": "files" });
-
 	// Run Eleventy when these files change:
 	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
 
