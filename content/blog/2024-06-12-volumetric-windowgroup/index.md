@@ -1,5 +1,5 @@
 ---
-title: Volumetric window groups
+title: Volumetric windows
 permalink: /volumetric-window-group/
 description: Showing an animation in a volumetric window
 date: 2024-06-12

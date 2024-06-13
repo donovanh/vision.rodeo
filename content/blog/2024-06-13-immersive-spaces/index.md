@@ -130,3 +130,19 @@ struct ContentView: View {
 ```
 
 With that we can toggle the immersive space, and display content within it.
+
+## Creating an immersive-first app
+
+If you don't want to make use of the toggle to switch into immersive mode, you can update the app to be in immersive mode by default. In `info.plist`, update the following:
+
+```
+Preferred Default Scene Session Role: Window Application Session Role
+```
+
+Change it to:
+
+```
+Preferred Default Scene Session Role: Immersive Space Application Session Role
+```
+
+That should start the app in immersive space.
