@@ -14,6 +14,11 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
 
+		<meta property="og:title" content="{{ title or metadata.title }}" />
+		<meta property="og:type" content="article" />
+		<meta property="og:description" content="{{ description or metadata.description }}">
+		<meta property="og:url" content="{{ url }}" />
+
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
 		<meta name="generator" content="{{ eleventy.generator }}">
 
