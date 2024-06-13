@@ -798,8 +798,16 @@ footer {
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>With that we can toggle the immersive space, and display content within it.</p>
+<h2 id="creating-an-immersive-first-app" tabindex="-1">Creating an immersive-first app <a class="header-anchor" href="#creating-an-immersive-first-app">#</a></h2>
+<p>If you don't want to make use of the toggle to switch into immersive mode, you can update the app to be in immersive mode by default. In <code>info.plist</code>, update the following:</p>
+<pre><code>Preferred Default Scene Session Role: Window Application Session Role
+</code></pre>
+<p>Change it to:</p>
+<pre><code>Preferred Default Scene Session Role: Immersive Space Application Session Role
+</code></pre>
+<p>That should start the app in immersive space.</p>
 
-<ul class="links-nextprev"><li>Previous: <a href="/volumetric-window-group/">Volumetric window groups</a></li>
+<ul class="links-nextprev"><li>Previous: <a href="/volumetric-window-group/">Volumetric windows</a></li>
 </ul>
 </div>
 

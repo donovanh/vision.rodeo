@@ -108,11 +108,19 @@
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;With that we can toggle the immersive space, and display content within it.&lt;/p&gt;
+&lt;h2 id=&quot;creating-an-immersive-first-app&quot; tabindex=&quot;-1&quot;&gt;Creating an immersive-first app &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/immersive-spaces/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you don&#39;t want to make use of the toggle to switch into immersive mode, you can update the app to be in immersive mode by default. In &lt;code&gt;info.plist&lt;/code&gt;, update the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Preferred Default Scene Session Role: Window Application Session Role
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Change it to:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Preferred Default Scene Session Role: Immersive Space Application Session Role
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That should start the app in immersive space.&lt;/p&gt;
 </content>
 	</entry>
 	
 	<entry>
-		<title>Volumetric window groups</title>
+		<title>Volumetric windows</title>
 		<link href="https://vision.rodeo/volumetric-window-group/"/>
 		<updated>2024-06-12T00:00:00Z</updated>
 		<id>https://vision.rodeo/volumetric-window-group/</id>
