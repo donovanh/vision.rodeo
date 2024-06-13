@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Donovan’s Vision Blog - Donovan's Vision Blog</title>
-		<meta name="description" content="Build great apps for Apple Vision Pro">
+		<title>Text &amp; Materials - Donovan's Vision Blog</title>
+		<meta name="description" content="Get used to the basic materials used in 2D visionOS apps">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -12,7 +12,175 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
 		<meta name="generator" content="Eleventy v2.0.1">
-		<style>* { box-sizing: border-box; }
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
@@ -506,129 +674,6 @@ footer {
 .signup-frame {
 	max-width: 375px;
 	margin: 0 auto;
-}
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #8292a2;
-}
-
-.token.punctuation {
-	color: #f8f8f2;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #a6e22e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
-}
-
-.token.keyword {
-	color: #66d9ef;
-}
-
-.token.regex,
-.token.important {
-	color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
 }</style>
 		<script src="/js/on-scroll.js"></script>
 	</head>
@@ -636,71 +681,88 @@ pre[class*="language-"] {
 		<div class="bodyBackground"></div>
 		<div class="bodyBGCover" id="overlay"></div>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
-			<div class="header-container home">
-				<header class="panel " id="header">
-					<a href="/" class="home-link">
-						<span class="wordart-wrapper">
-							<span class="wordart">Donovan’s Vision Blog</span>
-						</span>
-					</a>
-					<nav class="panel">
-						<h2 class="visually-hidden">Top level navigation menu</h2>
-						<ul class="nav">
-							<li class="nav-item"><a href="/">Home</a></li>
-							<li class="nav-item"><a href="/blog/" aria-current="page">All Posts</a></li>
-							<li class="nav-item"><a href="/links/">Cool Links</a></li>
-						</ul>
-					</nav>
-				</header>
-			</div>
+			<header class="internal">
+				<a href="/" class="home-link">
+					<span class="wordart-wrapper">
+						<span class="wordart">Donovan’s Vision Blog</span>
+					</span>
+				</a>
+				<nav class="panel">
+					<h2 class="visually-hidden">Top level navigation menu</h2>
+					<ul class="nav">
+						<li class="nav-item"><a href="/">Home</a></li>
+						<li class="nav-item"><a href="/blog/">All Posts</a></li>
+						<li class="nav-item"><a href="/links/">Cool Links</a></li>
+					</ul>
+				</nav>
+			</header>
 		<main id="skip" class="">
 			
 <div class="content panel padded">
-  <h1>All Posts</h1>
+	<h1>Text &amp; Materials</h1>
 
-
-<ul reversed class="nested postlist">
-
-	<li class="postlist-item">
-		<a href="/immersive-spaces/" class="postlist-link">Immersive Spaces</a>
-		<time class="postlist-date" datetime="2024-06-13">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/volumetric-window-group/" class="postlist-link">Volumetric window groups</a>
-		<time class="postlist-date" datetime="2024-06-12">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/blender-file-in-vision/" class="postlist-link">Animated Blender entity in RealityView</a>
-		<time class="postlist-date" datetime="2024-06-10">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/returns/" class="postlist-link">Are people returning Vision Pro?</a>
-		<time class="postlist-date" datetime="2024-02-16">February 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/app-roundup-1/" class="postlist-link">Launch Apps</a>
-		<time class="postlist-date" datetime="2024-01-29">January 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/vision/" class="postlist-link">Apple’s Vision</a>
-		<time class="postlist-date" datetime="2024-01-28">January 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/hello/" class="postlist-link">hello</a>
-		<time class="postlist-date" datetime="2024-01-26">January 2024</time>
-	</li>
-
+<ul class="post-metadata">
+	<li><time datetime="2024-01-30">30 January 2024</time></li>
+	<li><a href="/tags/apps/" class="post-tag">apps</a></li>
 </ul>
 
+<h1 id="text-and-materials" tabindex="-1">Text and materials <a class="header-anchor" href="#text-and-materials">#</a></h1>
+<p>Exploration of how to effectively make use of text and materials in visionOS and how it differs from iOS etc.</p>
+<p>Dig into HIG a bit also.</p>
+<p>In SwiftUI, the Color values we give to views are part of a bigger type called ShapeStyle. This includes not only color but materials too. In the Vision Pro world, our apps look better when we use materials.</p>
+<p>Optimise / combine images before adding.</p>
+<p>Note that the way to display text only is by setting windowStyle <code>.plain</code> on the Windowgroup.</p>
+<h2 id="text-sizes" tabindex="-1">Text sizes <a class="header-anchor" href="#text-sizes">#</a></h2>
+<pre><code>VStack {
+    Text(&quot;Extra Large Title&quot;)
+        .font(.extraLargeTitle)
+    Text(&quot;Extra Large Title 2&quot;)
+        .font(.extraLargeTitle2)
+    Text(&quot;Title&quot;)
+        .font(.title)
+    Text(&quot;Caption&quot;)
+        .font(.caption)
+}
+</code></pre>
+<p>Mention what each size represents in real-world sizes. How it looks small on simulator but in reality it is much bigger because <reasons>.</p>
+<h3 id="going-bigger" tabindex="-1">Going bigger <a class="header-anchor" href="#going-bigger">#</a></h3>
+<pre><code>VStack(alignment: .leading) {
+    Text(&quot;Really Large text in Primary&quot;)
+        .font(.system(size: 128).bold())
+        .foregroundColor(.primary)
+    Text(&quot;Some title-sized text in secondary mode.&quot;)
+        .font(.title)
+        .foregroundColor(.secondary)
+}
+</code></pre>
+<p>Then apply modifiers to the VStack to see how text shows:</p>
+<h2 id="colours-and-materials" tabindex="-1">Colours and materials <a class="header-anchor" href="#colours-and-materials">#</a></h2>
+<p>Primary</p>
+<pre><code>.foregroundColor(.primary)
+</code></pre>
+<p>Images: Primary text day / night (combine)</p>
+<p>Secondary</p>
+<pre><code>.foregroundColor(.secondary)
+</code></pre>
+<p>Images: Secondary text day / night (combine)</p>
+<p>Specific colours:</p>
+<pre><code>.foregroundColor(.red) // .green or .blue
+</code></pre>
+<p>Mention how using solid color may be important for branding etc and how bright colours might look best against solid backgrounds such as when you choose to use a white BG. It's important to think about eye comfort.</p>
+<pre><code>.foregroundColor(.green.opacity(0.75))
+</code></pre>
+<p>Mention how using solid colour on icons can look good, example Things: https://www.macrumors.com/2024/02/02/things-3-to-do-app-apple-vision-pro/</p>
+<h3 id="using-tints-and-opacity" tabindex="-1">Using tints and opacity <a class="header-anchor" href="#using-tints-and-opacity">#</a></h3>
+<h2 id="text-hover-effects" tabindex="-1">Text hover effects <a class="header-anchor" href="#text-hover-effects">#</a></h2>
+<h2 id="styling-text-with-markdown" tabindex="-1">Styling text with markdown <a class="header-anchor" href="#styling-text-with-markdown">#</a></h2>
+<h2 id="considering-fonts" tabindex="-1">Considering fonts <a class="header-anchor" href="#considering-fonts">#</a></h2>
+<h2 id="working-with-backgrounds" tabindex="-1">Working with backgrounds <a class="header-anchor" href="#working-with-backgrounds">#</a></h2>
+<p>To be explored in more depth, but mention the material options visionOS encourages.</p>
+<p>Check official docs and training notes for other angles. Then publish!</p>
 
+<ul class="links-nextprev"><li>Previous: <a href="/app-roundup-1/">Launch Apps</a></li><li>Next: <a href="/returns/">Are people returning Vision Pro?</a></li>
+</ul>
 </div>
-
 
 		</main>
 
@@ -724,7 +786,7 @@ pre[class*="language-"] {
 					<h2 class="visually-hidden">Footer navigation menu</h2>
 					<ul class="nav">
 						<li class="nav-item"><a href="/">Home</a></li>
-						<li class="nav-item"><a href="/blog/" aria-current="page">All Posts</a></li>
+						<li class="nav-item"><a href="/blog/">All Posts</a></li>
 						<li class="nav-item"><a href="/links/">Cool Links</a></li>
 					</ul>
 				</nav>
@@ -734,6 +796,6 @@ pre[class*="language-"] {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /blog/ -->
+		<!-- Current page: /text-materials/ -->
 	</body>
 </html>
