@@ -36,9 +36,7 @@ struct ContentView: View {
             .padding(50)
             .glassBackgroundEffect()
             .onAppear {
-                Task {
-                    openWindow(id: "model")
-                }
+                openWindow(id: "model")
             }
     }
 }
