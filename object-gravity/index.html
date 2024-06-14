@@ -717,10 +717,7 @@ footer {
 <h2 id="finished-result" tabindex="-1">Finished result <a class="header-anchor" href="#finished-result">#</a></h2>
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/pfxjclk" data-context="false" ><a href="//imgur.com/a/pfxjclk"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 <p>Starting with a simple reflective cube this time, adjusting from the sphere in <a href="/drag-gesture/">the drag example</a>. I've also adjusted the scale and position to make it easier to see. In the video above, it's being shown in the &quot;museum&quot; environment as it has a good amount of floor space. This demo won't account for furniture.</p>
-<pre class="language-swift" tabindex="0"><code class="language-swift">
-<span class="token attribute atrule">@State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> cube <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
     <span class="token comment">// Cube entity</span>
     cube <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>
         mesh<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">generateBox</span><span class="token punctuation">(</span>size<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
