@@ -16,9 +16,6 @@ Following on from [adding a drag gesture](/drag-gesture/), we can make it respon
 Starting with a simple reflective cube this time, adjusting from the sphere in [the drag example](/drag-gesture/). I've also adjusted the scale and position to make it easier to see. In the video above, it's being shown in the "museum" environment as it has a good amount of floor space. This demo won't account for furniture.
 
 ```swift
-
-@State private var cube = ModelEntity()
-
 RealityView { content in
     // Cube entity
     cube = ModelEntity(
