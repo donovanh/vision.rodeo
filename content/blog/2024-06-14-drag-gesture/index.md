@@ -2,7 +2,7 @@
 title: Dragging objects
 permalink: /drag-gesture/
 description: Using DragGesture to drag a 3D object
-date: 2024-06-13
+date: 2024-06-14
 tags:
   - dev
 ---

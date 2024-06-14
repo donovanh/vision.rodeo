@@ -146,3 +146,11 @@ Preferred Default Scene Session Role: Immersive Space Application Session Role
 ```
 
 That should start the app in immersive space.
+
+Alternately, you can change the `.onChange(of: showImmersiveSpace)` block to instead run a `task` on load, replacing the `onChange` block to:
+
+```swift
+.task {
+    await openImmersiveSpace(id: "ImmersiveSpace")
+}
+```
