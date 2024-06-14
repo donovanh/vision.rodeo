@@ -813,6 +813,10 @@ footer {
 <pre><code>Preferred Default Scene Session Role: Immersive Space Application Session Role
 </code></pre>
 <p>That should start the app in immersive space.</p>
+<p>Alternately, you can change the <code>.onChange(of: showImmersiveSpace)</code> block to instead run a <code>task</code> on load, replacing the <code>onChange</code> block to:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token punctuation">.</span>task <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token function">openImmersiveSpace</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"ImmersiveSpace"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
 
 <ul class="links-nextprev"><li>Previous: <a href="/volumetric-window-group/">Volumetric windows</a></li><li>Next: <a href="/drag-gesture/">Dragging objects</a></li>
 </ul>
