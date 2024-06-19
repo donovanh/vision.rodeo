@@ -1,5 +1,5 @@
 ---
-title: Immersive Spaces
+title: Immersive spaces
 permalink: /immersive-spaces/
 description: What an immersive space is, and when you might want to use it
 date: 2024-06-13
