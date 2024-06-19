@@ -109,14 +109,11 @@ a[href]:active {
 }
 
 main {
-	padding: 1rem;
+	padding: 1rem 0;
 }
 /* main.animated {
 	animation: slide-up 0.5s cubic-bezier(0, 1, 0.3, 1);
 } */
-main :first-child {
-	margin-top: 0;
-}
 
 .links-nextprev {
 	list-style: none;
