@@ -17,6 +17,8 @@ In my research, I found an Apple article on [transforming realitykit entities wi
 
 In [the downloaded code](https://docs-assets.developer.apple.com/published/0d923bca7c76/TransformingRealityKitEntitiesUsingGestures.zip) the `RealityKitContent` includes `Components` and `Extensions` folders with code for handling gestures. I copied these across into my project's RealityKitContent folder.
 
+{% image "./files/copied-files.png", "Copied Components and Extensions folders" %}
+
 These have been set up to allow for customisation in how we apply gestures. The first thing though is install the extensions:
 
 ```swift
