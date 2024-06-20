@@ -203,3 +203,26 @@ struct ImmersiveView: View {
 ```
 
 This view starts by also setting up an `@ObservedObject` `viewModel`, so we can display the `viewModel.objects` array. The `addEntities` method adds them to the scene, and the `update` method is called whenever the viewModel changes, adding any newly created shapes to the `content` of the scene.
+
+### Adding a drag gesture
+
+You can set the shapes to respond to gestures as before, but instead of having the gesture targeted to one specific entity, apply `targetedToAnyEntity`:
+
+```swift
+RealityView { content in
+    let floor = viewModel.generateFloor()
+    content.add(floor)
+    addEntities(content)
+} update: { content in
+    addEntities(content)
+}
+.gesture(
+    DragGesture()
+    .targetedToAnyEntity()
+    .onChanged { value in
+        value.entity.position = value.convert(value.location3D, from: .local, to: value.entity.parent!)
+    }
+)
+```
+
+This will give the `value` that itself contains the entity being selected. From there we can then apply the position.
