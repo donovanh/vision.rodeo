@@ -31,6 +31,8 @@
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;installGestures&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The &lt;code&gt;installGestures&lt;/code&gt; method sets up the extensions.&lt;/p&gt;
+&lt;h2 id=&quot;using-with-reality-composer-pro&quot; tabindex=&quot;-1&quot;&gt;Using with Reality Composer Pro &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/advanced-gestures/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As the above files are added to the Reality Composer Pro scene, they become available as settings to allow interaction on objects and scenes defined there. However I&#39;d like to try to apply the code to the objects created dynamically within my app.&lt;/p&gt;
 &lt;h2 id=&quot;applying-to-entities&quot; tabindex=&quot;-1&quot;&gt;Applying to entities &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/advanced-gestures/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In the shared view model (&lt;code&gt;SharedViewModel&lt;/code&gt;), I added the &lt;code&gt;components&lt;/code&gt; to handle gestures like so:&lt;/p&gt;
 &lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; jsonData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&quot;&quot;
