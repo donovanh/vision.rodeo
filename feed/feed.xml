@@ -4,12 +4,55 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-06-19T00:00:00Z</updated>
+	<updated>2024-06-20T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>Advanced gestures</title>
+		<link href="https://vision.rodeo/advanced-gestures/"/>
+		<updated>2024-06-20T00:00:00Z</updated>
+		<id>https://vision.rodeo/advanced-gestures/</id>
+		<content type="html">&lt;p&gt;After &lt;a href=&quot;https://vision.rodeo/multiple-objects/&quot;&gt;creating multiple 3D objects in a Vision OS scene&lt;/a&gt;, I thought it would be good to go further than the simple drag gesture mentioned there.&lt;/p&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/5HG8G7i&quot; data-context=&quot;false&quot;&gt;&lt;a href=&quot;https://imgur.com/a/5HG8G7i&quot;&gt;&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;p&gt;In my research, I found an Apple article on &lt;a href=&quot;https://developer.apple.com/documentation/realitykit/transforming-realitykit-entities-with-gestures&quot;&gt;transforming realitykit entities with gestures&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;installing-components-and-extensions&quot; tabindex=&quot;-1&quot;&gt;Installing Components and Extensions &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/advanced-gestures/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&quot;https://docs-assets.developer.apple.com/published/0d923bca7c76/TransformingRealityKitEntitiesUsingGestures.zip&quot;&gt;the downloaded code&lt;/a&gt; the &lt;code&gt;RealityKitContent&lt;/code&gt; includes &lt;code&gt;Components&lt;/code&gt; and &lt;code&gt;Extensions&lt;/code&gt; folders with code for handling gestures. I copied these across into my project&#39;s RealityKitContent folder.&lt;/p&gt;
+&lt;p&gt;These have been set up to allow for customisation in how we apply gestures. The first thing though is install the extensions:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;RealityView&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; content &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; floor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; viewModel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;generateFloor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;floor&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;addEntities&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; update&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; content &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;addEntities&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;installGestures&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;installGestures&lt;/code&gt; method sets up the extensions.&lt;/p&gt;
+&lt;h2 id=&quot;applying-to-entities&quot; tabindex=&quot;-1&quot;&gt;Applying to entities &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/advanced-gestures/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In the shared view model (&lt;code&gt;SharedViewModel&lt;/code&gt;), I added the &lt;code&gt;components&lt;/code&gt; to handle gestures like so:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; jsonData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&quot;&quot;
+{
+    &quot;canDrag&quot;: true,
+    &quot;pivotOnDrag&quot;: true,
+    &quot;preserveOrientationOnPivotDrag&quot;: true,
+    &quot;canScale&quot;: true,
+    &quot;canRotate&quot;: true
+}
+&quot;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;using&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;utf8&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; decoder &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JSONDecoder&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; gestureComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; decoder&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;GestureComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; from&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; jsonData&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    shape&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;components&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;gestureComponent&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Failed to decode JSON: &lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;&#92;(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This sets up the configuration, in which you can set to &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; the various options, then encodes the config. It then uses a JSON decoder with the &lt;code&gt;GestureComponent.self&lt;/code&gt; type to create a &lt;code&gt;gestureComponent&lt;/code&gt;, all configured with our interaction settings. We then apply this to the &lt;code&gt;shape&lt;/code&gt; with &lt;code&gt;shape.components.set(gestureComponent)&lt;/code&gt;.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Multiple objects</title>
@@ -194,7 +237,6 @@
 		<updated>2024-06-15T00:00:00Z</updated>
 		<id>https://vision.rodeo/object-gravity/</id>
 		<content type="html">&lt;p&gt;Following on from &lt;a href=&quot;https://vision.rodeo/drag-gesture/&quot;&gt;adding a drag gesture&lt;/a&gt;, we can make it respond to gravity using a &lt;a href=&quot;https://developer.apple.com/documentation/realitykit/physicsbodycomponent&quot;&gt;PhysicsBodyComponent&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;finished-result&quot; tabindex=&quot;-1&quot;&gt;Finished result &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/object-gravity/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/pfxjclk&quot; data-context=&quot;false&quot;&gt;&lt;a href=&quot;https://imgur.com/a/pfxjclk&quot;&gt;&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 &lt;p&gt;Starting with a simple reflective cube this time, adjusting from the sphere in &lt;a href=&quot;https://vision.rodeo/drag-gesture/&quot;&gt;the drag example&lt;/a&gt;. I&#39;ve also adjusted the scale and position to make it easier to see. In the video above, it&#39;s being shown in the &amp;quot;museum&amp;quot; environment as it has a good amount of floor space. This demo won&#39;t account for furniture.&lt;/p&gt;
 &lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;RealityView&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; content &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
@@ -312,8 +354,6 @@ content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 		<updated>2024-06-14T00:00:00Z</updated>
 		<id>https://vision.rodeo/drag-gesture/</id>
 		<content type="html">&lt;p&gt;With the 3D orb &lt;a href=&quot;https://vision.rodeo/immersive-spaces/&quot;&gt;created in this post&lt;/a&gt;, we can enable dragging with gestures.&lt;/p&gt;
-&lt;h2 id=&quot;finished-result&quot; tabindex=&quot;-1&quot;&gt;Finished result &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/drag-gesture/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;We should have an orb we can drag around:&lt;/p&gt;
 &lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/jBKlM3C&quot; data-context=&quot;false&quot;&gt;&lt;a href=&quot;https://imgur.com/a/jBKlM3C&quot;&gt;&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 &lt;h2 id=&quot;starting-code&quot; tabindex=&quot;-1&quot;&gt;Starting code &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/drag-gesture/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We begin with some code that sets up a &lt;code&gt;RealityView&lt;/code&gt; and creates a shiny metallic orb. It sets the scale and position so that it&#39;s in front of us.&lt;/p&gt;
@@ -516,7 +556,6 @@ orb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
 		<updated>2024-06-12T00:00:00Z</updated>
 		<id>https://vision.rodeo/volumetric-window-group/</id>
 		<content type="html">&lt;p&gt;Now that we can &lt;a href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;import a Blender file to RealityKit&lt;/a&gt;, let&#39;s make it look fancy in it&#39;s own &lt;em&gt;volumetric window&lt;/em&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;finished-example&quot; tabindex=&quot;-1&quot;&gt;Finished example &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/volumetric-window-group/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/02Lb3Wk&quot; data-context=&quot;false&quot;&gt;&lt;a href=&quot;https://imgur.com/a/02Lb3Wk&quot;&gt;Do a pushup! (Vision Pro demo)&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 &lt;h2 id=&quot;initial-plain-windowgroup&quot; tabindex=&quot;-1&quot;&gt;Initial plain WindowGroup &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/volumetric-window-group/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In your app&#39;s root view, apply the &lt;code&gt;plain&lt;/code&gt; windowStyle to the main WindowGroup:&lt;/p&gt;
