@@ -9,10 +9,6 @@ tags:
 
 With the 3D orb [created in this post](https://vision.rodeo/immersive-spaces/), we can enable dragging with gestures.
 
-## Finished result
-
-We should have an orb we can drag around:
-
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/jBKlM3C" data-context="false" ><a href="//imgur.com/a/jBKlM3C"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## Starting code

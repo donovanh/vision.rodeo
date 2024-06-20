@@ -9,8 +9,6 @@ tags:
 
 Following on from [adding a drag gesture](/drag-gesture/), we can make it respond to gravity using a [PhysicsBodyComponent](https://developer.apple.com/documentation/realitykit/physicsbodycomponent).
 
-## Finished result
-
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/pfxjclk" data-context="false" ><a href="//imgur.com/a/pfxjclk"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 Starting with a simple reflective cube this time, adjusting from the sphere in [the drag example](/drag-gesture/). I've also adjusted the scale and position to make it easier to see. In the video above, it's being shown in the "museum" environment as it has a good amount of floor space. This demo won't account for furniture.
