@@ -32,6 +32,10 @@ RealityView { content in
 
 The `installGestures` method sets up the extensions.
 
+## Using with Reality Composer Pro
+
+As the above files are added to the Reality Composer Pro scene, they become available as settings to allow interaction on objects and scenes defined there. However I'd like to try to apply the code to the objects created dynamically within my app.
+
 ## Applying to entities
 
 In the shared view model (`SharedViewModel`), I added the `components` to handle gestures like so:
