@@ -4,12 +4,30 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-06-20T00:00:00Z</updated>
+	<updated>2024-06-25T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>Simple hover effect</title>
+		<link href="https://vision.rodeo/hover-effect/"/>
+		<updated>2024-06-25T00:00:00Z</updated>
+		<id>https://vision.rodeo/hover-effect/</id>
+		<content type="html">&lt;p&gt;Following from adding &lt;a href=&quot;https://vision.rodeo/advanced-gestures/&quot;&gt;advanced gestures&lt;/a&gt;, we can make the interaction easier by adding a hover effect.&lt;/p&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/jAPaQ3T&quot; data-context=&quot;false&quot;&gt;
+  &lt;a href=&quot;https://imgur.com/a/jAPaQ3T&quot;&gt;Simple hover effect&lt;/a&gt;
+  &lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;
+&lt;/script&gt;
+&lt;h2 id=&quot;adding-hovereffectcomponent&quot; tabindex=&quot;-1&quot;&gt;Adding HoverEffectComponent() &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/hover-effect/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In the shared view model, when adding &lt;code&gt;components&lt;/code&gt;, add the &lt;a href=&quot;https://developer.apple.com/documentation/realitykit/hovereffectcomponent&quot;&gt;HoverEffectComponent&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;shape&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;components&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;HoverEffectComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As long as the entities have an &lt;a href=&quot;https://developer.apple.com/documentation/realitykit/inputtargetcomponent&quot;&gt;InputTargetComponent&lt;/a&gt; and &lt;a href=&quot;https://developer.apple.com/documentation/realitykit/collisioncomponent&quot;&gt;CollisionComponent&lt;/a&gt; they will receive hover effects. Those were added in previous posts.&lt;/p&gt;
+&lt;p&gt;And that&#39;s it! The &lt;a href=&quot;https://developer.apple.com/documentation/realitykit/hovereffectcomponent&quot;&gt;documentation&lt;/a&gt; suggests being able to customise the effect but I&#39;ve not managed to get the examples working yet. I&#39;ll update here if I do so.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Advanced gestures</title>

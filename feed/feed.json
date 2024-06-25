@@ -11,6 +11,14 @@
 	},
 	"items": [
 		{
+			"id": "https://vision.rodeo/hover-effect/",
+			"url": "https://vision.rodeo/hover-effect/",
+			"title": "Simple hover effect",
+			"content_html": "<p>Following from adding <a href=\"https://vision.rodeo/advanced-gestures/\">advanced gestures</a>, we can make the interaction easier by adding a hover effect.</p>\n<blockquote class=\"imgur-embed-pub\" lang=\"en\" data-id=\"a/jAPaQ3T\" data-context=\"false\">\n  <a href=\"https://imgur.com/a/jAPaQ3T\">Simple hover effect</a>\n  </blockquote><script async=\"\" src=\"https://s.imgur.com/min/embed.js\" charset=\"utf-8\">\n</script>\n<h2 id=\"adding-hovereffectcomponent\" tabindex=\"-1\">Adding HoverEffectComponent() <a class=\"header-anchor\" href=\"https://vision.rodeo/hover-effect/\">#</a></h2>\n<p>In the shared view model, when adding <code>components</code>, add the <a href=\"https://developer.apple.com/documentation/realitykit/hovereffectcomponent\">HoverEffectComponent</a>:</p>\n<pre class=\"language-swift\" tabindex=\"0\"><code class=\"language-swift\">shape<span class=\"token punctuation\">.</span>components<span class=\"token punctuation\">.</span><span class=\"token keyword\">set</span><span class=\"token punctuation\">(</span><span class=\"token class-name\">HoverEffectComponent</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span></code></pre>\n<p>As long as the entities have an <a href=\"https://developer.apple.com/documentation/realitykit/inputtargetcomponent\">InputTargetComponent</a> and <a href=\"https://developer.apple.com/documentation/realitykit/collisioncomponent\">CollisionComponent</a> they will receive hover effects. Those were added in previous posts.</p>\n<p>And that's it! The <a href=\"https://developer.apple.com/documentation/realitykit/hovereffectcomponent\">documentation</a> suggests being able to customise the effect but I've not managed to get the examples working yet. I'll update here if I do so.</p>\n",
+			"date_published": "2024-06-25T00:00:00Z"
+		}
+		,
+		{
 			"id": "https://vision.rodeo/advanced-gestures/",
 			"url": "https://vision.rodeo/advanced-gestures/",
 			"title": "Advanced gestures",

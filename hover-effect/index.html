@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Advanced gestures - Donovan's Vision Blog</title>
-		<meta name="description" content="Apply dragging, rotating and scaling to multiple objects">
+		<title>Simple hover effect - Donovan's Vision Blog</title>
+		<meta name="description" content="Applying a hover to 3D objects in RealityKit">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -12,9 +12,9 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
 
-		<meta property="og:title" content="Advanced gestures" />
+		<meta property="og:title" content="Simple hover effect" />
 		<meta property="og:type" content="article" />
-		<meta property="og:description" content="Apply dragging, rotating and scaling to multiple objects">
+		<meta property="og:description" content="Applying a hover to 3D objects in RealityKit">
 		<meta property="og:url" content="" />
 		<meta name="generator" content="Eleventy v2.0.1">
 		<style>/**
@@ -703,53 +703,25 @@ footer {
 		<main id="skip" class="">
 			
 <div class="content panel padded">
-	<h1>Advanced gestures</h1>
+	<h1>Simple hover effect</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2024-06-20">20 June 2024</time></li>
+	<li><time datetime="2024-06-25">25 June 2024</time></li>
 	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
 
-<p>After <a href="https://vision.rodeo/multiple-objects/">creating multiple 3D objects in a Vision OS scene</a>, I thought it would be good to go further than the simple drag gesture mentioned there.</p>
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/5HG8G7i" data-context="false" ><a href="//imgur.com/a/5HG8G7i"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-<p>In my research, I found an Apple article on <a href="https://developer.apple.com/documentation/realitykit/transforming-realitykit-entities-with-gestures">transforming realitykit entities with gestures</a>.</p>
-<h2 id="installing-components-and-extensions" tabindex="-1">Installing Components and Extensions <a class="header-anchor" href="#installing-components-and-extensions">#</a></h2>
-<p>In <a href="https://docs-assets.developer.apple.com/published/0d923bca7c76/TransformingRealityKitEntitiesUsingGestures.zip">the downloaded code</a> the <code>RealityKitContent</code> includes <code>Components</code> and <code>Extensions</code> folders with code for handling gestures. I copied these across into my project's RealityKitContent folder.</p>
-<p><picture><source type="image/avif" srcset="/img/QPMg47Z-vt-496.avif 496w"><source type="image/webp" srcset="/img/QPMg47Z-vt-496.webp 496w"><img alt="Copied Components and Extensions folders" loading="lazy" decoding="async" src="/img/QPMg47Z-vt-496.png" width="496" height="552"></picture></p>
-<p>These have been set up to allow for customisation in how we apply gestures. The first thing though is install the extensions:</p>
-<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
-    <span class="token keyword">let</span> floor <span class="token operator">=</span> viewModel<span class="token punctuation">.</span><span class="token function">generateFloor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>floor<span class="token punctuation">)</span>
-    <span class="token function">addEntities</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>
-<span class="token punctuation">}</span> update<span class="token punctuation">:</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
-    <span class="token function">addEntities</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token punctuation">.</span><span class="token function">installGestures</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p>The <code>installGestures</code> method sets up the extensions.</p>
-<h2 id="using-with-reality-composer-pro" tabindex="-1">Using with Reality Composer Pro <a class="header-anchor" href="#using-with-reality-composer-pro">#</a></h2>
-<p>As the above files are added to the Reality Composer Pro scene, they become available as settings to allow interaction on objects and scenes defined there. However I'd like to try to apply the code to the objects created dynamically within my app.</p>
-<h2 id="applying-to-entities" tabindex="-1">Applying to entities <a class="header-anchor" href="#applying-to-entities">#</a></h2>
-<p>In the shared view model (<code>SharedViewModel</code>), I added the <code>components</code> to handle gestures like so:</p>
-<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">let</span> jsonData <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"""
-{
-    "canDrag": true,
-    "pivotOnDrag": true,
-    "preserveOrientationOnPivotDrag": true,
-    "canScale": true,
-    "canRotate": true
-}
-"""</span></span><span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span>using<span class="token punctuation">:</span> <span class="token punctuation">.</span>utf8<span class="token punctuation">)</span><span class="token operator">!</span>
+<p>Following from adding <a href="/advanced-gestures/">advanced gestures</a>, we can make the interaction easier by adding a hover effect.</p>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/jAPaQ3T" data-context="false">
+  <a href="//imgur.com/a/jAPaQ3T">Simple hover effect</a>
+  </blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8">
+</script>
+<h2 id="adding-hovereffectcomponent" tabindex="-1">Adding HoverEffectComponent() <a class="header-anchor" href="#adding-hovereffectcomponent">#</a></h2>
+<p>In the shared view model, when adding <code>components</code>, add the <a href="https://developer.apple.com/documentation/realitykit/hovereffectcomponent">HoverEffectComponent</a>:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift">shape<span class="token punctuation">.</span>components<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token class-name">HoverEffectComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>As long as the entities have an <a href="https://developer.apple.com/documentation/realitykit/inputtargetcomponent">InputTargetComponent</a> and <a href="https://developer.apple.com/documentation/realitykit/collisioncomponent">CollisionComponent</a> they will receive hover effects. Those were added in previous posts.</p>
+<p>And that's it! The <a href="https://developer.apple.com/documentation/realitykit/hovereffectcomponent">documentation</a> suggests being able to customise the effect but I've not managed to get the examples working yet. I'll update here if I do so.</p>
 
-<span class="token keyword">do</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> decoder <span class="token operator">=</span> <span class="token class-name">JSONDecoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">let</span> gestureComponent <span class="token operator">=</span> <span class="token keyword">try</span> decoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token class-name">GestureComponent</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> from<span class="token punctuation">:</span> jsonData<span class="token punctuation">)</span>
-    shape<span class="token punctuation">.</span>components<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>gestureComponent<span class="token punctuation">)</span>
-<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Failed to decode JSON: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">error</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
-<p>This sets up the configuration, in which you can set to <code>true</code> or <code>false</code> the various options, then encodes the config. It then uses a JSON decoder with the <code>GestureComponent.self</code> type to create a <code>gestureComponent</code>, all configured with our interaction settings. We then apply this to the <code>shape</code> with <code>shape.components.set(gestureComponent)</code>.</p>
-
-<ul class="links-nextprev"><li>Previous: <a href="/multiple-objects/">Multiple objects</a></li><li>Next: <a href="/hover-effect/">Simple hover effect</a></li>
+<ul class="links-nextprev"><li>Previous: <a href="/advanced-gestures/">Advanced gestures</a></li>
 </ul>
 </div>
 
@@ -785,6 +757,6 @@ footer {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /advanced-gestures/ -->
+		<!-- Current page: /hover-effect/ -->
 	</body>
 </html>
