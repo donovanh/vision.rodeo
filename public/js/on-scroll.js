@@ -4,11 +4,6 @@ let scrollPos = window.scrollY;
 let targetDepth = 400;
 let scrollRatio = scrollPos / targetDepth;
 
-function applyOverlay(scrollRatio) {
-	const overlay = document.getElementById("overlay");
-	overlay.style.opacity = scrollRatio > 1 ? 1 : scrollRatio;
-}
-
 function adjustHeaderTransform(scrollRatio) {
 	const header = document.getElementById("header");
 	if (scrollRatio < 1.5) {
@@ -24,7 +19,6 @@ function adjustHeaderTransform(scrollRatio) {
 }
 
 window.document.onload = () => {
-	applyOverlay(scrollRatio);
 	adjustHeaderTransform(scrollRatio);
 };
 
@@ -33,6 +27,5 @@ onscroll = () => {
 	targetDepth = 400;
 	scrollRatio = scrollPos / targetDepth;
 
-	applyOverlay(scrollRatio);
 	adjustHeaderTransform(scrollRatio);
 };

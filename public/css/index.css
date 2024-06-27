@@ -65,16 +65,6 @@ html {
 	opacity: 0;
 }
 
-.bodyBGCover {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0, 0, 0, 0.75);
-	opacity: 0;
-}
-
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden {
 	clip: rect(0 0 0 0);
@@ -339,14 +329,24 @@ header.internal ul.nav {
 	list-style: none;
 	padding: 0;
 }
+.home.postlist {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 2rem;
+}
 .postlist-item {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
-	margin-bottom: 1em;
 }
 .home .postlist-item {
-	padding-bottom: 4rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	margin: 1rem;
+	max-width: calc(33% - 2rem);
+	width: 100%;
+	padding: 2rem;
 }
 .nested .postlist-item {
 	padding-top: 0;
@@ -364,6 +364,7 @@ main img {
 	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
 		0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
+
 .video-wrapper {
 	width: 100%;
 }
@@ -391,6 +392,12 @@ main video {
 .postlist h4 {
 	display: block;
 	width: 100%;
+}
+
+.more-posts {
+	color: white;
+	text-align: center;
+	margin: 2rem 0;
 }
 
 .content {
@@ -467,7 +474,7 @@ main h1,
 main h2,
 main h3,
 main h4 {
-	font-family: var(--font-family-monospace);
+	font-family: var(--font-family);
 	width: 100%;
 }
 

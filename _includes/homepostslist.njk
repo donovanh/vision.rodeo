@@ -1,6 +1,6 @@
 <ul reversed class="home postlist">
 {% for post in postslist | reverse %}
-	<li class="content panel padded postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+	<li class="panel home postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
 		<h1><a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h1>
 		<p>{{ post.data.description }}</p>
 	</li>
