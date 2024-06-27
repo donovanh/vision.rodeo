@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Donovan’s Vision Blog - Donovan's Vision Blog</title>
-		<meta name="description" content="Build great apps for Apple Vision Pro">
+		<title>Build a Jenga game in Vision OS - Donovan's Vision Blog</title>
+		<meta name="description" content="Create a simple Jenga-style game in Vision OS">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -12,12 +12,180 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
 
-		<meta property="og:title" content="Donovan’s Vision Blog" />
+		<meta property="og:title" content="Build a Jenga game in Vision OS" />
 		<meta property="og:type" content="article" />
-		<meta property="og:description" content="Build great apps for Apple Vision Pro">
+		<meta property="og:description" content="Create a simple Jenga-style game in Vision OS">
 		<meta property="og:url" content="" />
 		<meta name="generator" content="Eleventy v2.0.1">
-		<style>* { box-sizing: border-box; }
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
@@ -523,174 +691,82 @@ footer {
 .signup-frame {
 	max-width: 375px;
 	margin: 0 auto;
-}
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #8292a2;
-}
-
-.token.punctuation {
-	color: #f8f8f2;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #a6e22e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
-}
-
-.token.keyword {
-	color: #66d9ef;
-}
-
-.token.regex,
-.token.important {
-	color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
 }</style>
 		<script src="/js/on-scroll.js"></script>
 	</head>
 	<body>
 		<div class="bodyBackground"></div>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
-			<div class="header-container home">
-				<header class="panel " id="header">
-					<a href="/" class="home-link">
-						<span class="wordart-wrapper">
-							<span class="wordart">Donovan’s Vision Blog</span>
-						</span>
-					</a>
-					<nav class="panel">
-						<h2 class="visually-hidden">Top level navigation menu</h2>
-						<ul class="nav">
-							<li class="nav-item"><a href="/">Home</a></li>
-							<li class="nav-item"><a href="/blog/">All Posts</a></li>
-							<li class="nav-item"><a href="/links/">Cool Links</a></li>
-						</ul>
-					</nav>
-				</header>
-			</div>
+			<header class="internal">
+				<a href="/" class="home-link">
+					<span class="wordart-wrapper">
+						<span class="wordart">Donovan’s Vision Blog</span>
+					</span>
+				</a>
+				<nav class="panel">
+					<h2 class="visually-hidden">Top level navigation menu</h2>
+					<ul class="nav">
+						<li class="nav-item"><a href="/">Home</a></li>
+						<li class="nav-item"><a href="/blog/">All Posts</a></li>
+						<li class="nav-item"><a href="/links/">Cool Links</a></li>
+					</ul>
+				</nav>
+			</header>
 		<main id="skip" class="">
 			
 <div class="content panel padded">
-	<h1>Tags</h1>
+	<h1>Build a Jenga game in Vision OS</h1>
 
-<ul>
-
-	
-	<li><a href="/tags/thoughts/" class="post-tag">thoughts</a></li>
-
-	
-	<li><a href="/tags/apps/" class="post-tag">apps</a></li>
-
-	
+<ul class="post-metadata">
+	<li><time datetime="2024-06-28">28 June 2024</time></li>
 	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
-
-	
 	<li><a href="/tags/demo-project/" class="post-tag">demo project</a></li>
+</ul>
 
+<p>Building on the previous posts, we can put everything together into one demo.</p>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/27woqsV" data-context="false">
+  <a href="//imgur.com/a/27woqsV">Making a simple Jenga game</a>
+</blockquote>
+<script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<p>This is the goal. To build an interactive Jenga-like brick tower game where the bricks can be removed (and stacked on top) until the tower falls over.</p>
+<h2 id="finished-project" tabindex="-1">Finished project <a class="header-anchor" href="#finished-project">#</a></h2>
+<p>You can <a href="">download the finished code here (TODO)</a> as an Xcode project.</p>
+<h2 id="topics-covered" tabindex="-1">Topics covered <a class="header-anchor" href="#topics-covered">#</a></h2>
+<p>This work brings together all the previous topics we've covered including:</p>
+<ul>
+<li><a href="">Setting up an immersive space</a></li>
+<li><a href="">Adding physics to an entity</a></li>
+<li><a href="">Adding gestures to an entity</a></li>
+<li><a href="">Creating multiple 3D objects in code</a></li>
+<li><a href="">Hover effects on entities</a></li>
+</ul>
+<h2 id="getting-started" tabindex="-1">Getting started <a class="header-anchor" href="#getting-started">#</a></h2>
+<p>Create new Xcode project... todo</p>
+<h2 id="creating-a-table-top-in-reality-composer-pro" tabindex="-1">Creating a table-top in Reality Composer Pro <a class="header-anchor" href="#creating-a-table-top-in-reality-composer-pro">#</a></h2>
+<p>Before creating the game in code, we can try making and importing a scene from Reality Composer Pro. For this we'll create a simple &quot;table&quot; object to act as a stage on which the blocks can sit.</p>
+<p>TODO: Screenshot of the box with settings</p>
+<p>TODO: Note the connectors required and their settings</p>
+<h2 id="immersive-view" tabindex="-1">Immersive view <a class="header-anchor" href="#immersive-view">#</a></h2>
+<p>TODO: Setting up the immersive view</p>
+<h2 id="shared-view-model" tabindex="-1">Shared view model <a class="header-anchor" href="#shared-view-model">#</a></h2>
+<h2 id="adding-floor-and-table" tabindex="-1">Adding floor and table <a class="header-anchor" href="#adding-floor-and-table">#</a></h2>
+<p>Generating a floor to catch pieces that fall and displaying the table from Reality Compose Pro</p>
+<h2 id="generating-bricks" tabindex="-1">Generating bricks <a class="header-anchor" href="#generating-bricks">#</a></h2>
+<p>A function to generate a single box with simlpe texture, collisions, shadow, physics etc.</p>
+<h2 id="generating-the-tower" tabindex="-1">Generating the tower <a class="header-anchor" href="#generating-the-tower">#</a></h2>
+<p>Setting up a <code>tower</code> entity that will contain the bricks. This will help make it easier to position the tower as a single unit and help when resetting the brick's positions.</p>
+<h2 id="placing-the-tower" tabindex="-1">Placing the tower <a class="header-anchor" href="#placing-the-tower">#</a></h2>
+<p>Setting the tower in place on the table.</p>
+<h2 id="rest-game-button" tabindex="-1">Rest game button <a class="header-anchor" href="#rest-game-button">#</a></h2>
+<p>Wiring up the function to reset the positions.</p>
+<h2 id="bonus-adding-a-material-to-the-pieces" tabindex="-1">Bonus: Adding a material to the pieces <a class="header-anchor" href="#bonus-adding-a-material-to-the-pieces">#</a></h2>
+<p>How to extract the material from a Reality Kit Content scene and apply it to the bricks.</p>
+<h2 id="summary-of-what-was-covered" tabindex="-1">Summary of what was covered <a class="header-anchor" href="#summary-of-what-was-covered">#</a></h2>
+<p>Next steps, tips whatever.</p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/hover-effect/">Simple hover effect</a></li>
 </ul>
 </div>
-
 
 		</main>
 
@@ -724,6 +800,6 @@ pre[class*="language-"] {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /tags/ -->
+		<!-- Current page: /jenga-in-vision-os/ -->
 	</body>
 </html>

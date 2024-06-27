@@ -27,17 +27,22 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/thoughts/</loc>
-		<lastmod>2024-01-26</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://vision.rodeo/tags/apps/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
+		<loc>https://vision.rodeo/tags/thoughts/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://vision.rodeo/tags/dev/</loc>
+		<lastmod>2024-01-26</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/tags/demo-project/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -99,5 +104,10 @@
 	<url>
 		<loc>https://vision.rodeo/hover-effect/</loc>
 		<lastmod>2024-06-25</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/jenga-in-vision-os/</loc>
+		<lastmod>2024-06-28</lastmod>
 	</url>
 </urlset>

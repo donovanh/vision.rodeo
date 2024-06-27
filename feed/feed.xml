@@ -4,12 +4,60 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-06-25T00:00:00Z</updated>
+	<updated>2024-06-28T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>Build a Jenga game in Vision OS</title>
+		<link href="https://vision.rodeo/jenga-in-vision-os/"/>
+		<updated>2024-06-28T00:00:00Z</updated>
+		<id>https://vision.rodeo/jenga-in-vision-os/</id>
+		<content type="html">&lt;p&gt;Building on the previous posts, we can put everything together into one demo.&lt;/p&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/27woqsV&quot; data-context=&quot;false&quot;&gt;
+  &lt;a href=&quot;https://imgur.com/a/27woqsV&quot;&gt;Making a simple Jenga game&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;p&gt;This is the goal. To build an interactive Jenga-like brick tower game where the bricks can be removed (and stacked on top) until the tower falls over.&lt;/p&gt;
+&lt;h2 id=&quot;finished-project&quot; tabindex=&quot;-1&quot;&gt;Finished project &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can &lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;download the finished code here (TODO)&lt;/a&gt; as an Xcode project.&lt;/p&gt;
+&lt;h2 id=&quot;topics-covered&quot; tabindex=&quot;-1&quot;&gt;Topics covered &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This work brings together all the previous topics we&#39;ve covered including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;Setting up an immersive space&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;Adding physics to an entity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;Adding gestures to an entity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;Creating multiple 3D objects in code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;Hover effects on entities&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;getting-started&quot; tabindex=&quot;-1&quot;&gt;Getting started &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Create new Xcode project... todo&lt;/p&gt;
+&lt;h2 id=&quot;creating-a-table-top-in-reality-composer-pro&quot; tabindex=&quot;-1&quot;&gt;Creating a table-top in Reality Composer Pro &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Before creating the game in code, we can try making and importing a scene from Reality Composer Pro. For this we&#39;ll create a simple &amp;quot;table&amp;quot; object to act as a stage on which the blocks can sit.&lt;/p&gt;
+&lt;p&gt;TODO: Screenshot of the box with settings&lt;/p&gt;
+&lt;p&gt;TODO: Note the connectors required and their settings&lt;/p&gt;
+&lt;h2 id=&quot;immersive-view&quot; tabindex=&quot;-1&quot;&gt;Immersive view &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;TODO: Setting up the immersive view&lt;/p&gt;
+&lt;h2 id=&quot;shared-view-model&quot; tabindex=&quot;-1&quot;&gt;Shared view model &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;adding-floor-and-table&quot; tabindex=&quot;-1&quot;&gt;Adding floor and table &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Generating a floor to catch pieces that fall and displaying the table from Reality Compose Pro&lt;/p&gt;
+&lt;h2 id=&quot;generating-bricks&quot; tabindex=&quot;-1&quot;&gt;Generating bricks &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A function to generate a single box with simlpe texture, collisions, shadow, physics etc.&lt;/p&gt;
+&lt;h2 id=&quot;generating-the-tower&quot; tabindex=&quot;-1&quot;&gt;Generating the tower &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Setting up a &lt;code&gt;tower&lt;/code&gt; entity that will contain the bricks. This will help make it easier to position the tower as a single unit and help when resetting the brick&#39;s positions.&lt;/p&gt;
+&lt;h2 id=&quot;placing-the-tower&quot; tabindex=&quot;-1&quot;&gt;Placing the tower &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Setting the tower in place on the table.&lt;/p&gt;
+&lt;h2 id=&quot;rest-game-button&quot; tabindex=&quot;-1&quot;&gt;Rest game button &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Wiring up the function to reset the positions.&lt;/p&gt;
+&lt;h2 id=&quot;bonus-adding-a-material-to-the-pieces&quot; tabindex=&quot;-1&quot;&gt;Bonus: Adding a material to the pieces &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;How to extract the material from a Reality Kit Content scene and apply it to the bricks.&lt;/p&gt;
+&lt;h2 id=&quot;summary-of-what-was-covered&quot; tabindex=&quot;-1&quot;&gt;Summary of what was covered &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Next steps, tips whatever.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Simple hover effect</title>

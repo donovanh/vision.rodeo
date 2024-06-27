@@ -85,16 +85,6 @@ html {
 	opacity: 0;
 }
 
-.bodyBGCover {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0, 0, 0, 0.75);
-	opacity: 0;
-}
-
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden {
 	clip: rect(0 0 0 0);
@@ -131,9 +121,6 @@ a[href]:active {
 main {
 	padding: 1rem 0;
 }
-/* main.animated {
-	animation: slide-up 0.5s cubic-bezier(0, 1, 0.3, 1);
-} */
 
 .links-nextprev {
 	list-style: none;
@@ -187,7 +174,7 @@ code {
 }
 
 .padded {
-	padding: 2rem 4rem;
+	padding: 2rem;
 }
 
 @media (max-width: 500px) {
@@ -359,15 +346,35 @@ header.internal ul.nav {
 	list-style: none;
 	padding: 0;
 }
+.home.postlist {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 2rem;
+}
 .postlist-item {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
-	margin-bottom: 1em;
 }
+
 .home .postlist-item {
-	padding-bottom: 4rem;
+	margin: 1rem;
+	max-width: calc(33% - 2rem);
+	width: 100%;
+	padding: 2rem;
 }
+@media (max-width: 70rem) {
+	.home .postlist-item {
+		max-width: calc(50% - 2rem);
+	}
+}
+
+@media (max-width: 48rem) {
+	.home .postlist-item {
+		max-width: 100%;
+	}
+}
+
 .nested .postlist-item {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -384,6 +391,7 @@ main img {
 	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
 		0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
+
 .video-wrapper {
 	width: 100%;
 }
@@ -413,8 +421,13 @@ main video {
 	width: 100%;
 }
 
+.more-posts {
+	text-align: center;
+	margin: 2rem 0;
+}
+
 .content {
-	max-width: 48rem;
+	max-width: 54rem;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -487,7 +500,7 @@ main h1,
 main h2,
 main h3,
 main h4 {
-	font-family: var(--font-family-monospace);
+	font-family: var(--font-family);
 	width: 100%;
 }
 
@@ -638,7 +651,6 @@ pre[class*="language-"] {
 	</head>
 	<body>
 		<div class="bodyBackground"></div>
-		<div class="bodyBGCover" id="overlay"></div>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 			<div class="header-container home">
 				<header class="panel animated" id="header">
@@ -664,36 +676,70 @@ pre[class*="language-"] {
 
 <ul reversed class="home postlist">
 
-	<li class="content panel padded postlist-item">
+	<li class="panel home postlist-item">
+		<h1><a href="/jenga-in-vision-os/" class="postlist-link">Build a Jenga game in Vision OS</a></h1>
+		<p>Create a simple Jenga-style game in Vision OS</p>
+	</li>
+
+	<li class="panel home postlist-item">
 		<h1><a href="/hover-effect/" class="postlist-link">Simple hover effect</a></h1>
 		<p>Applying a hover to 3D objects in RealityKit</p>
 	</li>
 
-	<li class="content panel padded postlist-item">
+	<li class="panel home postlist-item">
 		<h1><a href="/advanced-gestures/" class="postlist-link">Advanced gestures</a></h1>
 		<p>Apply dragging, rotating and scaling to multiple objects</p>
 	</li>
 
-	<li class="content panel padded postlist-item">
+	<li class="panel home postlist-item">
 		<h1><a href="/multiple-objects/" class="postlist-link">Multiple objects</a></h1>
 		<p>Generate lots of 3D objects</p>
 	</li>
 
-	<li class="content panel padded postlist-item">
+	<li class="panel home postlist-item">
 		<h1><a href="/object-gravity/" class="postlist-link">Adding gravity</a></h1>
 		<p>Add gravity to a 3D object</p>
 	</li>
 
-	<li class="content panel padded postlist-item">
+	<li class="panel home postlist-item">
 		<h1><a href="/drag-gesture/" class="postlist-link">Dragging objects</a></h1>
 		<p>Using DragGesture to drag a 3D object</p>
+	</li>
+
+	<li class="panel home postlist-item">
+		<h1><a href="/immersive-spaces/" class="postlist-link">Immersive spaces</a></h1>
+		<p>What an immersive space is, and when you might want to use it</p>
+	</li>
+
+	<li class="panel home postlist-item">
+		<h1><a href="/volumetric-window-group/" class="postlist-link">Volumetric windows</a></h1>
+		<p>Showing an animation in a volumetric window</p>
+	</li>
+
+	<li class="panel home postlist-item">
+		<h1><a href="/blender-file-in-vision/" class="postlist-link">Animated Blender entity in RealityView</a></h1>
+		<p>Display a Blender 3D object in a Vision RealityView</p>
+	</li>
+
+	<li class="panel home postlist-item">
+		<h1><a href="/returns/" class="postlist-link">Are people returning Vision Pro?</a></h1>
+		<p>Lazy journalism helps reinforce assumptions</p>
+	</li>
+
+	<li class="panel home postlist-item">
+		<h1><a href="/app-roundup-1/" class="postlist-link">Launch Apps</a></h1>
+		<p>Explore spatial computing with these Apple Vision Pro apps available on launch day</p>
+	</li>
+
+	<li class="panel home postlist-item">
+		<h1><a href="/vision/" class="postlist-link">Apple’s Vision</a></h1>
+		<p>What the first version of Apple Vision Pro means as a stepping stone toward an AR future</p>
 	</li>
 
 </ul>
 
 
-
-
+<p class="more-posts"> More posts can be found in <a href="/blog/">the blog archive</a>.</p>
 
 
 
