@@ -101,9 +101,6 @@ a[href]:active {
 main {
 	padding: 1rem 0;
 }
-/* main.animated {
-	animation: slide-up 0.5s cubic-bezier(0, 1, 0.3, 1);
-} */
 
 .links-nextprev {
 	list-style: none;
@@ -157,7 +154,7 @@ code {
 }
 
 .padded {
-	padding: 2rem 4rem;
+	padding: 2rem;
 }
 
 @media (max-width: 500px) {
@@ -339,15 +336,25 @@ header.internal ul.nav {
 	flex-wrap: wrap;
 	align-items: baseline;
 }
+
 .home .postlist-item {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: baseline;
 	margin: 1rem;
 	max-width: calc(33% - 2rem);
 	width: 100%;
 	padding: 2rem;
 }
+@media (max-width: 70rem) {
+	.home .postlist-item {
+		max-width: calc(50% - 2rem);
+	}
+}
+
+@media (max-width: 48rem) {
+	.home .postlist-item {
+		max-width: 100%;
+	}
+}
+
 .nested .postlist-item {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -395,13 +402,12 @@ main video {
 }
 
 .more-posts {
-	color: white;
 	text-align: center;
 	margin: 2rem 0;
 }
 
 .content {
-	max-width: 48rem;
+	max-width: 54rem;
 	margin-left: auto;
 	margin-right: auto;
 }
