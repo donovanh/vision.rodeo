@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Donovan’s Vision Blog - Donovan's Vision Blog</title>
-		<meta name="description" content="Build great apps for Apple Vision Pro">
+		<title>Loading material from Reality Composer Pro scene - Donovan's Vision Blog</title>
+		<meta name="description" content="Load a material for use in coded RealityKit scenes">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -12,9 +12,9 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
 
-		<meta property="og:title" content="Donovan’s Vision Blog" />
+		<meta property="og:title" content="Loading material from Reality Composer Pro scene" />
 		<meta property="og:type" content="article" />
-		<meta property="og:description" content="Build great apps for Apple Vision Pro">
+		<meta property="og:description" content="Load a material for use in coded RealityKit scenes">
 		<meta property="og:url" content="" />
 		<meta name="generator" content="Eleventy v2.0.1">
 		<style>/**
@@ -715,12 +715,80 @@ footer {
 		<main id="skip" class="">
 			
 <div class="content panel padded">
-	<h1></h1>
+	<h1>Loading material from Reality Composer Pro scene</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2024-06-29">29 June 2024</time></li>
+	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
 
+<p>In <a href="/jenga-in-vision-os">this Jenga demo</a> we have some orange coloured bricks. I thought it would be good to try to apply a material from one of the predefined examples in Reality Composer Pro.</p>
+<h2 id="set-up-texture-entity" tabindex="-1">Set up texture entity <a class="header-anchor" href="#set-up-texture-entity">#</a></h2>
+<p>To begin we set up a primative (I chose a sphere) in Reality Composer Pro and add the <code>MaplePlywood</code> texture from the content library. Apply this texture, and name the sphere <code>PieceTexture</code>.</p>
+<p><picture><source type="image/avif" srcset="/img/NzxaVTi1rh-3350.avif 3350w"><source type="image/webp" srcset="/img/NzxaVTi1rh-3350.webp 3350w"><img alt="The PieceTexture object in Reality Composer Pro" loading="lazy" decoding="async" src="/img/NzxaVTi1rh-3350.png" width="3350" height="1358"></picture></p>
+<p>Since we don't want this object to be visible or interact with anything, we won't add any <code>connectors</code> like collisions or physics. Instead we can add the <code>Opacity</code> connector, and set the opacity to 0%.</p>
+<p><picture><source type="image/avif" srcset="/img/BgJTnFfhxr-738.avif 738w"><source type="image/webp" srcset="/img/BgJTnFfhxr-738.webp 738w"><img alt="Setting opacity to zero" loading="lazy" decoding="async" src="/img/BgJTnFfhxr-738.png" width="738" height="470"></picture></p>
+<p>With that in place we now have an object in the scene from which we can load the texture in code.</p>
+<h2 id="load-material-in-code" tabindex="-1">Load material in code <a class="header-anchor" href="#load-material-in-code">#</a></h2>
+<p>Before we load the texture, we can set up the following in the <code>SharedViewModel</code>. Add a new <code>pieceMaterial</code> variable, and then load the material using <code>loadPieceMaterial</code> inside the <code>init</code> method.</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">var</span> pieceMaterial<span class="token punctuation">:</span> <span class="token class-name">RealityKit</span><span class="token punctuation">.</span><span class="token class-name">Material</span><span class="token operator">?</span>
+
+<span class="token keyword">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    pieceMaterial <span class="token operator">=</span> <span class="token function">loadPieceMaterial</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Scene"</span></span><span class="token punctuation">,</span> named<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"PieceTexture"</span></span><span class="token punctuation">)</span>
+    <span class="token function">generateTower</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>With this we can put together some code to drive this <code>loadPieceMaterial</code> method.</p>
+<h2 id="obtaining-the-material" tabindex="-1">Obtaining the material <a class="header-anchor" href="#obtaining-the-material">#</a></h2>
+<p>To obtain the material we want we need to set up a couple of helpful functions. First we need to find the entity.</p>
+<h3 id="find-the-entity" tabindex="-1">Find the entity <a class="header-anchor" href="#find-the-entity">#</a></h3>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token comment">// Recursive function to search the entity and children for the named entity</span>
+<span class="token keyword">func</span> <span class="token function-definition function">findEntity</span><span class="token punctuation">(</span>named name<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token keyword">in</span> entity<span class="token punctuation">:</span> <span class="token class-name">Entity</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Entity</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> entity<span class="token punctuation">.</span>name <span class="token operator">==</span> name <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> entity
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> child <span class="token keyword">in</span> entity<span class="token punctuation">.</span>children <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> foundEntity <span class="token operator">=</span> <span class="token function">findEntity</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> name<span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> child<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> foundEntity
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token nil constant">nil</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This function when called will check entities and their children and then return the matching entity if found.</p>
+<h3 id="find-the-material" tabindex="-1">Find the material <a class="header-anchor" href="#find-the-material">#</a></h3>
+<p>With the entity found, we check in a similar way to see if it is a component and return the first material, or else check the children and repeat.</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token comment">// Finds a material from an entity (or its children)</span>
+<span class="token keyword">func</span> <span class="token function-definition function">findMaterial</span><span class="token punctuation">(</span>from entity<span class="token punctuation">:</span> <span class="token class-name">Entity</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">RealityKit</span><span class="token punctuation">.</span><span class="token class-name">Material</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token keyword">let</span> modelComponent <span class="token operator">=</span> entity<span class="token punctuation">.</span>components<span class="token punctuation">[</span><span class="token class-name">ModelComponent</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> modelComponent<span class="token punctuation">.</span>materials<span class="token punctuation">.</span>first
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> child <span class="token keyword">in</span> entity<span class="token punctuation">.</span>children <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> material <span class="token operator">=</span> <span class="token function">findMaterial</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> child<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> material
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token nil constant">nil</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="putting-the-functions-together" tabindex="-1">Putting the functions together <a class="header-anchor" href="#putting-the-functions-together">#</a></h3>
+<p>Lastly we put these functions together to search for the entity, then the material, and return it.</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">loadPieceMaterial</span><span class="token punctuation">(</span>from sceneName<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> named materialName<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">RealityKit</span><span class="token punctuation">.</span><span class="token class-name">Material</span><span class="token operator">?</span> <span class="token punctuation">{</span>
+  <span class="token keyword">guard</span> <span class="token keyword">let</span> scene <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">Entity</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> sceneName<span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> realityKitContentBundle<span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Error: Unable to load the scene."</span></span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token nil constant">nil</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token keyword">let</span> materialEntity <span class="token operator">=</span> <span class="token function">findEntity</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> materialName<span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> scene<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token keyword">let</span> material <span class="token operator">=</span> <span class="token function">findMaterial</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> materialEntity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> material
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Error: Unable to find entity or its material in the scene."</span></span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token nil constant">nil</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>That seems to work for now! I'd like to learn other hopefully more simple ways to load materials in Swift. I will update here once I learn more.</p>
 
 <ul class="links-nextprev"><li>Previous: <a href="/jenga-in-vision-os/">Build a Jenga game in Vision OS</a></li>
 </ul>
@@ -758,6 +826,6 @@ footer {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /undefined/ -->
+		<!-- Current page: /loading-material-from-scene/ -->
 	</body>
 </html>
