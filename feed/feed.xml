@@ -98,7 +98,7 @@
 &lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 &lt;p&gt;This is the goal. To build an interactive Jenga-like brick tower game where the bricks can be removed (and stacked on top) until the tower falls over.&lt;/p&gt;
 &lt;h2 id=&quot;finished-project&quot; tabindex=&quot;-1&quot;&gt;Finished project &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;You can &lt;a href=&quot;https://vision.rodeo/files/Jenga.zip&quot;&gt;download the finished code here&lt;/a&gt; as an Xcode project.&lt;/p&gt;
+&lt;p&gt;You can &lt;a href=&quot;https://files.vision.rodeo/xcode/jenga.zip&quot;&gt;download the finished code here&lt;/a&gt; as an Xcode project.&lt;/p&gt;
 &lt;h2 id=&quot;topics-covered&quot; tabindex=&quot;-1&quot;&gt;Topics covered &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;This work brings together all the previous topics we&#39;ve covered including:&lt;/p&gt;
 &lt;ul&gt;
@@ -1052,7 +1052,7 @@ orb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
 &lt;h2 id=&quot;convert-blender-file-to-usdz&quot; tabindex=&quot;-1&quot;&gt;Convert Blender file to USDZ &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;To get started I chose a model from my &lt;a href=&quot;http://reps.hop.ie&quot;&gt;Reps app&lt;/a&gt;. Rather than create animation in Reality Composer Pro, this model has an animation already built-in.&lt;/p&gt;
 &lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/kkggEtt4mT-2558.avif 2558w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/kkggEtt4mT-2558.webp 2558w&quot;&gt;&lt;img alt=&quot;A blender model with animation&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/kkggEtt4mT-2558.png&quot; width=&quot;2558&quot; height=&quot;1800&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
-&lt;p&gt;You can &lt;a href=&quot;https://vision.rodeo/files/pushup-05.blend.zip&quot;&gt;download the Blender file here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can &lt;a href=&quot;https://files.vision.rodeo/blender/pushup-05.blend.zip&quot;&gt;download the Blender file here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The first step is to export this model as a &lt;code&gt;GLB&lt;/code&gt; file (gITF 2.0)&lt;/p&gt;
 &lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/Nb3qybsBTS-978.avif 978w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/Nb3qybsBTS-978.webp 978w&quot;&gt;&lt;img alt=&quot;Export GLB file from Blender&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/Nb3qybsBTS-978.png&quot; width=&quot;978&quot; height=&quot;666&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
 &lt;h2 id=&quot;reality-converter&quot; tabindex=&quot;-1&quot;&gt;Reality Converter &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blender-file-in-vision/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
