@@ -84,7 +84,7 @@ func findMaterial(from entity: Entity) -> RealityKit.Material? {
 
 ### Putting the functions together
 
-Lastly we put these functions together to search for the entity, then the material, and return it.
+Next we put these functions together to search for the entity, then the material, and return it.
 
 ```swift
 func loadPieceMaterial(from sceneName: String, named materialName: String) -> RealityKit.Material? {
@@ -102,5 +102,33 @@ func loadPieceMaterial(from sceneName: String, named materialName: String) -> Re
   }
 }
 ```
+
+### Applying texture to the brick pieces
+
+Lastly we want to update the code that applies the texture. In the `generatePiece` method amend the code that generates the piece to:
+
+```swift
+let piece: ModelEntity
+let boxShape: MeshResource = .generateBox(width: pieceWidth, height: pieceHeight, depth: pieceDepth, cornerRadius: 0.005)
+if let material = pieceMaterial {
+    piece = ModelEntity(
+        mesh: boxShape,
+        materials: [material]
+    )
+} else {
+    var defaultMaterial = PhysicallyBasedMaterial()
+    defaultMaterial.baseColor.tint = .orange
+    defaultMaterial.roughness = PhysicallyBasedMaterial.Roughness(floatLiteral: 1)
+
+    piece = ModelEntity(
+        mesh: boxShape,
+        materials: [defaultMaterial]
+    )
+}
+```
+
+This will conditionally apply the material if loaded.
+
+{% image "./files/textured-blocks.png", "Textured blocks featuring a wooden material" %}
 
 That seems to work for now! I'd like to learn other hopefully more simple ways to load materials in Swift. I will update here once I learn more.
