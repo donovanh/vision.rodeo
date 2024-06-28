@@ -773,7 +773,7 @@ footer {
     <span class="token keyword">return</span> <span class="token nil constant">nil</span>
 <span class="token punctuation">}</span></code></pre>
 <h3 id="putting-the-functions-together" tabindex="-1">Putting the functions together <a class="header-anchor" href="#putting-the-functions-together">#</a></h3>
-<p>Lastly we put these functions together to search for the entity, then the material, and return it.</p>
+<p>Next we put these functions together to search for the entity, then the material, and return it.</p>
 <pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">loadPieceMaterial</span><span class="token punctuation">(</span>from sceneName<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> named materialName<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">RealityKit</span><span class="token punctuation">.</span><span class="token class-name">Material</span><span class="token operator">?</span> <span class="token punctuation">{</span>
   <span class="token keyword">guard</span> <span class="token keyword">let</span> scene <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">Entity</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> sceneName<span class="token punctuation">,</span> <span class="token keyword">in</span><span class="token punctuation">:</span> realityKitContentBundle<span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
       <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Error: Unable to load the scene."</span></span><span class="token punctuation">)</span>
@@ -788,6 +788,27 @@ footer {
       <span class="token keyword">return</span> <span class="token nil constant">nil</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<h3 id="applying-texture-to-the-brick-pieces" tabindex="-1">Applying texture to the brick pieces <a class="header-anchor" href="#applying-texture-to-the-brick-pieces">#</a></h3>
+<p>Lastly we want to update the code that applies the texture. In the <code>generatePiece</code> method amend the code that generates the piece to:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">let</span> piece<span class="token punctuation">:</span> <span class="token class-name">ModelEntity</span>
+<span class="token keyword">let</span> boxShape<span class="token punctuation">:</span> <span class="token class-name">MeshResource</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token function">generateBox</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> pieceWidth<span class="token punctuation">,</span> height<span class="token punctuation">:</span> pieceHeight<span class="token punctuation">,</span> depth<span class="token punctuation">:</span> pieceDepth<span class="token punctuation">,</span> cornerRadius<span class="token punctuation">:</span> <span class="token number">0.005</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token keyword">let</span> material <span class="token operator">=</span> pieceMaterial <span class="token punctuation">{</span>
+    piece <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>
+        mesh<span class="token punctuation">:</span> boxShape<span class="token punctuation">,</span>
+        materials<span class="token punctuation">:</span> <span class="token punctuation">[</span>material<span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> defaultMaterial <span class="token operator">=</span> <span class="token class-name">PhysicallyBasedMaterial</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    defaultMaterial<span class="token punctuation">.</span>baseColor<span class="token punctuation">.</span>tint <span class="token operator">=</span> <span class="token punctuation">.</span>orange
+    defaultMaterial<span class="token punctuation">.</span>roughness <span class="token operator">=</span> <span class="token class-name">PhysicallyBasedMaterial</span><span class="token punctuation">.</span><span class="token class-name">Roughness</span><span class="token punctuation">(</span>floatLiteral<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+    piece <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>
+        mesh<span class="token punctuation">:</span> boxShape<span class="token punctuation">,</span>
+        materials<span class="token punctuation">:</span> <span class="token punctuation">[</span>defaultMaterial<span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This will conditionally apply the material if loaded.</p>
+<p><picture><source type="image/avif" srcset="/img/ZZqk06Gd_p-2732.avif 2732w"><source type="image/webp" srcset="/img/ZZqk06Gd_p-2732.webp 2732w"><img alt="Textured blocks featuring a wooden material" loading="lazy" decoding="async" src="/img/ZZqk06Gd_p-2732.png" width="2732" height="2048"></picture></p>
 <p>That seems to work for now! I'd like to learn other hopefully more simple ways to load materials in Swift. I will update here once I learn more.</p>
 
 <ul class="links-nextprev"><li>Previous: <a href="/jenga-in-vision-os/">Build a Jenga game in Vision OS</a></li>
