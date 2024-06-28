@@ -1,13 +1,11 @@
 ---
 title: Loading material from Reality Composer Pro scene
 permalink: /loading-material-from-scene/
-description: Grab a material from a scene for use in code
+description: Load a material for use in coded RealityKit scenes
 date: 2024-06-29
 tags:
   - dev
 ---
-
-- How to grab the material from a scene and apply it to an object
 
 In [this Jenga demo](/jenga-in-vision-os) we have some orange coloured bricks. I thought it would be good to try to apply a material from one of the predefined examples in Reality Composer Pro.
 
