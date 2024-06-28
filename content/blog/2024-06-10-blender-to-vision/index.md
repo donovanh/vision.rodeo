@@ -19,7 +19,7 @@ To get started I chose a model from my [Reps app](http://reps.hop.ie). Rather th
 
 {% image "./files/02-blender-model.png", "A blender model with animation" %}
 
-You can [download the Blender file here](/files/pushup-05.blend.zip).
+You can [download the Blender file here](https://files.vision.rodeo/blender/pushup-05.blend.zip).
 
 The first step is to export this model as a `GLB` file (gITF 2.0)
 

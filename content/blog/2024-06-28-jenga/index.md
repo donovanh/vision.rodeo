@@ -19,7 +19,7 @@ This is the goal. To build an interactive Jenga-like brick tower game where the 
 
 ## Finished project
 
-You can [download the finished code here](/files/Jenga.zip) as an Xcode project.
+You can [download the finished code here](https://files.vision.rodeo/xcode/jenga.zip) as an Xcode project.
 
 ## Topics covered
 
