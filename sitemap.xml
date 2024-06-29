@@ -27,12 +27,12 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/apps/</loc>
+		<loc>https://vision.rodeo/tags/thoughts/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/thoughts/</loc>
+		<loc>https://vision.rodeo/tags/apps/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -114,5 +114,10 @@
 	<url>
 		<loc>https://vision.rodeo/loading-material-from-scene/</loc>
 		<lastmod>2024-06-29</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/detecting-collisions/</loc>
+		<lastmod>2024-06-30</lastmod>
 	</url>
 </urlset>

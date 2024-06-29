@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Detecting collisions in Vision OS - Donovan's Vision Blog</title>
+		<meta name="description" content="Load a material for use in coded RealityKit scenes">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
+
+		<meta property="og:title" content="Detecting collisions in Vision OS" />
+		<meta property="og:type" content="article" />
+		<meta property="og:description" content="Load a material for use in coded RealityKit scenes">
+		<meta property="og:url" content="" />
+		<meta name="generator" content="Eleventy v2.0.1">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-70: rgba(255, 255, 255, 0.3);
+	--color-gray-50: rgba(255, 255, 255, 0.5);
+	--color-gray-20: rgba(255, 255, 255, 0.8);
+
+	--background-color: #000;
+
+	--text-color: var(--color-gray-20);
+	--text-color-link: rgba(241, 233, 255, 0.8);
+	--text-color-link-active: rgba(241, 233, 255, 1);
+	--text-color-link-visited: rgba(241, 233, 255, 0.5);
+
+	--syntax-tab-size: 2;
+}
+
+/* TODO: Make a proper dark theme? */
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-70: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above 
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+} */
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	/* TODO: Have this dynamically change by time of day */
+	background: var(--background-color);
+	background-image: url("/img/office.webp");
+	background-size: 100vw;
+	background-repeat: no-repeat;
+}
+html {
+	overflow-y: scroll;
+}
+
+.bodyBackground {
+	opacity: 0;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem 0;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+	word-break: break-word;
+}
+pre:where([class*="language-"]) {
+	width: 100%;
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+.panel {
+	background-color: rgba(89, 89, 89, 0.2);
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.75),
+		0 0 1rem 0 rgba(0, 0, 0, 0.1);
+	border-radius: 2.5rem;
+	position: relative;
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+}
+
+.padded {
+	padding: 2rem;
+}
+
+@media (max-width: 500px) {
+	.padded {
+		padding: 1rem;
+	}
+}
+
+/* Header */
+.header-container {
+	perspective: 100vw;
+	perspective-origin: 50% 30vh;
+	transform-style: preserve-3d;
+}
+header {
+	font-family: var(--font-family-monospace);
+	text-align: center;
+	align-items: center;
+	padding: 4rem 0;
+	margin: 2rem auto 4rem;
+	max-width: 90rem;
+	z-index: 128;
+}
+
+@media (max-width: 90rem) {
+	header {
+		margin: 2rem 1rem 3rem;
+	}
+}
+
+@media (max-width: 40rem) {
+	header.panel {
+		background: none;
+		box-shadow: none;
+		backdrop-filter: none;
+		-webkit-backdrop-filter: none;
+		margin: 2rem 1rem;
+	}
+}
+
+.wordart {
+	display: inline-block;
+	margin: 2rem 0 4rem;
+	font-size: 9vw;
+	text-shadow: none;
+	background: linear-gradient(
+		183deg,
+		rgba(183, 0, 255, 0.7) 10%,
+		rgba(255, 21, 200, 0.7) 70%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	font-family: "Impact";
+	transform: skewY(-8deg) scaleY(1.3) scaleX(0.8);
+	-webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+}
+
+.wordart-wrapper {
+	filter: drop-shadow(2px 2px 0px rgba(2, 5, 42, 0.8));
+}
+
+@media (min-width: 1400px) {
+	.wordart {
+		font-size: 8rem;
+	}
+}
+
+/* Nav */
+nav {
+	max-width: 22rem;
+	margin: 0 auto;
+	margin-bottom: -8rem;
+}
+nav.secondary {
+	margin: 1rem auto 2rem;
+}
+.nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.5rem 1rem;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	padding: 0 1rem;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	color: #fff;
+}
+
+@media (max-width: 40rem) {
+	nav {
+		margin-bottom: -7rem;
+	}
+}
+
+/* Internal header */
+header.internal {
+	display: flex;
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+header.internal .home-link {
+	width: 300px;
+	margin-right: auto;
+}
+
+header.internal .wordart {
+	font-size: 2rem;
+	margin: 0;
+}
+
+header.internal nav {
+	background: none;
+	box-shadow: none;
+	filter: none;
+	-webkit-backdrop-filter: none;
+	max-width: 100%;
+	margin: 2rem;
+}
+
+header.internal ul.nav {
+	padding: 1rem 0 0;
+}
+
+@media (max-width: 500px) {
+	header.internal,
+	header,
+	header.panel {
+		display: block;
+		max-width: 100%;
+		padding: 0;
+		margin: 2rem 0 0;
+	}
+
+	header .home-link {
+		width: 300px;
+		margin-right: auto;
+	}
+
+	header .wordart {
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	nav,
+	header .panel {
+		background: none;
+		box-shadow: none;
+		filter: none;
+		-webkit-backdrop-filter: none;
+		max-width: 100%;
+		margin: 2rem;
+	}
+
+	header .nav {
+		padding: 1rem 0 0;
+	}
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+}
+.home.postlist {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 2rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+}
+
+.home .postlist-item {
+	margin: 1rem;
+	max-width: calc(33% - 2rem);
+	width: 100%;
+	padding: 2rem;
+}
+@media (max-width: 70rem) {
+	.home .postlist-item {
+		max-width: calc(50% - 2rem);
+	}
+}
+
+@media (max-width: 48rem) {
+	.home .postlist-item {
+		max-width: 100%;
+	}
+}
+
+.nested .postlist-item {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.postlist-item time {
+	width: 100%;
+}
+.postlist-item img,
+main img {
+	max-width: 100%;
+	height: auto;
+	margin: 3rem 0;
+	border-radius: 2rem;
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
+		0 0 1rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper {
+	width: 100%;
+}
+main video {
+	display: block;
+	max-width: 80%;
+	height: auto;
+	border-radius: 2rem;
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
+		0 0 1rem 0 rgba(0, 0, 0, 0.2);
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-70);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+.postlist h2,
+.postlist h3,
+.postlist h4 {
+	display: block;
+	width: 100%;
+}
+
+.more-posts {
+	text-align: center;
+	margin: 2rem 0;
+}
+
+.content {
+	max-width: 54rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.content h2,
+.content h3,
+.content h4 {
+	margin-top: 2rem;
+	margin-bottom: 0;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	text-decoration: none;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 0.25rem 0.5rem;
+	border: 0.5px solid rgba(255, 255, 255, 0.25);
+	border-radius: 1rem;
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
+		0 0 1rem 0 rgba(0, 0, 0, 0.2);
+	font-size: 0.75em; /* 12px /16 */
+	opacity: 0.5;
+}
+.post-tag:hover {
+	opacity: 1;
+	transition: opacity 0.25s ease-out;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+	text-shadow: none;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+	font-family: var(--font-family);
+	width: 100%;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+footer {
+	max-width: 80rem;
+	margin: 2rem auto;
+	text-align: center;
+}
+
+@media (max-width: 90rem) {
+	footer {
+		margin: 1rem;
+	}
+}
+
+.signup-frame {
+	max-width: 375px;
+	margin: 0 auto;
+}</style>
+		<script src="/js/on-scroll.js"></script>
+	</head>
+	<body>
+		<div class="bodyBackground"></div>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+			<header class="internal">
+				<a href="/" class="home-link">
+					<span class="wordart-wrapper">
+						<span class="wordart">Donovan’s Vision Blog</span>
+					</span>
+				</a>
+				<nav class="panel">
+					<h2 class="visually-hidden">Top level navigation menu</h2>
+					<ul class="nav">
+						<li class="nav-item"><a href="/">Home</a></li>
+						<li class="nav-item"><a href="/blog/">All Posts</a></li>
+						<li class="nav-item"><a href="/links/">Cool Links</a></li>
+					</ul>
+				</nav>
+			</header>
+		<main id="skip" class="">
+			
+<div class="content panel padded">
+	<h1>Detecting collisions in Vision OS</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2024-06-30">30 June 2024</time></li>
+	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
+</ul>
+
+<p>Looking at ways to extend <a href="/jenga-in-vision-os/">the Jenga game we built earlier</a>, we need to know when the pieces collide with the table. We can use that to then play sounds or even add game logic. First though we need to detect collisions.</p>
+<p>I found <a href="https://lickability.com/blog/detecting-collisions-with-realitykit-in-visionos/">this guide to detecting collisions on Lickability</a>, which explains nicely how to detect collisions between our game pieces and the table or floor.</p>
+<p>We can extend the Jenga example to add collision detection events.</p>
+<h2 id="adding-collision-events" tabindex="-1">Adding collision events <a class="header-anchor" href="#adding-collision-events">#</a></h2>
+<p>There are two parts to adding collision detection events. First we need to set up a variable to store event subscriptions. In <code>ImmersiveView</code>, add a private <code>@State</code> variable:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token attribute atrule">@State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> subscription<span class="token punctuation">:</span> <span class="token class-name">EventSubscription</span><span class="token operator">?</span></code></pre>
+<p>Then in the <code>RealityKit</code> view we can subscribe to an event which will trigger any time something collides with the floor:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift">subscription <span class="token operator">=</span> content<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>to<span class="token punctuation">:</span> <span class="token class-name">CollisionEvents</span><span class="token punctuation">.</span><span class="token class-name">Began</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> on<span class="token punctuation">:</span> floor<span class="token punctuation">)</span> <span class="token punctuation">{</span> collisionEvent <span class="token keyword">in</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"💥 Collision between </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">collisionEvent<span class="token punctuation">.</span>entityA<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> and </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">collisionEvent<span class="token punctuation">.</span>entityB<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Running this, any time a piece falls off the table onto the floor we should see a print statement.</p>
+<h3 id="colliding-with-table" tabindex="-1">Colliding with table <a class="header-anchor" href="#colliding-with-table">#</a></h3>
+<p>I wasn't able to work out how to enable this for the table we build in Reality Composer Pro. Instead, I created a method similar to <code>generateFloor</code>.</p>
+<p>Since we added methods to <a href="/loading-material-from-scene/">load materials from a Reality Kit Content scene</a>, we can make use of these to load the table material and apply it to an entity created in code. Add the following to the <code>SharedViewModel</code>:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">generateTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">ModelEntity</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> material<span class="token punctuation">:</span> <span class="token class-name">RealityKit</span><span class="token punctuation">.</span><span class="token class-name">Material</span> <span class="token operator">=</span> <span class="token function">loadMaterial</span><span class="token punctuation">(</span>from<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"Scene"</span></span><span class="token punctuation">,</span> named<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"table"</span></span><span class="token punctuation">)</span> <span class="token operator">??</span> <span class="token class-name">UnlitMaterial</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> tableShape<span class="token punctuation">:</span> <span class="token class-name">MeshResource</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token function">generateBox</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">1.5</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">,</span> depth<span class="token punctuation">:</span> <span class="token number">1.5</span><span class="token punctuation">,</span> cornerRadius<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> table <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>
+        mesh<span class="token punctuation">:</span> tableShape<span class="token punctuation">,</span>
+        materials<span class="token punctuation">:</span> <span class="token punctuation">[</span>material<span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+    table<span class="token punctuation">.</span><span class="token function">generateCollisionShapes</span><span class="token punctuation">(</span>recursive<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    table<span class="token punctuation">.</span>components<span class="token punctuation">[</span><span class="token class-name">PhysicsBodyComponent</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+        massProperties<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">,</span>
+        mode<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token keyword">static</span>
+    <span class="token punctuation">)</span>
+    <span class="token keyword">return</span> table
+<span class="token punctuation">}</span></code></pre>
+<p>I made the table using a box primative, and added a <code>cornerRadius</code> to make it smoother. It's set to generate collision shapes, and physics and behave similarly to the floor.</p>
+<p>Back in <code>ImmersiveView</code> we can use this to generate and display a table:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">let</span> table <span class="token operator">=</span> viewModel<span class="token punctuation">.</span><span class="token function">generateTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+table<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"table"</span></span>
+table<span class="token punctuation">.</span>position<span class="token punctuation">.</span>x <span class="token operator">=</span> viewModel<span class="token punctuation">.</span>startingPositionX <span class="token operator">+</span> viewModel<span class="token punctuation">.</span>pieceWidth
+table<span class="token punctuation">.</span>position<span class="token punctuation">.</span>y <span class="token operator">=</span> viewModel<span class="token punctuation">.</span>startingPositionY
+table<span class="token punctuation">.</span>position<span class="token punctuation">.</span>z <span class="token operator">=</span> viewModel<span class="token punctuation">.</span>startingPositionZ <span class="token operator">-</span> viewModel<span class="token punctuation">.</span>pieceWidth</code></pre>
+<p>We then can add code to subscribe to the <code>table</code> collisions:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift">subscription <span class="token operator">=</span> content<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>to<span class="token punctuation">:</span> <span class="token class-name">CollisionEvents</span><span class="token punctuation">.</span><span class="token class-name">Began</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> on<span class="token punctuation">:</span> table<span class="token punctuation">)</span> <span class="token punctuation">{</span> collisionEvent <span class="token keyword">in</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"💥 Collision between </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">collisionEvent<span class="token punctuation">.</span>entityA<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> and </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">collisionEvent<span class="token punctuation">.</span>entityB<span class="token punctuation">.</span>name</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>We should now have a table generated in code that prints when collisions are detected:</p>
+<p><picture><source type="image/avif" srcset="/img/tYfnx-yWjS-2732.avif 2732w"><source type="image/webp" srcset="/img/tYfnx-yWjS-2732.webp 2732w"><img alt="A table generated in code with a material loaded from Reality Composr Pro" loading="lazy" decoding="async" src="/img/tYfnx-yWjS-2732.png" width="2732" height="2048"></picture></p>
+
+<ul class="links-nextprev"><li>Previous: <a href="/loading-material-from-scene/">Loading material from Reality Composer Pro scene</a></li>
+</ul>
+</div>
+
+		</main>
+
+		<footer class="panel padded">
+			<div class="signup">
+				<h2>Donovan's Vision Newsletter</h2>
+				<p>Stay up to date when new posts land</p>
+				<div class="signup-frame">
+					<iframe
+					src="https://embeds.beehiiv.com/e4b485a8-6ae4-48c8-a4aa-e699ebbc193f?slim=true"
+					data-test-id="beehiiv-embed"
+					height="52"
+					width="100%"
+					frameborder="0"
+					scrolling="no"
+					style="margin: 1rem 0 2rem; border-radius: 0px !important; background-color: transparent;"
+					></iframe>
+				</div>
+			</div>
+			<nav class="panel secondary">
+					<h2 class="visually-hidden">Footer navigation menu</h2>
+					<ul class="nav">
+						<li class="nav-item"><a href="/">Home</a></li>
+						<li class="nav-item"><a href="/blog/">All Posts</a></li>
+						<li class="nav-item"><a href="/links/">Cool Links</a></li>
+					</ul>
+				</nav>
+				<p>This website is built on <a href="http://eleventy-base-blog.netlify.app">Eleventy Base Blog</a> with a few small tweaks.</p>
+
+			<p>Thanks for reading, be sure to check out <a href="/feed/feed.xml">the RSS feed</a>.</p>
+				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
+		</footer>
+
+		<!-- Current page: /detecting-collisions/ -->
+	</body>
+</html>
