@@ -12,6 +12,14 @@
 	</author>
 	
 	<entry>
+		<title></title>
+		<link href="https://vision.rodeo/undefined/"/>
+		<updated>2024-06-30T00:00:00Z</updated>
+		<id>https://vision.rodeo/undefined/</id>
+		<content type="html"></content>
+	</entry>
+	
+	<entry>
 		<title>Detecting collisions in Vision OS</title>
 		<link href="https://vision.rodeo/detecting-collisions/"/>
 		<updated>2024-06-30T00:00:00Z</updated>
@@ -433,6 +441,12 @@ table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position&lt;s
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This method resets the orientation of the pieces (try it without it - creates a fun explosion) then runs the &lt;code&gt;positionPiece&lt;/code&gt; method on each piece to put it back into the starting position.&lt;/p&gt;
+&lt;h2 id=&quot;bonus-going-further&quot; tabindex=&quot;-1&quot;&gt;Bonus: Going further &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If you want to go further check out these posts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://vision.rodeo/loading-material-from-scene/&quot;&gt;Loading material from Reality Composer Pro scene&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://vision.rodeo/detecting-collisions/&quot;&gt;Detecting collisions in Vision OS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&quot;congrats&quot; tabindex=&quot;-1&quot;&gt;Congrats! &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;This was a big one. In this post we&#39;ve put together several concepts, including creating an immersive view, adding gestures, physics, collisions, and used a shared view model to control the state of a game.&lt;/p&gt;
 &lt;p&gt;If you found this post useful, don&#39;t forget to subscribe below! I&#39;ll email occasionally when I&#39;ve something new to share.&lt;/p&gt;
