@@ -371,6 +371,13 @@ func reset() {
 
 This method resets the orientation of the pieces (try it without it - creates a fun explosion) then runs the `positionPiece` method on each piece to put it back into the starting position.
 
+## Bonus: Going further
+
+If you want to go further check out these posts:
+
+- [Loading material from Reality Composer Pro scene](/loading-material-from-scene/)
+- [Detecting collisions in Vision OS](/detecting-collisions/)
+
 ## Congrats!
 
 This was a big one. In this post we've put together several concepts, including creating an immersive view, adding gestures, physics, collisions, and used a shared view model to control the state of a game.
