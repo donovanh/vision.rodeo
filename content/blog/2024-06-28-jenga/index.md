@@ -375,8 +375,9 @@ This method resets the orientation of the pieces (try it without it - creates a 
 
 If you want to go further check out these posts:
 
-- [Loading material from Reality Composer Pro scene](/loading-material-from-scene/)
-- [Detecting collisions in Vision OS](/detecting-collisions/)
+- [Loading materials](/loading-material-from-scene/)
+- [Detecting collisions](/detecting-collisions/)
+- [Playing sounds](/playing-sounds/)
 
 ## Congrats!
 
