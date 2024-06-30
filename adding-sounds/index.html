@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Tagged “dev” - Donovan's Vision Blog</title>
-		<meta name="description" content="Build great apps for Apple Vision Pro">
+		<title>Playing sounds - Donovan's Vision Blog</title>
+		<meta name="description" content="Play a sound when a brick collides with table">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -12,12 +12,180 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
 
-		<meta property="og:title" content="Tagged “dev”" />
+		<meta property="og:title" content="Playing sounds" />
 		<meta property="og:type" content="article" />
-		<meta property="og:description" content="Build great apps for Apple Vision Pro">
+		<meta property="og:description" content="Play a sound when a brick collides with table">
 		<meta property="og:url" content="" />
 		<meta name="generator" content="Eleventy v2.0.1">
-		<style>* { box-sizing: border-box; }
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
@@ -523,226 +691,66 @@ footer {
 .signup-frame {
 	max-width: 375px;
 	margin: 0 auto;
-}
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #f8f8f2;
-	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #8292a2;
-}
-
-.token.punctuation {
-	color: #f8f8f2;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
-.token.boolean,
-.token.number {
-	color: #ae81ff;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: #a6e22e;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: #f8f8f2;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
-}
-
-.token.keyword {
-	color: #66d9ef;
-}
-
-.token.regex,
-.token.important {
-	color: #fd971f;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
 }</style>
 		<script src="/js/on-scroll.js"></script>
 	</head>
 	<body>
 		<div class="bodyBackground"></div>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
-			<div class="header-container home">
-				<header class="panel " id="header">
-					<a href="/" class="home-link">
-						<span class="wordart-wrapper">
-							<span class="wordart">Donovan’s Vision Blog</span>
-						</span>
-					</a>
-					<nav class="panel">
-						<h2 class="visually-hidden">Top level navigation menu</h2>
-						<ul class="nav">
-							<li class="nav-item"><a href="/">Home</a></li>
-							<li class="nav-item"><a href="/blog/">All Posts</a></li>
-							<li class="nav-item"><a href="/links/">Cool Links</a></li>
-						</ul>
-					</nav>
-				</header>
-			</div>
+			<header class="internal">
+				<a href="/" class="home-link">
+					<span class="wordart-wrapper">
+						<span class="wordart">Donovan’s Vision Blog</span>
+					</span>
+				</a>
+				<nav class="panel">
+					<h2 class="visually-hidden">Top level navigation menu</h2>
+					<ul class="nav">
+						<li class="nav-item"><a href="/">Home</a></li>
+						<li class="nav-item"><a href="/blog/">All Posts</a></li>
+						<li class="nav-item"><a href="/links/">Cool Links</a></li>
+					</ul>
+				</nav>
+			</header>
 		<main id="skip" class="">
 			
 <div class="content panel padded">
-  <h1>Tagged “dev”</h1>
+	<h1>Playing sounds</h1>
 
-
-<ul reversed class="nested postlist">
-
-	<li class="postlist-item">
-		<a href="/playing-sounds/" class="postlist-link">Playing sounds</a>
-		<time class="postlist-date" datetime="2024-06-30">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/detecting-collisions/" class="postlist-link">Detecting collisions in Vision OS</a>
-		<time class="postlist-date" datetime="2024-06-30">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/loading-material-from-scene/" class="postlist-link">Loading material from Reality Composer Pro scene</a>
-		<time class="postlist-date" datetime="2024-06-29">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/jenga-in-vision-os/" class="postlist-link">Build a Jenga game in Vision OS</a>
-		<time class="postlist-date" datetime="2024-06-28">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/hover-effect/" class="postlist-link">Simple hover effect</a>
-		<time class="postlist-date" datetime="2024-06-25">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/advanced-gestures/" class="postlist-link">Advanced gestures</a>
-		<time class="postlist-date" datetime="2024-06-20">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/multiple-objects/" class="postlist-link">Multiple objects</a>
-		<time class="postlist-date" datetime="2024-06-19">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/object-gravity/" class="postlist-link">Adding gravity</a>
-		<time class="postlist-date" datetime="2024-06-15">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/drag-gesture/" class="postlist-link">Dragging objects</a>
-		<time class="postlist-date" datetime="2024-06-14">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/immersive-spaces/" class="postlist-link">Immersive spaces</a>
-		<time class="postlist-date" datetime="2024-06-13">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/volumetric-window-group/" class="postlist-link">Volumetric windows</a>
-		<time class="postlist-date" datetime="2024-06-12">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/blender-file-in-vision/" class="postlist-link">Animated Blender entity in RealityView</a>
-		<time class="postlist-date" datetime="2024-06-10">June 2024</time>
-	</li>
-
+<ul class="post-metadata">
+	<li><time datetime="2024-06-30">30 June 2024</time></li>
+	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
 
+<p>With a Jenga game capable of <a href="/detecting-collisions/">detecting collisions</a>, we can experiment with adding sounds to collision events.</p>
+<h2 id="prepare-an-audio-file" tabindex="-1">Prepare an audio file <a class="header-anchor" href="#prepare-an-audio-file">#</a></h2>
+<p>To prepare a sound for this test, I grabbed a <a href="https://pixabay.com/sound-effects/search/jenga%20piece/">free file from Pixabay</a> and used Audacity to export it as WAV, then an online converter to create a <code>caf</code> file. This can be added to the project and accessed when needed.</p>
+<p><a href="https://files.vision.rodeo/sounds/tap01.caf">Download the audio file here</a>.</p>
+<h2 id="audiofileresource-extension" tabindex="-1">AudioFileResource extension <a class="header-anchor" href="#audiofileresource-extension">#</a></h2>
+<p>In order to load the file, we need to set up</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">extension</span> <span class="token class-name">AudioFileResource</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">func</span> <span class="token function-definition function">loadBundleFile</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> filename<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">AudioFileResource</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token keyword">let</span> audio <span class="token operator">=</span> <span class="token keyword">try</span><span class="token operator">?</span> <span class="token class-name">AudioFileResource</span><span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>named<span class="token punctuation">:</span> filename<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            audio
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">fatalError</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Unable to local audio file resource: </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">filename</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string"> from bundle."</span></span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="loading-sound" tabindex="-1">Loading sound <a class="header-anchor" href="#loading-sound">#</a></h2>
+<p>In the <code>ImmersiveView</code>, add a line above the body that uses this <code>loadBundleFile</code> method to load the sound:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">let</span> collisionAudio <span class="token operator">=</span> <span class="token class-name">AudioFileResource</span><span class="token punctuation">.</span><span class="token function">loadBundleFile</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"tap01.caf"</span></span><span class="token punctuation">)</span></code></pre>
+<h2 id="play-audio-from-an-entity" tabindex="-1">Play audio from an entity <a class="header-anchor" href="#play-audio-from-an-entity">#</a></h2>
+<p>We can have the entity play this sound. As the Vision Pro makes use of spatial audio, the sound will sound like it's coming from the entity that plays it.</p>
+<p>We can have the entity involved in a collision play the sound when a collision event occurs:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift">subscription <span class="token operator">=</span> content<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>to<span class="token punctuation">:</span> <span class="token class-name">CollisionEvents</span><span class="token punctuation">.</span><span class="token class-name">Began</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">,</span> on<span class="token punctuation">:</span> floor<span class="token punctuation">)</span> <span class="token punctuation">{</span> collisionEvent <span class="token keyword">in</span>
+    collisionEvent<span class="token punctuation">.</span>entityB<span class="token punctuation">.</span><span class="token function">playAudio</span><span class="token punctuation">(</span>collisionAudio<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The important detail here is that we can have <code>entity.playAudio(audioFile)</code> play the sound where needed.</p>
 
-<p>See <a href="/tags/">all tags</a>.</p>
+<ul class="links-nextprev"><li>Previous: <a href="/detecting-collisions/">Detecting collisions in Vision OS</a></li>
+</ul>
 </div>
-
 
 		</main>
 
@@ -776,6 +784,6 @@ pre[class*="language-"] {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /tags/dev/ -->
+		<!-- Current page: /adding-sounds/ -->
 	</body>
 </html>

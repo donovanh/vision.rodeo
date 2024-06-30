@@ -12,11 +12,36 @@
 	</author>
 	
 	<entry>
-		<title></title>
-		<link href="https://vision.rodeo/undefined/"/>
+		<title>Playing sounds</title>
+		<link href="https://vision.rodeo/playing-sounds/"/>
 		<updated>2024-06-30T00:00:00Z</updated>
-		<id>https://vision.rodeo/undefined/</id>
-		<content type="html"></content>
+		<id>https://vision.rodeo/playing-sounds/</id>
+		<content type="html">&lt;p&gt;With a Jenga game capable of &lt;a href=&quot;https://vision.rodeo/detecting-collisions/&quot;&gt;detecting collisions&lt;/a&gt;, we can experiment with adding sounds to collision events.&lt;/p&gt;
+&lt;h2 id=&quot;prepare-an-audio-file&quot; tabindex=&quot;-1&quot;&gt;Prepare an audio file &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/playing-sounds/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To prepare a sound for this test, I grabbed a &lt;a href=&quot;https://pixabay.com/sound-effects/search/jenga%20piece/&quot;&gt;free file from Pixabay&lt;/a&gt; and used Audacity to export it as WAV, then an online converter to create a &lt;code&gt;caf&lt;/code&gt; file. This can be added to the project and accessed when needed.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://files.vision.rodeo/sounds/tap01.caf&quot;&gt;Download the audio file here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;audiofileresource-extension&quot; tabindex=&quot;-1&quot;&gt;AudioFileResource extension &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/playing-sounds/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In order to load the file, we need to set up&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AudioFileResource&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function-definition function&quot;&gt;loadBundleFile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token omit keyword&quot;&gt;_&lt;/span&gt; filename&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AudioFileResource&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; audio &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AudioFileResource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;named&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; filename&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            audio
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token function&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to local audio file resource: &lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;&#92;(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; from bundle.&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;loading-sound&quot; tabindex=&quot;-1&quot;&gt;Loading sound &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/playing-sounds/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In the &lt;code&gt;ImmersiveView&lt;/code&gt;, add a line above the body that uses this &lt;code&gt;loadBundleFile&lt;/code&gt; method to load the sound:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; collisionAudio &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AudioFileResource&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;loadBundleFile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;tap01.caf&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;play-audio-from-an-entity&quot; tabindex=&quot;-1&quot;&gt;Play audio from an entity &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/playing-sounds/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can have the entity play this sound. As the Vision Pro makes use of spatial audio, the sound will sound like it&#39;s coming from the entity that plays it.&lt;/p&gt;
+&lt;p&gt;We can have the entity involved in a collision play the sound when a collision event occurs:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;subscription &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;subscribe&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;to&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;CollisionEvents&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Began&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; on&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; floor&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; collisionEvent &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+    collisionEvent&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;entityB&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;playAudio&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;collisionAudio&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The important detail here is that we can have &lt;code&gt;entity.playAudio(audioFile)&lt;/code&gt; play the sound where needed.&lt;/p&gt;
+</content>
 	</entry>
 	
 	<entry>
