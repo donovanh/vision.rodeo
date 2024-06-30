@@ -378,9 +378,3 @@ If you want to go further check out these posts:
 - [Loading materials](/loading-material-from-scene/)
 - [Detecting collisions](/detecting-collisions/)
 - [Playing sounds](/playing-sounds/)
-
-## Congrats!
-
-In this post we've put together several concepts, including creating an immersive view, adding gestures, physics, collisions, and used a shared view model to control the state of a game.
-
-If you found this post useful, don't forget to subscribe below! I'll email occasionally when I've something new to share.
