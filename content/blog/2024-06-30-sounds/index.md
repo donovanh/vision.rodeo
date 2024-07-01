@@ -17,7 +17,7 @@ To prepare a sound for this test, I grabbed a [free file from Pixabay](https://p
 
 ## AudioFileResource extension
 
-In order to load the file, we need to set up
+In order to load the file, we need to set up an extension to `AudioFileResource`. This will allow us to load the necessary audio files in our views. Add this as a standalone file such as `AudioFileResource-loadBundleFile`.
 
 ```swift
 extension AudioFileResource {
