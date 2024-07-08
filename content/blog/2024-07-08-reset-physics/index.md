@@ -1,5 +1,5 @@
 ---
-title: Resetting physics in Vision OS entities
+title: Reset physics in Vision OS entities
 permalink: /reset-physics/
 description: How to reset positions of pieces that are currently in motion
 date: 2024-07-08
@@ -7,7 +7,7 @@ tags:
   - dev
 ---
 
-When [building a Jenga game](/jenga-in-vision-os/), I wanted to be able to reset the pieces. I was able to write a simple `reset` method that put the pieces back to where they should be but there was an unexpected result:
+When [building a Jenga game](/jenga-in-vision-os/), I wanted to be able to reset the pieces. I was able to write a simple `reset` method that put the pieces back to where they should be but there was an unexpected result. Each time I press `Reset`, the pieces fall over:
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/RZIVyh3" data-context="false" ><a href="//imgur.com/a/RZIVyh3">Jenga game without physics reset code</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
