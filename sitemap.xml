@@ -125,4 +125,14 @@
 		<loc>https://vision.rodeo/playing-sounds/</loc>
 		<lastmod>2024-06-30</lastmod>
 	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/dismiss-immersive/</loc>
+		<lastmod>2024-06-30</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/reset-physics/</loc>
+		<lastmod>2024-07-08</lastmod>
+	</url>
 </urlset>

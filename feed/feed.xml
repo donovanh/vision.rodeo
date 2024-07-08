@@ -4,12 +4,48 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-06-30T00:00:00Z</updated>
+	<updated>2024-07-08T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>Reset physics in Vision OS entities</title>
+		<link href="https://vision.rodeo/reset-physics/"/>
+		<updated>2024-07-08T00:00:00Z</updated>
+		<id>https://vision.rodeo/reset-physics/</id>
+		<content type="html">&lt;p&gt;When &lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;building a Jenga game&lt;/a&gt;, I wanted to be able to reset the pieces. I was able to write a simple &lt;code&gt;reset&lt;/code&gt; method that put the pieces back to where they should be but there was an unexpected result. Each time I press &lt;code&gt;Reset&lt;/code&gt;, the pieces fall over:&lt;/p&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/RZIVyh3&quot; data-context=&quot;false&quot;&gt;&lt;a href=&quot;https://imgur.com/a/RZIVyh3&quot;&gt;Jenga game without physics reset code&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;h2 id=&quot;object-physics&quot; tabindex=&quot;-1&quot;&gt;Object physics &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/reset-physics/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The video above shows that the pieces are being reset into their positions, but they still have their movement physics in place. As a result when reset, they continue to move causing the tower to collapse.&lt;/p&gt;
+&lt;h2 id=&quot;reset-the-physics&quot; tabindex=&quot;-1&quot;&gt;Reset the physics &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/reset-physics/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can apply to lines of code to reset the physics. First we set the piece to static, then call &lt;a href=&quot;https://developer.apple.com/documentation/realitykit/modelentity/clearforcesandtorques()&quot;&gt;clearForcesAndTorques&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;modelEntity&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;physicsBody&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mode &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt;
+modelEntity&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;clearForcesAndTorques&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We then need to run a loop over the pieces to re-enable the physics:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; child &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; tower&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;children &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; modelEntity &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; child &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ModelEntity&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        modelEntity&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;physicsBody&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mode &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;dynamic&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As a result we should now be able to set the pieces and they should stay still:&lt;/p&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/DQwj1qo&quot; data-context=&quot;false&quot;&gt;&lt;a href=&quot;https://imgur.com/a/DQwj1qo&quot;&gt;Jenga game with physics reset code&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Dismissing immersive views</title>
+		<link href="https://vision.rodeo/dismiss-immersive/"/>
+		<updated>2024-06-30T00:00:00Z</updated>
+		<id>https://vision.rodeo/dismiss-immersive/</id>
+		<content type="html">&lt;p&gt;When running an app that uses an immersive view, such as &lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;this Jenga demo&lt;/a&gt;, you might want the immersive scene to disappear when the window is closed. We can do this using the &lt;code&gt;scenePhase&lt;/code&gt; environmental setting along with &lt;code&gt;dismissImmersiveSpace&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Note some caveats such as reopening (try to get a good simplified version working)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Playing sounds</title>

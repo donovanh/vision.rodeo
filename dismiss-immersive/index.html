@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Donovan’s Vision Blog - Donovan's Vision Blog</title>
-		<meta name="description" content="Build great apps for Apple Vision Pro">
+		<title>Dismissing immersive views - Donovan's Vision Blog</title>
+		<meta name="description" content="Exit an immersive view in Vision OS programaticslly">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -12,9 +12,9 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
 
-		<meta property="og:title" content="Donovan’s Vision Blog" />
+		<meta property="og:title" content="Dismissing immersive views" />
 		<meta property="og:type" content="article" />
-		<meta property="og:description" content="Build great apps for Apple Vision Pro">
+		<meta property="og:description" content="Exit an immersive view in Vision OS programaticslly">
 		<meta property="og:url" content="" />
 		<meta name="generator" content="Eleventy v2.0.1">
 		<style>/**
@@ -722,14 +722,19 @@ footer {
 		<main id="skip" class="">
 			
 <div class="content panel padded">
-	<h1></h1>
+	<h1>Dismissing immersive views</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2024-07-04">4 July 2024</time></li>
+	<li><time datetime="2024-06-30">30 June 2024</time></li>
+	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
 
+<p>When running an app that uses an immersive view, such as <a href="/jenga-in-vision-os/">this Jenga demo</a>, you might want the immersive scene to disappear when the window is closed. We can do this using the <code>scenePhase</code> environmental setting along with <code>dismissImmersiveSpace</code>.</p>
+<ul>
+<li>Note some caveats such as reopening (try to get a good simplified version working)</li>
+</ul>
 
-<ul class="links-nextprev"><li>Previous: <a href="/playing-sounds/">Playing sounds</a></li>
+<ul class="links-nextprev"><li>Previous: <a href="/playing-sounds/">Playing sounds</a></li><li>Next: <a href="/reset-physics/">Reset physics in Vision OS entities</a></li>
 </ul>
 </div>
 
@@ -765,6 +770,6 @@ footer {
 				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /undefined/ -->
+		<!-- Current page: /dismiss-immersive/ -->
 	</body>
 </html>
