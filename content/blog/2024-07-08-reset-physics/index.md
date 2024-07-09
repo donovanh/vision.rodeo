@@ -1,5 +1,5 @@
 ---
-title: Reset physics in Vision OS entities
+title: Reset physics in entities
 permalink: /reset-physics/
 description: How to reset positions of pieces that are currently in motion
 date: 2024-07-08
