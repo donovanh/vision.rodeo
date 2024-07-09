@@ -31,6 +31,28 @@ extension AudioFileResource {
 }
 ```
 
+## Set up Spatial Audio on entity
+
+When setting up the `piece` entity in the view model, we can set the entity to use Spatial audio:
+
+```swift
+piece.spatialAudio = SpatialAudioComponent()
+```
+
+The [SpatialAudioComponent](https://developer.apple.com/documentation/realitykit/spatialaudiocomponent) method can be configured with `directivity` (the radiated pattern of sound), `gain` (the overall volume) and more.
+
+We can also set orientation on the sound to work in combination with `directivity` using `piece.orienation`:
+
+```swift
+audioSource.orientation = .init(angle: .pi, axis: [0, 1, 0])
+```
+
+These can be set directly also such as when a collision event occurs and we might want to specify a value calculated in some way.
+
+```swift
+entity.spatialAudio?.directivity = .beam(focus: 0.75)
+```
+
 ## Loading sound
 
 In the `ImmersiveView`, add a line above the body that uses this `loadBundleFile` method to load the sound:
