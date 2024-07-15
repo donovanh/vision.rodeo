@@ -1,9 +1,6 @@
 ---
 layout: layouts/home.njk
-eleventyNavigation:
-  key: Home
-  order: 1
-numberOfLatestPostsToShow: 12
+numberOfLatestPostsToShow: 20
 ---
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}

@@ -47,14 +47,13 @@
 	<body>
 		<div class="bodyBackground"></div>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
-		{%- if isInternal %}
 			<header class="internal">
 				<a href="/" class="home-link">
 					<span class="wordart-wrapper">
 						<span class="wordart">{{ metadata.title }}</span>
 					</span>
 				</a>
-				<nav class="panel">
+				<nav>
 					<h2 class="visually-hidden">Top level navigation menu</h2>
 					<ul class="nav">
 					{%- for entry in collections.all | eleventyNavigation %}
@@ -63,25 +62,6 @@
 					</ul>
 				</nav>
 			</header>
-		{%- else %}
-			<div class="header-container home">
-				<header class="panel {% if page.url === "/" %}animated{% endif %}" id="header">
-					<a href="/" class="home-link">
-						<span class="wordart-wrapper">
-							<span class="wordart">{{ metadata.title }}</span>
-						</span>
-					</a>
-					<nav class="panel">
-						<h2 class="visually-hidden">Top level navigation menu</h2>
-						<ul class="nav">
-						{%- for entry in collections.all | eleventyNavigation %}
-							<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-						{%- endfor %}
-						</ul>
-					</nav>
-				</header>
-			</div>
-		{%- endif %}
 		<main id="skip" class="{% if page.url === "/" %}animated{% endif %}">
 			{{ content | safe }}
 		</main>
@@ -102,18 +82,8 @@
 					></iframe>
 				</div>
 			</div>
-			<nav class="panel secondary">
-					<h2 class="visually-hidden">Footer navigation menu</h2>
-					<ul class="nav">
-					{%- for entry in collections.all | eleventyNavigation %}
-						<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-					{%- endfor %}
-					</ul>
-				</nav>
-				<p>This website is built on <a href="http://eleventy-base-blog.netlify.app">Eleventy Base Blog</a> with a few small tweaks.</p>
-
-			<p>Thanks for reading, be sure to check out <a href="/feed/feed.xml">the RSS feed</a>.</p>
-				<p>All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
+				<p>Thanks for reading! Follow the <a href="/feed/feed.xml">the RSS feed</a></p>
+				<p style="font-size: 0.75rem">All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->

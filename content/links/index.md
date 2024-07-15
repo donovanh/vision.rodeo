@@ -1,9 +1,6 @@
 ---
 title: "Cool links"
 layout: layouts/base.njk
-eleventyNavigation:
-  key: Cool Links
-  order: 3
 ---
 
 <div class="content panel padded">
