@@ -12,27 +12,17 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/links/</loc>
-		<lastmod>2024-01-26</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://vision.rodeo/</loc>
-		<lastmod>2024-01-26</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://vision.rodeo/tags/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/apps/</loc>
+		<loc>https://vision.rodeo/tags/thoughts/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/thoughts/</loc>
+		<loc>https://vision.rodeo/tags/apps/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -129,5 +119,20 @@
 	<url>
 		<loc>https://vision.rodeo/reset-physics/</loc>
 		<lastmod>2024-07-08</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/dismiss-immersive/</loc>
+		<lastmod>2024-07-15</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/</loc>
+		<lastmod>2024-07-15</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/links/</loc>
+		<lastmod>2024-07-15</lastmod>
 	</url>
 </urlset>

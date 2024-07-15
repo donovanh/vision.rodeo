@@ -4,12 +4,56 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-07-08T00:00:00Z</updated>
+	<updated>2024-07-15T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>Dismissing immersive views</title>
+		<link href="https://vision.rodeo/dismiss-immersive/"/>
+		<updated>2024-07-15T00:00:00Z</updated>
+		<id>https://vision.rodeo/dismiss-immersive/</id>
+		<content type="html">&lt;p&gt;When running an app that uses an immersive view, such as &lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;this Jenga demo&lt;/a&gt;, you might want the immersive scene to disappear when the window is closed. We can do this using the &lt;code&gt;scenePhase&lt;/code&gt; environmental setting along with &lt;code&gt;dismissImmersiveSpace&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For example, we can use the &lt;code&gt;scenePhase&lt;/code&gt; value of the main content view to determine if it&#39;s been closed, and use that to hide the immersive view:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;onChange&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;of&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; showImmersiveSpace&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token omit keyword&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; newValue &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+    &lt;span class=&quot;token class-name&quot;&gt;Task&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; newValue &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;showImmersiveView&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; immersiveSpaceIsShown &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            immersiveSpaceIsShown &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+            &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;dismissImmersiveSpace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; scenePhase&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;switch&lt;/span&gt; scenePhase &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;inactive&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;background&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        immersiveSpaceIsShown &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+        showImmersiveSpace &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This &lt;code&gt;onChange&lt;/code&gt; block will show the &lt;code&gt;ImmersiveView&lt;/code&gt; if the &lt;code&gt;newValue&lt;/code&gt; is &lt;code&gt;true&lt;/code&gt; otherwise if the &lt;code&gt;ImmersiveView&lt;/code&gt; is currently shown, it&#39;ll dismiss it.&lt;/p&gt;
+&lt;p&gt;Then the &lt;code&gt;scenePhase&lt;/code&gt; task applies a switch to &lt;code&gt;scenePhase&lt;/code&gt; that will update the &lt;code&gt;showImmersiveSpace&lt;/code&gt; value to &lt;code&gt;false&lt;/code&gt; when the window is closed or goes into the background. This would then result in the immersive view being dismissed.&lt;/p&gt;
+&lt;h2 id=&quot;tracking-on-the-immersiveview&quot; tabindex=&quot;-1&quot;&gt;Tracking on the ImmersiveView &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/dismiss-immersive/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We can also keep track of whether the immersive view is showing by using &lt;code&gt;scenePhase&lt;/code&gt; but applied to the &lt;code&gt;RealityView&lt;/code&gt; in &lt;code&gt;ImmersiveView&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; scenePhase&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;switch&lt;/span&gt; scenePhase &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;inactive&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;background&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        isShowingImmersive &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;active&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        isShowingImmersive &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;break&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here a &lt;code&gt;Binding&lt;/code&gt; of &lt;code&gt;isShowingImmersive&lt;/code&gt; can be toggled and the system can be aware that the &lt;code&gt;ImmersiveView&lt;/code&gt; has been dismissed.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Reset physics in entities</title>
@@ -77,7 +121,7 @@ modelEntity&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;spa
 	</entry>
 	
 	<entry>
-		<title>Detecting collisions in Vision OS</title>
+		<title>Detecting collisions in visionOS</title>
 		<link href="https://vision.rodeo/detecting-collisions/"/>
 		<updated>2024-06-30T00:00:00Z</updated>
 		<id>https://vision.rodeo/detecting-collisions/</id>
@@ -222,7 +266,7 @@ table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position&lt;s
 	</entry>
 	
 	<entry>
-		<title>Build a Jenga game in Vision OS</title>
+		<title>Build a Jenga game in visionOS</title>
 		<link href="https://vision.rodeo/jenga-in-vision-os/"/>
 		<updated>2024-06-28T00:00:00Z</updated>
 		<id>https://vision.rodeo/jenga-in-vision-os/</id>
@@ -240,7 +284,7 @@ table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position&lt;s
 &lt;li&gt;&lt;a href=&quot;https://vision.rodeo/immersive-spaces/&quot;&gt;Setting up an immersive space&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://vision.rodeo/object-gravity/&quot;&gt;Adding physics to an entity&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://vision.rodeo/multiple-objects/&quot;&gt;Creating multiple 3D objects in code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://vision.rodeo/advanced-gestures/&quot;&gt;Adding gestures to an entity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://vision.rodeo/drag-gesture/&quot;&gt;Adding drag gesture to an entity&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://vision.rodeo/hover-effect/&quot;&gt;Hover effects on entities&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;getting-started&quot; tabindex=&quot;-1&quot;&gt;Getting started &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -396,25 +440,6 @@ table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position&lt;s
   &lt;span class=&quot;token comment&quot;&gt;// Hover effect&lt;/span&gt;
   piece&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;components&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;HoverEffectComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-  &lt;span class=&quot;token comment&quot;&gt;// Configure and apply gestures component&lt;/span&gt;
-  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; jsonData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&quot;&quot;
-  {
-      &quot;canDrag&quot;: true,
-      &quot;pivotOnDrag&quot;: true,
-      &quot;preserveOrientationOnPivotDrag&quot;: true,
-      &quot;canScale&quot;: false,
-      &quot;canRotate&quot;: true
-  }
-  &quot;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;using&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;utf8&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;
-
-  &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; decoder &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;JSONDecoder&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; gestureComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; decoder&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;GestureComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; from&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; jsonData&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-      piece&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;components&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;gestureComponent&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token function&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Failed to decode JSON: &lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;&#92;(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
   &lt;span class=&quot;token comment&quot;&gt;// Collisions&lt;/span&gt;
   piece&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;generateCollisionShapes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;recursive&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
@@ -485,7 +510,16 @@ table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position&lt;s
     &lt;span class=&quot;token comment&quot;&gt;// Add pieces&lt;/span&gt;
     content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;viewModel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tower&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;rest-game-button&quot; tabindex=&quot;-1&quot;&gt;Rest game button &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;adding-drag-gesture&quot; tabindex=&quot;-1&quot;&gt;Adding drag gesture &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Now that pieces are in place, we can make the pieces movable using a drag gesture applied to any entity:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;gesture&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token class-name&quot;&gt;DragGesture&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;targetedToAnyEntity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;onChanged &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; value &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
+            value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;entity&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;location3D&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; from&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;local&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; to&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;entity&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;parent&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;reset-game-button&quot; tabindex=&quot;-1&quot;&gt;Reset game button &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;We should now have a workable Jenga tower. The next step is to have some way to reset it. Add a &lt;code&gt;reset&lt;/code&gt; method to the &lt;code&gt;SharedViewModel&lt;/code&gt;:&lt;/p&gt;
 &lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function-definition function&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
@@ -531,7 +565,7 @@ table&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position&lt;s
 		<link href="https://vision.rodeo/advanced-gestures/"/>
 		<updated>2024-06-20T00:00:00Z</updated>
 		<id>https://vision.rodeo/advanced-gestures/</id>
-		<content type="html">&lt;p&gt;After &lt;a href=&quot;https://vision.rodeo/multiple-objects/&quot;&gt;creating multiple 3D objects in a Vision OS scene&lt;/a&gt;, I thought it would be good to go further than the simple drag gesture mentioned there.&lt;/p&gt;
+		<content type="html">&lt;p&gt;After &lt;a href=&quot;https://vision.rodeo/multiple-objects/&quot;&gt;creating multiple 3D objects in a visionOS scene&lt;/a&gt;, I thought it would be good to go further than the simple drag gesture mentioned there.&lt;/p&gt;
 &lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/5HG8G7i&quot; data-context=&quot;false&quot;&gt;&lt;a href=&quot;https://imgur.com/a/5HG8G7i&quot;&gt;&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 &lt;p&gt;In my research, I found an Apple article on &lt;a href=&quot;https://developer.apple.com/documentation/realitykit/transforming-realitykit-entities-with-gestures&quot;&gt;transforming realitykit entities with gestures&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;installing-components-and-extensions&quot; tabindex=&quot;-1&quot;&gt;Installing Components and Extensions &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/advanced-gestures/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -892,7 +926,7 @@ content&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
     &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&quot;adding-gesture&quot; tabindex=&quot;-1&quot;&gt;Adding gesture &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/drag-gesture/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Interaction in Vision OS is handled using &lt;a href=&quot;https://developer.apple.com/design/human-interface-guidelines/gestures&quot;&gt;gestures&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Interaction in visionOS is handled using &lt;a href=&quot;https://developer.apple.com/design/human-interface-guidelines/gestures&quot;&gt;gestures&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We add a gesture to our &lt;code&gt;RealityView&lt;/code&gt; like so, and pass in a &lt;code&gt;DragGesture&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;RealityView&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; content &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt;
     &lt;span class=&quot;token comment&quot;&gt;//... orb code&lt;/span&gt;
