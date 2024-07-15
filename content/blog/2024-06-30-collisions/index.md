@@ -1,5 +1,5 @@
 ---
-title: Detecting collisions in Vision OS
+title: Detecting collisions in visionOS
 permalink: /detecting-collisions/
 description: Load a material for use in coded RealityKit scenes
 date: 2024-06-30

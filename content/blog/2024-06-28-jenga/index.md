@@ -1,7 +1,7 @@
 ---
-title: Build a Jenga game in Vision OS
+title: Build a Jenga game in visionOS
 permalink: /jenga-in-vision-os/
-description: Create a simple Jenga-style game in Vision OS
+description: Create a simple Jenga-style game in visionOS
 date: 2024-06-28
 tags:
   - dev
@@ -28,7 +28,7 @@ This work brings together all the previous topics we've covered including:
 - [Setting up an immersive space](/immersive-spaces/)
 - [Adding physics to an entity](/object-gravity/)
 - [Creating multiple 3D objects in code](/multiple-objects/)
-- [Adding gestures to an entity](/advanced-gestures/)
+- [Adding drag gesture to an entity](/drag-gesture/)
 - [Hover effects on entities](/hover-effect/)
 
 ## Getting started
@@ -240,25 +240,6 @@ func generatePiece() -> ModelEntity {
   // Hover effect
   piece.components.set(HoverEffectComponent())
 
-  // Configure and apply gestures component
-  let jsonData = """
-  {
-      "canDrag": true,
-      "pivotOnDrag": true,
-      "preserveOrientationOnPivotDrag": true,
-      "canScale": false,
-      "canRotate": true
-  }
-  """.data(using: .utf8)!
-
-  do {
-      let decoder = JSONDecoder()
-      let gestureComponent = try decoder.decode(GestureComponent.self, from: jsonData)
-      piece.components.set(gestureComponent)
-  } catch {
-      print("Failed to decode JSON: \(error)")
-  }
-
   // Collisions
   piece.generateCollisionShapes(recursive: false)
 
@@ -352,7 +333,21 @@ RealityView { content in
 }
 ```
 
-## Rest game button
+## Adding drag gesture
+
+Now that pieces are in place, we can make the pieces movable using a drag gesture applied to any entity:
+
+```swift
+.gesture(
+    DragGesture()
+        .targetedToAnyEntity()
+        .onChanged { value in
+            value.entity.position = value.convert(value.location3D, from: .local, to: value.entity.parent!)
+        }
+)
+```
+
+## Reset game button
 
 We should now have a workable Jenga tower. The next step is to have some way to reset it. Add a `reset` method to the `SharedViewModel`:
 

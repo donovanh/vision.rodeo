@@ -36,7 +36,7 @@ struct ImmersiveView: View {
 
 ## Adding gesture
 
-Interaction in Vision OS is handled using [gestures](https://developer.apple.com/design/human-interface-guidelines/gestures).
+Interaction in visionOS is handled using [gestures](https://developer.apple.com/design/human-interface-guidelines/gestures).
 
 We add a gesture to our `RealityView` like so, and pass in a `DragGesture`.
 

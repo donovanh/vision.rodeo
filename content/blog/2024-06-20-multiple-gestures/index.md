@@ -7,7 +7,7 @@ tags:
   - dev
 ---
 
-After [creating multiple 3D objects in a Vision OS scene](https://vision.rodeo/multiple-objects/), I thought it would be good to go further than the simple drag gesture mentioned there.
+After [creating multiple 3D objects in a visionOS scene](https://vision.rodeo/multiple-objects/), I thought it would be good to go further than the simple drag gesture mentioned there.
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/5HG8G7i" data-context="false" ><a href="//imgur.com/a/5HG8G7i"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
