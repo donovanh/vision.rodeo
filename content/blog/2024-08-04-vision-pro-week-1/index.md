@@ -4,7 +4,7 @@ permalink: /vision-pro-week-one/
 description: The ups and downs of getting used to the Vision Pro
 date: 2024-08-04
 tags:
-  - dev
+  - thoughts
 ---
 
 I've had a Vision Pro for almost a week and thought I'd share my initial thoughts on this unusual device.
