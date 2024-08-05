@@ -61,7 +61,7 @@ I was struck by how different it is to have any number of huge windows I can pla
 
 I quickly learned about what people meant when they said that the device was uncomfortable. I think there's a learning curve to the way the device sits on the face. For me, I quickly found that the headset would feel like it was pulling down on my cheeks.
 
-When I tried to dial shift the weight through changing the position of the strap on the back of my head, I found that the pressure on my forehead became a problem. After the first day I had a headache and strange pains in my cheeks.
+When I tried to shift the weight through changing the position of the strap on the back of my head, I found that the pressure on my forehead became a problem. After the first day I had a headache and strange pains in my cheeks.
 
 ### Revisiting the store
 
@@ -72,6 +72,14 @@ In-store it felt perfectly fine. This is something I saw many commentators menti
 The comfort feels ok at first, but even with the new seal it becomes a bit much within about 30 minutes. I can adjust the straps to move the weight around between the cheeks and forehead but it seems for me at least it's just not possible to get it to feel entirely comfortable.
 
 Even when writing this, I started off feeling totally fine (and loving this giant text editor window), but 30 minutes in I'm finding I need to either keep adjusting it or take a break.
+
+### Tips for better comfort
+
+I have since discovered that my issue was mainly caused by over-tightening the solo strap. I've since found that comfort can be improved by keeping the headset loose enough that the device is on the edge of slipping off my face. I then carefully adjust the strap's position on the back of my head so that it's splitting the pressure between forehead and cheeks.
+
+The tweaks can be very subtle but with a little practice I'm able to dial-in the position: if it's heavy on cheeks I move the strap slightly down and maybe tighten a little. If it's heavy on forehead, I move it up a little and loosen.
+
+Everyone's different but this seems to help. It even reduces the blurriness a little.
 
 ## Glare and blurriness
 
