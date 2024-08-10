@@ -1,7 +1,7 @@
 ---
 title: Dismissing immersive views
 permalink: /dismiss-immersive/
-description: Exit an immersive view in visionOS programaticslly
+description: Exit an immersive view in visionOS programatically
 date: 2024-07-15
 tags:
   - dev
