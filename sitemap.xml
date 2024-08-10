@@ -17,12 +17,12 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/thoughts/</loc>
+		<loc>https://vision.rodeo/tags/apps/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/apps/</loc>
+		<loc>https://vision.rodeo/tags/thoughts/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -139,5 +139,10 @@
 	<url>
 		<loc>https://vision.rodeo/vision-pro-week-one/</loc>
 		<lastmod>2024-08-04</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/vision-pro-week-two/</loc>
+		<lastmod>2024-08-10</lastmod>
 	</url>
 </urlset>

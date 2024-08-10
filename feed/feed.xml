@@ -4,12 +4,57 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-08-04T00:00:00Z</updated>
+	<updated>2024-08-10T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>Vision Pro update - I can see clearly now</title>
+		<link href="https://vision.rodeo/vision-pro-week-two/"/>
+		<updated>2024-08-10T00:00:00Z</updated>
+		<id>https://vision.rodeo/vision-pro-week-two/</id>
+		<content type="html">&lt;p&gt;My Zeiss lenses arrived! As a follow up from &lt;a href=&quot;https://vision.rodeo/vision-pro-week-one/&quot;&gt;this post on the first week with Vision Pro&lt;/a&gt;, this is an update on how I&#39;m getting on with this amazing device.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/f91B2Bwq5U-1280.avif 1280w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/f91B2Bwq5U-1280.webp 1280w&quot;&gt;&lt;img alt=&quot;Updating Vision Pro to visionOS 2 Beta 5&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/f91B2Bwq5U-1280.jpeg&quot; width=&quot;1280&quot; height=&quot;960&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;My initial post got &lt;a href=&quot;https://www.reddit.com/r/VisionPro/comments/1ejs7gi/thoughts_on_a_week_with_vision_pro/&quot;&gt;many helpful comments&lt;/a&gt;, mostly relating to comfort. This post will focus on how that&#39;s going.&lt;/p&gt;
+&lt;h2 id=&quot;wearing-it-wrong&quot; tabindex=&quot;-1&quot;&gt;Wearing it wrong &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision-pro-week-two/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There were several comments suggesting that the dual strap was a better approach that the solo for comfort. I&#39;ve been back and forth on this and I was surprised to find that for longer usage I find the solo strap easier to use.&lt;/p&gt;
+&lt;p&gt;With the dual strap I found it ends up putting more strain on the top of my head, and the back part needs to be adjusted a lot as it slips up, causing pressure on my cheeks.&lt;/p&gt;
+&lt;p&gt;With the solo strap I can more easily &lt;em&gt;dial-in&lt;/em&gt; the comfort by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Moving it lower on the back of my head when the cheeks need a little less pressure&lt;/li&gt;
+&lt;li&gt;Moving it up when the forehead needs less pressure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the end, the approach I found that really helped was to not tighten it so much. For me the best approach is to position the light seal such that it hangs on the forehead with a light contact on the cheeks and nose, and only dial the solo strap in to the point where I can just slightly feel it on the back of my head.&lt;/p&gt;
+&lt;p&gt;It&#39;s loose enough that if the cheeks start to feel it, I can scrunch my face up in a grimace and nudge the forehead position back up without having to use my hands to adjust the position.&lt;/p&gt;
+&lt;p&gt;With this I am finding I can use Vision Pro for multiple hours every day. While it&#39;s still not perfect, it&#39;s good enough that I often forget any concerns about comfort.&lt;/p&gt;
+&lt;h2 id=&quot;lenses-and-visual-clarity&quot; tabindex=&quot;-1&quot;&gt;Lenses and visual clarity &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision-pro-week-two/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I spent the first week using Vision Pro without Zeiss corrective lenses (they had to be ordered separately). While I&#39;m not someone who wears glasses all the time, I do have use them for a slight distance correction.&lt;/p&gt;
+&lt;p&gt;I only really need to use my glasses when driving and I had even asked my optometrist if I&#39;d need the adjustment for the Vision Pro&#39;s approximate &lt;a href=&quot;https://discussions.apple.com/thread/255464091?sortBy=rank&quot;&gt;6 to 8-foot focal distance&lt;/a&gt; and was told I would not need them.&lt;/p&gt;
+&lt;p&gt;Still, during the in-store demo I was set up with some Zeiss inserts and I found on using the device at home that nothing was &lt;em&gt;quite&lt;/em&gt; sharp enough. I was continually having to strain and blink to try to focus things just a little more, as they would be always a little fringed and blurry. This was particularly true of the virtual display which was just about usable.&lt;/p&gt;
+&lt;p&gt;The end result was my eyes and brain were getting tired quickly when using the headset and I was even noticing my eyes struggling to focus for a time after using it.&lt;/p&gt;
+&lt;h3 id=&quot;zeiss-lenses-arrived&quot; tabindex=&quot;-1&quot;&gt;Zeiss lenses arrived &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision-pro-week-two/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;But then my lenses arrived. When I put them in and put on the headset it was immediately clear &lt;em&gt;(heh)&lt;/em&gt; that everythig was improved. Windows and text was clearer and the virtual display from my M1 Macbook Air was clear enough to be usable.&lt;/p&gt;
+&lt;p&gt;I opened Apple TV and put on the Experience Immersive video, and suddenly it felt just as impressive as the in-store demo.&lt;/p&gt;
+&lt;p&gt;After several days with the lenses my eyes are no longer fatigued. I would say that even with mild distance correction needs, having the Zeiss lenses is worthwhile.&lt;/p&gt;
+&lt;h2 id=&quot;using-the-device-day-to-day&quot; tabindex=&quot;-1&quot;&gt;Using the device day to day &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision-pro-week-two/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;After the initial week, I&#39;m still using Vision Pro for several hours each day. I have put in about 12 hours in following coding tutorials and working on a little game I&#39;m building to learn visionOS development.&lt;/p&gt;
+&lt;p&gt;I&#39;ve also watched some amazing 4K movies. Having a personal cinema is one of the device&#39;s strongest use-cases and a great way to watch movies. It is quite intense though so I&#39;m finding I often watch half a movie and need to pause and revisit it the next day. I may get used to this.&lt;/p&gt;
+&lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://vision.rodeo/img/C1XednCZGy-1280.avif 1280w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://vision.rodeo/img/C1XednCZGy-1280.webp 1280w&quot;&gt;&lt;img alt=&quot;Get away from her!&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://vision.rodeo/img/C1XednCZGy-1280.jpeg&quot; width=&quot;1280&quot; height=&quot;720&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;p&gt;This is an iMax-sized screen in a virtual cinema. I often set up a big screen floating in an environment too.&lt;/p&gt;
+&lt;h3 id=&quot;panoramas&quot; tabindex=&quot;-1&quot;&gt;Panoramas &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision-pro-week-two/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I am finding I take a lot more panoramas these days and they look great in the device. While the spatial-ify option for making 2D photos into 3D photos is feeling like a bit of a gimmick, I am more often turning to the panoramas to remind me how it felt to be in places. They&#39;re not the highest resolution but they work well.&lt;/p&gt;
+&lt;h3 id=&quot;emotional-immersion&quot; tabindex=&quot;-1&quot;&gt;Emotional immersion &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision-pro-week-two/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;I&#39;ve noticed that with the comfort and clarity improved, I&#39;m can better enjoy the immersive videos. Watching a documentary about rhinos and a musical rehearsal had me feeling much more emotional than a 2D video. I was clapping along with Alicia Keys and the band, and even got a little choked up at the story of the orphaned rhino and zebra.&lt;/p&gt;
+&lt;p&gt;It&#39;s a common complaint that we don&#39;t have enough of such content, but I&#39;m sure once the market for it grows we&#39;ll see more and more.&lt;/p&gt;
+&lt;h2 id=&quot;week-2-conclusions&quot; tabindex=&quot;-1&quot;&gt;Week 2 conclusions &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/vision-pro-week-two/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;After two weeks using the Vision Pro multiple hours per day, it&#39;s definitely growing on me. I&#39;m much more content now with the comfort and find myself looking forward to taking time to sit back and enjoy TV shows and movies in my own little world, and I&#39;m excited to learn how to build apps in 3D.&lt;/p&gt;
+&lt;p&gt;I&#39;ve learned how to properly position the headset using the solo strap, and the arrival of Zeiss lenses made it much easier on the eyes.&lt;/p&gt;
+&lt;p&gt;The headset is not perfect. It&#39;s still heavy, warm, and feels like looking at the world through binoculars, but I&#39;m seeing past these imperfections to the value is delivers and enjoying it all the more.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Vision Pro week one - An emotional rollercoaster</title>

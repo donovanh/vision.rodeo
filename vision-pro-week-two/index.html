@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Donovan’s Vision Blog - Donovan's Vision Blog</title>
-		<meta name="description" content="Build great apps for Apple Vision Pro">
+		<title>Vision Pro update - I can see clearly now - Donovan's Vision Blog</title>
+		<meta name="description" content="After a second week, I discuss improving the Vision Pro&#39;s comfort and visual clarity">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -14,12 +14,135 @@
 
 		<meta name="fediverse:creator" content="@donovanh@mastodon.ie" />
 
-		<meta property="og:title" content="Donovan’s Vision Blog" />
+		<meta property="og:title" content="Vision Pro update - I can see clearly now" />
 		<meta property="og:type" content="article" />
-		<meta property="og:description" content="Build great apps for Apple Vision Pro">
+		<meta property="og:description" content="After a second week, I discuss improving the Vision Pro&#39;s comfort and visual clarity">
 		<meta property="og:url" content="" />
 		<meta name="generator" content="Eleventy v2.0.1">
-		<style>* { box-sizing: border-box; }
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+* { box-sizing: border-box; }
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
@@ -572,123 +695,58 @@ footer.panel {
 					</ul>
 				</nav>
 			</header>
-		<main id="skip" class="animated">
+		<main id="skip" class="">
 			
 
+<div class="content panel padded">
+	<h1>Vision Pro update - I can see clearly now</h1>
 
-
-<ul reversed class="home postlist">
-
-	<li class="panel home postlist-item">
-		<h1><a href="/vision-pro-week-two/" class="postlist-link">Vision Pro update - I can see clearly now</a></h1>
-		<p>After a second week, I discuss improving the Vision Pro&#39;s comfort and visual clarity</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/vision-pro-week-one/" class="postlist-link">Vision Pro week one - An emotional rollercoaster</a></h1>
-		<p>The ups and downs of getting used to the Vision Pro</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/dismiss-immersive/" class="postlist-link">Dismissing immersive views</a></h1>
-		<p>Exit an immersive view in visionOS programatically</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/reset-physics/" class="postlist-link">Reset physics in entities</a></h1>
-		<p>How to reset positions of pieces that are currently in motion</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/playing-sounds/" class="postlist-link">Playing sounds</a></h1>
-		<p>Play a sound when a brick collides with table</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/detecting-collisions/" class="postlist-link">Detecting collisions in visionOS</a></h1>
-		<p>Load a material for use in coded RealityKit scenes</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/loading-material-from-scene/" class="postlist-link">Loading material from Reality Composer Pro scene</a></h1>
-		<p>Load a material for use in coded RealityKit scenes</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/jenga-in-vision-os/" class="postlist-link">Build a Jenga game in visionOS</a></h1>
-		<p>Create a simple Jenga-style game in visionOS</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/hover-effect/" class="postlist-link">Simple hover effect</a></h1>
-		<p>Applying a hover to 3D objects in RealityKit</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/advanced-gestures/" class="postlist-link">Advanced gestures</a></h1>
-		<p>Apply dragging, rotating and scaling to multiple objects</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/multiple-objects/" class="postlist-link">Multiple objects</a></h1>
-		<p>Generate lots of 3D objects</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/object-gravity/" class="postlist-link">Adding gravity</a></h1>
-		<p>Add gravity to a 3D object</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/drag-gesture/" class="postlist-link">Dragging objects</a></h1>
-		<p>Using DragGesture to drag a 3D object</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/immersive-spaces/" class="postlist-link">Immersive spaces</a></h1>
-		<p>What an immersive space is, and when you might want to use it</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/volumetric-window-group/" class="postlist-link">Volumetric windows</a></h1>
-		<p>Showing an animation in a volumetric window</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/blender-file-in-vision/" class="postlist-link">Animated Blender entity in RealityView</a></h1>
-		<p>Display a Blender 3D object in a Vision RealityView</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/returns/" class="postlist-link">Are people returning Vision Pro?</a></h1>
-		<p>Lazy journalism helps reinforce assumptions</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/app-roundup-1/" class="postlist-link">Launch Apps</a></h1>
-		<p>Explore spatial computing with these Apple Vision Pro apps available on launch day</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/vision/" class="postlist-link">Apple’s Vision</a></h1>
-		<p>What the first version of Apple Vision Pro means as a stepping stone toward an AR future</p>
-	</li>
-
-	<li class="panel home postlist-item">
-		<h1><a href="/hello/" class="postlist-link">hello</a></h1>
-		<p>Let&#39;s start on this Vision Pro journey</p>
-	</li>
-
+<ul class="post-metadata">
+	<li><time datetime="2024-08-10">10 August 2024</time></li>
+	<li><a href="/tags/thoughts/" class="post-tag">thoughts</a></li>
 </ul>
 
+<p>My Zeiss lenses arrived! As a follow up from <a href="/vision-pro-week-one/">this post on the first week with Vision Pro</a>, this is an update on how I'm getting on with this amazing device.</p>
+<p><picture><source type="image/avif" srcset="/img/f91B2Bwq5U-1280.avif 1280w"><source type="image/webp" srcset="/img/f91B2Bwq5U-1280.webp 1280w"><img alt="Updating Vision Pro to visionOS 2 Beta 5" loading="lazy" decoding="async" src="/img/f91B2Bwq5U-1280.jpeg" width="1280" height="960"></picture></p>
+<p>My initial post got <a href="https://www.reddit.com/r/VisionPro/comments/1ejs7gi/thoughts_on_a_week_with_vision_pro/">many helpful comments</a>, mostly relating to comfort. This post will focus on how that's going.</p>
+<h2 id="wearing-it-wrong" tabindex="-1">Wearing it wrong <a class="header-anchor" href="#wearing-it-wrong">#</a></h2>
+<p>There were several comments suggesting that the dual strap was a better approach that the solo for comfort. I've been back and forth on this and I was surprised to find that for longer usage I find the solo strap easier to use.</p>
+<p>With the dual strap I found it ends up putting more strain on the top of my head, and the back part needs to be adjusted a lot as it slips up, causing pressure on my cheeks.</p>
+<p>With the solo strap I can more easily <em>dial-in</em> the comfort by:</p>
+<ul>
+<li>Moving it lower on the back of my head when the cheeks need a little less pressure</li>
+<li>Moving it up when the forehead needs less pressure</li>
+</ul>
+<p>In the end, the approach I found that really helped was to not tighten it so much. For me the best approach is to position the light seal such that it hangs on the forehead with a light contact on the cheeks and nose, and only dial the solo strap in to the point where I can just slightly feel it on the back of my head.</p>
+<p>It's loose enough that if the cheeks start to feel it, I can scrunch my face up in a grimace and nudge the forehead position back up without having to use my hands to adjust the position.</p>
+<p>With this I am finding I can use Vision Pro for multiple hours every day. While it's still not perfect, it's good enough that I often forget any concerns about comfort.</p>
+<h2 id="lenses-and-visual-clarity" tabindex="-1">Lenses and visual clarity <a class="header-anchor" href="#lenses-and-visual-clarity">#</a></h2>
+<p>I spent the first week using Vision Pro without Zeiss corrective lenses (they had to be ordered separately). While I'm not someone who wears glasses all the time, I do have use them for a slight distance correction.</p>
+<p>I only really need to use my glasses when driving and I had even asked my optometrist if I'd need the adjustment for the Vision Pro's approximate <a href="https://discussions.apple.com/thread/255464091?sortBy=rank">6 to 8-foot focal distance</a> and was told I would not need them.</p>
+<p>Still, during the in-store demo I was set up with some Zeiss inserts and I found on using the device at home that nothing was <em>quite</em> sharp enough. I was continually having to strain and blink to try to focus things just a little more, as they would be always a little fringed and blurry. This was particularly true of the virtual display which was just about usable.</p>
+<p>The end result was my eyes and brain were getting tired quickly when using the headset and I was even noticing my eyes struggling to focus for a time after using it.</p>
+<h3 id="zeiss-lenses-arrived" tabindex="-1">Zeiss lenses arrived <a class="header-anchor" href="#zeiss-lenses-arrived">#</a></h3>
+<p>But then my lenses arrived. When I put them in and put on the headset it was immediately clear <em>(heh)</em> that everythig was improved. Windows and text was clearer and the virtual display from my M1 Macbook Air was clear enough to be usable.</p>
+<p>I opened Apple TV and put on the Experience Immersive video, and suddenly it felt just as impressive as the in-store demo.</p>
+<p>After several days with the lenses my eyes are no longer fatigued. I would say that even with mild distance correction needs, having the Zeiss lenses is worthwhile.</p>
+<h2 id="using-the-device-day-to-day" tabindex="-1">Using the device day to day <a class="header-anchor" href="#using-the-device-day-to-day">#</a></h2>
+<p>After the initial week, I'm still using Vision Pro for several hours each day. I have put in about 12 hours in following coding tutorials and working on a little game I'm building to learn visionOS development.</p>
+<p>I've also watched some amazing 4K movies. Having a personal cinema is one of the device's strongest use-cases and a great way to watch movies. It is quite intense though so I'm finding I often watch half a movie and need to pause and revisit it the next day. I may get used to this.</p>
+<p><picture><source type="image/avif" srcset="/img/C1XednCZGy-1280.avif 1280w"><source type="image/webp" srcset="/img/C1XednCZGy-1280.webp 1280w"><img alt="Get away from her!" loading="lazy" decoding="async" src="/img/C1XednCZGy-1280.jpeg" width="1280" height="720"></picture></p>
+<p>This is an iMax-sized screen in a virtual cinema. I often set up a big screen floating in an environment too.</p>
+<h3 id="panoramas" tabindex="-1">Panoramas <a class="header-anchor" href="#panoramas">#</a></h3>
+<p>I am finding I take a lot more panoramas these days and they look great in the device. While the spatial-ify option for making 2D photos into 3D photos is feeling like a bit of a gimmick, I am more often turning to the panoramas to remind me how it felt to be in places. They're not the highest resolution but they work well.</p>
+<h3 id="emotional-immersion" tabindex="-1">Emotional immersion <a class="header-anchor" href="#emotional-immersion">#</a></h3>
+<p>I've noticed that with the comfort and clarity improved, I'm can better enjoy the immersive videos. Watching a documentary about rhinos and a musical rehearsal had me feeling much more emotional than a 2D video. I was clapping along with Alicia Keys and the band, and even got a little choked up at the story of the orphaned rhino and zebra.</p>
+<p>It's a common complaint that we don't have enough of such content, but I'm sure once the market for it grows we'll see more and more.</p>
+<h2 id="week-2-conclusions" tabindex="-1">Week 2 conclusions <a class="header-anchor" href="#week-2-conclusions">#</a></h2>
+<p>After two weeks using the Vision Pro multiple hours per day, it's definitely growing on me. I'm much more content now with the comfort and find myself looking forward to taking time to sit back and enjoy TV shows and movies in my own little world, and I'm excited to learn how to build apps in 3D.</p>
+<p>I've learned how to properly position the headset using the solo strap, and the arrival of Zeiss lenses made it much easier on the eyes.</p>
+<p>The headset is not perfect. It's still heavy, warm, and feels like looking at the world through binoculars, but I'm seeing past these imperfections to the value is delivers and enjoying it all the more.</p>
 
-<p class="more-posts"> More posts can be found in <a href="/blog/">the blog archive</a>.</p>
-
-
-
-
-
-
+<ul class="links-nextprev"><li>Previous: <a href="/vision-pro-week-one/">Vision Pro week one - An emotional rollercoaster</a></li>
+</ul>
+</div>
 
 		</main>
 
@@ -712,6 +770,6 @@ footer.panel {
 				<p style="font-size: 0.75rem">All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: / -->
+		<!-- Current page: /vision-pro-week-two/ -->
 	</body>
 </html>
