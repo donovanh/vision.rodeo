@@ -15,16 +15,16 @@ My initial post got [many helpful comments](https://www.reddit.com/r/VisionPro/c
 
 ## Wearing it wrong
 
-There were several comments suggesting that the dual strap was a better approach that the solo for comfort. I've been back and forth on this and I was surprised to find that for longer usage I find the solo strap easier to use.
+There were several comments suggesting that the dual loop was a better approach that the solo knit for comfort. I've been back and forth on this and I was surprised to find that for longer usage I find the solo easier to use.
 
-With the dual strap I found it ends up putting more strain on the top of my head, and the back part needs to be adjusted a lot as it slips up, causing pressure on my cheeks.
+The dual loop put more strain on the top of my head and the back part needs to be adjusted a lot as it slipped upward. This felt like a constant distraction.
 
-With the solo strap I can more easily _dial-in_ the comfort by:
+With the solo knit I can more easily dial-in the comfort by:
 
 - Moving it lower on the back of my head when the cheeks need a little less pressure
 - Moving it up when the forehead needs less pressure
 
-In the end, the approach I found that really helped was to not tighten it so much. For me the best approach is to position the light seal such that it hangs on the forehead with a light contact on the cheeks and nose, and only dial the solo strap in to the point where I can just slightly feel it on the back of my head.
+In the end, the approach I found that really helped was to not tighten it so much. For me the best approach is to position the light seal such that it hangs on the forehead with a light contact on the cheeks and nose, and only dial the solo knit in to the point where I can just slightly feel it on the back of my head.
 
 It's loose enough that if the cheeks start to feel it, I can scrunch my face up in a grimace and nudge the forehead position back up without having to use my hands to adjust the position.
 
@@ -72,6 +72,6 @@ It's a common complaint that we don't have enough of such content, but I'm sure 
 
 After two weeks using the Vision Pro multiple hours per day, it's definitely growing on me. I'm much more content now with the comfort and find myself looking forward to taking time to sit back and enjoy TV shows and movies in my own little world, and I'm excited to learn how to build apps in 3D.
 
-I've learned how to properly position the headset using the solo strap, and the arrival of Zeiss lenses made it much easier on the eyes.
+I've learned how to properly position the headset using the solo knit, and the arrival of Zeiss lenses made it much easier on the eyes.
 
 The headset is not perfect. It's still heavy, warm, and feels like looking at the world through binoculars, but I'm seeing past these imperfections to the value is delivers and enjoying it all the more.
