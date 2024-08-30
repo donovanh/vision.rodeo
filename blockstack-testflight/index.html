@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Donovan’s Vision Blog - Donovan's Vision Blog</title>
-		<meta name="description" content="Build great apps for Apple Vision Pro">
+		<title>BlockStack now on TestFlight - Donovan's Vision Blog</title>
+		<meta name="description" content="Test out my new Vision Pro game">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -14,12 +14,135 @@
 
 		<meta name="fediverse:creator" content="@donovanh@mastodon.ie" />
 
-		<meta property="og:title" content="Donovan’s Vision Blog" />
+		<meta property="og:title" content="BlockStack now on TestFlight" />
 		<meta property="og:type" content="article" />
-		<meta property="og:description" content="Build great apps for Apple Vision Pro">
+		<meta property="og:description" content="Test out my new Vision Pro game">
 		<meta property="og:url" content="" />
 		<meta name="generator" content="Eleventy v2.0.1">
-		<style>* { box-sizing: border-box; }
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+* { box-sizing: border-box; }
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
@@ -568,128 +691,32 @@ footer.panel {
 				<nav>
 					<h2 class="visually-hidden">Top level navigation menu</h2>
 					<ul class="nav">
-						<li class="nav-item"><a href="/blog/" aria-current="page">All Posts</a></li>
+						<li class="nav-item"><a href="/blog/">All Posts</a></li>
 					</ul>
 				</nav>
 			</header>
 		<main id="skip" class="">
 			
+
 <div class="content panel padded">
-  <h1>All Posts</h1>
+	<h1>BlockStack now on TestFlight</h1>
 
-
-<ul reversed class="nested postlist">
-
-	<li class="postlist-item">
-		<a href="/blockstack-testflight/" class="postlist-link">BlockStack now on TestFlight</a>
-		<time class="postlist-date" datetime="2024-08-30">August 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/vision-pro-week-two/" class="postlist-link">Vision Pro update - I can see clearly now</a>
-		<time class="postlist-date" datetime="2024-08-10">August 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/vision-pro-week-one/" class="postlist-link">Vision Pro week one - An emotional rollercoaster</a>
-		<time class="postlist-date" datetime="2024-08-04">August 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/dismiss-immersive/" class="postlist-link">Dismissing immersive views</a>
-		<time class="postlist-date" datetime="2024-07-15">July 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/reset-physics/" class="postlist-link">Reset physics in entities</a>
-		<time class="postlist-date" datetime="2024-07-08">July 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/playing-sounds/" class="postlist-link">Playing sounds</a>
-		<time class="postlist-date" datetime="2024-06-30">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/detecting-collisions/" class="postlist-link">Detecting collisions in visionOS</a>
-		<time class="postlist-date" datetime="2024-06-30">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/loading-material-from-scene/" class="postlist-link">Loading material from Reality Composer Pro scene</a>
-		<time class="postlist-date" datetime="2024-06-29">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/jenga-in-vision-os/" class="postlist-link">Build a Jenga game in visionOS</a>
-		<time class="postlist-date" datetime="2024-06-28">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/hover-effect/" class="postlist-link">Simple hover effect</a>
-		<time class="postlist-date" datetime="2024-06-25">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/advanced-gestures/" class="postlist-link">Advanced gestures</a>
-		<time class="postlist-date" datetime="2024-06-20">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/multiple-objects/" class="postlist-link">Multiple objects</a>
-		<time class="postlist-date" datetime="2024-06-19">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/object-gravity/" class="postlist-link">Adding gravity</a>
-		<time class="postlist-date" datetime="2024-06-15">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/drag-gesture/" class="postlist-link">Dragging objects</a>
-		<time class="postlist-date" datetime="2024-06-14">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/immersive-spaces/" class="postlist-link">Immersive spaces</a>
-		<time class="postlist-date" datetime="2024-06-13">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/volumetric-window-group/" class="postlist-link">Volumetric windows</a>
-		<time class="postlist-date" datetime="2024-06-12">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/blender-file-in-vision/" class="postlist-link">Animated Blender entity in RealityView</a>
-		<time class="postlist-date" datetime="2024-06-10">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/returns/" class="postlist-link">Are people returning Vision Pro?</a>
-		<time class="postlist-date" datetime="2024-02-16">February 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/app-roundup-1/" class="postlist-link">Launch Apps</a>
-		<time class="postlist-date" datetime="2024-01-29">January 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/vision/" class="postlist-link">Apple’s Vision</a>
-		<time class="postlist-date" datetime="2024-01-28">January 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/hello/" class="postlist-link">hello</a>
-		<time class="postlist-date" datetime="2024-01-26">January 2024</time>
-	</li>
-
+<ul class="post-metadata">
+	<li><time datetime="2024-08-30">30 August 2024</time></li>
+	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
 
+<p>Just a few weeks ago I <a href="/vision-pro-week-one/">picked up a Vision Pro</a> and I've been learning loads about what it means to develop in visionOS.</p>
+<p>My first project was to take this <a href="/jenga-in-vision-os/">basic Jenga demo</a> and try to make it something actually playable, even fun! Introducing BlockStack, <a href="https://testflight.apple.com/join/1e8wHwE9">available now on TestFlight</a>.</p>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/cLbhLN5" data-context="false" ><a href="//imgur.com/a/cLbhLN5">Playing BlockStack on the beach!</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<p><strong>BlockStack for Vision Pro!</strong> This single-player game is relaxing way to play virtual Jenga. Challenge yourself to get the high score. Customise your experience with beautiful themes. Have fun!</p>
+<h2 id="testflight-version-now-available" tabindex="-1">TestFlight version now available <a class="header-anchor" href="#testflight-version-now-available">#</a></h2>
+<p>I've uploaded my first build of the game <a href="https://testflight.apple.com/join/1e8wHwE9">to TestFlight</a>. To install, make sure you have the TestFlight app then select &quot;Start Testing&quot; on the linked page.</p>
+<p>As I'm using some of the newer APIs introduced in Xcode 16, this version of the app requires <a href="https://www.apple.com/visionos/visionos-2-preview/">vision OS 2</a>. Apologies for anyone on version 1 currently.</p>
 
+<ul class="links-nextprev"><li>Previous: <a href="/vision-pro-week-two/">Vision Pro update - I can see clearly now</a></li>
+</ul>
 </div>
-
 
 		</main>
 
@@ -713,6 +740,6 @@ footer.panel {
 				<p style="font-size: 0.75rem">All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /blog/ -->
+		<!-- Current page: /blockstack-testflight/ -->
 	</body>
 </html>

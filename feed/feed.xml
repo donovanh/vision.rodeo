@@ -4,12 +4,27 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-08-10T00:00:00Z</updated>
+	<updated>2024-08-30T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>BlockStack now on TestFlight</title>
+		<link href="https://vision.rodeo/blockstack-testflight/"/>
+		<updated>2024-08-30T00:00:00Z</updated>
+		<id>https://vision.rodeo/blockstack-testflight/</id>
+		<content type="html">&lt;p&gt;Just a few weeks ago I &lt;a href=&quot;https://vision.rodeo/vision-pro-week-one/&quot;&gt;picked up a Vision Pro&lt;/a&gt; and I&#39;ve been learning loads about what it means to develop in visionOS.&lt;/p&gt;
+&lt;p&gt;My first project was to take this &lt;a href=&quot;https://vision.rodeo/jenga-in-vision-os/&quot;&gt;basic Jenga demo&lt;/a&gt; and try to make it something actually playable, even fun! Introducing BlockStack, &lt;a href=&quot;https://testflight.apple.com/join/1e8wHwE9&quot;&gt;available now on TestFlight&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote class=&quot;imgur-embed-pub&quot; lang=&quot;en&quot; data-id=&quot;a/cLbhLN5&quot; data-context=&quot;false&quot;&gt;&lt;a href=&quot;https://imgur.com/a/cLbhLN5&quot;&gt;Playing BlockStack on the beach!&lt;/a&gt;&lt;/blockquote&gt;&lt;script async=&quot;&quot; src=&quot;https://s.imgur.com/min/embed.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;BlockStack for Vision Pro!&lt;/strong&gt; This single-player game is relaxing way to play virtual Jenga. Challenge yourself to get the high score. Customise your experience with beautiful themes. Have fun!&lt;/p&gt;
+&lt;h2 id=&quot;testflight-version-now-available&quot; tabindex=&quot;-1&quot;&gt;TestFlight version now available &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/blockstack-testflight/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I&#39;ve uploaded my first build of the game &lt;a href=&quot;https://testflight.apple.com/join/1e8wHwE9&quot;&gt;to TestFlight&lt;/a&gt;. To install, make sure you have the TestFlight app then select &amp;quot;Start Testing&amp;quot; on the linked page.&lt;/p&gt;
+&lt;p&gt;As I&#39;m using some of the newer APIs introduced in Xcode 16, this version of the app requires &lt;a href=&quot;https://www.apple.com/visionos/visionos-2-preview/&quot;&gt;vision OS 2&lt;/a&gt;. Apologies for anyone on version 1 currently.&lt;/p&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Vision Pro update - I can see clearly now</title>
