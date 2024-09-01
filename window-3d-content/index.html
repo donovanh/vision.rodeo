@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bringing 3D to window content - Donovan's Vision Blog</title>
+		<meta name="description" content="Adding depth to 2D windows">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Donovan’s Vision Blog">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Donovan’s Vision Blog">
+
+		<meta name="fediverse:creator" content="@donovanh@mastodon.ie" />
+
+		<meta property="og:title" content="Bringing 3D to window content" />
+		<meta property="og:type" content="article" />
+		<meta property="og:description" content="Adding depth to 2D windows">
+		<meta property="og:url" content="" />
+		<meta name="generator" content="Eleventy v2.0.1">
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	/* --color-gray-90: rgba(255, 255, 255, 0.25);
+	--color-gray-70: rgba(255, 255, 255, 0.7);
+	--color-gray-50: rgba(255, 255, 255, 0.5);
+	--color-gray-20: rgba(255, 255, 255, 0.2);
+
+	--background-color: rgba(128, 255, 255, 0.5);
+
+	--text-color: #222;
+	--text-color-link: rgba(168, 10, 221, 0.8);
+	--text-color-link-active: rgba(168, 10, 221, 1);
+	--text-color-link-visited: rgba(168, 10, 221, 0.7);
+
+	--syntax-tab-size: 2; */
+	--color-gray-90: rgba(255, 255, 255, 0.1);
+	--color-gray-70: rgba(255, 255, 255, 0.3);
+	--color-gray-50: rgba(255, 255, 255, 0.5);
+	--color-gray-20: rgba(255, 255, 255, 0.8);
+
+	--background-color: rgb(2, 0, 20);
+
+	--text-color: #eee;
+	--text-color-link: rgba(241, 233, 255, 0.8);
+	--text-color-link-active: rgba(241, 233, 255, 1);
+	--text-color-link-visited: rgba(241, 233, 255, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-90: rgba(255, 255, 255, 0.1);
+		--color-gray-70: rgba(255, 255, 255, 0.3);
+		--color-gray-50: rgba(255, 255, 255, 0.5);
+		--color-gray-20: rgba(255, 255, 255, 0.8);
+
+		--background-color: rgb(2, 0, 20);
+
+		--text-color: #eee;
+		--text-color-link: rgba(241, 233, 255, 0.8);
+		--text-color-link-active: rgba(241, 233, 255, 1);
+		--text-color-link-visited: rgba(241, 233, 255, 0.5);
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	font-size: 1.25em;
+
+	background: var(--background-color);
+	background-size: 100vw;
+	background-repeat: no-repeat;
+}
+html {
+	overflow-y: scroll;
+}
+
+@media (max-width: 90rem) {
+	html,
+	body {
+		font-size: 1em;
+	}
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem 0;
+}
+
+.links-nextprev {
+	list-style: none;
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+.callout {
+	background: var(--color-gray-90);
+	border-radius: 0.25rem;
+	padding: 1rem;
+	margin: 1rem;
+	text-align: center;
+}
+
+pre,
+code {
+	background: var(--color-gray-90);
+	border-radius: 0.25rem;
+	padding: 0.25rem;
+	font-family: var(--font-family-monospace);
+	font-size: 0.75rem;
+	word-break: break-word;
+}
+pre:where([class*="language-"]) {
+	margin: 2rem 0 !important;
+	width: 100%;
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+
+.panel {
+	background-color: var(--color-gray-90);
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.15);
+	border-radius: 2rem;
+	position: relative;
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+}
+
+.padded {
+	padding: 2rem;
+}
+
+@media (max-width: 500px) {
+	.padded {
+		padding: 1rem;
+	}
+}
+
+/* Header */
+.header-container {
+	perspective: 100vw;
+	perspective-origin: 50% 30vh;
+	transform-style: preserve-3d;
+}
+header {
+	text-align: center;
+	align-items: center;
+	padding: 4rem 0;
+	margin: 2rem auto 4rem;
+	max-width: 90rem;
+	z-index: 128;
+}
+
+@media (max-width: 90rem) {
+	header {
+		margin: 2rem 1rem 3rem;
+	}
+}
+
+@media (max-width: 40rem) {
+	header.panel {
+		background: none;
+		box-shadow: none;
+		backdrop-filter: none;
+		-webkit-backdrop-filter: none;
+		margin: 2rem 1rem;
+	}
+}
+
+.wordart {
+	display: inline-block;
+	margin: 2rem 0 4rem;
+	font-size: 9vw;
+	text-shadow: none;
+	background: linear-gradient(
+		183deg,
+		rgba(183, 0, 255, 0.7) 10%,
+		rgba(255, 21, 200, 0.7) 70%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	font-family: "Impact";
+	transform: skewY(-8deg) scaleY(1.3) scaleX(0.8);
+	-webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+}
+
+.wordart-wrapper {
+	filter: drop-shadow(2px 2px 0px rgba(2, 5, 42, 0.8));
+}
+
+@media (min-width: 1400px) {
+	.wordart {
+		font-size: 8rem;
+	}
+}
+
+/* Nav */
+nav {
+	max-width: 22rem;
+	margin: 0 auto;
+	margin-bottom: -8rem;
+}
+nav.secondary {
+	margin: 1rem auto 2rem;
+}
+.nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.5rem 1rem;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	padding: 0 1rem;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+
+@media (max-width: 40rem) {
+	nav {
+		margin-bottom: -7rem;
+	}
+}
+
+/* Internal header */
+header {
+	display: flex;
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+header .home-link {
+	width: 300px;
+	margin-right: auto;
+}
+
+header .wordart {
+	font-size: 2rem;
+	margin: 0;
+}
+
+header nav {
+	background: none;
+	box-shadow: none;
+	filter: none;
+	-webkit-backdrop-filter: none;
+	max-width: 100%;
+	margin: 2rem;
+}
+
+header ul.nav {
+	padding: 1rem 0 0;
+}
+
+@media (max-width: 500px) {
+	header,
+	header.panel {
+		display: block;
+		max-width: 100%;
+		padding: 0;
+		margin: 2rem 0 0;
+	}
+
+	header .wordart {
+		font-size: 2rem;
+		margin: 0;
+	}
+
+	header nav {
+		display: none;
+	}
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+}
+.home.postlist {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 2rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+}
+
+.home .postlist-item {
+	background: var(--color-gray-90);
+	margin: 1rem;
+	max-width: calc(33% - 2rem);
+	width: 100%;
+	padding: 2rem;
+}
+
+@media (max-width: 70rem) {
+	.home .postlist-item {
+		max-width: calc(50% - 2rem);
+	}
+}
+
+@media (max-width: 48rem) {
+	.home .postlist-item {
+		max-width: 100%;
+	}
+}
+
+.home .postlist-item h1 {
+	margin: 0;
+}
+
+.nested .postlist-item {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.postlist-item time {
+	width: 100%;
+}
+.postlist-item img,
+main img {
+	max-width: 100%;
+	height: auto;
+	margin: 3rem 0;
+	border-radius: 2rem;
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
+		0 0 1rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper {
+	width: 100%;
+}
+main video {
+	display: block;
+	max-width: 80%;
+	height: auto;
+	border-radius: 2rem;
+	box-shadow: -0.25px -0.25px 0.25px 0 rgba(255, 255, 255, 0.5),
+		0 0 1rem 0 rgba(0, 0, 0, 0.2);
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-20);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+.postlist h2,
+.postlist h3,
+.postlist h4 {
+	display: block;
+	width: 100%;
+}
+
+.more-posts {
+	text-align: center;
+	margin: 2rem 0;
+}
+
+.content {
+	max-width: 54rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.content h2,
+.content h3,
+.content h4 {
+	margin-top: 2rem;
+	margin-bottom: 0;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	text-decoration: none;
+	background: var(--color-gray-90);
+	padding: 0.25rem 0.5rem;
+	border: 0.5px solid rgba(0, 0, 0, 0.25);
+	border-radius: 1rem;
+	font-size: 0.75em; /* 12px /16 */
+	opacity: 0.5;
+}
+.post-tag:hover {
+	opacity: 1;
+	transition: opacity 0.25s ease-out;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	/* color: rgba(0, 0, 0, 0.5); */
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 1rem;
+	margin-right: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+	.post-metadata time {
+		color: rgba(255, 255, 255, 0.75);
+	}
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+	text-shadow: none;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+	font-family: var(--font-family);
+	width: 100%;
+}
+
+.content h1 {
+	font-size: 4rem;
+}
+
+@media (max-width: 500px) {
+	.content h1 {
+		text-align: center;
+	}
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+footer {
+	max-width: 80rem;
+	margin: 2rem auto;
+	text-align: center;
+}
+
+footer.panel {
+	background: var(--color-gray-90);
+}
+
+@media (max-width: 90rem) {
+	footer {
+		margin: 1rem;
+	}
+}
+
+.signup-frame {
+	max-width: 375px;
+	margin: 0 auto;
+}
+
+@media (max-width: 30rem) {
+	.imgur-embed-iframe-pub {
+		margin: 0 -2rem !important;
+		max-width: calc(100% + 4rem);
+	}
+}</style>
+		<script src="/js/on-scroll.js"></script>
+	</head>
+	<body>
+		<div class="bodyBackground"></div>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+			<header class="internal">
+				<a href="/" class="home-link">
+					<span class="wordart-wrapper">
+						<span class="wordart">Donovan’s Vision Blog</span>
+					</span>
+				</a>
+				<nav>
+					<h2 class="visually-hidden">Top level navigation menu</h2>
+					<ul class="nav">
+						<li class="nav-item"><a href="/blog/">All Posts</a></li>
+					</ul>
+				</nav>
+			</header>
+		<main id="skip" class="">
+			
+
+<div class="content panel padded">
+	<h1>Bringing 3D to window content</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2024-08-31">31 August 2024</time></li>
+	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
+</ul>
+
+<div class="callout"><a href="/blockstack-testflight/">BlockStack is now on Testflight!</a> Try the game <a href="https://testflight.apple.com/join/1e8wHwE9">for free here</a>.</div>
+
+<p>We can add depth to windowed content in visionOS with 3D objects and 3D padding.</p>
+<p>In the post we will look at ways to use use <code>RealityView</code> to generate some 3D artwork, and position it alongside some buttons and inputs, using 3D positioning.</p>
+<h2 id="3d-theme-selector" tabindex="-1">3D theme selector <a class="header-anchor" href="#3d-theme-selector">#</a></h2>
+<p>When working on <a href="/blockstack-testflight/">BlockStack</a> I wanted to make a theme-selector screen that showed how the textures would look in 3D. The resulting screen looks like this:</p>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/6V45WJT"  ><a href="//imgur.com/a/6V45WJT">BlockStack Theme Selector</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<p>The view includes a pair of 3D objects generated in code to which I've applied textures. Then it uses a <code>Picker</code> UI element to change the selected texture. Let's build something similar.</p>
+<h2 id="example" tabindex="-1">Example <a class="header-anchor" href="#example">#</a></h2>
+<p>Let's build a simplified version of the above to see how 3D positioning works:</p>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/lfYc0WM"  ><a href="//imgur.com/a/lfYc0WM">A 3D window content view</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<h3 id="adding-a-3d-object" tabindex="-1">Adding a 3D object <a class="header-anchor" href="#adding-a-3d-object">#</a></h3>
+<p>To start we can set up some initial code that generates and displays different shapes based on a given <code>selectedShape</code>:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">ContentView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token attribute atrule">@State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> selectedShape <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"cube"</span></span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+        <span class="token class-name">VStack</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> selectedShape <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"sphere"</span></span> <span class="token punctuation">{</span>
+                <span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
+                    content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">generateEntity</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"sphere"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> selectedShape <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"cone"</span></span> <span class="token punctuation">{</span>
+                <span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
+                    content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">generateEntity</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"cone"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
+                    content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">generateEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">func</span> <span class="token function-definition function">generateEntity</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> shape<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"cube"</span></span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">ModelEntity</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> modelEntity <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>mesh<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">generateBox</span><span class="token punctuation">(</span>size<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> shape <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"sphere"</span></span> <span class="token punctuation">{</span>
+            modelEntity <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>mesh<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">generateSphere</span><span class="token punctuation">(</span>radius<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> shape <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"cone"</span></span> <span class="token punctuation">{</span>
+            modelEntity <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>mesh<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">generateCone</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">,</span> radius<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        modelEntity<span class="token punctuation">.</span>model<span class="token operator">?</span><span class="token punctuation">.</span>materials <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token class-name">SimpleMaterial</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token punctuation">.</span>red<span class="token punctuation">,</span> isMetallic<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> modelEntity
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p>We can generate a shape and show it in the content view. Let's add some UI. Adjust the above by adding a &quot;Done&quot; button and a <code>Picker</code> to select different shapes:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+        <span class="token class-name">VStack</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Button</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Done"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// Perform relevant action for "Done"</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">tint</span><span class="token punctuation">(</span><span class="token punctuation">.</span>blue<span class="token punctuation">)</span>
+
+            <span class="token keyword">if</span> selectedShape <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"sphere"</span></span> <span class="token punctuation">{</span>
+                <span class="token comment">// ... existing code</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token class-name">Picker</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Piece texture"</span></span><span class="token punctuation">,</span> selection<span class="token punctuation">:</span> $selectedShape<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">ForEach</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"cube"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"sphere"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"cone"</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token punctuation">\</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> shape <span class="token keyword">in</span>
+                    <span class="token class-name">Text</span><span class="token punctuation">(</span>shape<span class="token punctuation">.</span><span class="token function">uppercased</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tag</span><span class="token punctuation">(</span>shape<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>This adds some 2D content to our view, but the 3D shape is in the way!</p>
+<p><picture><source type="image/avif" srcset="/img/hV7kw7f-uD-2337.avif 2337w"><source type="image/webp" srcset="/img/hV7kw7f-uD-2337.webp 2337w"><img alt="The UI is blocked by the 3D shape" loading="lazy" decoding="async" src="/img/hV7kw7f-uD-2337.png" width="2337" height="806"></picture></p>
+<p>We could tweak the size of the 3D object to not block the button and Picker, but then when the picker opens it'll still be behind the object. Let's instead bring those 2D elements forward to make them easier to see and interact with.</p>
+<h3 id="adding-ui-depth" tabindex="-1">Adding UI depth <a class="header-anchor" href="#adding-ui-depth">#</a></h3>
+<p>We can use <a href="https://developer.apple.com/documentation/swiftui/view/padding3d">padding3D</a> to bring the UI forward:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token class-name">Picker</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Piece texture"</span></span><span class="token punctuation">,</span> selection<span class="token punctuation">:</span> $selectedShape<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">ForEach</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"cube"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"sphere"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"cone"</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token punctuation">\</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> shape <span class="token keyword">in</span>
+        <span class="token class-name">Text</span><span class="token punctuation">(</span>shape<span class="token punctuation">.</span><span class="token function">uppercased</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tag</span><span class="token punctuation">(</span>shape<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">.</span><span class="token function">padding3D</span><span class="token punctuation">(</span><span class="token punctuation">.</span>back<span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span></code></pre>
+<p>Adding <code>padding3D</code> with a <code>back</code> value of <code>400</code> will bring it forward. Apply this to both the picker and the &quot;Done&quot; button makes them easier to see:</p>
+<p><picture><source type="image/avif" srcset="/img/X0YHKIKhCV-930.avif 930w"><source type="image/webp" srcset="/img/X0YHKIKhCV-930.webp 930w"><img alt="UI positioned in front" loading="lazy" decoding="async" src="/img/X0YHKIKhCV-930.png" width="930" height="958"></picture></p>
+<h3 id="finished-code" tabindex="-1">Finished code <a class="header-anchor" href="#finished-code">#</a></h3>
+<p>Here's what we have for the complete demo:</p>
+<p><em>ContentView</em></p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">ContentView</span><span class="token punctuation">:</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+    <span class="token attribute atrule">@State</span> <span class="token keyword">private</span> <span class="token keyword">var</span> selectedShape <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"cube"</span></span>
+
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">View</span> <span class="token punctuation">{</span>
+        <span class="token class-name">VStack</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Button</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Done"</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// Perform relevant action for "Done"</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">tint</span><span class="token punctuation">(</span><span class="token punctuation">.</span>blue<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">padding3D</span><span class="token punctuation">(</span><span class="token punctuation">.</span>back<span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span>
+
+            <span class="token keyword">if</span> selectedShape <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"sphere"</span></span> <span class="token punctuation">{</span>
+                <span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
+                    content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">generateEntity</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"sphere"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> selectedShape <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"cone"</span></span> <span class="token punctuation">{</span>
+                <span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
+                    content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">generateEntity</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"cone"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token class-name">RealityView</span> <span class="token punctuation">{</span> content <span class="token keyword">in</span>
+                    content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">generateEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token class-name">Picker</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Piece texture"</span></span><span class="token punctuation">,</span> selection<span class="token punctuation">:</span> $selectedShape<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">ForEach</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"cube"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"sphere"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"cone"</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token punctuation">\</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> shape <span class="token keyword">in</span>
+                    <span class="token class-name">Text</span><span class="token punctuation">(</span>shape<span class="token punctuation">.</span><span class="token function">uppercased</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tag</span><span class="token punctuation">(</span>shape<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token punctuation">.</span><span class="token function">padding3D</span><span class="token punctuation">(</span><span class="token punctuation">.</span>back<span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token punctuation">.</span><span class="token function">padding</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">func</span> <span class="token function-definition function">generateEntity</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> shape<span class="token punctuation">:</span> <span class="token class-name">String</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"cube"</span></span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">ModelEntity</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> modelEntity <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>mesh<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">generateBox</span><span class="token punctuation">(</span>size<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> shape <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"sphere"</span></span> <span class="token punctuation">{</span>
+            modelEntity <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>mesh<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">generateSphere</span><span class="token punctuation">(</span>radius<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> shape <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"cone"</span></span> <span class="token punctuation">{</span>
+            modelEntity <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>mesh<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">generateCone</span><span class="token punctuation">(</span>height<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">,</span> radius<span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        modelEntity<span class="token punctuation">.</span>model<span class="token operator">?</span><span class="token punctuation">.</span>materials <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token class-name">SimpleMaterial</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token punctuation">.</span>red<span class="token punctuation">,</span> isMetallic<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> modelEntity
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<p><em>App View</em></p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">struct</span> <span class="token class-name">ExampleApp</span><span class="token punctuation">:</span> <span class="token class-name">App</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> body<span class="token punctuation">:</span> <span class="token keyword">some</span> <span class="token class-name">Scene</span> <span class="token punctuation">{</span>
+        <span class="token class-name">WindowGroup</span> <span class="token punctuation">{</span>
+            <span class="token class-name">ContentView</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token punctuation">.</span><span class="token function">defaultSize</span><span class="token punctuation">(</span>width<span class="token punctuation">:</span> <span class="token number">420</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+<ul class="links-nextprev"><li>Previous: <a href="/blockstack-testflight/">BlockStack now on TestFlight</a></li>
+</ul>
+</div>
+
+		</main>
+
+		<footer class="panel padded">
+			<div class="signup">
+				<h2>Donovan's Vision Newsletter</h2>
+				<p>Stay up to date when new posts land</p>
+				<div class="signup-frame">
+					<iframe
+					src="https://embeds.beehiiv.com/e4b485a8-6ae4-48c8-a4aa-e699ebbc193f?slim=true"
+					data-test-id="beehiiv-embed"
+					height="52"
+					width="100%"
+					frameborder="0"
+					scrolling="no"
+					style="margin: 1rem 0 2rem; border-radius: 0px !important; background-color: transparent;"
+					></iframe>
+				</div>
+			</div>
+				<p>Thanks for reading! Follow the <a href="/feed/feed.xml">the RSS feed</a></p>
+				<p style="font-size: 0.75rem">All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
+		</footer>
+
+		<!-- Current page: /window-3d-content/ -->
+	</body>
+</html>

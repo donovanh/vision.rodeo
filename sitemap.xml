@@ -22,12 +22,12 @@
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/apps/</loc>
+		<loc>https://vision.rodeo/tags/dev/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://vision.rodeo/tags/dev/</loc>
+		<loc>https://vision.rodeo/tags/apps/</loc>
 		<lastmod>2024-01-26</lastmod>
 	</url>
 	
@@ -149,5 +149,10 @@
 	<url>
 		<loc>https://vision.rodeo/blockstack-testflight/</loc>
 		<lastmod>2024-08-30</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://vision.rodeo/window-3d-content/</loc>
+		<lastmod>2024-08-31</lastmod>
 	</url>
 </urlset>

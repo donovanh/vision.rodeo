@@ -274,6 +274,14 @@ table th {
 	padding-right: 1em;
 }
 
+.callout {
+	background: var(--color-gray-90);
+	border-radius: 0.25rem;
+	padding: 1rem;
+	margin: 1rem;
+	text-align: center;
+}
+
 pre,
 code {
 	background: var(--color-gray-90);
@@ -705,6 +713,8 @@ footer.panel {
 	<li><time datetime="2024-07-08">8 July 2024</time></li>
 	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
+
+<div class="callout"><a href="/blockstack-testflight/">BlockStack is now on Testflight!</a> Try the game <a href="https://testflight.apple.com/join/1e8wHwE9">for free here</a>.</div>
 
 <p>When <a href="/jenga-in-vision-os/">building a Jenga game</a>, I wanted to be able to reset the pieces. I was able to write a simple <code>reset</code> method that put the pieces back to where they should be but there was an unexpected result. Each time I press <code>Reset</code>, the pieces fall over:</p>
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/RZIVyh3" data-context="false" ><a href="//imgur.com/a/RZIVyh3">Jenga game without physics reset code</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>

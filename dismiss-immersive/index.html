@@ -274,6 +274,14 @@ table th {
 	padding-right: 1em;
 }
 
+.callout {
+	background: var(--color-gray-90);
+	border-radius: 0.25rem;
+	padding: 1rem;
+	margin: 1rem;
+	text-align: center;
+}
+
 pre,
 code {
 	background: var(--color-gray-90);
@@ -705,6 +713,8 @@ footer.panel {
 	<li><time datetime="2024-07-15">15 July 2024</time></li>
 	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
+
+<div class="callout"><a href="/blockstack-testflight/">BlockStack is now on Testflight!</a> Try the game <a href="https://testflight.apple.com/join/1e8wHwE9">for free here</a>.</div>
 
 <p>When running an app that uses an immersive view, such as <a href="/jenga-in-vision-os/">this Jenga demo</a>, you might want the immersive scene to disappear when the window is closed. We can do this using the <code>scenePhase</code> environmental setting along with <code>dismissImmersiveSpace</code>.</p>
 <p>For example, we can use the <code>scenePhase</code> value of the main content view to determine if it's been closed, and use that to hide the immersive view:</p>
