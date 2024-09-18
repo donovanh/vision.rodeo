@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Tagged “dev” - Donovan's Vision Blog</title>
-		<meta name="description" content="Build great apps for Apple Vision Pro">
+		<title>Get started with TabletopKit - Donovan's Vision Blog</title>
+		<meta name="description" content="Some initial setup required to make a TabletopKit game for Vision Pro">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -14,12 +14,135 @@
 
 		<meta name="fediverse:creator" content="@donovanh@mastodon.ie" />
 
-		<meta property="og:title" content="Tagged “dev”" />
+		<meta property="og:title" content="Get started with TabletopKit" />
 		<meta property="og:type" content="article" />
-		<meta property="og:description" content="Build great apps for Apple Vision Pro">
+		<meta property="og:description" content="Some initial setup required to make a TabletopKit game for Vision Pro">
 		<meta property="og:url" content="" />
 		<meta name="generator" content="Eleventy v2.0.1">
-		<style>* { box-sizing: border-box; }
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+* { box-sizing: border-box; }
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
@@ -582,103 +705,28 @@ footer.panel {
 			</header>
 		<main id="skip" class="">
 			
+
 <div class="content panel padded">
-  <h1>Tagged “dev”</h1>
+	<h1>Get started with TabletopKit</h1>
 
-
-<ul reversed class="nested postlist">
-
-	<li class="postlist-item">
-		<a href="/tabletopkit-getting-started/" class="postlist-link">Get started with TabletopKit</a>
-		<time class="postlist-date" datetime="2024-09-20">September 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/window-3d-content/" class="postlist-link">Bringing 3D to window content</a>
-		<time class="postlist-date" datetime="2024-08-31">August 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/blockstack-testflight/" class="postlist-link">BlockStack now on TestFlight</a>
-		<time class="postlist-date" datetime="2024-08-30">August 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/dismiss-immersive/" class="postlist-link">Dismissing immersive views</a>
-		<time class="postlist-date" datetime="2024-07-15">July 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/reset-physics/" class="postlist-link">Reset physics in entities</a>
-		<time class="postlist-date" datetime="2024-07-08">July 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/playing-sounds/" class="postlist-link">Playing sounds</a>
-		<time class="postlist-date" datetime="2024-06-30">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/detecting-collisions/" class="postlist-link">Detecting collisions in visionOS</a>
-		<time class="postlist-date" datetime="2024-06-30">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/loading-material-from-scene/" class="postlist-link">Loading material from Reality Composer Pro scene</a>
-		<time class="postlist-date" datetime="2024-06-29">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/jenga-in-vision-os/" class="postlist-link">Build a Jenga game in visionOS</a>
-		<time class="postlist-date" datetime="2024-06-28">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/hover-effect/" class="postlist-link">Simple hover effect</a>
-		<time class="postlist-date" datetime="2024-06-25">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/advanced-gestures/" class="postlist-link">Advanced gestures</a>
-		<time class="postlist-date" datetime="2024-06-20">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/multiple-objects/" class="postlist-link">Multiple objects</a>
-		<time class="postlist-date" datetime="2024-06-19">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/object-gravity/" class="postlist-link">Adding gravity</a>
-		<time class="postlist-date" datetime="2024-06-15">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/drag-gesture/" class="postlist-link">Dragging objects</a>
-		<time class="postlist-date" datetime="2024-06-14">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/immersive-spaces/" class="postlist-link">Immersive spaces</a>
-		<time class="postlist-date" datetime="2024-06-13">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/volumetric-window-group/" class="postlist-link">Volumetric windows</a>
-		<time class="postlist-date" datetime="2024-06-12">June 2024</time>
-	</li>
-
-	<li class="postlist-item">
-		<a href="/blender-file-in-vision/" class="postlist-link">Animated Blender entity in RealityView</a>
-		<time class="postlist-date" datetime="2024-06-10">June 2024</time>
-	</li>
-
+<ul class="post-metadata">
+	<li><time datetime="2024-09-20">20 September 2024</time></li>
+	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
 
+<div class="callout"><a href="/blockstack-testflight/">BlockStack is now on Testflight!</a> Try the game <a href="https://testflight.apple.com/join/1e8wHwE9">for free here</a>.</div>
 
-<p>See <a href="/tags/">all tags</a>.</p>
+<p>Goal: Create a simple &quot;hello world&quot; TabletopKit app (tested somehow to see if it works)</p>
+<ul>
+<li>table</li>
+<li>equipment (something simple like a ball that can be passed) or a button for each player that when pressed makes them &quot;active&quot;?</li>
+<li>state - who touched it last?</li>
+<li>game rules - something simple to demonstrate that the current player can be passed along after an action</li>
+</ul>
+
+<ul class="links-nextprev"><li>Previous: <a href="/undefined/"></a></li>
+</ul>
 </div>
-
 
 		</main>
 
@@ -702,6 +750,6 @@ footer.panel {
 				<p style="font-size: 0.75rem">All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /tags/dev/ -->
+		<!-- Current page: /tabletopkit-getting-started/ -->
 	</body>
 </html>
