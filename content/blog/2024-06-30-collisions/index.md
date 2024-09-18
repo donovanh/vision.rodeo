@@ -1,7 +1,7 @@
 ---
 title: Detecting collisions in visionOS
 permalink: /detecting-collisions/
-description: Load a material for use in coded RealityKit scenes
+description: Detect when entities collide within RealityKit scenes
 date: 2024-06-30
 tags:
   - dev
