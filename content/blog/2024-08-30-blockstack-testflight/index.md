@@ -20,3 +20,7 @@ My first project was to take this [basic Jenga demo](/jenga-in-vision-os/) and t
 I've uploaded my first build of the game [to TestFlight](https://testflight.apple.com/join/1e8wHwE9). To install, make sure you have the TestFlight app then select "Start Testing" on the linked page.
 
 As I'm using some of the newer APIs introduced in Xcode 16, this version of the app requires [vision OS 2](https://www.apple.com/visionos/visionos-2-preview/). Apologies for anyone on version 1 currently.
+
+## Update: The app is now live on the store!
+
+Want to support my development? [Pick up the game now for just $1.99](https://apps.apple.com/app/blockstack/id6670283686).
