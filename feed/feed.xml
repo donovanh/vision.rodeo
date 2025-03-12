@@ -4,12 +4,187 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2024-08-31T00:00:00Z</updated>
+	<updated>2025-03-11T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
 		<email>donovan@hop.ie</email>
 	</author>
+	
+	<entry>
+		<title>Arctic iOS conference 2025</title>
+		<link href="https://vision.rodeo/arctic-2025/"/>
+		<updated>2025-03-11T00:00:00Z</updated>
+		<id>https://vision.rodeo/arctic-2025/</id>
+		<content type="html">&lt;p&gt;It&#39;s been a while since I posted, as I&#39;ve been busy with web projects such as the new &lt;a href=&quot;https://classy.cards&quot;&gt;Classy.cards&lt;/a&gt; project. However this week I&#39;ve been lucky enough to attend &lt;a href=&quot;https://arcticonference.com&quot;&gt;Arctic Conference&lt;/a&gt; in Oulu, Finland. Here are some notes from the talks I&#39;ve enjoyed.&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;localizedStandardContains: Case-insensitive, diacritic-insensitive, locale-aware string matching in Swift.&lt;/li&gt;
+&lt;li&gt;Apple&#39;s Translation Tooling: Useful for quick translations but requires verification for accuracy.&lt;/li&gt;
+&lt;li&gt;Localized UI Considerations: Ensure proper text scaling and right-to-left (RTL) layout support (useful for accessibility too).&lt;/li&gt;
+&lt;li&gt;App Intents &amp;amp; Localization: Structure user interactions for cross-platform usability with localized responses.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;workshop-level-up-your-swift-and-swiftui-with-paul-hudson&quot; tabindex=&quot;-1&quot;&gt;Workshop: Level up your Swift and SwiftUI with Paul Hudson &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://arcticonference.com/workshop/levelup/&quot;&gt;Arctic Conference Workshop: Level Up&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I attended Paul Hudson&#39;s half-day workshop at the Arctic Conference, a hands-on session focused on refining existing Swift code. The format encouraged discussion and collaboration, with attendees suggesting and implementing improvements to a working project.&lt;/p&gt;
+&lt;h3 id=&quot;string-matching-with-localizedstandardcontains&quot; tabindex=&quot;-1&quot;&gt;String Matching with &lt;code&gt;localizedStandardContains&lt;/code&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;One of the more useful discussions covered best practices for string matching in Swift. &lt;a href=&quot;https://developer.apple.com/documentation/foundation/nsstring/1416328-localizedstandardcontains&quot;&gt;&lt;code&gt;localizedStandardContains&lt;/code&gt;&lt;/a&gt; was recommended for case-insensitive, diacritic-insensitive, locale-aware searches. This method is particularly helpful for handling special characters from different languages, such as the German sharp S (&lt;code&gt;ß&lt;/code&gt;). However, it can sometimes behave unpredictably with emoji and other special characters, so testing is essential.&lt;/p&gt;
+&lt;h3 id=&quot;translation-tooling-with-apple-intelligence&quot; tabindex=&quot;-1&quot;&gt;Translation Tooling with Apple Intelligence &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;We also covered Apple&#39;s built-in translation tooling and how it can streamline internationalization. While useful, it’s important to be aware of its limitations and verify translations for accuracy.&lt;/p&gt;
+&lt;h3 id=&quot;best-practices-for-clean-code&quot; tabindex=&quot;-1&quot;&gt;Best Practices for Clean Code &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The session reinforced several best practices for writing cleaner Swift code:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Abstracting reusable code&lt;/strong&gt;: Moving repeated logic into separate methods for better modularity.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Consistent variable naming&lt;/strong&gt;: Keeping naming conventions uniform to improve readability.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code organization&lt;/strong&gt;: Structuring projects logically for easier maintenance and collaboration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The workshop provided was an interesting and practical opportunity to refine best practices and pick up new techniques.&lt;/p&gt;
+&lt;h2 id=&quot;arctic-day-1&quot; tabindex=&quot;-1&quot;&gt;Arctic Day 1 &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The conference took place in the beautiful &lt;a href=&quot;https://teatteri-rio.wheree.com&quot;&gt;Teatteri Rio&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;ben-scheirman-from-independent-to-big-company-ios&quot; tabindex=&quot;-1&quot;&gt;Ben Scheirman: From independent to big company iOS &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ben’s talk explored the transition from small teams to larger company environments, touching on the challenges and trade-offs at different stages of a developer’s career. It was centered around iOS but could easily apply to developers in other fields.&lt;/p&gt;
+&lt;h3 id=&quot;small-companies-and-independent-work&quot; tabindex=&quot;-1&quot;&gt;Small Companies and Independent Work &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Working in small teams offers speed, flexibility, and control over technology choices. However, it also means smaller projects, budgets, and overall impact.&lt;/p&gt;
+&lt;p&gt;For independent developers, the biggest challenges often go beyond coding—handling taxes, business management, and chasing down payments are part of the job. A useful rule of thumb: independent work should provide at least two of the following—great pay, great work, or great people. When setting up contracts, including a kill fee or buyout clause is a smart move.&lt;/p&gt;
+&lt;p&gt;While independence brings freedom, it also comes with limited involvement after project handoff and fewer long-term opportunities.&lt;/p&gt;
+&lt;h3 id=&quot;large-companies-and-scaling-up&quot; tabindex=&quot;-1&quot;&gt;Large Companies and Scaling Up &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Larger companies function as a collection of interconnected teams, requiring strong alignment to stay on track. Finding the ‘north star’—a shared goal—is crucial to keeping teams moving in the same direction.&lt;/p&gt;
+&lt;p&gt;At scale, abstraction matters more than implementation. Good software design allows components to plug into existing platforms without micromanaging details.&lt;/p&gt;
+&lt;h4 id=&quot;working-effectively-in-teams&quot; tabindex=&quot;-1&quot;&gt;Working Effectively in Teams &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Great teams produce great software. Key practices for fostering a strong team environment include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Empathy and relationships&lt;/strong&gt;: Building trust and offering growth opportunities.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Knowledge sharing&lt;/strong&gt;: Setting up office hours or calendar slots for technical questions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PR reviews with empathy&lt;/strong&gt;: Being kind while maintaining standards, and using linting to automate minor checks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pair programming&lt;/strong&gt;: Encouraging learning and collaboration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collective code ownership&lt;/strong&gt;: Avoiding territorial behavior while ensuring accountability through a Directly Responsible Individual (DRI), such as a release captain.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;handling-scale-and-stability&quot; tabindex=&quot;-1&quot;&gt;Handling Scale and Stability &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Planning for high demand is essential. A simple yet effective first step is leveraging HTTP caching.&lt;/p&gt;
+&lt;p&gt;Crashes become significant at scale — a seemingly low 0.5% crash rate translates to thousands of failures across millions of sessions. Tracking and addressing crashes proactively is key.&lt;/p&gt;
+&lt;h4 id=&quot;writing-reliable-code&quot; tabindex=&quot;-1&quot;&gt;Writing Reliable Code &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Prioritize compiler errors over test failures&lt;/strong&gt;: Catching issues early reduces reliance on runtime checks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Use strong types&lt;/strong&gt;: Preventing errors at the type level reduces the need for manual vigilance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maintain test infrastructure&lt;/strong&gt;: Provide useful example tests, build a support library, and keep components small with minimal dependencies.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Debugging tools&lt;/strong&gt;: Implementing a debug menu to trigger tests and mock states can streamline development.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;alaina-kafkes-long-live-the-code-comment&quot; tabindex=&quot;-1&quot;&gt;Alaina Kafkes: Long live the code comment &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Alaina Kafkes’ talk explored how to write effective code comments, addressing common pitfalls and best practices for clarity and maintainability.&lt;/p&gt;
+&lt;h3 id=&quot;common-issues-with-code-comments&quot; tabindex=&quot;-1&quot;&gt;Common Issues with Code Comments &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Poorly written comments can create more confusion than clarity. Some of the most common issues include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Outdated&lt;/strong&gt;: No longer accurate as the code evolves.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inaccurate&lt;/strong&gt;: Misleading or incorrect explanations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Redundant&lt;/strong&gt;: Simply restating what the code already makes obvious.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Overlong&lt;/strong&gt;: Too much detail, making them difficult to read.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Incomplete&lt;/strong&gt;: Missing critical context or purpose.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;the-role-of-comments-in-code&quot; tabindex=&quot;-1&quot;&gt;The Role of Comments in Code &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Inspired by &lt;em&gt;A Philosophy of Software Design&lt;/em&gt; by John Ousterhout, the talk emphasized that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Code &lt;strong&gt;shows how&lt;/strong&gt; something works.&lt;/li&gt;
+&lt;li&gt;Comments &lt;strong&gt;explain what&lt;/strong&gt; the code does and &lt;strong&gt;why&lt;/strong&gt; it’s written that way.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;types-of-comments-and-their-uses&quot; tabindex=&quot;-1&quot;&gt;Types of Comments and Their Uses &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Interface Comments&lt;/strong&gt; (Most useful)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Placed above functions, explaining purpose and expected behavior.&lt;/li&gt;
+&lt;li&gt;Can be supplemented by well-named functions and clear APIs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Implementation Comments&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Found within functions, clarifying non-obvious logic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cross-Component Comments&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Documentation such as READMEs to explain how different parts of a system interact.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;vidit-bhargava-action-centered-design&quot; tabindex=&quot;-1&quot;&gt;Vidit Bhargava: Action centered design &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Vidit Bhargava’s talk explored how app design is evolving beyond single platforms, focusing on actions rather than standalone applications.&lt;/p&gt;
+&lt;h3 id=&quot;the-shift-to-action-centered-design&quot; tabindex=&quot;-1&quot;&gt;The Shift to Action-Centered Design &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Modern apps function across multiple contexts—phones, watches, desktops, and notifications. Instead of designing for a single platform, developers should think of apps as a way to enable actions that adapt to different environments.&lt;/p&gt;
+&lt;h3 id=&quot;the-action-centered-approach&quot; tabindex=&quot;-1&quot;&gt;The Action-Centered Approach &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Action&lt;/strong&gt; → Identify the core task the user wants to accomplish.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Information&lt;/strong&gt; → Determine the essential data required for that action.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interface&lt;/strong&gt; → Surface the information through the simplest possible interface, from widgets to full-screen apps.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;implementation-with-app-intents&quot; tabindex=&quot;-1&quot;&gt;Implementation with App Intents &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Apple’s App Intents framework helps structure this approach by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Performing logic&lt;/strong&gt; to handle user actions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Defining inputs&lt;/strong&gt; (AppEntities) that supply necessary information.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Providing results&lt;/strong&gt; through various interface outputs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Action-centered design ensures that apps remain functional across different devices and contexts, making user interactions more seamless and efficient.&lt;/p&gt;
+&lt;p&gt;More insights can be found at &lt;a href=&quot;https://blog.viditb.com&quot;&gt;Vidit Bhargava’s blog&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;ellen-shapiro-an-ai-skeptic-implements-apple-intelligence&quot; tabindex=&quot;-1&quot;&gt;Ellen Shapiro: An AI Skeptic Implements Apple Intelligence &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://mastodon.social/@designatednerd&quot;&gt;mastodon.social/@designatednerd&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;issues-with-ai-and-llms&quot; tabindex=&quot;-1&quot;&gt;Issues with AI and LLMs &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Large language models (LLMs) have fundamental flaws, including their inability to distinguish truth from fiction. This raises concerns about their reliability, as seen in real-world issues like an AI agent purchasing overpriced groceries due to poor judgment.&lt;/p&gt;
+&lt;p&gt;Some broader concerns with AI include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Grand theft autocomplete&lt;/strong&gt; – Many models are trained on data with unclear or questionable sourcing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;High energy consumption&lt;/strong&gt; – AI systems require significantly more power than traditional computing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unpredictable errors&lt;/strong&gt; – AI outputs can be inconsistent and difficult to anticipate.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Susceptibility to abuse&lt;/strong&gt; – Bad actors can exploit AI hallucinations.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Erosion of critical thinking&lt;/strong&gt; – Overreliance on AI may reduce users&#39; ability to think critically.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;apple-s-approach-to-ai&quot; tabindex=&quot;-1&quot;&gt;Apple’s Approach to AI &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Apple aims to address some of these concerns by focusing on on-device computation, making AI features more efficient and private. Their ML platforms offer structured ways to integrate AI while maintaining a user-first approach.&lt;/p&gt;
+&lt;h3 id=&quot;implementing-apple-intelligence&quot; tabindex=&quot;-1&quot;&gt;Implementing Apple Intelligence &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Ellen provided examples of how Apple Intelligence can be integrated into apps. See the GitHub repository for sample implementations: &lt;a href=&quot;https://github.com/designatednerd/AppleIntelligenceExamples&quot;&gt;Apple Intelligence Examples&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;Notes: &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Image Playgrounds&lt;/strong&gt; – Only available on a real device (not in the simulator), with strict limitations and visual artifacts.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Genmoji&lt;/strong&gt; – Managed as a folder requiring special handling for inline usage.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Writing Tools&lt;/strong&gt; – Brings up a UI panel with customization options but has limitations (e.g., tables are not fully supported for copy/paste).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Translation API&lt;/strong&gt; – Useful for machine-driven translations, potentially helpful in apps like an iOS recipe app.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;summary&quot; tabindex=&quot;-1&quot;&gt;Summary &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Be cautious of AI hype and its limitations.&lt;/li&gt;
+&lt;li&gt;Apple Intelligence has restrictions that require real-device testing.&lt;/li&gt;
+&lt;li&gt;Genmojis have tricky implementation details.&lt;/li&gt;
+&lt;li&gt;TextKit 2 remains buggy and may not always be worth updating to.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;chris-price-when-content-is-king&quot; tabindex=&quot;-1&quot;&gt;Chris Price: When Content is King &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;When building content-driven apps, structuring data efficiently is crucial:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose a storage format that simplifies functionality (e.g., mapping SQLite to CoreData or using JSON for direct mapping to app structure).&lt;/li&gt;
+&lt;li&gt;Develop tools for data entry, such as spreadsheets or helper apps, and document the process.&lt;/li&gt;
+&lt;li&gt;Determine an update strategy—this could be time-based or aligned with Apple’s release cycle.&lt;/li&gt;
+&lt;li&gt;Treat content with the same importance as code: version control it, ensure proper naming conventions, and implement a testing and bug-tracking system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;klemens-strasser-what-video-games-can-teach-us-about-accessibility&quot; tabindex=&quot;-1&quot;&gt;Klemens Strasser: What Video Games Can Teach Us About Accessibility &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Key accessibility considerations inspired by video game design:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Color Deficiency:&lt;/strong&gt; Use accessible color palettes and symbols instead of relying solely on color (see &lt;em&gt;Effortless SwiftUI Theming&lt;/em&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Custom Fonts:&lt;/strong&gt; Support font adjustments, including accessible fonts like Lexend and OpenDyslexic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Simplified Layouts:&lt;/strong&gt; Offer streamlined interfaces using Assistive Access (&lt;code&gt;isAssistiveAccessEnabled&lt;/code&gt; environment variable) to adapt content presentation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sound Design:&lt;/strong&gt; Augment sound cues with haptic feedback (see &lt;em&gt;WWDC Explore Immersive Sound Design&lt;/em&gt; and use the &lt;em&gt;Haptrix&lt;/em&gt; tool for generating haptic feedback).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Spatial Accessibility:&lt;/strong&gt; Ensure Vision Pro experiences are accessible.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Onboarding:&lt;/strong&gt; Present accessibility options early, ideally with an overlay or an easily accessible settings button.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Resources:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://medium.com/@katramesh91/effortless-theming-in-swiftui-mastering-multiple-themes-and-best-practices-061113be6d3d&quot;&gt;Effortless Theming in SwiftUI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gameaccessibilityguidelines.com&quot;&gt;Game Accessibility Guidelines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.applevis.com&quot;&gt;AppleVis Forum&lt;/a&gt; – Community for discussing accessibility&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ec.europa.eu/social/main.jsp?catId=1202&quot;&gt;European Accessibility Act&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://strasser.app&quot;&gt;Klemens Strasser’s Website&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Bringing 3D to window content</title>
