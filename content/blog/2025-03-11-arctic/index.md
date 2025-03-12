@@ -195,7 +195,7 @@ When building content-driven apps, structuring data efficiently is crucial:
 - Determine an update strategy—this could be time-based or aligned with Apple’s release cycle.
 - Treat content with the same importance as code: version control it, ensure proper naming conventions, and implement a testing and bug-tracking system.
 
-### [Klemens Strasser: What Video Games Can Teach Us About Accessibility](https://arcticonference.com/speaker/klemens#talk)
+## [Klemens Strasser: What Video Games Can Teach Us About Accessibility](https://arcticonference.com/speaker/klemens#talk)
 
 Key accessibility considerations inspired by video game design:
 
