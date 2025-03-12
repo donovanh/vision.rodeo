@@ -4,7 +4,7 @@ permalink: /arctic-2025/
 description: Learning about Swift, iOS, VisionOS and general Apple dev at the world's most northern Apple conference.
 date: 2025-03-12
 tags:
-  - dev
+  - conference
 ---
 
 It's been a while since I posted, as I've been busy with web projects such as the new [Classy.cards](https://classy.cards) project. However this week I've been lucky enough to attend [Arctic Conference](https://arcticonference.com) in Oulu, Finland.
