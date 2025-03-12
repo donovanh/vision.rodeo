@@ -62,7 +62,7 @@ body {
 	margin: 0 auto;
 	font-family: var(--font-family);
 	color: var(--text-color);
-	font-size: 1.25em;
+	font-size: 1.15em;
 
 	background: var(--background-color);
 	background-size: 100vw;
@@ -94,11 +94,11 @@ p:last-child {
 	margin-bottom: 0;
 }
 p {
-	line-height: 1.5;
+	line-height: 1.75;
 }
 
 li {
-	line-height: 1.5;
+	line-height: 1.75;
 }
 
 a[href] {
@@ -503,6 +503,14 @@ main h4 {
 	font-size: 4rem;
 }
 
+main h2 {
+	font-size: 1.75em;
+}
+
+main h3 {
+	font-size: 1.5em;
+}
+
 @media (max-width: 500px) {
 	.content h1 {
 		text-align: center;
@@ -510,7 +518,7 @@ main h4 {
 }
 
 h2 + .header-anchor {
-	font-size: 1.5em;
+	font-size: 1.75em;
 }
 
 footer {
