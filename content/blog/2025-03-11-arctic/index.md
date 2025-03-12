@@ -1,5 +1,5 @@
 ---
-title: Arctic iOS conference 2025: Day 1
+title: Arctic iOS conference 2025 - Day 1
 permalink: /arctic-2025/
 description: Learning about Swift, iOS, VisionOS and general Apple dev at the world's most northern Apple conference.
 date: 2025-03-12
