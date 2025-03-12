@@ -1,17 +1,19 @@
 ---
-title: Arctic iOS conference 2025
+title: Arctic iOS conference 2025: Day 1
 permalink: /arctic-2025/
 description: Learning about Swift, iOS, VisionOS and general Apple dev at the world's most northern Apple conference.
-date: 2025-03-11
+date: 2025-03-12
 tags:
   - dev
 ---
 
-It's been a while since I posted, as I've been busy with web projects such as the new [Classy.cards](https://classy.cards) project. However this week I've been lucky enough to attend [Arctic Conference](https://arcticonference.com) in Oulu, Finland. Here are some notes from the talks I've enjoyed.
+It's been a while since I posted, as I've been busy with web projects such as the new [Classy.cards](https://classy.cards) project. However this week I've been lucky enough to attend [Arctic Conference](https://arcticonference.com) in Oulu, Finland.
+
+There was a lot of great content and the conference has already proved inspiring after just the first day. Here are some notes from the talks I've enjoyed on the first day.
 
 ## Highlights
 
-- localizedStandardContains: Case-insensitive, diacritic-insensitive, locale-aware string matching in Swift.
+- [localizedStandardContains](https://developer.apple.com/documentation/foundation/nsstring/1416328-localizedstandardcontains): Case-insensitive, diacritic-insensitive, locale-aware string matching in Swift.
 - Apple's Translation Tooling: Useful for quick translations but requires verification for accuracy.
 - Localized UI Considerations: Ensure proper text scaling and right-to-left (RTL) layout support (useful for accessibility too).
 - App Intents & Localization: Structure user interactions for cross-platform usability with localized responses.
@@ -44,7 +46,7 @@ The workshop provided was an interesting and practical opportunity to refine bes
 
 The conference took place in the beautiful [Teatteri Rio](https://teatteri-rio.wheree.com).
 
-## Ben Scheirman: From independent to big company iOS
+## [Ben Scheirman: From independent to big company iOS](https://arcticonference.com/speaker/ben#talk)
 
 Ben’s talk explored the transition from small teams to larger company environments, touching on the challenges and trade-offs at different stages of a developer’s career. It was centered around iOS but could easily apply to developers in other fields.
 
@@ -85,7 +87,7 @@ Crashes become significant at scale — a seemingly low 0.5% crash rate translat
 - **Maintain test infrastructure**: Provide useful example tests, build a support library, and keep components small with minimal dependencies.
 - **Debugging tools**: Implementing a debug menu to trigger tests and mock states can streamline development.
 
-## Alaina Kafkes: Long live the code comment
+## [Alaina Kafkes: Long live the code comment](https://arcticonference.com/speaker/alaina#talk)
 
 Alaina Kafkes’ talk explored how to write effective code comments, addressing common pitfalls and best practices for clarity and maintainability.
 
@@ -120,7 +122,7 @@ Inspired by _A Philosophy of Software Design_ by John Ousterhout, the talk empha
 3. **Cross-Component Comments**
    - Documentation such as READMEs to explain how different parts of a system interact.
 
-## Vidit Bhargava: Action centered design
+## [Vidit Bhargava: Action centered design](https://arcticonference.com/speaker/vidit#talk)
 
 Vidit Bhargava’s talk explored how app design is evolving beyond single platforms, focusing on actions rather than standalone applications.
 
@@ -146,7 +148,7 @@ Action-centered design ensures that apps remain functional across different devi
 
 More insights can be found at [Vidit Bhargava’s blog](https://blog.viditb.com).
 
-## Ellen Shapiro: An AI Skeptic Implements Apple Intelligence
+## [Ellen Shapiro: An AI Skeptic Implements Apple Intelligence](https://arcticonference.com/speaker/ellen#talk)
 
 [mastodon.social/@designatednerd](https://mastodon.social/@designatednerd)
 
@@ -184,7 +186,7 @@ Ellen provided examples of how Apple Intelligence can be integrated into apps. S
 - Genmojis have tricky implementation details.
 - TextKit 2 remains buggy and may not always be worth updating to.
 
-### Chris Price: When Content is King
+## [Chris Price: When Content is King](https://arcticonference.com/speaker/chris#talk)
 
 When building content-driven apps, structuring data efficiently is crucial:
 
@@ -193,7 +195,7 @@ When building content-driven apps, structuring data efficiently is crucial:
 - Determine an update strategy—this could be time-based or aligned with Apple’s release cycle.
 - Treat content with the same importance as code: version control it, ensure proper naming conventions, and implement a testing and bug-tracking system.
 
-### Klemens Strasser: What Video Games Can Teach Us About Accessibility
+### [Klemens Strasser: What Video Games Can Teach Us About Accessibility](https://arcticonference.com/speaker/klemens#talk)
 
 Key accessibility considerations inspired by video game design:
 
@@ -211,3 +213,5 @@ Key accessibility considerations inspired by video game design:
 - [AppleVis Forum](https://www.applevis.com) – Community for discussing accessibility
 - [European Accessibility Act](https://ec.europa.eu/social/main.jsp?catId=1202)
 - [Klemens Strasser’s Website](https://strasser.app)
+
+That's all I have for day 1! I did miss a couple of talks as I was feeling quite run down by the afternoon. Hopefully I'll catch some more tomorrow. See you then!
