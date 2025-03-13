@@ -11,7 +11,13 @@ After a great [ARCtic Conference day 1](/arctic-2025/), we had a second day pack
 
 ## Highlights
 
-- TODO: Once the day ends!
+1. **Paul Hudson introduced Ignite**, a new static site generator for Swift, allowing developers to build websites using Swift’s syntax and SwiftUI-like result builders.
+2. **Mikaela Caron showcased TabletopKit** for VisionOS, demonstrating how to create immersive tabletop games with RealityKit and SharePlay integration.
+3. **Daniel Steinberg broke down `some` vs. `any` in Swift**, explaining their impact on generics, type safety, and performance.
+4. **Priyal Porwal explored Swift Macros**, showing how they reduce boilerplate and improve maintainability in iOS apps.
+5. **Hidde van der Ploeg emphasized “Less AI, more magic”**, encouraging developers to focus on seamless user experiences rather than highlighting AI.
+6. **Pol Piella Abadia demonstrated Xcode’s Instruments**, providing insights into detecting performance bottlenecks, UI hangs, and memory leaks.
+7. **Aurelius Prochazka discussed the history of AudioKit**, highlighting the benefits of creating community.
 
 If you missed it, you can find a write-up of the [talks from day one here](/arctic-2025/).
 
@@ -222,7 +228,7 @@ Sell the solution, not the technology.
 
 Instruments are powerful tools for analyzing performance across Apple platforms. They are integrated into Xcode and can be accessed from the standalone Instruments app, by pressing `Cmd + I` in Xcode, or navigating to `Product -> Profile`. While incredibly useful, mastering them can take time.
 
-## Working with the Main Thread
+### Working with the Main Thread
 
 All UI updates must happen on the main thread. If a function runs on a background thread but modifies the UI, it can cause crashes or unexpected behavior.
 
@@ -236,7 +242,7 @@ However, overusing `@MainActor` can lead to performance bottlenecks. If the main
 - A **severe hang** lasts 500ms or longer and significantly impacts user experience.
 - Instruments allows hang detection, which can be enabled in debugging settings to show warnings on-screen.
 
-## Memory Management & Leaks
+### Memory Management & Leaks
 
 Memory leaks occur when allocated memory is not properly released, leading to increased memory usage over time. This is often due to strong references preventing objects from being deallocated.
 
@@ -250,7 +256,7 @@ The **Leaks** instrument in Instruments helps identify memory leaks:
 - A **red cross** signals a detected memory leak.
 - Investigate by checking for objects that reference each other in a circular way, and mark appropriate references as `weak`.
 
-## Using the Profiler
+### Using the Profiler
 
 To diagnose performance issues, Instruments provides various profiling tools:
 
@@ -266,10 +272,16 @@ For long-running tasks that slow down the main thread:
 - `async let ...` allows parallel execution of multiple async functions, reducing wait time for independent tasks.
 - The **Swift Tasks** instrument in Instruments can help visualize when async tasks run and identify bottlenecks.
 
-## Additional Tools & Tips
+### Additional Tools & Tips
 
 - **Signposts**: Use [OSSignpost](https://developer.apple.com/documentation/os/ossignposter) to insert markers in your code and measure performance at specific points.
 - **View Body Instrument**: This adds a timeline lane in Instruments, helping highlight slow SwiftUI rendering processes.
 - **Building Between Runs**: Always build (`Cmd + I`) before starting a new Instruments recording to ensure the latest version is analyzed.
 
 By integrating these tools into development workflows, performance issues can be identified and resolved efficiently, leading to smoother, more responsive apps.
+
+## [Aurelius Prochazka: 10 Years of Magic and Bliss (Just Kidding)](https://arcticonference.com/speaker/aure)
+
+The creator of AudioKit, Aurelius gave a wonderful talk that drew together all the others in delivering insights about how to be a positive member of the developer community.
+
+Shipping, improving, collaborating, and the benefits of putting out quality into the universe. A lovely end to the day!
