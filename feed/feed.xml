@@ -163,7 +163,6 @@
 &lt;p&gt;In the example above, &lt;code&gt;translate&lt;/code&gt; could be &lt;code&gt;AI translation&lt;/code&gt; but not useful information for the user looking for a solution.&lt;/p&gt;
 &lt;p&gt;Sell the solution, not the technology.&lt;/p&gt;
 &lt;h2 id=&quot;pol-piella-abadia-tuning-your-app-using-xcode-s-instruments&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/pol&quot;&gt;Pol Piella Abadia: Tuning your app using Xcode&#39;s instruments&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://vision.rodeo/arctic-2025-day-2/bento.me/pol&quot;&gt;Social links for Pol&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Instruments are powerful tools for analyzing performance across Apple platforms. They are integrated into Xcode and can be accessed from the standalone Instruments app, by pressing &lt;code&gt;Cmd + I&lt;/code&gt; in Xcode, or navigating to &lt;code&gt;Product -&amp;gt; Profile&lt;/code&gt;. While incredibly useful, mastering them can take time.&lt;/p&gt;
 &lt;h2 id=&quot;working-with-the-main-thread&quot; tabindex=&quot;-1&quot;&gt;Working with the Main Thread &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;All UI updates must happen on the main thread. If a function runs on a background thread but modifies the UI, it can cause crashes or unexpected behavior.&lt;/p&gt;
