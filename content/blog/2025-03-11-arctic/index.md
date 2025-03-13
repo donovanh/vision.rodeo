@@ -13,10 +13,16 @@ There was a lot of great content and the conference has already proved inspiring
 
 ## Highlights
 
-- [localizedStandardContains](https://developer.apple.com/documentation/foundation/nsstring/1416328-localizedstandardcontains): Case-insensitive, diacritic-insensitive, locale-aware string matching in Swift.
-- Apple's Translation Tooling: Useful for quick translations but requires verification for accuracy.
-- Localized UI Considerations: Ensure proper text scaling and right-to-left (RTL) layout support (useful for accessibility too).
-- App Intents & Localization: Structure user interactions for cross-platform usability with localized responses.
+## Updated Highlights
+
+- **Localized String Matching**: Use [`localizedStandardContains`](https://developer.apple.com/documentation/foundation/nsstring/1416328-localizedstandardcontains) for case-insensitive, diacritic-aware searches in Swift.
+- **Apple's Translation Tooling**: Handy for quick translations but requires manual verification for accuracy.
+- **App Intents & Action-Centered Design**: Shift focus from app-centric to action-centric experiences, enabling seamless interactions across devices.
+- **Code Comments That Matter**: Write comments that explain the _why_, not just the _how_, and keep them relevant over time.
+- **Scaling from Indie to Enterprise**: Small teams offer flexibility, but scaling up requires strong alignment, documentation, and structured ownership.
+- **AI in Apple’s Ecosystem**: Apple’s AI approach prioritizes privacy and efficiency, but real-world limitations (e.g., Genmoji handling, translation quirks) require thoughtful implementation.
+- **Video Games & Accessibility**: Lessons from gaming—clear visuals, sound alternatives, and adaptive interfaces—can improve app usability for everyone.
+- **Content as Code**: Treat content with the same rigor as software—version control, structured updates, and dedicated tooling for data management.
 
 ## Workshop: Level up your Swift and SwiftUI with Paul Hudson
 
