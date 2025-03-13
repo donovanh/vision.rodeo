@@ -192,4 +192,28 @@ Macros have specific roles that define how they transform code. More details on 
 
 While powerful, macros come with challenges. The syntax can be complex, and poorly optimized macros can increase build times. Proper testing is crucial, but unit tests for macros can be tricky due to strict formatting requirements. Macros offer significant benefits by simplifying code and improving maintainability.
 
-## Hidde van der Ploeg: Less AI, more magic
+## [Hidde van der Ploeg: Less AI, more magic](https://arcticonference.com/speaker/hidde#talk)
+
+AI is everywhere. It's like when electricity replaced candles. Over time, appliances came about from better understanding of electricity. In a way, AI is similarly early.
+
+Using AI can help in marketing, but we can go further and turn it into magic.
+
+### Magic = achieving the impossible.
+
+AI can help produce solutions that were not possible before. We don't need to call it out with sparkles icons. Such as when presenting a summary of data - the value is in the summary not in dressing it by advertising the implementation details.
+
+### Approach: Start with the problem
+
+As in, don't start with "how can we use AI to do _insert thing here_", instead ask "how do we do _insert thing here_" and if AI is an answer, maybe use it. In the end the customer doesn't care if the solution is created with AI as long as it works.
+
+AI presents a new or extended pallette of tools. From image generation, text summaries, translations and more.
+
+### Abstract away the complexity
+
+Instead of using an open text field, offer more specific options such as `translate` or `improve`. The chat box is only the beginning.
+
+### Naming features
+
+In the example above, `translate` could be `AI translation` but not useful information for the user looking for a solution.
+
+Sell the solution, not the technology.
