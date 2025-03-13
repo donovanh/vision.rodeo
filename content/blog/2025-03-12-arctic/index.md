@@ -5,6 +5,7 @@ description: Learning about Swift, iOS, VisionOS and general Apple dev at the wo
 date: 2025-03-12
 tags:
   - conference
+draft
 ---
 
 It's been a while since I posted, as I've been busy with web projects such as the new [Classy.cards](https://classy.cards) project. However this week I've been lucky enough to attend [Arctic Conference](https://arcticonference.com) in Oulu, Finland.
@@ -12,8 +13,6 @@ It's been a while since I posted, as I've been busy with web projects such as th
 There was a lot of great content and the conference has already proved inspiring after just the first day. Here are some notes from the talks I've enjoyed on the first day.
 
 ## Highlights
-
-## Updated Highlights
 
 - **Localized String Matching**: Use [`localizedStandardContains`](https://developer.apple.com/documentation/foundation/nsstring/1416328-localizedstandardcontains) for case-insensitive, diacritic-aware searches in Swift.
 - **Apple's Translation Tooling**: Handy for quick translations but requires manual verification for accuracy.
