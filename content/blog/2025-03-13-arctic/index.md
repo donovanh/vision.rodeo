@@ -11,13 +11,13 @@ After a great [ARCtic Conference day 1](/arctic-2025/), we had a second day pack
 
 ## Highlights
 
-1. **Paul Hudson introduced Ignite**, a new static site generator for Swift, allowing developers to build websites using Swift’s syntax and SwiftUI-like result builders.
-2. **Mikaela Caron showcased TabletopKit** for VisionOS, demonstrating how to create immersive tabletop games with RealityKit and SharePlay integration.
-3. **Daniel Steinberg broke down `some` vs. `any` in Swift**, explaining their impact on generics, type safety, and performance.
-4. **Priyal Porwal explored Swift Macros**, showing how they reduce boilerplate and improve maintainability in iOS apps.
-5. **Hidde van der Ploeg emphasized “Less AI, more magic”**, encouraging developers to focus on seamless user experiences rather than highlighting AI.
-6. **Pol Piella Abadia demonstrated Xcode’s Instruments**, providing insights into detecting performance bottlenecks, UI hangs, and memory leaks.
-7. **Aurelius Prochazka discussed the history of AudioKit**, highlighting the benefits of creating community.
+1. **[Paul Hudson](https://vision.rodeo/arctic-2025-day-2/#paul-hudson-ignite) introduced Ignite**, a new static site generator for Swift, allowing developers to build websites using Swift’s syntax and SwiftUI-like result builders.
+2. **[Mikaela Caron](https://vision.rodeo/arctic-2025-day-2/#mikaela-caron-creating-games-with-tabletopkit-for-visionos) showcased TabletopKit** for VisionOS, demonstrating how to create immersive tabletop games with RealityKit and SharePlay integration.
+3. **[Daniel Steinberg](https://vision.rodeo/arctic-2025-day-2/#daniel-steinberg-what-the-heck-happened-to-generics) broke down `some` vs. `any` in Swift**, explaining their impact on generics, type safety, and performance.
+4. **[Priyal Porwal](https://vision.rodeo/arctic-2025-day-2/#priyal-porwal-building-maintainable-ios-apps-with-swift-macros) explored Swift Macros**, showing how they reduce boilerplate and improve maintainability in iOS apps.
+5. **[Hidde van der Ploeg](https://vision.rodeo/arctic-2025-day-2/#hidde-van-der-ploeg-less-ai-more-magic) emphasized “Less AI, more magic”**, encouraging developers to focus on seamless user experiences rather than highlighting AI.
+6. **[Pol Piella Abadia](https://vision.rodeo/arctic-2025-day-2/#pol-piella-abadia-tuning-your-app-using-xcode-s-instruments) demonstrated Xcode’s Instruments**, providing insights into detecting performance bottlenecks, UI hangs, and memory leaks.
+7. **[Aurelius Prochazka](https://vision.rodeo/arctic-2025-day-2/#aurelius-prochazka-10-years-of-magic-and-bliss-just-kidding) discussed the history of AudioKit**, highlighting the benefits of creating community.
 
 If you missed it, you can find a write-up of the [talks from day one here](/arctic-2025/).
 
