@@ -52,7 +52,7 @@ The workshop provided was an interesting and practical opportunity to refine bes
 
 The conference took place in the beautiful [Teatteri Rio](https://teatteri-rio.wheree.com). The following is my notes from each of the talks.
 
-## [Ben Scheirman: From independent to big company iOS](https://arcticonference.com/speaker/ben#talk)
+## [Ben Scheirman: From independent to big company iOS](https://arcticonference.com/speaker/ben)
 
 Ben’s talk explored the transition from small teams to larger company environments, touching on the challenges and trade-offs at different stages of a developer’s career. It was centered around iOS but could easily apply to developers in other fields.
 
@@ -93,7 +93,7 @@ Crashes become significant at scale — a seemingly low 0.5% crash rate translat
 - **Maintain test infrastructure**: Provide useful example tests, build a support library, and keep components small with minimal dependencies.
 - **Debugging tools**: Implementing a debug menu to trigger tests and mock states can streamline development.
 
-## [Alaina Kafkes: Long live the code comment](https://arcticonference.com/speaker/alaina#talk)
+## [Alaina Kafkes: Long live the code comment](https://arcticonference.com/speaker/alaina)
 
 Alaina Kafkes’ talk explored how to write effective code comments, addressing common pitfalls and best practices for clarity and maintainability.
 
@@ -128,7 +128,7 @@ Inspired by _A Philosophy of Software Design_ by John Ousterhout, the talk empha
 3. **Cross-Component Comments**
    - Documentation such as READMEs to explain how different parts of a system interact.
 
-## [Vidit Bhargava: Action centered design](https://arcticonference.com/speaker/vidit#talk)
+## [Vidit Bhargava: Action centered design](https://arcticonference.com/speaker/vidit)
 
 Vidit Bhargava’s talk explored how app design is evolving beyond single platforms, focusing on actions rather than standalone applications.
 
@@ -154,7 +154,7 @@ Action-centered design ensures that apps remain functional across different devi
 
 More insights can be found at [Vidit Bhargava’s blog](https://blog.viditb.com).
 
-## [Ellen Shapiro: An AI Skeptic Implements Apple Intelligence](https://arcticonference.com/speaker/ellen#talk)
+## [Ellen Shapiro: An AI Skeptic Implements Apple Intelligence](https://arcticonference.com/speaker/ellen)
 
 [mastodon.social/@designatednerd](https://mastodon.social/@designatednerd)
 
@@ -192,7 +192,7 @@ Ellen provided examples of how Apple Intelligence can be integrated into apps. S
 - Genmojis have tricky implementation details.
 - TextKit 2 remains buggy and may not always be worth updating to.
 
-## [Chris Price: When Content is King](https://arcticonference.com/speaker/chris#talk)
+## [Chris Price: When Content is King](https://arcticonference.com/speaker/chris)
 
 When building content-driven apps, structuring data efficiently is crucial:
 
@@ -201,7 +201,7 @@ When building content-driven apps, structuring data efficiently is crucial:
 - Determine an update strategy—this could be time-based or aligned with Apple’s release cycle.
 - Treat content with the same importance as code: version control it, ensure proper naming conventions, and implement a testing and bug-tracking system.
 
-## [Klemens Strasser: What Video Games Can Teach Us About Accessibility](https://arcticonference.com/speaker/klemens#talk)
+## [Klemens Strasser: What Video Games Can Teach Us About Accessibility](https://arcticonference.com/speaker/klemens)
 
 Key accessibility considerations inspired by video game design:
 
