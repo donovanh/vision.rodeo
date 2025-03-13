@@ -220,8 +220,6 @@ Sell the solution, not the technology.
 
 ## [Pol Piella Abadia: Tuning your app using Xcode's instruments](https://arcticonference.com/speaker/pol)
 
-[Social links for Pol](bento.me/pol).
-
 Instruments are powerful tools for analyzing performance across Apple platforms. They are integrated into Xcode and can be accessed from the standalone Instruments app, by pressing `Cmd + I` in Xcode, or navigating to `Product -> Profile`. While incredibly useful, mastering them can take time.
 
 ## Working with the Main Thread
