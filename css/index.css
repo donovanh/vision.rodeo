@@ -143,8 +143,12 @@ code {
 	border-radius: 0.25rem;
 	padding: 0.25rem;
 	font-family: var(--font-family-monospace);
-	font-size: 0.75rem;
 	word-break: break-word;
+}
+p code,
+li code,
+pre code {
+	font-size: 0.75rem;
 }
 pre:where([class*="language-"]) {
 	margin: 2rem 0 !important;
