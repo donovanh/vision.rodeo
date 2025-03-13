@@ -5,6 +5,7 @@ description: The second day at the world's most northern Apple conference.
 date: 2025-03-13
 tags:
   - conference
+draft: true
 ---
 
 - Intro summarising the day
