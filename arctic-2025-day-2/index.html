@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Arctic iOS conference 2025 - Day 2 - Donovan's Vision Blog</title>
+		<title>ARCtic iOS conference 2025 - Day 2 - Donovan's Vision Blog</title>
 		<meta name="description" content="The second day at the world&#39;s most northern Apple conference.">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -14,7 +14,7 @@
 
 		<meta name="fediverse:creator" content="@donovanh@mastodon.ie" />
 
-		<meta property="og:title" content="Arctic iOS conference 2025 - Day 2" />
+		<meta property="og:title" content="ARCtic iOS conference 2025 - Day 2" />
 		<meta property="og:type" content="article" />
 		<meta property="og:description" content="The second day at the world&#39;s most northern Apple conference.">
 		<meta property="og:url" content="" />
@@ -376,7 +376,7 @@ header {
 	color: transparent;
 	font-family: "Impact";
 	transform: skewY(-8deg) scaleY(1.3) scaleX(0.8);
-	-webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+	-webkit-text-stroke: 1px rgba(0, 0, 0, 0.15);
 }
 
 .wordart-wrapper {
@@ -506,6 +506,7 @@ header ul.nav {
 
 .home .postlist-item h1 {
 	margin: 0;
+	line-height: 1.25em;
 }
 
 .nested .postlist-item {
@@ -715,7 +716,7 @@ footer.panel {
 			
 
 <div class="content panel padded">
-	<h1>Arctic iOS conference 2025 - Day 2</h1>
+	<h1>ARCtic iOS conference 2025 - Day 2</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2025-03-13">13 March 2025</time></li>
@@ -724,13 +725,142 @@ footer.panel {
 
 <div class="callout"><a href="https://apps.apple.com/app/blockstack/id6670283686">BlockStack for Vision Pro is now available!</a></div>
 
-<ul>
-<li>Intro summarising the day</li>
-</ul>
+<p>After a great <a href="/arctic-2025/">ARCtic Conference day 1</a>, we had a second day packed full of inspiring Apple development talks.</p>
 <h2 id="highlights" tabindex="-1">Highlights <a class="header-anchor" href="#highlights">#</a></h2>
+<ul>
+<li>TODO: Once the day ends!</li>
+</ul>
+<p>If you missed it, you can find a write-up of the <a href="/arctic-2025/">talks from day one here</a>.</p>
 <h2 id="day-2-talks" tabindex="-1">Day 2 talks <a class="header-anchor" href="#day-2-talks">#</a></h2>
+<p>As with day one, the conference took place in the beautiful <a href="https://teatteri-rio.wheree.com">Teatteri Rio</a>. The following is my notes from each of the talks.</p>
+<h2 id="paul-hudson-ignite" tabindex="-1"><a href="https://arcticonference.com/speaker/paul#talk">Paul Hudson: Ignite</a> <a class="header-anchor" href="#paul-hudson-ignite">#</a></h2>
+<p>At the recent <a href="https://arcticonference.com">ARCtic Conference</a>, Paul Hudson introduced <a href="https://github.com/twostraws/Ignite">Ignite</a>, a new tool that allows Swift developers to build websites using Swift. This talk explored why this approach makes sense and how Ignite simplifies web development while leveraging Swift’s strengths.</p>
+<p>When building websites today, developers need to consider a range of factors:</p>
+<ul>
+<li>Browser compatibility</li>
+<li>Device compatibility</li>
+<li>Complex UI elements</li>
+<li>Accessibility</li>
+</ul>
+<p>For Swift developers, juggling both Swift and HTML can be a challenge. Hudson’s argument is that using Swift to build websites could streamline this process, making web development more familiar and accessible for Swift developers.</p>
+<p>One of the key innovations behind Ignite is its use of Swift’s <strong>Result Builders</strong> to define HTML structures. This approach allows developers to write HTML in a SwiftUI-like syntax. Just as swift handles views like this:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token class-name">VStack</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Hello world"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>This can be directly mapped to HTML elements:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift">h2 <span class="token punctuation">{</span>
+  <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Hello world"</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>By adopting SwiftUI’s declarative approach, developers can define web pages with clean, readable Swift code that is then rendered appropriately for the web.</p>
+<h3 id="ignite-a-static-site-generator-for-swift-developers" tabindex="-1">Ignite: A Static Site Generator for Swift Developers <a class="header-anchor" href="#ignite-a-static-site-generator-for-swift-developers">#</a></h3>
+<p><strong>Ignite</strong> is a static site generator designed specifically for Swift developers. It allows you to write websites in Swift and publish them easily, whether to GitHub Pages or other hosting services.</p>
+<ul>
+<li>Supports all standard HTML elements.</li>
+<li>Uses <a href="https://getbootstrap.com">Bootstrap</a> for styling and accessibility.</li>
+<li>Includes pre-built components like accordions and navigation elements.</li>
+<li>Automatically generates metadata for SEO and social sharing.</li>
+<li>Responsive design that works across all device sizes.</li>
+<li>Requires no direct HTML knowledge.</li>
+<li>Provides command-line tools for running and building projects.</li>
+</ul>
+<p>This makes Ignite an appealing choice for developers who want a Swift-centric approach to building websites while ensuring modern compatibility and accessibility.</p>
+<h3 id="ignite-in-practice" tabindex="-1">Ignite in Practice <a class="header-anchor" href="#ignite-in-practice">#</a></h3>
+<p>Ignite is open source and actively maintained, boasting <strong>over 74 contributors</strong> and <strong>500+ unit tests</strong>. While it is focused on static site generation, developers looking for more dynamic functionality can integrate it with <strong><a href="https://docs.vapor.codes/leaf/overview/">Vapor</a></strong> or <strong><a href="https://wpmudev.com/project/wp-hummingbird/">Hummingbird</a></strong>.</p>
+<p>If you’re interested in seeing Ignite in action, check out the live examples available at <a href="https://ignitesamples.hackingwithswift.com/">Ignite Samples</a>.</p>
+<p>During the talk, one interesting idea came to mind: <strong>Could Ignite be used as a template for app developers to create marketing websites for their apps?</strong></p>
+<p>A simple, ready-to-use <strong>Ignite template</strong> could include:</p>
+<ul>
+<li>A homepage with an introduction to the app</li>
+<li>Screenshots and feature highlights</li>
+<li>A direct link to the App Store</li>
+<li>A privacy policy page</li>
+<li>An optional developer blog for updates</li>
+</ul>
+<p>Since Ignite handles the complexities of web development, Swift developers could quickly spin up an app website without needing to learn HTML, CSS, or JavaScript.</p>
+<p>Find <a href="https://github.com/twostraws/Ignite">Ignite on GitHub</a>.</p>
+<h2 id="mikaela-caron-creating-games-with-tabletopkit-for-visionos" tabindex="-1"><a href="https://arcticonference.com/speaker/mikaela#talk">Mikaela Caron: Creating games with TabletopKit for VisionOS</a> <a class="header-anchor" href="#mikaela-caron-creating-games-with-tabletopkit-for-visionos">#</a></h2>
+<p><a href="https://arcticonference.com/speaker/mikaela#talk">TabletopKit</a> is a set of APIs designed for building tabletop games, working alongside RealityKit to render 3D elements. It provides a structured approach to game development by defining tables, seats, equipment, and interactions within a shared environment.</p>
+<h3 id="setting-up-a-game" tabindex="-1">Setting Up a Game <a class="header-anchor" href="#setting-up-a-game">#</a></h3>
+<p>Each game is centered around a <strong>table</strong>, which exists within a <strong>Volume</strong> and conforms to the <strong>Tabletop</strong> protocol. The table is identified using an <strong>Equipment</strong> identifier. Players occupy <strong>seats</strong>, which have specific poses relative to the table. These seats conform to the <strong>TableSeat</strong> protocol, defining their state and position.</p>
+<p>The primary steps to building an app with TabletopKit include:</p>
+<ul>
+<li>Configuring the game</li>
+<li>Implementing rules</li>
+<li>Adding effects with RealityKit</li>
+<li>Enabling SharePlay for multiplayer experiences</li>
+</ul>
+<h3 id="equipment-and-game-elements" tabindex="-1">Equipment and Game Elements <a class="header-anchor" href="#equipment-and-game-elements">#</a></h3>
+<p>Each piece of equipment requires a <strong>unique identifier</strong> (e.g., table, seats, game pieces). Equipment conforms to the <strong>Equipment</strong> protocol and has a <strong>BaseEquipmentState</strong> for configuration and rules. Items are added to the tabletop using <code>setup.add</code>.</p>
+<p>Additional considerations include:</p>
+<ul>
+<li><strong>EntityEquipment</strong> represents individual entities that exist separately from the core equipment.</li>
+<li><strong>Dice</strong> have a dedicated state called <strong>TossableRepresentation</strong>, which includes shape and initial state.</li>
+<li><strong>Tiles</strong> can be defined as <strong>Equipment</strong>, representing board spaces where tokens or other game pieces can be placed.</li>
+</ul>
+<h3 id="handling-interactions" tabindex="-1">Handling Interactions <a class="header-anchor" href="#handling-interactions">#</a></h3>
+<p>Interactions are managed through a structured update cycle:</p>
+<ul>
+<li>The <strong>Game</strong> object holds the overall setup.</li>
+<li>The <strong>GameInteraction</strong> class processes player interactions.</li>
+<li>The interaction cycle is updated and tracks active, canceled, or completed states.</li>
+<li>Interactions modify the game state based on predefined rules.</li>
+</ul>
+<p>Gestures define possible actions, such as:</p>
+<ul>
+<li>Specifying where a die can be thrown using <code>onGesturePhaseStarted</code>.</li>
+<li>Restricting token movement to valid board spaces.</li>
+<li>Using <code>onGesturePhaseEnd</code> to trigger actions like tossing equipment.</li>
+<li>Defining actions via <code>interaction.addAction</code> once interactions conclude.</li>
+</ul>
+<h3 id="observing-actions-and-game-state" tabindex="-1">Observing Actions and Game State <a class="header-anchor" href="#observing-actions-and-game-state">#</a></h3>
+<p>After setting up interactions, observers track game state changes and trigger responses, such as animations or state updates based on the type of equipment being used.</p>
+<h3 id="enabling-shareplay-for-multiplayer" tabindex="-1">Enabling SharePlay for Multiplayer <a class="header-anchor" href="#enabling-shareplay-for-multiplayer">#</a></h3>
+<p>TabletopKit integrates with the <strong>GroupActivities API</strong> to support shared multiplayer sessions. This is managed through:</p>
+<ul>
+<li>Setting up a <strong>GroupActivityManager</strong> as an observable class.</li>
+<li>Using <code>coordinateWithSession</code> within each <code>Activity.session</code> to synchronize interactions across multiple players.</li>
+</ul>
+<p>This ensures that game states remain in sync, allowing for a seamless shared experience.</p>
+<h2 id="daniel-steinberg-what-the-heck-happened-to-generics" tabindex="-1"><a href="https://arcticonference.com/speaker/daniel#talk">Daniel Steinberg: What the heck happened to generics</a> <a class="header-anchor" href="#daniel-steinberg-what-the-heck-happened-to-generics">#</a></h2>
+<h3 id="understanding-some-and-any-in-swift" tabindex="-1">Understanding <code>some</code> and <code>any</code> in Swift <a class="header-anchor" href="#understanding-some-and-any-in-swift">#</a></h3>
+<p>Swift provides <code>some</code> and <code>any</code> as ways to define opaque or existential types, but choosing the right one can impact performance and flexibility.</p>
+<h3 id="using-some-and-any" tabindex="-1">Using <code>some</code> and <code>any</code> <a class="header-anchor" href="#using-some-and-any">#</a></h3>
+<ul>
+<li><code>some</code> indicates that while the exact type isn't specified, it remains consistent. This is useful in cases like <code>some View</code>, where the type is determined at compile time but remains opaque to the caller.</li>
+<li><code>any</code> is used for type erasure when working with protocol types, creating a runtime-checked box around a value rather than preserving its concrete type.</li>
+<li>When returning a <strong>random view</strong>, <code>some View</code> cannot be used because the compiler cannot determine the exact type. Instead, <code>any View</code> is required, but this comes with additional runtime overhead.</li>
+</ul>
+<h3 id="handling-identifiability-in-lists" tabindex="-1">Handling Identifiability in Lists <a class="header-anchor" href="#handling-identifiability-in-lists">#</a></h3>
+<ul>
+<li>Lists require unique identifiers, but strings alone are not identifiable.</li>
+<li>One solution is to wrap a string in a struct that conforms to <strong>Identifiable</strong>, using a <strong>UUID</strong> as the identifier.</li>
+</ul>
+<h3 id="best-practices" tabindex="-1">Best Practices <a class="header-anchor" href="#best-practices">#</a></h3>
+<p>Swift encourages certain best practices to optimize performance and maintainability:</p>
+<ul>
+<li>Prefer <strong>let</strong> over <strong>var</strong> to ensure immutability where possible.</li>
+<li>Use <strong>structs</strong> instead of classes for value semantics.</li>
+<li>Prefer <code>some</code> over <code>any</code> where possible, as <code>some</code> is resolved at compile time and avoids the performance costs of type erasure.</li>
+</ul>
+<h3 id="parameter-packs-for-generic-views" tabindex="-1">Parameter Packs for Generic Views <a class="header-anchor" href="#parameter-packs-for-generic-views">#</a></h3>
+<p>To handle cases where a function needs to render multiple types of views generically, <strong>parameter packs</strong> can be used. These allow a flexible number of generic parameters without needing to specify them individually, improving type safety and reducing boilerplate. More details can be found in <a href="https://www.avanderlee.com/swift/value-and-type-parameter-packs/">this guide</a>.</p>
+<h2 id="priyal-porwal-building-maintainable-ios-apps-with-swift-macros" tabindex="-1"><a href="https://arcticonference.com/speaker/priyal#talk">Priyal Porwal: Building maintainable iOS apps with Swift Macros</a> <a class="header-anchor" href="#priyal-porwal-building-maintainable-ios-apps-with-swift-macros">#</a></h2>
+<p>Swift macros, introduced in Swift 5.9, are used throughout Xcode to reduce repetitive code and improve performance by generating code at compile time. One common example is the <code>#Preview</code> macro for SwiftUI views. While macros do not support parameters, they help streamline development by eliminating boilerplate code.</p>
+<h3 id="types-of-macros" tabindex="-1">Types of Macros <a class="header-anchor" href="#types-of-macros">#</a></h3>
+<p>There are two main types of macros:</p>
+<ul>
+<li><strong>Freestanding macros</strong> start with <code>#</code> and function independently within the code.</li>
+<li><strong>Attached macros</strong> are used as attributes and begin with <code>@</code>, such as <code>@Observable</code>.</li>
+</ul>
+<h3 id="creating-and-using-custom-macros" tabindex="-1">Creating and Using Custom Macros <a class="header-anchor" href="#creating-and-using-custom-macros">#</a></h3>
+<p>Developers can create custom macros in Xcode using the <code>swift-syntax</code> framework. Macros should be well-tested, ensuring that their output matches expected results, including formatting details like newlines. A basic example of a macro definition looks like this:</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">public</span> macro <span class="token function">myMacro</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span></code></pre>
+<p>Macros have specific roles that define how they transform code. More details on their implementation and best practices can be found <a href="https://swiftylion.com/articles/swift-macros">in this article</a>.</p>
+<h3 id="challenges-and-considerations" tabindex="-1">Challenges and Considerations <a class="header-anchor" href="#challenges-and-considerations">#</a></h3>
+<p>While powerful, macros come with challenges. The syntax can be complex, and poorly optimized macros can increase build times. Proper testing is crucial, but unit tests for macros can be tricky due to strict formatting requirements. Macros offer significant benefits by simplifying code and improving maintainability.</p>
+<h2 id="hidde-van-der-ploeg-less-ai-more-magic" tabindex="-1">Hidde van der Ploeg: Less AI, more magic <a class="header-anchor" href="#hidde-van-der-ploeg-less-ai-more-magic">#</a></h2>
 
-<ul class="links-nextprev"><li>Previous: <a href="/arctic-2025/">Arctic iOS conference 2025 - Day 1</a></li>
+<ul class="links-nextprev"><li>Previous: <a href="/arctic-2025/">ARCtic iOS conference 2025 - Day 1</a></li>
 </ul>
 </div>
 

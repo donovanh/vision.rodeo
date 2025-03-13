@@ -4,7 +4,7 @@
 	<subtitle>Build great apps for Apple Vision Pro</subtitle>
 	<link href="https://vision.rodeo/feed/feed.xml" rel="self"/>
 	<link href="https://vision.rodeo/"/>
-	<updated>2025-03-12T00:00:00Z</updated>
+	<updated>2025-03-13T00:00:00Z</updated>
 	<id>https://vision.rodeo/</id>
 	<author>
 		<name>Donovan Hutchinson</name>
@@ -12,12 +12,155 @@
 	</author>
 	
 	<entry>
-		<title>Arctic iOS conference 2025 - Day 1</title>
+		<title>ARCtic iOS conference 2025 - Day 2</title>
+		<link href="https://vision.rodeo/arctic-2025-day-2/"/>
+		<updated>2025-03-13T00:00:00Z</updated>
+		<id>https://vision.rodeo/arctic-2025-day-2/</id>
+		<content type="html">&lt;p&gt;After a great &lt;a href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;ARCtic Conference day 1&lt;/a&gt;, we had a second day packed full of inspiring Apple development talks.&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;TODO: Once the day ends!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you missed it, you can find a write-up of the &lt;a href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;talks from day one here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;day-2-talks&quot; tabindex=&quot;-1&quot;&gt;Day 2 talks &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As with day one, the conference took place in the beautiful &lt;a href=&quot;https://teatteri-rio.wheree.com&quot;&gt;Teatteri Rio&lt;/a&gt;. The following is my notes from each of the talks.&lt;/p&gt;
+&lt;h2 id=&quot;paul-hudson-ignite&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/paul#talk&quot;&gt;Paul Hudson: Ignite&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;At the recent &lt;a href=&quot;https://arcticonference.com&quot;&gt;ARCtic Conference&lt;/a&gt;, Paul Hudson introduced &lt;a href=&quot;https://github.com/twostraws/Ignite&quot;&gt;Ignite&lt;/a&gt;, a new tool that allows Swift developers to build websites using Swift. This talk explored why this approach makes sense and how Ignite simplifies web development while leveraging Swift’s strengths.&lt;/p&gt;
+&lt;p&gt;When building websites today, developers need to consider a range of factors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Browser compatibility&lt;/li&gt;
+&lt;li&gt;Device compatibility&lt;/li&gt;
+&lt;li&gt;Complex UI elements&lt;/li&gt;
+&lt;li&gt;Accessibility&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For Swift developers, juggling both Swift and HTML can be a challenge. Hudson’s argument is that using Swift to build websites could streamline this process, making web development more familiar and accessible for Swift developers.&lt;/p&gt;
+&lt;p&gt;One of the key innovations behind Ignite is its use of Swift’s &lt;strong&gt;Result Builders&lt;/strong&gt; to define HTML structures. This approach allows developers to write HTML in a SwiftUI-like syntax. Just as swift handles views like this:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;VStack&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token class-name&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This can be directly mapped to HTML elements:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;h2 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token class-name&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-literal&quot;&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;By adopting SwiftUI’s declarative approach, developers can define web pages with clean, readable Swift code that is then rendered appropriately for the web.&lt;/p&gt;
+&lt;h3 id=&quot;ignite-a-static-site-generator-for-swift-developers&quot; tabindex=&quot;-1&quot;&gt;Ignite: A Static Site Generator for Swift Developers &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Ignite&lt;/strong&gt; is a static site generator designed specifically for Swift developers. It allows you to write websites in Swift and publish them easily, whether to GitHub Pages or other hosting services.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Supports all standard HTML elements.&lt;/li&gt;
+&lt;li&gt;Uses &lt;a href=&quot;https://getbootstrap.com&quot;&gt;Bootstrap&lt;/a&gt; for styling and accessibility.&lt;/li&gt;
+&lt;li&gt;Includes pre-built components like accordions and navigation elements.&lt;/li&gt;
+&lt;li&gt;Automatically generates metadata for SEO and social sharing.&lt;/li&gt;
+&lt;li&gt;Responsive design that works across all device sizes.&lt;/li&gt;
+&lt;li&gt;Requires no direct HTML knowledge.&lt;/li&gt;
+&lt;li&gt;Provides command-line tools for running and building projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This makes Ignite an appealing choice for developers who want a Swift-centric approach to building websites while ensuring modern compatibility and accessibility.&lt;/p&gt;
+&lt;h3 id=&quot;ignite-in-practice&quot; tabindex=&quot;-1&quot;&gt;Ignite in Practice &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Ignite is open source and actively maintained, boasting &lt;strong&gt;over 74 contributors&lt;/strong&gt; and &lt;strong&gt;500+ unit tests&lt;/strong&gt;. While it is focused on static site generation, developers looking for more dynamic functionality can integrate it with &lt;strong&gt;&lt;a href=&quot;https://docs.vapor.codes/leaf/overview/&quot;&gt;Vapor&lt;/a&gt;&lt;/strong&gt; or &lt;strong&gt;&lt;a href=&quot;https://wpmudev.com/project/wp-hummingbird/&quot;&gt;Hummingbird&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;If you’re interested in seeing Ignite in action, check out the live examples available at &lt;a href=&quot;https://ignitesamples.hackingwithswift.com/&quot;&gt;Ignite Samples&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;During the talk, one interesting idea came to mind: &lt;strong&gt;Could Ignite be used as a template for app developers to create marketing websites for their apps?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A simple, ready-to-use &lt;strong&gt;Ignite template&lt;/strong&gt; could include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A homepage with an introduction to the app&lt;/li&gt;
+&lt;li&gt;Screenshots and feature highlights&lt;/li&gt;
+&lt;li&gt;A direct link to the App Store&lt;/li&gt;
+&lt;li&gt;A privacy policy page&lt;/li&gt;
+&lt;li&gt;An optional developer blog for updates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since Ignite handles the complexities of web development, Swift developers could quickly spin up an app website without needing to learn HTML, CSS, or JavaScript.&lt;/p&gt;
+&lt;p&gt;Find &lt;a href=&quot;https://github.com/twostraws/Ignite&quot;&gt;Ignite on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;mikaela-caron-creating-games-with-tabletopkit-for-visionos&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/mikaela#talk&quot;&gt;Mikaela Caron: Creating games with TabletopKit for VisionOS&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://arcticonference.com/speaker/mikaela#talk&quot;&gt;TabletopKit&lt;/a&gt; is a set of APIs designed for building tabletop games, working alongside RealityKit to render 3D elements. It provides a structured approach to game development by defining tables, seats, equipment, and interactions within a shared environment.&lt;/p&gt;
+&lt;h3 id=&quot;setting-up-a-game&quot; tabindex=&quot;-1&quot;&gt;Setting Up a Game &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Each game is centered around a &lt;strong&gt;table&lt;/strong&gt;, which exists within a &lt;strong&gt;Volume&lt;/strong&gt; and conforms to the &lt;strong&gt;Tabletop&lt;/strong&gt; protocol. The table is identified using an &lt;strong&gt;Equipment&lt;/strong&gt; identifier. Players occupy &lt;strong&gt;seats&lt;/strong&gt;, which have specific poses relative to the table. These seats conform to the &lt;strong&gt;TableSeat&lt;/strong&gt; protocol, defining their state and position.&lt;/p&gt;
+&lt;p&gt;The primary steps to building an app with TabletopKit include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Configuring the game&lt;/li&gt;
+&lt;li&gt;Implementing rules&lt;/li&gt;
+&lt;li&gt;Adding effects with RealityKit&lt;/li&gt;
+&lt;li&gt;Enabling SharePlay for multiplayer experiences&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;equipment-and-game-elements&quot; tabindex=&quot;-1&quot;&gt;Equipment and Game Elements &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Each piece of equipment requires a &lt;strong&gt;unique identifier&lt;/strong&gt; (e.g., table, seats, game pieces). Equipment conforms to the &lt;strong&gt;Equipment&lt;/strong&gt; protocol and has a &lt;strong&gt;BaseEquipmentState&lt;/strong&gt; for configuration and rules. Items are added to the tabletop using &lt;code&gt;setup.add&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Additional considerations include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;EntityEquipment&lt;/strong&gt; represents individual entities that exist separately from the core equipment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dice&lt;/strong&gt; have a dedicated state called &lt;strong&gt;TossableRepresentation&lt;/strong&gt;, which includes shape and initial state.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tiles&lt;/strong&gt; can be defined as &lt;strong&gt;Equipment&lt;/strong&gt;, representing board spaces where tokens or other game pieces can be placed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;handling-interactions&quot; tabindex=&quot;-1&quot;&gt;Handling Interactions &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Interactions are managed through a structured update cycle:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;Game&lt;/strong&gt; object holds the overall setup.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;GameInteraction&lt;/strong&gt; class processes player interactions.&lt;/li&gt;
+&lt;li&gt;The interaction cycle is updated and tracks active, canceled, or completed states.&lt;/li&gt;
+&lt;li&gt;Interactions modify the game state based on predefined rules.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Gestures define possible actions, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Specifying where a die can be thrown using &lt;code&gt;onGesturePhaseStarted&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Restricting token movement to valid board spaces.&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;onGesturePhaseEnd&lt;/code&gt; to trigger actions like tossing equipment.&lt;/li&gt;
+&lt;li&gt;Defining actions via &lt;code&gt;interaction.addAction&lt;/code&gt; once interactions conclude.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;observing-actions-and-game-state&quot; tabindex=&quot;-1&quot;&gt;Observing Actions and Game State &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;After setting up interactions, observers track game state changes and trigger responses, such as animations or state updates based on the type of equipment being used.&lt;/p&gt;
+&lt;h3 id=&quot;enabling-shareplay-for-multiplayer&quot; tabindex=&quot;-1&quot;&gt;Enabling SharePlay for Multiplayer &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;TabletopKit integrates with the &lt;strong&gt;GroupActivities API&lt;/strong&gt; to support shared multiplayer sessions. This is managed through:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Setting up a &lt;strong&gt;GroupActivityManager&lt;/strong&gt; as an observable class.&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;coordinateWithSession&lt;/code&gt; within each &lt;code&gt;Activity.session&lt;/code&gt; to synchronize interactions across multiple players.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This ensures that game states remain in sync, allowing for a seamless shared experience.&lt;/p&gt;
+&lt;h2 id=&quot;daniel-steinberg-what-the-heck-happened-to-generics&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/daniel#talk&quot;&gt;Daniel Steinberg: What the heck happened to generics&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;understanding-some-and-any-in-swift&quot; tabindex=&quot;-1&quot;&gt;Understanding &lt;code&gt;some&lt;/code&gt; and &lt;code&gt;any&lt;/code&gt; in Swift &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Swift provides &lt;code&gt;some&lt;/code&gt; and &lt;code&gt;any&lt;/code&gt; as ways to define opaque or existential types, but choosing the right one can impact performance and flexibility.&lt;/p&gt;
+&lt;h3 id=&quot;using-some-and-any&quot; tabindex=&quot;-1&quot;&gt;Using &lt;code&gt;some&lt;/code&gt; and &lt;code&gt;any&lt;/code&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;some&lt;/code&gt; indicates that while the exact type isn&#39;t specified, it remains consistent. This is useful in cases like &lt;code&gt;some View&lt;/code&gt;, where the type is determined at compile time but remains opaque to the caller.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;any&lt;/code&gt; is used for type erasure when working with protocol types, creating a runtime-checked box around a value rather than preserving its concrete type.&lt;/li&gt;
+&lt;li&gt;When returning a &lt;strong&gt;random view&lt;/strong&gt;, &lt;code&gt;some View&lt;/code&gt; cannot be used because the compiler cannot determine the exact type. Instead, &lt;code&gt;any View&lt;/code&gt; is required, but this comes with additional runtime overhead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;handling-identifiability-in-lists&quot; tabindex=&quot;-1&quot;&gt;Handling Identifiability in Lists &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Lists require unique identifiers, but strings alone are not identifiable.&lt;/li&gt;
+&lt;li&gt;One solution is to wrap a string in a struct that conforms to &lt;strong&gt;Identifiable&lt;/strong&gt;, using a &lt;strong&gt;UUID&lt;/strong&gt; as the identifier.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;best-practices&quot; tabindex=&quot;-1&quot;&gt;Best Practices &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Swift encourages certain best practices to optimize performance and maintainability:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prefer &lt;strong&gt;let&lt;/strong&gt; over &lt;strong&gt;var&lt;/strong&gt; to ensure immutability where possible.&lt;/li&gt;
+&lt;li&gt;Use &lt;strong&gt;structs&lt;/strong&gt; instead of classes for value semantics.&lt;/li&gt;
+&lt;li&gt;Prefer &lt;code&gt;some&lt;/code&gt; over &lt;code&gt;any&lt;/code&gt; where possible, as &lt;code&gt;some&lt;/code&gt; is resolved at compile time and avoids the performance costs of type erasure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;parameter-packs-for-generic-views&quot; tabindex=&quot;-1&quot;&gt;Parameter Packs for Generic Views &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;To handle cases where a function needs to render multiple types of views generically, &lt;strong&gt;parameter packs&lt;/strong&gt; can be used. These allow a flexible number of generic parameters without needing to specify them individually, improving type safety and reducing boilerplate. More details can be found in &lt;a href=&quot;https://www.avanderlee.com/swift/value-and-type-parameter-packs/&quot;&gt;this guide&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;priyal-porwal-building-maintainable-ios-apps-with-swift-macros&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/priyal#talk&quot;&gt;Priyal Porwal: Building maintainable iOS apps with Swift Macros&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Swift macros, introduced in Swift 5.9, are used throughout Xcode to reduce repetitive code and improve performance by generating code at compile time. One common example is the &lt;code&gt;#Preview&lt;/code&gt; macro for SwiftUI views. While macros do not support parameters, they help streamline development by eliminating boilerplate code.&lt;/p&gt;
+&lt;h3 id=&quot;types-of-macros&quot; tabindex=&quot;-1&quot;&gt;Types of Macros &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;There are two main types of macros:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Freestanding macros&lt;/strong&gt; start with &lt;code&gt;#&lt;/code&gt; and function independently within the code.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Attached macros&lt;/strong&gt; are used as attributes and begin with &lt;code&gt;@&lt;/code&gt;, such as &lt;code&gt;@Observable&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;creating-and-using-custom-macros&quot; tabindex=&quot;-1&quot;&gt;Creating and Using Custom Macros &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Developers can create custom macros in Xcode using the &lt;code&gt;swift-syntax&lt;/code&gt; framework. Macros should be well-tested, ensuring that their output matches expected results, including formatting details like newlines. A basic example of a macro definition looks like this:&lt;/p&gt;
+&lt;pre class=&quot;language-swift&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-swift&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; macro &lt;span class=&quot;token function&quot;&gt;myMacro&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Macros have specific roles that define how they transform code. More details on their implementation and best practices can be found &lt;a href=&quot;https://swiftylion.com/articles/swift-macros&quot;&gt;in this article&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;challenges-and-considerations&quot; tabindex=&quot;-1&quot;&gt;Challenges and Considerations &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;While powerful, macros come with challenges. The syntax can be complex, and poorly optimized macros can increase build times. Proper testing is crucial, but unit tests for macros can be tricky due to strict formatting requirements. Macros offer significant benefits by simplifying code and improving maintainability.&lt;/p&gt;
+&lt;h2 id=&quot;hidde-van-der-ploeg-less-ai-more-magic&quot; tabindex=&quot;-1&quot;&gt;Hidde van der Ploeg: Less AI, more magic &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>ARCtic iOS conference 2025 - Day 1</title>
 		<link href="https://vision.rodeo/arctic-2025/"/>
 		<updated>2025-03-12T00:00:00Z</updated>
 		<id>https://vision.rodeo/arctic-2025/</id>
-		<content type="html">&lt;p&gt;It&#39;s been a while since I posted, as I&#39;ve been busy with web projects such as the new &lt;a href=&quot;https://classy.cards&quot;&gt;Classy.cards&lt;/a&gt; project. However this week I&#39;ve been lucky enough to attend &lt;a href=&quot;https://arcticonference.com&quot;&gt;Arctic Conference&lt;/a&gt; in Oulu, Finland.&lt;/p&gt;
-&lt;p&gt;There was a lot of great content and the conference has already proved inspiring after just the first day. Here are some notes from the talks I&#39;ve enjoyed on the first day.&lt;/p&gt;
+		<content type="html">&lt;p&gt;It&#39;s been a while since I posted, as I&#39;ve been busy with web projects such as the new &lt;a href=&quot;https://classy.cards&quot;&gt;Classy.cards&lt;/a&gt; project. However this week I&#39;ve been lucky enough to attend &lt;a href=&quot;https://arcticonference.com&quot;&gt;ARCtic Conference&lt;/a&gt; in Oulu, Finland.&lt;/p&gt;
+&lt;p&gt;There was a lot of great content and the conference has already proved inspiring after just the first day. It covered coding practices, working with large teams, comments, designing for intent, and handling content.&lt;/p&gt;
+&lt;p&gt;Here are some notes from the talks I&#39;ve enjoyed so far.&lt;/p&gt;
 &lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Localized String Matching&lt;/strong&gt;: Use &lt;a href=&quot;https://developer.apple.com/documentation/foundation/nsstring/1416328-localizedstandardcontains&quot;&gt;&lt;code&gt;localizedStandardContains&lt;/code&gt;&lt;/a&gt; for case-insensitive, diacritic-aware searches in Swift.&lt;/li&gt;
@@ -30,8 +173,8 @@
 &lt;li&gt;&lt;strong&gt;Content as Code&lt;/strong&gt;: Treat content with the same rigor as software—version control, structured updates, and dedicated tooling for data management.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;workshop-level-up-your-swift-and-swiftui-with-paul-hudson&quot; tabindex=&quot;-1&quot;&gt;Workshop: Level up your Swift and SwiftUI with Paul Hudson &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://arcticonference.com/workshop/levelup/&quot;&gt;Arctic Conference Workshop: Level Up&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I attended Paul Hudson&#39;s half-day workshop at the Arctic Conference, a hands-on session focused on refining existing Swift code. The format encouraged discussion and collaboration, with attendees suggesting and implementing improvements to a working project.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arcticonference.com/workshop/levelup/&quot;&gt;ARCtic Conference Workshop: Level Up&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I attended Paul Hudson&#39;s half-day workshop at the ARCtic Conference, a hands-on session focused on refining existing Swift code. The format encouraged discussion and collaboration, with attendees suggesting and implementing improvements to a working project.&lt;/p&gt;
 &lt;h3 id=&quot;string-matching-with-localizedstandardcontains&quot; tabindex=&quot;-1&quot;&gt;String Matching with &lt;code&gt;localizedStandardContains&lt;/code&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;One of the more useful discussions covered best practices for string matching in Swift. &lt;a href=&quot;https://developer.apple.com/documentation/foundation/nsstring/1416328-localizedstandardcontains&quot;&gt;&lt;code&gt;localizedStandardContains&lt;/code&gt;&lt;/a&gt; was recommended for case-insensitive, diacritic-insensitive, locale-aware searches. This method is particularly helpful for handling special characters from different languages, such as the German sharp S (&lt;code&gt;ß&lt;/code&gt;). However, it can sometimes behave unpredictably with emoji and other special characters, so testing is essential.&lt;/p&gt;
 &lt;h3 id=&quot;translation-tooling-with-apple-intelligence&quot; tabindex=&quot;-1&quot;&gt;Translation Tooling with Apple Intelligence &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -44,8 +187,8 @@
 &lt;li&gt;&lt;strong&gt;Code organization&lt;/strong&gt;: Structuring projects logically for easier maintenance and collaboration.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The workshop provided was an interesting and practical opportunity to refine best practices and pick up new techniques.&lt;/p&gt;
-&lt;h2 id=&quot;arctic-day-1&quot; tabindex=&quot;-1&quot;&gt;Arctic Day 1 &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;The conference took place in the beautiful &lt;a href=&quot;https://teatteri-rio.wheree.com&quot;&gt;Teatteri Rio&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;day-1&quot; tabindex=&quot;-1&quot;&gt;Day 1 &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The conference took place in the beautiful &lt;a href=&quot;https://teatteri-rio.wheree.com&quot;&gt;Teatteri Rio&lt;/a&gt;. The following is my notes from each of the talks.&lt;/p&gt;
 &lt;h2 id=&quot;ben-scheirman-from-independent-to-big-company-ios&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/ben#talk&quot;&gt;Ben Scheirman: From independent to big company iOS&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Ben’s talk explored the transition from small teams to larger company environments, touching on the challenges and trade-offs at different stages of a developer’s career. It was centered around iOS but could easily apply to developers in other fields.&lt;/p&gt;
 &lt;h3 id=&quot;small-companies-and-independent-work&quot; tabindex=&quot;-1&quot;&gt;Small Companies and Independent Work &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
