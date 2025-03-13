@@ -1,5 +1,5 @@
 ---
-title: Arctic iOS conference 2025 - Day 1
+title: ARCtic iOS conference 2025 - Day 1
 permalink: /arctic-2025/
 description: Learning about Swift, iOS, VisionOS and general Apple dev at the world's most northern Apple conference.
 date: 2025-03-12
@@ -7,9 +7,11 @@ tags:
   - conference
 ---
 
-It's been a while since I posted, as I've been busy with web projects such as the new [Classy.cards](https://classy.cards) project. However this week I've been lucky enough to attend [Arctic Conference](https://arcticonference.com) in Oulu, Finland.
+It's been a while since I posted, as I've been busy with web projects such as the new [Classy.cards](https://classy.cards) project. However this week I've been lucky enough to attend [ARCtic Conference](https://arcticonference.com) in Oulu, Finland.
 
-There was a lot of great content and the conference has already proved inspiring after just the first day. Here are some notes from the talks I've enjoyed on the first day.
+There was a lot of great content and the conference has already proved inspiring after just the first day. It covered coding practices, working with large teams, comments, designing for intent, and handling content.
+
+Here are some notes from the talks I've enjoyed so far.
 
 ## Highlights
 
@@ -24,9 +26,9 @@ There was a lot of great content and the conference has already proved inspiring
 
 ## Workshop: Level up your Swift and SwiftUI with Paul Hudson
 
-[Arctic Conference Workshop: Level Up](https://arcticonference.com/workshop/levelup/)
+[ARCtic Conference Workshop: Level Up](https://arcticonference.com/workshop/levelup/)
 
-I attended Paul Hudson's half-day workshop at the Arctic Conference, a hands-on session focused on refining existing Swift code. The format encouraged discussion and collaboration, with attendees suggesting and implementing improvements to a working project.
+I attended Paul Hudson's half-day workshop at the ARCtic Conference, a hands-on session focused on refining existing Swift code. The format encouraged discussion and collaboration, with attendees suggesting and implementing improvements to a working project.
 
 ### String Matching with `localizedStandardContains`
 
@@ -46,9 +48,9 @@ The session reinforced several best practices for writing cleaner Swift code:
 
 The workshop provided was an interesting and practical opportunity to refine best practices and pick up new techniques.
 
-## Arctic Day 1
+## Day 1
 
-The conference took place in the beautiful [Teatteri Rio](https://teatteri-rio.wheree.com).
+The conference took place in the beautiful [Teatteri Rio](https://teatteri-rio.wheree.com). The following is my notes from each of the talks.
 
 ## [Ben Scheirman: From independent to big company iOS](https://arcticonference.com/speaker/ben#talk)
 
