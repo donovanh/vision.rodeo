@@ -731,9 +731,15 @@ footer.panel {
 
 <p>After a great <a href="/arctic-2025/">ARCtic Conference day 1</a>, we had a second day packed full of inspiring Apple development talks.</p>
 <h2 id="highlights" tabindex="-1">Highlights <a class="header-anchor" href="#highlights">#</a></h2>
-<ul>
-<li>TODO: Once the day ends!</li>
-</ul>
+<ol>
+<li><strong>Paul Hudson introduced Ignite</strong>, a new static site generator for Swift, allowing developers to build websites using Swift’s syntax and SwiftUI-like result builders.</li>
+<li><strong>Mikaela Caron showcased TabletopKit</strong> for VisionOS, demonstrating how to create immersive tabletop games with RealityKit and SharePlay integration.</li>
+<li><strong>Daniel Steinberg broke down <code>some</code> vs. <code>any</code> in Swift</strong>, explaining their impact on generics, type safety, and performance.</li>
+<li><strong>Priyal Porwal explored Swift Macros</strong>, showing how they reduce boilerplate and improve maintainability in iOS apps.</li>
+<li><strong>Hidde van der Ploeg emphasized “Less AI, more magic”</strong>, encouraging developers to focus on seamless user experiences rather than highlighting AI.</li>
+<li><strong>Pol Piella Abadia demonstrated Xcode’s Instruments</strong>, providing insights into detecting performance bottlenecks, UI hangs, and memory leaks.</li>
+<li><strong>Aurelius Prochazka discussed the history of AudioKit</strong>, highlighting the benefits of creating community.</li>
+</ol>
 <p>If you missed it, you can find a write-up of the <a href="/arctic-2025/">talks from day one here</a>.</p>
 <h2 id="day-2-talks" tabindex="-1">Day 2 talks <a class="header-anchor" href="#day-2-talks">#</a></h2>
 <p>As with day one, the conference took place in the beautiful <a href="https://teatteri-rio.wheree.com">Teatteri Rio</a>. The following is my notes from each of the talks.</p>
@@ -877,7 +883,7 @@ footer.panel {
 <p>Sell the solution, not the technology.</p>
 <h2 id="pol-piella-abadia-tuning-your-app-using-xcode-s-instruments" tabindex="-1"><a href="https://arcticonference.com/speaker/pol">Pol Piella Abadia: Tuning your app using Xcode's instruments</a> <a class="header-anchor" href="#pol-piella-abadia-tuning-your-app-using-xcode-s-instruments">#</a></h2>
 <p>Instruments are powerful tools for analyzing performance across Apple platforms. They are integrated into Xcode and can be accessed from the standalone Instruments app, by pressing <code>Cmd + I</code> in Xcode, or navigating to <code>Product -&gt; Profile</code>. While incredibly useful, mastering them can take time.</p>
-<h2 id="working-with-the-main-thread" tabindex="-1">Working with the Main Thread <a class="header-anchor" href="#working-with-the-main-thread">#</a></h2>
+<h3 id="working-with-the-main-thread" tabindex="-1">Working with the Main Thread <a class="header-anchor" href="#working-with-the-main-thread">#</a></h3>
 <p>All UI updates must happen on the main thread. If a function runs on a background thread but modifies the UI, it can cause crashes or unexpected behavior.</p>
 <ul>
 <li>Swift 6 introduces stricter async rules: marking classes with <code>@MainActor</code> helps catch violations at compile time.</li>
@@ -890,7 +896,7 @@ footer.panel {
 <li>A <strong>severe hang</strong> lasts 500ms or longer and significantly impacts user experience.</li>
 <li>Instruments allows hang detection, which can be enabled in debugging settings to show warnings on-screen.</li>
 </ul>
-<h2 id="memory-management-and-leaks" tabindex="-1">Memory Management &amp; Leaks <a class="header-anchor" href="#memory-management-and-leaks">#</a></h2>
+<h3 id="memory-management-and-leaks" tabindex="-1">Memory Management &amp; Leaks <a class="header-anchor" href="#memory-management-and-leaks">#</a></h3>
 <p>Memory leaks occur when allocated memory is not properly released, leading to increased memory usage over time. This is often due to strong references preventing objects from being deallocated.</p>
 <ul>
 <li>When a view that uses resources is removed, ensure those resources are also freed.</li>
@@ -903,7 +909,7 @@ footer.panel {
 <li>A <strong>red cross</strong> signals a detected memory leak.</li>
 <li>Investigate by checking for objects that reference each other in a circular way, and mark appropriate references as <code>weak</code>.</li>
 </ul>
-<h2 id="using-the-profiler" tabindex="-1">Using the Profiler <a class="header-anchor" href="#using-the-profiler">#</a></h2>
+<h3 id="using-the-profiler" tabindex="-1">Using the Profiler <a class="header-anchor" href="#using-the-profiler">#</a></h3>
 <p>To diagnose performance issues, Instruments provides various profiling tools:</p>
 <ul>
 <li><strong>Time Profiler</strong> is useful for detecting UI hangs and sluggish performance.
@@ -921,13 +927,16 @@ footer.panel {
 <li><code>async let ...</code> allows parallel execution of multiple async functions, reducing wait time for independent tasks.</li>
 <li>The <strong>Swift Tasks</strong> instrument in Instruments can help visualize when async tasks run and identify bottlenecks.</li>
 </ul>
-<h2 id="additional-tools-and-tips" tabindex="-1">Additional Tools &amp; Tips <a class="header-anchor" href="#additional-tools-and-tips">#</a></h2>
+<h3 id="additional-tools-and-tips" tabindex="-1">Additional Tools &amp; Tips <a class="header-anchor" href="#additional-tools-and-tips">#</a></h3>
 <ul>
 <li><strong>Signposts</strong>: Use <a href="https://developer.apple.com/documentation/os/ossignposter">OSSignpost</a> to insert markers in your code and measure performance at specific points.</li>
 <li><strong>View Body Instrument</strong>: This adds a timeline lane in Instruments, helping highlight slow SwiftUI rendering processes.</li>
 <li><strong>Building Between Runs</strong>: Always build (<code>Cmd + I</code>) before starting a new Instruments recording to ensure the latest version is analyzed.</li>
 </ul>
 <p>By integrating these tools into development workflows, performance issues can be identified and resolved efficiently, leading to smoother, more responsive apps.</p>
+<h2 id="aurelius-prochazka-10-years-of-magic-and-bliss-just-kidding" tabindex="-1"><a href="https://arcticonference.com/speaker/aure">Aurelius Prochazka: 10 Years of Magic and Bliss (Just Kidding)</a> <a class="header-anchor" href="#aurelius-prochazka-10-years-of-magic-and-bliss-just-kidding">#</a></h2>
+<p>The creator of AudioKit, Aurelius gave a wonderful talk that drew together all the others in delivering insights about how to be a positive member of the developer community.</p>
+<p>Shipping, improving, collaborating, and the benefits of putting out quality into the universe. A lovely end to the day!</p>
 
 <ul class="links-nextprev"><li>Previous: <a href="/arctic-2025/">ARCtic iOS conference 2025 - Day 1</a></li>
 </ul>

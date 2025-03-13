@@ -18,9 +18,15 @@
 		<id>https://vision.rodeo/arctic-2025-day-2/</id>
 		<content type="html">&lt;p&gt;After a great &lt;a href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;ARCtic Conference day 1&lt;/a&gt;, we had a second day packed full of inspiring Apple development talks.&lt;/p&gt;
 &lt;h2 id=&quot;highlights&quot; tabindex=&quot;-1&quot;&gt;Highlights &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;TODO: Once the day ends!&lt;/li&gt;
-&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Paul Hudson introduced Ignite&lt;/strong&gt;, a new static site generator for Swift, allowing developers to build websites using Swift’s syntax and SwiftUI-like result builders.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mikaela Caron showcased TabletopKit&lt;/strong&gt; for VisionOS, demonstrating how to create immersive tabletop games with RealityKit and SharePlay integration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Daniel Steinberg broke down &lt;code&gt;some&lt;/code&gt; vs. &lt;code&gt;any&lt;/code&gt; in Swift&lt;/strong&gt;, explaining their impact on generics, type safety, and performance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Priyal Porwal explored Swift Macros&lt;/strong&gt;, showing how they reduce boilerplate and improve maintainability in iOS apps.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hidde van der Ploeg emphasized “Less AI, more magic”&lt;/strong&gt;, encouraging developers to focus on seamless user experiences rather than highlighting AI.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pol Piella Abadia demonstrated Xcode’s Instruments&lt;/strong&gt;, providing insights into detecting performance bottlenecks, UI hangs, and memory leaks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aurelius Prochazka discussed the history of AudioKit&lt;/strong&gt;, highlighting the benefits of creating community.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;If you missed it, you can find a write-up of the &lt;a href=&quot;https://vision.rodeo/arctic-2025/&quot;&gt;talks from day one here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;day-2-talks&quot; tabindex=&quot;-1&quot;&gt;Day 2 talks &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;As with day one, the conference took place in the beautiful &lt;a href=&quot;https://teatteri-rio.wheree.com&quot;&gt;Teatteri Rio&lt;/a&gt;. The following is my notes from each of the talks.&lt;/p&gt;
@@ -164,7 +170,7 @@
 &lt;p&gt;Sell the solution, not the technology.&lt;/p&gt;
 &lt;h2 id=&quot;pol-piella-abadia-tuning-your-app-using-xcode-s-instruments&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/pol&quot;&gt;Pol Piella Abadia: Tuning your app using Xcode&#39;s instruments&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Instruments are powerful tools for analyzing performance across Apple platforms. They are integrated into Xcode and can be accessed from the standalone Instruments app, by pressing &lt;code&gt;Cmd + I&lt;/code&gt; in Xcode, or navigating to &lt;code&gt;Product -&amp;gt; Profile&lt;/code&gt;. While incredibly useful, mastering them can take time.&lt;/p&gt;
-&lt;h2 id=&quot;working-with-the-main-thread&quot; tabindex=&quot;-1&quot;&gt;Working with the Main Thread &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;working-with-the-main-thread&quot; tabindex=&quot;-1&quot;&gt;Working with the Main Thread &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;All UI updates must happen on the main thread. If a function runs on a background thread but modifies the UI, it can cause crashes or unexpected behavior.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Swift 6 introduces stricter async rules: marking classes with &lt;code&gt;@MainActor&lt;/code&gt; helps catch violations at compile time.&lt;/li&gt;
@@ -177,7 +183,7 @@
 &lt;li&gt;A &lt;strong&gt;severe hang&lt;/strong&gt; lasts 500ms or longer and significantly impacts user experience.&lt;/li&gt;
 &lt;li&gt;Instruments allows hang detection, which can be enabled in debugging settings to show warnings on-screen.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;memory-management-and-leaks&quot; tabindex=&quot;-1&quot;&gt;Memory Management &amp;amp; Leaks &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;memory-management-and-leaks&quot; tabindex=&quot;-1&quot;&gt;Memory Management &amp;amp; Leaks &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Memory leaks occur when allocated memory is not properly released, leading to increased memory usage over time. This is often due to strong references preventing objects from being deallocated.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;When a view that uses resources is removed, ensure those resources are also freed.&lt;/li&gt;
@@ -190,7 +196,7 @@
 &lt;li&gt;A &lt;strong&gt;red cross&lt;/strong&gt; signals a detected memory leak.&lt;/li&gt;
 &lt;li&gt;Investigate by checking for objects that reference each other in a circular way, and mark appropriate references as &lt;code&gt;weak&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;using-the-profiler&quot; tabindex=&quot;-1&quot;&gt;Using the Profiler &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;using-the-profiler&quot; tabindex=&quot;-1&quot;&gt;Using the Profiler &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;To diagnose performance issues, Instruments provides various profiling tools:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Time Profiler&lt;/strong&gt; is useful for detecting UI hangs and sluggish performance.
@@ -208,13 +214,16 @@
 &lt;li&gt;&lt;code&gt;async let ...&lt;/code&gt; allows parallel execution of multiple async functions, reducing wait time for independent tasks.&lt;/li&gt;
 &lt;li&gt;The &lt;strong&gt;Swift Tasks&lt;/strong&gt; instrument in Instruments can help visualize when async tasks run and identify bottlenecks.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;additional-tools-and-tips&quot; tabindex=&quot;-1&quot;&gt;Additional Tools &amp;amp; Tips &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;additional-tools-and-tips&quot; tabindex=&quot;-1&quot;&gt;Additional Tools &amp;amp; Tips &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Signposts&lt;/strong&gt;: Use &lt;a href=&quot;https://developer.apple.com/documentation/os/ossignposter&quot;&gt;OSSignpost&lt;/a&gt; to insert markers in your code and measure performance at specific points.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;View Body Instrument&lt;/strong&gt;: This adds a timeline lane in Instruments, helping highlight slow SwiftUI rendering processes.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Building Between Runs&lt;/strong&gt;: Always build (&lt;code&gt;Cmd + I&lt;/code&gt;) before starting a new Instruments recording to ensure the latest version is analyzed.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;By integrating these tools into development workflows, performance issues can be identified and resolved efficiently, leading to smoother, more responsive apps.&lt;/p&gt;
+&lt;h2 id=&quot;aurelius-prochazka-10-years-of-magic-and-bliss-just-kidding&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/aure&quot;&gt;Aurelius Prochazka: 10 Years of Magic and Bliss (Just Kidding)&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The creator of AudioKit, Aurelius gave a wonderful talk that drew together all the others in delivering insights about how to be a positive member of the developer community.&lt;/p&gt;
+&lt;p&gt;Shipping, improving, collaborating, and the benefits of putting out quality into the universe. A lovely end to the day!&lt;/p&gt;
 </content>
 	</entry>
 	
