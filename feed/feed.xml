@@ -149,7 +149,20 @@
 &lt;p&gt;Macros have specific roles that define how they transform code. More details on their implementation and best practices can be found &lt;a href=&quot;https://swiftylion.com/articles/swift-macros&quot;&gt;in this article&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;challenges-and-considerations&quot; tabindex=&quot;-1&quot;&gt;Challenges and Considerations &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;While powerful, macros come with challenges. The syntax can be complex, and poorly optimized macros can increase build times. Proper testing is crucial, but unit tests for macros can be tricky due to strict formatting requirements. Macros offer significant benefits by simplifying code and improving maintainability.&lt;/p&gt;
-&lt;h2 id=&quot;hidde-van-der-ploeg-less-ai-more-magic&quot; tabindex=&quot;-1&quot;&gt;Hidde van der Ploeg: Less AI, more magic &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;hidde-van-der-ploeg-less-ai-more-magic&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/hidde#talk&quot;&gt;Hidde van der Ploeg: Less AI, more magic&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;AI is everywhere. It&#39;s like when electricity replaced candles. Over time, appliances came about from better understanding of electricity. In a way, AI is similarly early.&lt;/p&gt;
+&lt;p&gt;Using AI can help in marketing, but we can go further and turn it into magic.&lt;/p&gt;
+&lt;h3 id=&quot;magic-achieving-the-impossible&quot; tabindex=&quot;-1&quot;&gt;Magic = achieving the impossible. &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;AI can help produce solutions that were not possible before. We don&#39;t need to call it out with sparkles icons. Such as when presenting a summary of data - the value is in the summary not in dressing it by advertising the implementation details.&lt;/p&gt;
+&lt;h3 id=&quot;approach-start-with-the-problem&quot; tabindex=&quot;-1&quot;&gt;Approach: Start with the problem &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;As in, don&#39;t start with &amp;quot;how can we use AI to do &lt;em&gt;insert thing here&lt;/em&gt;&amp;quot;, instead ask &amp;quot;how do we do &lt;em&gt;insert thing here&lt;/em&gt;&amp;quot; and if AI is an answer, maybe use it. In the end the customer doesn&#39;t care if the solution is created with AI as long as it works.&lt;/p&gt;
+&lt;p&gt;AI presents a new or extended pallette of tools. From image generation, text summaries, translations and more.&lt;/p&gt;
+&lt;h3 id=&quot;abstract-away-the-complexity&quot; tabindex=&quot;-1&quot;&gt;Abstract away the complexity &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Instead of using an open text field, offer more specific options such as &lt;code&gt;translate&lt;/code&gt; or &lt;code&gt;improve&lt;/code&gt;. The chat box is only the beginning.&lt;/p&gt;
+&lt;h3 id=&quot;naming-features&quot; tabindex=&quot;-1&quot;&gt;Naming features &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In the example above, &lt;code&gt;translate&lt;/code&gt; could be &lt;code&gt;AI translation&lt;/code&gt; but not useful information for the user looking for a solution.&lt;/p&gt;
+&lt;p&gt;Sell the solution, not the technology.&lt;/p&gt;
+&lt;h2 id=&quot;pol-piella-abadia-tuning-your-app-using-xcode-s-instruments&quot; tabindex=&quot;-1&quot;&gt;&lt;a href=&quot;https://arcticonference.com/speaker/pol#talk&quot;&gt;Pol Piella Abadia: Tuning your app using Xcode&#39;s instruments&lt;/a&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/arctic-2025-day-2/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 </content>
 	</entry>
 	
@@ -1931,6 +1944,67 @@ orb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
 &lt;h2 id=&quot;what-to-think&quot; tabindex=&quot;-1&quot;&gt;What to think? &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/returns/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Having read hundreds of threads by real-world users expressing their excitement, concerns, disappointments, hacks and hopes, I think this is very much an early adopter product that won&#39;t make everyone happy. Not yet anyway. It&#39;s pricey, finicky, but equally is awe-inspiring and a glimpse of a possible AR-infused future.&lt;/p&gt;
 &lt;p&gt;It&#39;s an interesting product. Definitely not for everyone but at the same time, I do wish people would stop and think about what they&#39;re sharing when they echo the headlines that cherry-pick the &amp;quot;bad&amp;quot; news. This is a very exciting time to be in the Apple ecosystem and I&#39;m looking forward to some day trying my own AVP.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Text &amp; Materials</title>
+		<link href="https://vision.rodeo/text-materials/"/>
+		<updated>2024-01-30T00:00:00Z</updated>
+		<id>https://vision.rodeo/text-materials/</id>
+		<content type="html">&lt;h1 id=&quot;text-and-materials&quot; tabindex=&quot;-1&quot;&gt;Text and materials &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/text-materials/&quot;&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Exploration of how to effectively make use of text and materials in visionOS and how it differs from iOS etc.&lt;/p&gt;
+&lt;p&gt;Dig into HIG a bit also.&lt;/p&gt;
+&lt;p&gt;In SwiftUI, the Color values we give to views are part of a bigger type called ShapeStyle. This includes not only color but materials too. In the Vision Pro world, our apps look better when we use materials.&lt;/p&gt;
+&lt;p&gt;Optimise / combine images before adding.&lt;/p&gt;
+&lt;p&gt;Note that the way to display text only is by setting windowStyle &lt;code&gt;.plain&lt;/code&gt; on the Windowgroup.&lt;/p&gt;
+&lt;h2 id=&quot;text-sizes&quot; tabindex=&quot;-1&quot;&gt;Text sizes &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/text-materials/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;VStack {
+    Text(&amp;quot;Extra Large Title&amp;quot;)
+        .font(.extraLargeTitle)
+    Text(&amp;quot;Extra Large Title 2&amp;quot;)
+        .font(.extraLargeTitle2)
+    Text(&amp;quot;Title&amp;quot;)
+        .font(.title)
+    Text(&amp;quot;Caption&amp;quot;)
+        .font(.caption)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mention what each size represents in real-world sizes. How it looks small on simulator but in reality it is much bigger because &lt;reasons&gt;.&lt;/reasons&gt;&lt;/p&gt;
+&lt;h3 id=&quot;going-bigger&quot; tabindex=&quot;-1&quot;&gt;Going bigger &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/text-materials/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;VStack(alignment: .leading) {
+    Text(&amp;quot;Really Large text in Primary&amp;quot;)
+        .font(.system(size: 128).bold())
+        .foregroundColor(.primary)
+    Text(&amp;quot;Some title-sized text in secondary mode.&amp;quot;)
+        .font(.title)
+        .foregroundColor(.secondary)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then apply modifiers to the VStack to see how text shows:&lt;/p&gt;
+&lt;h2 id=&quot;colours-and-materials&quot; tabindex=&quot;-1&quot;&gt;Colours and materials &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/text-materials/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Primary&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.foregroundColor(.primary)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Images: Primary text day / night (combine)&lt;/p&gt;
+&lt;p&gt;Secondary&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.foregroundColor(.secondary)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Images: Secondary text day / night (combine)&lt;/p&gt;
+&lt;p&gt;Specific colours:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.foregroundColor(.red) // .green or .blue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mention how using solid color may be important for branding etc and how bright colours might look best against solid backgrounds such as when you choose to use a white BG. It&#39;s important to think about eye comfort.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.foregroundColor(.green.opacity(0.75))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mention how using solid colour on icons can look good, example Things: https://www.macrumors.com/2024/02/02/things-3-to-do-app-apple-vision-pro/&lt;/p&gt;
+&lt;h3 id=&quot;using-tints-and-opacity&quot; tabindex=&quot;-1&quot;&gt;Using tints and opacity &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/text-materials/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&quot;text-hover-effects&quot; tabindex=&quot;-1&quot;&gt;Text hover effects &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/text-materials/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;styling-text-with-markdown&quot; tabindex=&quot;-1&quot;&gt;Styling text with markdown &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/text-materials/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;considering-fonts&quot; tabindex=&quot;-1&quot;&gt;Considering fonts &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/text-materials/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;working-with-backgrounds&quot; tabindex=&quot;-1&quot;&gt;Working with backgrounds &lt;a class=&quot;header-anchor&quot; href=&quot;https://vision.rodeo/text-materials/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To be explored in more depth, but mention the material options visionOS encourages.&lt;/p&gt;
+&lt;p&gt;Check official docs and training notes for other angles. Then publish!&lt;/p&gt;
 </content>
 	</entry>
 	
