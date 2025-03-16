@@ -15,7 +15,7 @@ This is also tricky but having watched a [talk from Mikaela Caron](/arctic-2025-
 
 With that in mind, here's what I've learned so far. I've set up the following code as a [Git repo here](https://github.com/donovanh/tabletopkitexample).
 
-## Summary
+## Result
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/mYLLdov" data-context="false" ><a href="//imgur.com/a/mYLLdov">Blockstack in TabletopKit</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
