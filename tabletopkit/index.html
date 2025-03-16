@@ -843,7 +843,7 @@ footer.panel {
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h3 id="gamesetup" tabindex="-1">GameSetup <a class="header-anchor" href="#gamesetup">#</a></h3>
-<p>The minimum setup requires a table and seating. This is enough to get a tabletop kit app to run (and some testing blocks to illustrate the interactions):</p>
+<p>The minimum setup requires a table and seating. This is enough to get a tabletop kit app to run. I will also add some testing blocks to illustrate the interactions:</p>
 <pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token attribute atrule">@MainActor</span>
 <span class="token keyword">class</span> <span class="token class-name">GameSetup</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> root<span class="token punctuation">:</span> <span class="token class-name">Entity</span>
@@ -890,63 +890,6 @@ footer.panel {
             setup<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>equipment<span class="token punctuation">:</span> block<span class="token punctuation">)</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="blocks" tabindex="-1">Blocks <a class="header-anchor" href="#blocks">#</a></h3>
-<p>While not part of <code>TabletopKit</code>, I wanted something to test the interaction so the following is used to generate the blocks (<code>Block</code> class above):</p>
-<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">generateBlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">ModelEntity</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">let</span> pieceWidth<span class="token punctuation">:</span> <span class="token class-name">Float</span> <span class="token operator">=</span> <span class="token number">0.0375</span>
-    <span class="token keyword">let</span> pieceHeight<span class="token punctuation">:</span> <span class="token class-name">Float</span> <span class="token operator">=</span> <span class="token number">0.0225</span>
-    <span class="token keyword">let</span> pieceLength<span class="token punctuation">:</span> <span class="token class-name">Float</span> <span class="token operator">=</span> <span class="token number">0.1125</span>
-
-    <span class="token keyword">var</span> metallicMaterial <span class="token operator">=</span> <span class="token class-name">SimpleMaterial</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token punctuation">.</span>gray<span class="token punctuation">,</span> isMetallic<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
-    metallicMaterial<span class="token punctuation">.</span>metallic <span class="token operator">=</span> <span class="token class-name">MaterialScalarParameter</span><span class="token punctuation">(</span>floatLiteral<span class="token punctuation">:</span> <span class="token number">1.0</span><span class="token punctuation">)</span>
-    metallicMaterial<span class="token punctuation">.</span>roughness <span class="token operator">=</span> <span class="token class-name">MaterialScalarParameter</span><span class="token punctuation">(</span>floatLiteral<span class="token punctuation">:</span> <span class="token number">0.3</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">let</span> boxShape<span class="token punctuation">:</span> <span class="token class-name">MeshResource</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token function">generateBox</span><span class="token punctuation">(</span>
-        width<span class="token punctuation">:</span> pieceWidth<span class="token punctuation">,</span>
-        height<span class="token punctuation">:</span> pieceHeight<span class="token punctuation">,</span>
-        depth<span class="token punctuation">:</span> pieceLength<span class="token punctuation">,</span>
-        cornerRadius<span class="token punctuation">:</span> <span class="token number">0.0025</span>
-    <span class="token punctuation">)</span>
-    <span class="token keyword">let</span> piece <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>
-        mesh<span class="token punctuation">:</span> boxShape<span class="token punctuation">,</span>
-        materials<span class="token punctuation">:</span> <span class="token punctuation">[</span>metallicMaterial<span class="token punctuation">]</span>
-    <span class="token punctuation">)</span>
-
-    <span class="token comment">// Physics</span>
-    <span class="token keyword">let</span> physicsMaterial <span class="token operator">=</span> <span class="token class-name">PhysicsMaterialResource</span><span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span>
-        staticFriction<span class="token punctuation">:</span> <span class="token number">0.8</span><span class="token punctuation">,</span>
-        dynamicFriction<span class="token punctuation">:</span> <span class="token number">0.8</span><span class="token punctuation">,</span>
-        restitution<span class="token punctuation">:</span> <span class="token number">0</span>
-    <span class="token punctuation">)</span>
-
-    piece<span class="token punctuation">.</span>components<span class="token punctuation">[</span><span class="token class-name">PhysicsBodyComponent</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
-        massProperties<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
-            shape<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">generateBox</span><span class="token punctuation">(</span>
-                width<span class="token punctuation">:</span> pieceWidth<span class="token punctuation">,</span>
-                height<span class="token punctuation">:</span> pieceHeight<span class="token punctuation">,</span>
-                depth<span class="token punctuation">:</span> pieceLength
-            <span class="token punctuation">)</span><span class="token punctuation">,</span>
-            mass<span class="token punctuation">:</span> <span class="token number">1</span>
-        <span class="token punctuation">)</span><span class="token punctuation">,</span>
-        material<span class="token punctuation">:</span> physicsMaterial<span class="token punctuation">,</span>
-        mode<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token keyword">static</span>
-    <span class="token punctuation">)</span>
-
-    <span class="token comment">// Shadow</span>
-    piece<span class="token punctuation">.</span>components<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token class-name">GroundingShadowComponent</span><span class="token punctuation">(</span>castsShadow<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    <span class="token comment">// Input</span>
-    piece<span class="token punctuation">.</span>components<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token class-name">InputTargetComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    <span class="token comment">// Sound</span>
-    piece<span class="token punctuation">.</span>spatialAudio <span class="token operator">=</span> <span class="token class-name">SpatialAudioComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-    <span class="token comment">// Collisions</span>
-    piece<span class="token punctuation">.</span><span class="token function">generateCollisionShapes</span><span class="token punctuation">(</span>recursive<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> piece
 <span class="token punctuation">}</span></code></pre>
 <h3 id="gamemetrics" tabindex="-1">GameMetrics <a class="header-anchor" href="#gamemetrics">#</a></h3>
 <p>To make configuration easier, we set up some shared variables:</p>
@@ -1019,7 +962,7 @@ footer.panel {
          initialState <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>pose<span class="token punctuation">:</span> spatialSeatPose<span class="token punctuation">)</span>
      <span class="token punctuation">}</span>
  <span class="token punctuation">}</span></code></pre>
-<p>There are different types of equipment. When using entities for custom equipment, <code>EntityEquipment</code> is ideal. In the example above, I have added a sinple <code>Block</code> struct so we can add some interactive elements.</p>
+<p>There are different types of equipment. When using entities for custom equipment, <code>EntityEquipment</code> is ideal. In the example above, I have added a <code>Block</code> struct so we can add some interactive elements.</p>
 <p><code>TabletopKit</code> also brings useful tools such as dice.</p>
 <h3 id="gameinteraction" tabindex="-1">GameInteraction <a class="header-anchor" href="#gameinteraction">#</a></h3>
 <p>With the equipment in place, we can add some boilerplate for when we want interactions.</p>
@@ -1067,7 +1010,7 @@ footer.panel {
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h3 id="groupactivitymanager" tabindex="-1">GroupActivityManager <a class="header-anchor" href="#groupactivitymanager">#</a></h3>
-<p>To bring it all together, we set up a group activity session:</p>
+<p>To introduce multiplayer, we set up a group activity session:</p>
 <pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">import</span> <span class="token class-name">GroupActivities</span>
 <span class="token keyword">import</span> <span class="token class-name">SwiftUI</span>
 <span class="token attribute atrule">@preconcurrency</span> <span class="token keyword">import</span> <span class="token class-name">TabletopKit</span>
@@ -1098,6 +1041,70 @@ footer.panel {
         tabletopGame<span class="token punctuation">.</span><span class="token function">detachNetworkCoordinator</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
+<h3 id="blocks" tabindex="-1">Blocks <a class="header-anchor" href="#blocks">#</a></h3>
+<p>Lastly we add in a function to generate those testing blocks above.</p>
+<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">func</span> <span class="token function-definition function">generateBlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">ModelEntity</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">let</span> pieceWidth<span class="token punctuation">:</span> <span class="token class-name">Float</span> <span class="token operator">=</span> <span class="token number">0.0375</span>
+    <span class="token keyword">let</span> pieceHeight<span class="token punctuation">:</span> <span class="token class-name">Float</span> <span class="token operator">=</span> <span class="token number">0.0225</span>
+    <span class="token keyword">let</span> pieceLength<span class="token punctuation">:</span> <span class="token class-name">Float</span> <span class="token operator">=</span> <span class="token number">0.1125</span>
+
+    <span class="token keyword">var</span> metallicMaterial <span class="token operator">=</span> <span class="token class-name">SimpleMaterial</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token punctuation">.</span>gray<span class="token punctuation">,</span> isMetallic<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+    metallicMaterial<span class="token punctuation">.</span>metallic <span class="token operator">=</span> <span class="token class-name">MaterialScalarParameter</span><span class="token punctuation">(</span>floatLiteral<span class="token punctuation">:</span> <span class="token number">1.0</span><span class="token punctuation">)</span>
+    metallicMaterial<span class="token punctuation">.</span>roughness <span class="token operator">=</span> <span class="token class-name">MaterialScalarParameter</span><span class="token punctuation">(</span>floatLiteral<span class="token punctuation">:</span> <span class="token number">0.3</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">let</span> boxShape<span class="token punctuation">:</span> <span class="token class-name">MeshResource</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token function">generateBox</span><span class="token punctuation">(</span>
+        width<span class="token punctuation">:</span> pieceWidth<span class="token punctuation">,</span>
+        height<span class="token punctuation">:</span> pieceHeight<span class="token punctuation">,</span>
+        depth<span class="token punctuation">:</span> pieceLength<span class="token punctuation">,</span>
+        cornerRadius<span class="token punctuation">:</span> <span class="token number">0.0025</span>
+    <span class="token punctuation">)</span>
+    <span class="token keyword">let</span> piece <span class="token operator">=</span> <span class="token class-name">ModelEntity</span><span class="token punctuation">(</span>
+        mesh<span class="token punctuation">:</span> boxShape<span class="token punctuation">,</span>
+        materials<span class="token punctuation">:</span> <span class="token punctuation">[</span>metallicMaterial<span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token comment">// Physics</span>
+    <span class="token keyword">let</span> physicsMaterial <span class="token operator">=</span> <span class="token class-name">PhysicsMaterialResource</span><span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span>
+        staticFriction<span class="token punctuation">:</span> <span class="token number">0.8</span><span class="token punctuation">,</span>
+        dynamicFriction<span class="token punctuation">:</span> <span class="token number">0.8</span><span class="token punctuation">,</span>
+        restitution<span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">)</span>
+
+    piece<span class="token punctuation">.</span>components<span class="token punctuation">[</span><span class="token class-name">PhysicsBodyComponent</span><span class="token punctuation">.</span><span class="token keyword">self</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+        massProperties<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token keyword">init</span><span class="token punctuation">(</span>
+            shape<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token function">generateBox</span><span class="token punctuation">(</span>
+                width<span class="token punctuation">:</span> pieceWidth<span class="token punctuation">,</span>
+                height<span class="token punctuation">:</span> pieceHeight<span class="token punctuation">,</span>
+                depth<span class="token punctuation">:</span> pieceLength
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            mass<span class="token punctuation">:</span> <span class="token number">1</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        material<span class="token punctuation">:</span> physicsMaterial<span class="token punctuation">,</span>
+        mode<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token keyword">static</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token comment">// Shadow</span>
+    piece<span class="token punctuation">.</span>components<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token class-name">GroundingShadowComponent</span><span class="token punctuation">(</span>castsShadow<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// Input</span>
+    piece<span class="token punctuation">.</span>components<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token class-name">InputTargetComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// Sound</span>
+    piece<span class="token punctuation">.</span>spatialAudio <span class="token operator">=</span> <span class="token class-name">SpatialAudioComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// Collisions</span>
+    piece<span class="token punctuation">.</span><span class="token function">generateCollisionShapes</span><span class="token punctuation">(</span>recursive<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> piece
+<span class="token punctuation">}</span></code></pre>
+<p>This should give us a starting point to build from when building TabletopKit games. You might want to think about next steps such as:</p>
+<ul>
+<li>Introducing game state and turns</li>
+<li>Adding dice</li>
+<li>Setting up rules about who can interact with equipment and when</li>
+</ul>
+<p>TabletopKit helps with all these and more.</p>
 <p>You can see the <a href="https://github.com/donovanh/tabletopkitexample">full project on Github here</a>.</p>
 
 <ul class="links-nextprev"><li>Previous: <a href="/arctic-2025-day-2/">ARCtic iOS conference 2025 - Day 2</a></li>
