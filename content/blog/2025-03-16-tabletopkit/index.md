@@ -19,7 +19,11 @@ With that in mind, here's what I've learned so far. I've set up the following co
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/mYLLdov" data-context="false" ><a href="//imgur.com/a/mYLLdov">Blockstack in TabletopKit</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
-In building this demo I have learned that while `TabletopKit` has many useful tools, it's not a great fit for a physics-based project such as Blockstack. However the setup below might prove useful when starting new projects.
+In building this demo I have learned that while `TabletopKit` has many useful tools, it's not a great fit for a physics-based project such as Blockstack.
+
+The pieces can clip through others. They don't push other pieces over or fall using physics. There may be ways around this but this is as far as I've got so far.
+
+However, the setup below might prove useful when starting new projects.
 
 ## TabletopKit setup
 
