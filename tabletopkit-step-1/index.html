@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Reset physics in entities - Donovan's Vision Blog</title>
-		<meta name="description" content="How to reset positions of pieces that are currently in motion">
+		<title>TabletopKit - displaying a game table - Donovan's Vision Blog</title>
+		<meta name="description" content="Start with the basic boilerplate code needed for just a table.">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -14,9 +14,9 @@
 
 		<meta name="fediverse:creator" content="@donovanh@mastodon.ie" />
 
-		<meta property="og:title" content="Reset physics in entities" />
+		<meta property="og:title" content="TabletopKit - displaying a game table" />
 		<meta property="og:type" content="article" />
-		<meta property="og:description" content="How to reset positions of pieces that are currently in motion">
+		<meta property="og:description" content="Start with the basic boilerplate code needed for just a table.">
 		<meta property="og:url" content="" />
 		<meta name="generator" content="Eleventy v2.0.1">
 		<style>/**
@@ -722,33 +722,27 @@ footer.panel {
 			
 
 <div class="content panel padded">
-	<h1>Reset physics in entities</h1>
+	<h1>TabletopKit - displaying a game table</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2024-07-08">8 July 2024</time></li>
+	<li><time datetime="2025-03-17">17 March 2025</time></li>
 	<li><a href="/tags/dev/" class="post-tag">dev</a></li>
 </ul>
 
 <div class="callout"><a href="https://apps.apple.com/app/blockstack/id6670283686">BlockStack for Vision Pro is now available!</a></div>
 
-<p>When <a href="/jenga-in-vision-os/">building a Jenga game</a>, I wanted to be able to reset the pieces. I was able to write a simple <code>reset</code> method that put the pieces back to where they should be but there was an unexpected result. Each time I press <code>Reset</code>, the pieces fall over:</p>
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/RZIVyh3" data-context="false" ><a href="//imgur.com/a/RZIVyh3">Jenga game without physics reset code</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-<h2 id="object-physics" tabindex="-1">Object physics <a class="header-anchor" href="#object-physics">#</a></h2>
-<p>The video above shows that the pieces are being reset into their positions, but they still have their movement physics in place. As a result when reset, they continue to move causing the tower to collapse.</p>
-<h2 id="reset-the-physics" tabindex="-1">Reset the physics <a class="header-anchor" href="#reset-the-physics">#</a></h2>
-<p>We can apply to lines of code to reset the physics. First we set the piece to static, then call <a href="https://developer.apple.com/documentation/realitykit/modelentity/clearforcesandtorques()">clearForcesAndTorques</a>.</p>
-<pre class="language-swift" tabindex="0"><code class="language-swift">modelEntity<span class="token punctuation">.</span>physicsBody<span class="token operator">?</span><span class="token punctuation">.</span>mode <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token keyword">static</span>
-modelEntity<span class="token punctuation">.</span><span class="token function">clearForcesAndTorques</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<p>We then need to run a loop over the pieces to re-enable the physics:</p>
-<pre class="language-swift" tabindex="0"><code class="language-swift"><span class="token keyword">for</span> child <span class="token keyword">in</span> tower<span class="token punctuation">.</span>children <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token keyword">let</span> modelEntity <span class="token operator">=</span> child <span class="token keyword">as</span><span class="token operator">?</span> <span class="token class-name">ModelEntity</span> <span class="token punctuation">{</span>
-        modelEntity<span class="token punctuation">.</span>physicsBody<span class="token operator">?</span><span class="token punctuation">.</span>mode <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token keyword">dynamic</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>As a result we should now be able to set the pieces and they should stay still:</p>
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/DQwj1qo" data-context="false" ><a href="//imgur.com/a/DQwj1qo">Jenga game with physics reset code</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<p>Preparation:</p>
+<p>WWDC session: https://developer.apple.com/videos/play/wwdc2024/10091/
+Download sample code: https://developer.apple.com/documentation/tabletopkit/tabletopkitsample</p>
+<ul>
+<li>What boilerplate code is needed for a minimal table view (new app)</li>
+</ul>
+<h2 id="start-with-a-table" tabindex="-1">Start with a table <a class="header-anchor" href="#start-with-a-table">#</a></h2>
+<p>As introduced in the WWDC video, each game needs a table. The table is a surface on which all the game interaction takes place. This can be a circular or rectangular primative, and represents a real-world table.</p>
+<p>The table acts as the focal point for the game, which means all coordinates for positioning equipment is derived from this starting point.</p>
+<h2 id="initial-volume-code" tabindex="-1">Initial volume code <a class="header-anchor" href="#initial-volume-code">#</a></h2>
 
-<ul class="links-nextprev"><li>Previous: <a href="/playing-sounds/">Playing sounds</a></li><li>Next: <a href="/dismiss-immersive/">Dismissing immersive views</a></li>
+<ul class="links-nextprev"><li>Previous: <a href="/tabletopkit/">TabletopKit</a></li><li>Next: <a href="/tabletopkit-step-0/">TabletopKit - bringing multiple Vision Pro users together</a></li>
 </ul>
 </div>
 
@@ -774,6 +768,6 @@ modelEntity<span class="token punctuation">.</span><span class="token function">
 				<p style="font-size: 0.75rem">All content @2024 <a href="https://hop.ie">Donovan Hutchinson</a></p>
 		</footer>
 
-		<!-- Current page: /reset-physics/ -->
+		<!-- Current page: /tabletopkit-step-1/ -->
 	</body>
 </html>
