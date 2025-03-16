@@ -120,7 +120,7 @@ Additional considerations include:
 Interactions are managed through a structured update cycle:
 
 - The **Game** object holds the overall setup.
-- The **GameInteraction** class processes player interactions.
+- The **TabletopInteraction** delegate processes player interactions.
 - The interaction cycle is updated and tracks active, canceled, or completed states.
 - Interactions modify the game state based on predefined rules.
 
