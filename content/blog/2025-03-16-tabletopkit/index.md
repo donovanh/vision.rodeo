@@ -154,7 +154,7 @@ class GameRenderer: TabletopGame.RenderDelegate {
 
 ### GameSetup
 
-The minimum setup requires a table and seating. This is enough to get a tabletop kit app to run (and some testing blocks to illustrate the interactions):
+The minimum setup requires a table and seating. This is enough to get a tabletop kit app to run. I will also add some testing blocks to illustrate the interactions:
 
 ```swift
 @MainActor
@@ -203,68 +203,6 @@ class GameSetup {
             setup.add(equipment: block)
         }
     }
-}
-```
-
-### Blocks
-
-While not part of `TabletopKit`, I wanted something to test the interaction so the following is used to generate the blocks (`Block` class above):
-
-```swift
-func generateBlock() -> ModelEntity {
-
-    let pieceWidth: Float = 0.0375
-    let pieceHeight: Float = 0.0225
-    let pieceLength: Float = 0.1125
-
-    var metallicMaterial = SimpleMaterial(color: .gray, isMetallic: true)
-    metallicMaterial.metallic = MaterialScalarParameter(floatLiteral: 1.0)
-    metallicMaterial.roughness = MaterialScalarParameter(floatLiteral: 0.3)
-
-    let boxShape: MeshResource = .generateBox(
-        width: pieceWidth,
-        height: pieceHeight,
-        depth: pieceLength,
-        cornerRadius: 0.0025
-    )
-    let piece = ModelEntity(
-        mesh: boxShape,
-        materials: [metallicMaterial]
-    )
-
-    // Physics
-    let physicsMaterial = PhysicsMaterialResource.generate(
-        staticFriction: 0.8,
-        dynamicFriction: 0.8,
-        restitution: 0
-    )
-
-    piece.components[PhysicsBodyComponent.self] = .init(
-        massProperties: .init(
-            shape: .generateBox(
-                width: pieceWidth,
-                height: pieceHeight,
-                depth: pieceLength
-            ),
-            mass: 1
-        ),
-        material: physicsMaterial,
-        mode: .static
-    )
-
-    // Shadow
-    piece.components.set(GroundingShadowComponent(castsShadow: true))
-
-    // Input
-    piece.components.set(InputTargetComponent())
-
-    // Sound
-    piece.spatialAudio = SpatialAudioComponent()
-
-    // Collisions
-    piece.generateCollisionShapes(recursive: false)
-
-    return piece
 }
 ```
 
@@ -349,7 +287,7 @@ struct Block: EntityEquipment {
  }
 ```
 
-There are different types of equipment. When using entities for custom equipment, `EntityEquipment` is ideal. In the example above, I have added a sinple `Block` struct so we can add some interactive elements.
+There are different types of equipment. When using entities for custom equipment, `EntityEquipment` is ideal. In the example above, I have added a `Block` struct so we can add some interactive elements.
 
 `TabletopKit` also brings useful tools such as dice.
 
@@ -412,7 +350,7 @@ class GameObserver: TabletopGame.Observer {
 
 ### GroupActivityManager
 
-To bring it all together, we set up a group activity session:
+To introduce multiplayer, we set up a group activity session:
 
 ```swift
 import GroupActivities
@@ -446,5 +384,75 @@ class GroupActivityManager: Observable {
     }
 }
 ```
+
+### Blocks
+
+Lastly we add in a function to generate those testing blocks above.
+
+```swift
+func generateBlock() -> ModelEntity {
+
+    let pieceWidth: Float = 0.0375
+    let pieceHeight: Float = 0.0225
+    let pieceLength: Float = 0.1125
+
+    var metallicMaterial = SimpleMaterial(color: .gray, isMetallic: true)
+    metallicMaterial.metallic = MaterialScalarParameter(floatLiteral: 1.0)
+    metallicMaterial.roughness = MaterialScalarParameter(floatLiteral: 0.3)
+
+    let boxShape: MeshResource = .generateBox(
+        width: pieceWidth,
+        height: pieceHeight,
+        depth: pieceLength,
+        cornerRadius: 0.0025
+    )
+    let piece = ModelEntity(
+        mesh: boxShape,
+        materials: [metallicMaterial]
+    )
+
+    // Physics
+    let physicsMaterial = PhysicsMaterialResource.generate(
+        staticFriction: 0.8,
+        dynamicFriction: 0.8,
+        restitution: 0
+    )
+
+    piece.components[PhysicsBodyComponent.self] = .init(
+        massProperties: .init(
+            shape: .generateBox(
+                width: pieceWidth,
+                height: pieceHeight,
+                depth: pieceLength
+            ),
+            mass: 1
+        ),
+        material: physicsMaterial,
+        mode: .static
+    )
+
+    // Shadow
+    piece.components.set(GroundingShadowComponent(castsShadow: true))
+
+    // Input
+    piece.components.set(InputTargetComponent())
+
+    // Sound
+    piece.spatialAudio = SpatialAudioComponent()
+
+    // Collisions
+    piece.generateCollisionShapes(recursive: false)
+
+    return piece
+}
+```
+
+This should give us a starting point to build from when building TabletopKit games. You might want to think about next steps such as:
+
+- Introducing game state and turns
+- Adding dice
+- Setting up rules about who can interact with equipment and when
+
+TabletopKit helps with all these and more.
 
 You can see the [full project on Github here](https://github.com/donovanh/tabletopkitexample).
